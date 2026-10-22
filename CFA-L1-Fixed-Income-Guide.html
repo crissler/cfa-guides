@@ -1,0 +1,1207 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — FIXED INCOME STUDY GUIDE
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+  Read that block first to restore context, then rebuild or extend visuals as asked.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Fixed Income Guide</title>
+<style>
+:root{
+  --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;
+  --border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);
+  --accent:#534AB7;--accent-bg:#EEEDFE;
+  --c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;
+  --good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+    --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+    --accent:#AFA9EC;--accent-bg:#26215C;
+    --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+    --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+  --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+  --accent:#AFA9EC;--accent-bg:#26215C;
+  --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+  --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:40px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:17px;max-width:720px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}
+nav.toc .row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}
+.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}
+.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}
+.fx-eq .frac{margin:0 4px;line-height:1.4}
+.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}
+.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}
+.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;border-radius:0;margin:12px 0}
+.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.tip{border-left-color:var(--good);background:var(--good-bg)}
+.callout b{font-weight:600}
+.callout.trap b{color:var(--bad)}
+.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}
+.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}
+.ctl label{font-size:14px;color:var(--muted);min-width:170px}
+.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+.ctl output{font-size:14px;font-weight:600;min-width:64px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
+.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.stat .l{font-size:12px;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg .grid{stroke:var(--border);stroke-width:1}
+svg .axis{stroke:var(--border-strong);stroke-width:1}
+svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}
+svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}
+button:hover{background:var(--surface-2)}
+button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .step{flex:1 1 180px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.pill.g{background:var(--good-bg);color:var(--good)}
+.pill.w{background:var(--warn-bg);color:var(--warn)}
+.pill.b{background:var(--bad-bg);color:var(--bad)}
+.pill.a{background:var(--accent-bg);color:var(--accent)}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}
+details.q summary{cursor:pointer;font-weight:500;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}
+details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}
+details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border);position:relative}
+.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;transition:width .2s}
+.bar .loss{position:absolute;top:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,var(--bad) 0 6px,transparent 6px 12px);opacity:.85;border-left:2px solid var(--bad)}
+.mini{height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden}
+.mini>div{height:100%;background:var(--bad)}
+.ladder{display:flex;flex-direction:column;gap:6px}
+.ladder .rung{display:flex;align-items:center;gap:10px;font-size:14px}
+.ladder .rung .b{height:26px;border-radius:6px;background:var(--c1);opacity:.85;flex:none}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I</div>
+  <h1>Fixed income guide</h1>
+  <p class="lead">Formulas, visuals, worked examples and exam traps for all 19 fixed income learning modules, grouped into seven parts. Save this file and re-upload it to Claude to pick up where you left off.</p>
+  <div class="chips">
+    <span class="chip acc">Exam weight 11–14%</span>
+    <span class="chip">About 20–25 of 180 questions</span>
+    <span class="chip">19 learning modules</span>
+    <span class="chip">Calculation-heavy</span>
+  </div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a>
+  <a href="#p1">1 · Features and types</a>
+  <a href="#p2">2 · Issuance and markets</a>
+  <a href="#p3">3 · Prices and yields</a>
+  <a href="#p4">4 · Term structure</a>
+  <a href="#p5">5 · Duration and convexity</a>
+  <a href="#p6">6 · Credit</a>
+  <a href="#p7">7 · Securitization, ABS, MBS</a>
+  <a href="#sheet">Formula sheet</a>
+  <a href="#practice">Practice</a>
+  <a href="#progress">My progress</a>
+</div></nav>
+
+<!-- ================= GAME PLAN ================= -->
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <p class="muted">What candidates who passed wish they'd known going in.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>What actually gets tested</h4>
+      <ul class="small">
+        <li>Fixed income is one of the most <b>calculation-heavy</b> topics: bond prices, yields, forward rates, duration and convexity estimates.</li>
+        <li>The concept questions are about <b>direction</b>: what happens to price, duration or spread when yields, options or credit quality change. If you can draw the price–yield curve, you can answer most of them.</li>
+        <li>Securitization and MBS questions are mostly vocabulary: tranches, credit enhancement, contraction vs extension risk.</li>
+        <li>Three choices per question and no penalty for guessing, so never leave one blank.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Highest-yield items, ranked</h4>
+      <ol class="small">
+        <li>Bond pricing and the price–yield relationship (premium, par, discount)</li>
+        <li>Duration: Macaulay, modified, effective, money duration, PVBP</li>
+        <li>Price change estimate with duration and convexity</li>
+        <li>Spot, par and forward rates</li>
+        <li>Callable, putable and convertible bonds; effect on duration and convexity</li>
+        <li>Yield spreads: G-spread, I-spread, Z-spread, OAS</li>
+        <li>Credit risk: expected loss, seniority, ratings, spread changes</li>
+        <li>Securitization: tranching and credit enhancement</li>
+        <li>MBS prepayment: contraction vs extension risk, CPR and PSA, CMOs</li>
+        <li>Full vs flat price, accrued interest, money market yields</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout trap"><b>Top traps.</b> Using semiannual durations without annualizing (divide duration by the periodicity, convexity by its square). Using Macaulay duration in a price-change formula (use modified or effective). Forgetting the convexity term is <i>added</i> for an option-free bond. Mixing up full and flat price. Confusing discount-basis and add-on money market yields. Calling falling rates "extension risk" for an MBS (it's contraction risk).</div>
+  <div class="callout tip"><b>BA II Plus.</b> Bond price: <span class="kbd">2nd</span> <span class="kbd">CLR TVM</span>, then N, I/Y, PMT, FV and <span class="kbd">CPT</span> <span class="kbd">PV</span>. Semiannual bond: double N, halve I/Y and PMT. Yield: enter price as a negative PV, then <span class="kbd">CPT</span> <span class="kbd">I/Y</span> (double it for a semiannual bond's annual yield). Pricing with spot rates: discount each cash flow separately; TVM only works with one rate.</div>
+</section>
+
+<!-- ================= PART 1 ================= -->
+<section class="mod" id="p1">
+  <div class="modtag">Part 1 · Learning modules 1–2</div>
+  <h2>Bond features, cash flows and types</h2>
+  <p class="muted">What a bond is made of, how it pays, and the options built into it.</p>
+
+  <h3>1.1 Basic features</h3>
+  <div class="grid">
+    <div class="card"><h4>Issuer</h4><p class="small" style="margin:0">Corporates, governments (sovereign and non-sovereign), quasi-government agencies, supranationals.</p></div>
+    <div class="card"><h4>Maturity (tenor)</h4><p class="small" style="margin:0">When principal is repaid. Money market: 1 year or less. Capital market: over 1 year. Perpetual bonds never mature.</p></div>
+    <div class="card"><h4>Par value</h4><p class="small" style="margin:0">Principal repaid at maturity (face value). Prices are quoted per 100 of par.</p></div>
+    <div class="card"><h4>Coupon rate and frequency</h4><p class="small" style="margin:0">Annual interest as a % of par, paid annually, semiannually, quarterly or monthly. Zero-coupon bonds pay none and sell at a discount.</p></div>
+    <div class="card"><h4>Currency</h4><p class="small" style="margin:0">Dual-currency bonds pay coupons in one currency and principal in another. Currency option bonds let the investor choose.</p></div>
+    <div class="card"><h4>Yield</h4><p class="small" style="margin:0">The return the market requires. It sets the price, not the coupon.</p></div>
+  </div>
+
+  <h3>1.2 Indenture, covenants and seniority</h3>
+  <div class="grid two">
+    <div class="card"><h4>Indenture (trust deed)</h4><p class="small" style="margin:0">The legal contract: issuer's obligations, investors' rights, source of repayment, collateral, credit enhancements and covenants. A <b>trustee</b> monitors it on the bondholders' behalf.</p></div>
+    <div class="card"><h4>Covenants</h4><p class="small" style="margin:0"><b>Affirmative</b> = what the issuer <i>must</i> do (pay interest, maintain insurance, comply with laws). <b>Negative</b> = what it <i>must not</i> do (take on more debt, pledge assets to others (negative pledge), sell key assets, pay large dividends).</p></div>
+  </div>
+  <p class="small" style="margin-top:10px"><b>Secured</b> bonds are backed by collateral (e.g. mortgage bonds, equipment trust certificates); <b>unsecured</b> bonds (debentures) rely on the issuer's general credit. Secured ranks ahead in a default and has higher expected recovery.</p>
+
+  <h3>1.3 Legal, regulatory and tax</h3>
+  <div class="tbl"><table>
+    <tr><th>Type</th><th>What it is</th></tr>
+    <tr><td><b>Domestic bond</b></td><td>Issued by a local issuer, in the local currency, in the local market</td></tr>
+    <tr><td><b>Foreign bond</b></td><td>Issued by a foreign issuer in another country's market and currency (Yankee in the US, Samurai in Japan, Panda in China, Bulldog in the UK)</td></tr>
+    <tr><td><b>Eurobond</b></td><td>Issued outside the jurisdiction of its currency (e.g. a USD bond sold in London); lighter regulation; historically bearer form</td></tr>
+    <tr><td><b>Global bond</b></td><td>Issued at the same time in the Eurobond market and at least one domestic market</td></tr>
+  </table></div>
+  <ul class="small">
+    <li><b>Bearer vs registered:</b> bearer bonds are owned by whoever holds them; registered bonds record the owner.</li>
+    <li><b>Tax:</b> coupons are usually taxed as income; capital gains are taxed on sale. Original issue discount (OID) bonds may be taxed on the annual accretion. Some government bonds (e.g. US municipals) are tax-exempt.</li>
+  </ul>
+
+  <h3>1.4 Principal repayment structures</h3>
+  <div class="grid">
+    <div class="card"><h4>Bullet</h4><p class="small" style="margin:0">Coupons only, all principal at maturity. Most common.</p></div>
+    <div class="card"><h4>Fully amortizing</h4><p class="small" style="margin:0">Each payment includes interest and principal; balance hits zero at maturity (like a mortgage).</p></div>
+    <div class="card"><h4>Partially amortizing</h4><p class="small" style="margin:0">Some principal paid along the way, with a <b>balloon</b> payment at maturity.</p></div>
+    <div class="card"><h4>Sinking fund</h4><p class="small" style="margin:0">Issuer retires part of the issue each year. Lowers credit risk, but investors face reinvestment risk and may be repaid below market price.</p></div>
+  </div>
+
+  <h3>1.5 Coupon structures</h3>
+  <div class="tbl"><table>
+    <tr><th>Structure</th><th>How it works</th></tr>
+    <tr><td><b>Floating-rate note (FRN)</b></td><td>Coupon = market reference rate (e.g. SOFR) + quoted margin, reset periodically. A <b>cap</b> limits the coupon (benefits the issuer); a <b>floor</b> sets a minimum (benefits the investor). Inverse floaters move opposite to the reference rate.</td></tr>
+    <tr><td><b>Step-up coupon</b></td><td>Coupon rises on set dates; often paired with a call so the issuer is pushed to refinance</td></tr>
+    <tr><td><b>Credit-linked coupon</b></td><td>Coupon rises if the issuer's credit rating falls</td></tr>
+    <tr><td><b>Payment-in-kind (PIK)</b></td><td>Issuer can pay coupons with more bonds instead of cash; used by weak credits, so higher yield</td></tr>
+    <tr><td><b>Deferred coupon</b></td><td>No coupons for the first few years, then higher coupons</td></tr>
+    <tr><td><b>Inflation-linked</b></td><td>Payments adjust with an inflation index. Capital-indexed (most common, e.g. TIPS): principal adjusts, fixed coupon rate applied to it. Also interest-indexed and zero-coupon-indexed.</td></tr>
+    <tr><td><b>Equity-linked note</b></td><td>Final payment linked to an equity index return</td></tr>
+  </table></div>
+
+  <h3>1.6 Embedded options (contingency provisions)</h3>
+  <div class="grid">
+    <div class="card"><h4>Callable bond</h4><p class="small" style="margin:0"><b>Issuer</b> can repay early, usually when rates fall. Investors demand a <b>higher yield</b>. Terms: call price and schedule, call protection (lockout) period, make-whole call. American (any time), European (one date), Bermudan (set dates).</p></div>
+    <div class="card"><h4>Putable bond</h4><p class="small" style="margin:0"><b>Investor</b> can sell back to the issuer at the put price, usually when rates rise. Investors accept a <b>lower yield</b>.</p></div>
+    <div class="card"><h4>Convertible bond</h4><p class="small" style="margin:0"><b>Investor</b> can convert into shares. Lower yield than a straight bond. Contingent convertibles (CoCos) convert automatically if a trigger is hit, such as a bank's capital ratio falling.</p></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Conversion price</div><div class="fx-eq"><span class="frac"><span>Par value</span><span>Conversion ratio</span></span></div></div>
+    <div class="fx"><div class="fx-name">Conversion value</div><div class="fx-eq">Conversion ratio × Share price</div></div>
+    <div class="fx"><div class="fx-name">Conversion premium</div><div class="fx-eq">Bond price − Conversion value</div></div>
+  </div>
+  <div class="callout tip"><b>Who owns the option?</b> Call = issuer, so it lowers the bond's value to investors. Put and conversion = investor, so they raise it. Bond value: callable = straight − call; putable = straight + put.</div>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="mod" id="p2">
+  <div class="modtag">Part 2 · Learning modules 3–5</div>
+  <h2>Issuance, trading and markets</h2>
+  <p class="muted">How bonds are sold and traded, and how corporations and governments borrow.</p>
+
+  <h3>2.1 Primary and secondary markets</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>Primary market (new issues)</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Underwritten offering:</b> the bank buys the whole issue and resells it, taking the risk.</li>
+        <li><b>Best-efforts offering:</b> the bank sells what it can, no guarantee.</li>
+        <li><b>Auction:</b> common for government bonds.</li>
+        <li><b>Shelf registration:</b> one registration, sold in pieces over time.</li>
+        <li><b>Private placement:</b> sold directly to a few investors; not registered, less liquid, custom covenants.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Secondary market (trading)</h4>
+      <ul class="small" style="margin:0">
+        <li>Mostly <b>over-the-counter</b> through dealers, not exchanges.</li>
+        <li>Liquidity is measured by the <b>bid–offer spread</b>: narrower = more liquid.</li>
+        <li>Government bonds are the most liquid; small corporate issues the least.</li>
+        <li>Settlement is usually T+1 or T+2.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.2 Corporate issuers</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>Short-term funding</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Bank lines of credit:</b> uncommitted (bank can refuse), committed (bank must lend, fee charged), revolving credit (multi-year, most reliable).</li>
+        <li><b>Secured loans and factoring:</b> borrowing against or selling receivables.</li>
+        <li><b>Commercial paper:</b> unsecured short-term notes sold at a discount, by strong issuers. <b>Rollover risk</b>: can't refinance at maturity, so it's backed by bank backup lines.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Long-term funding</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Investment-grade</b> issuers: longer maturities, fewer covenants, often unsecured.</li>
+        <li><b>High-yield</b> issuers: more covenants, often secured, shorter maturities, often callable.</li>
+        <li><b>Medium-term notes:</b> issued continuously in a range of maturities.</li>
+        <li>Spreading out maturities (laddering) reduces refinancing risk.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.3 Repurchase agreements (repos)</h3>
+  <p class="small">A repo is a short-term <b>secured loan</b>: one party sells a bond and agrees to buy it back later at a higher price. The difference is the interest. The other side is a <b>reverse repo</b>.</p>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Repo interest</div><div class="fx-eq">Repo amount × Repo rate × <span class="frac"><span>Days</span><span>360</span></span></div></div>
+    <div class="fx"><div class="fx-name">Haircut (repo margin)</div><div class="fx-eq">Loan = Collateral value × (1 − Haircut)</div><div class="fx-note">The haircut protects the lender if the collateral falls in value.</div></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Repo rate is <b>higher</b> when…</th><th>Haircut is <b>higher</b> when…</th></tr>
+    <tr><td>Collateral is riskier or lower quality<br>The term is longer<br>Collateral isn't delivered to the lender<br>Other short-term rates are higher<br>The collateral is in plentiful supply (not "special")</td><td>The repo term is longer<br>Collateral is lower quality or more volatile<br>The borrower is less creditworthy<br>The collateral is scarce or illiquid</td></tr>
+  </table></div>
+
+  <h3>2.4 Government issuers</h3>
+  <div class="grid">
+    <div class="card"><h4>Sovereign bonds</h4><p class="small" style="margin:0">Bills (≤ 1 year, sold at a discount), notes and bonds. <b>On-the-run</b> = the most recent issue: most liquid, used as the benchmark, slightly lower yield than off-the-run.</p></div>
+    <div class="card"><h4>Auctions</h4><p class="small" style="margin:0"><b>Single-price:</b> all winning bidders pay the same price (at the highest accepted yield). <b>Multiple-price:</b> each winner pays its own bid. Non-competitive bids accept whatever yield is set.</p></div>
+    <div class="card"><h4>Local vs foreign currency</h4><p class="small" style="margin:0">A government can tax or print its own currency, so local-currency debt is usually rated higher than its foreign-currency debt.</p></div>
+    <div class="card"><h4>Non-sovereign</h4><p class="small" style="margin:0">States, provinces and cities. <b>General obligation (GO)</b> bonds are backed by taxing power; <b>revenue bonds</b> by a project's income, so they're riskier.</p></div>
+    <div class="card"><h4>Agency / quasi-government</h4><p class="small" style="margin:0">Issued by government-sponsored entities; often an implied (not explicit) government guarantee.</p></div>
+    <div class="card"><h4>Supranational</h4><p class="small" style="margin:0">Multilateral bodies such as the World Bank and regional development banks; usually very highly rated.</p></div>
+  </div>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="mod" id="p3">
+  <div class="modtag">Part 3 · Learning modules 6–8</div>
+  <h2>Bond prices and yields</h2>
+  <p class="muted">Pricing, the price–yield relationship, accrued interest, yield measures, spreads, floaters and money market yields.</p>
+
+  <h3>3.1 Pricing a bond</h3>
+  <div class="fx"><div class="fx-name">Price = present value of all cash flows at the market discount rate r</div><div class="fx-eq">PV = <span class="frac"><span>PMT</span><span>(1 + r)<sup>1</sup></span></span> + <span class="frac"><span>PMT</span><span>(1 + r)<sup>2</sup></span></span> + … + <span class="frac"><span>PMT + FV</span><span>(1 + r)<sup>N</sup></span></span></div><div class="fx-note">With spot rates, discount each cash flow at its own rate: PMT/(1+z<sub>1</sub>) + PMT/(1+z<sub>2</sub>)² + …</div></div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card soft small"><span class="pill g">Premium</span> coupon rate &gt; market yield → price &gt; 100</div>
+    <div class="card soft small"><span class="pill a">Par</span> coupon rate = market yield → price = 100</div>
+    <div class="card soft small"><span class="pill w">Discount</span> coupon rate &lt; market yield → price &lt; 100</div>
+  </div>
+  <div class="callout"><b>Four price–yield rules.</b> (1) Price and yield move in opposite directions. (2) For the same yield change, price rises more than it falls (convexity). (3) Lower-coupon bonds are more sensitive to yield changes. (4) Longer-maturity bonds are usually more sensitive.</div>
+
+  <div class="viz">
+    <div class="viz-title">Price–yield curve with duration and convexity estimates</div>
+    <div class="viz-sub">Pick a bond, then shift its yield. The dashed tangent is the duration-only estimate; the dotted curve adds convexity. The solid curve is the actual price.</div>
+    <div class="ctl"><label for="pyC">Coupon rate</label><input type="range" id="pyC" min="0" max="10" step="0.5" value="5"><output id="pyCo"></output></div>
+    <div class="ctl"><label for="pyN">Maturity</label><input type="range" id="pyN" min="1" max="30" step="1" value="10"><output id="pyNo"></output></div>
+    <div class="ctl"><label for="pyY">Yield today</label><input type="range" id="pyY" min="1" max="12" step="0.25" value="5"><output id="pyYo"></output></div>
+    <div class="ctl"><label for="pyD">Yield change</label><input type="range" id="pyD" min="-300" max="300" step="25" value="150"><output id="pyDo"></output></div>
+    <div class="small" id="pyType" style="margin-bottom:6px"></div>
+    <svg id="pySvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Actual price</span><span><span class="sw" style="background:var(--c3)"></span>Duration only (tangent)</span><span><span class="sw" style="background:var(--c2)"></span>Duration + convexity</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Price today</div><div class="v" id="pyP"></div></div>
+      <div class="stat"><div class="l">Modified duration</div><div class="v" id="pyMD"></div></div>
+      <div class="stat"><div class="l">Convexity</div><div class="v" id="pyCX"></div></div>
+      <div class="stat"><div class="l">Actual % change</div><div class="v" id="pyA"></div></div>
+      <div class="stat"><div class="l">Duration estimate</div><div class="v" id="pyE1"></div></div>
+      <div class="stat"><div class="l">Duration + convexity</div><div class="v" id="pyE2"></div></div>
+    </div>
+  </div>
+
+  <div class="viz">
+    <div class="viz-title">Pull to par: price over time at a constant yield</div>
+    <div class="viz-sub">Three 10-year bonds with different coupons. If the yield doesn't change, every price drifts to 100 at maturity.</div>
+    <div class="ctl"><label for="ptY">Market yield</label><input type="range" id="ptY" min="2" max="10" step="0.5" value="6"><output id="ptYo"></output></div>
+    <svg id="ptSvg"></svg>
+    <div class="legend" id="ptLeg"></div>
+  </div>
+
+  <h3>3.2 Full price, flat price and accrued interest</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Full (dirty) price</div><div class="fx-eq">PV<sub>Full</sub> = PV<sub>Flat</sub> + AI</div><div class="fx-note">What the buyer actually pays.</div></div>
+    <div class="fx"><div class="fx-name">Accrued interest</div><div class="fx-eq">AI = <span class="frac"><span>t</span><span>T</span></span> × PMT</div><div class="fx-note">t = days since last coupon, T = days in the coupon period.</div></div>
+    <div class="fx"><div class="fx-name">Full price between coupons</div><div class="fx-eq">PV<sub>Full</sub> = PV × (1 + r)<sup>t/T</sup></div><div class="fx-note">PV = price on the last coupon date.</div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Flat (clean) price</b> is what's quoted. It avoids the jump in price on each coupon date.</li>
+    <li><b>Day counts:</b> government bonds usually use actual/actual; corporate bonds usually use 30/360.</li>
+    <li><b>Matrix pricing:</b> to price a bond that rarely trades, use yields of comparable bonds (similar maturity, coupon and credit), interpolating if needed.</li>
+  </ul>
+
+  <h3>3.3 Yield measures</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Yield to maturity</div><div class="fx-eq">The single r that makes PV = price</div><div class="fx-note">An IRR. Assumes held to maturity, all payments made, coupons reinvested at the YTM.</div></div>
+    <div class="fx"><div class="fx-name">Periodicity conversion</div><div class="fx-eq">(1 + <span class="frac"><span>APR<sub>m</sub></span><span>m</span></span>)<sup>m</sup> = (1 + <span class="frac"><span>APR<sub>n</sub></span><span>n</span></span>)<sup>n</sup></div><div class="fx-note">e.g. 6% semiannual = 1.03² − 1 = 6.09% annual.</div></div>
+    <div class="fx"><div class="fx-name">Current yield</div><div class="fx-eq"><span class="frac"><span>Annual coupon</span><span>Flat price</span></span></div><div class="fx-note">Ignores reinvestment and gains or losses.</div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Street convention:</b> assumes payments arrive on scheduled dates. <b>True yield:</b> uses actual dates (weekends, holidays).</li>
+    <li><b>Simple yield:</b> (coupon + straight-line amortized gain or loss) / flat price.</li>
+    <li><b>Yield to call:</b> uses the call date and call price. <b>Yield to worst:</b> the lowest of YTM and all yields to call.</li>
+    <li><b>Annual-pay vs semiannual:</b> to compare, convert to the same periodicity first.</li>
+  </ul>
+
+  <h3>3.4 Yield spreads</h3>
+  <div class="tbl"><table>
+    <tr><th>Spread</th><th>Measured over</th><th>Notes</th></tr>
+    <tr><td><b>Benchmark / G-spread</b></td><td>Government bond yield of the same maturity (interpolated if needed)</td><td>Simplest; uses one point on the curve</td></tr>
+    <tr><td><b>I-spread</b></td><td>Swap rate of the same maturity</td><td>Common for corporate and bank bonds</td></tr>
+    <tr><td><b>Z-spread</b></td><td>Constant spread added to <i>every</i> spot rate on the government curve</td><td>More accurate than G or I; uses the whole curve</td></tr>
+    <tr><td><b>Option-adjusted spread (OAS)</b></td><td>Z-spread with the option's value removed</td><td>For bonds with embedded options. Callable: OAS &lt; Z-spread. Putable: OAS &gt; Z-spread.</td></tr>
+  </table></div>
+  <p class="small">A spread compensates for credit risk, liquidity risk and tax differences relative to the benchmark.</p>
+
+  <h3>3.5 Floating-rate notes</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">FRN coupon</div><div class="fx-eq">Coupon = MRR + Quoted margin</div><div class="fx-note">MRR = market reference rate (e.g. SOFR). The quoted margin is fixed at issue.</div></div>
+    <div class="card small">The <b>discount margin</b> (required margin) is what the market demands now.<br><span class="pill g">QM &gt; DM</span> premium · <span class="pill a">QM = DM</span> par on reset dates · <span class="pill w">QM &lt; DM</span> discount.<br>Because the coupon resets, an FRN's price stays close to par and its duration is short (about the time to the next reset).</div>
+  </div>
+
+  <h3>3.6 Money market yields</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Discount rate basis (e.g. T-bills)</div><div class="fx-eq">PV = FV × (1 − <span class="frac"><span>Days</span><span>Year</span></span> × DR)</div></div>
+    <div class="fx"><div class="fx-name">Add-on rate basis (e.g. CDs, repos)</div><div class="fx-eq">PV = <span class="frac"><span>FV</span><span>1 + <span style="font-size:.85em">(Days/Year)</span> × AOR</span></span></div></div>
+    <div class="fx"><div class="fx-name">Converting to add-on</div><div class="fx-eq">AOR = <span class="frac"><span>Year</span><span>Days</span></span> × <span class="frac"><span>FV − PV</span><span>PV</span></span></div><div class="fx-note">Bond equivalent yield = add-on rate on a 365-day year.</div></div>
+  </div>
+  <div class="callout trap"><b>Trap.</b> A discount rate understates the true return: it divides the interest by FV, not by the amount you invest, and often uses a 360-day year. Always convert to an add-on (365-day) yield before comparing.</div>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section class="mod" id="p4">
+  <div class="modtag">Part 4 · Learning module 9</div>
+  <h2>The term structure: spot, par and forward curves</h2>
+  <p class="muted">Three ways to describe the same yield curve, and how to move between them.</p>
+
+  <div class="grid">
+    <div class="card"><h4>Spot rate (z)</h4><p class="small" style="margin:0">The yield on a zero-coupon bond for one maturity. Use it to discount a single cash flow at that date.</p></div>
+    <div class="card"><h4>Par rate</h4><p class="small" style="margin:0">The coupon rate that makes a bond price exactly 100 when discounted at the spot rates.</p></div>
+    <div class="card"><h4>Forward rate</h4><p class="small" style="margin:0">A rate agreed today for borrowing in the future. "1y1y" = a 1-year rate starting 1 year from now; "2y3y" = a 3-year rate starting in 2 years.</p></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Spot and forward rates</div><div class="fx-eq">(1 + z<sub>B</sub>)<sup>B</sup> = (1 + z<sub>A</sub>)<sup>A</sup> × (1 + IFR<sub>A,B−A</sub>)<sup>B−A</sup></div><div class="fx-note">Example: z<sub>1</sub> = 2%, z<sub>2</sub> = 3% → 1y1y = 1.03²/1.02 − 1 = 4.01%.</div></div>
+    <div class="fx"><div class="fx-name">Par rate from spot rates</div><div class="fx-eq">p = <span class="frac"><span>1 − d<sub>N</sub></span><span>d<sub>1</sub> + d<sub>2</sub> + … + d<sub>N</sub></span></span></div><div class="fx-note">d<sub>t</sub> = 1/(1 + z<sub>t</sub>)<sup>t</sup>, the discount factor. Same example: 2-year par rate = 2.985%.</div></div>
+  </div>
+
+  <div class="viz">
+    <div class="viz-title">Spot, par and forward curves</div>
+    <div class="viz-sub">Change the level and slope of the spot curve. Each forward point is the 1-year rate starting one year before that maturity.</div>
+    <div class="ctl"><label for="tsL">1-year spot rate</label><input type="range" id="tsL" min="0.5" max="6" step="0.25" value="2"><output id="tsLo"></output></div>
+    <div class="ctl"><label for="tsS">Slope (long − short)</label><input type="range" id="tsS" min="-3" max="3" step="0.25" value="2"><output id="tsSo"></output></div>
+    <svg id="tsSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Spot curve</span><span><span class="sw" style="background:var(--c2)"></span>Par curve</span><span><span class="sw" style="background:var(--c3)"></span>1-year forward rates</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">2-year spot</div><div class="v" id="tsZ2"></div></div>
+      <div class="stat"><div class="l">1y1y forward</div><div class="v" id="tsF"></div></div>
+      <div class="stat"><div class="l">2-year par</div><div class="v" id="tsP2"></div></div>
+    </div>
+  </div>
+  <div class="callout"><b>Ordering rule.</b> Upward-sloping curve: forward &gt; spot &gt; par. Downward-sloping: forward &lt; spot &lt; par. Flat: all three are equal. The par curve sits closest to "average", the forward curve moves the most.</div>
+  <ul class="small">
+    <li><b>Why forwards sit above spots on an upward curve:</b> the 2-year spot is roughly an average of the 1-year spot and the 1y1y forward, so the forward must be higher to pull the average up.</li>
+    <li><b>Breakeven idea:</b> investing for 2 years at z<sub>2</sub> earns the same as 1 year at z<sub>1</sub> then rolling at the 1y1y forward.</li>
+    <li><b>Pricing:</b> a bond priced with spot rates and the same bond priced with its YTM give the same price; the YTM is a kind of weighted average of the spot rates.</li>
+  </ul>
+</section>
+
+<!-- ================= PART 5 ================= -->
+<section class="mod" id="p5">
+  <div class="modtag">Part 5 · Learning modules 10–13</div>
+  <h2>Interest rate risk: duration and convexity</h2>
+  <p class="muted">The most tested area of fixed income. Learn what each duration measures and when to use it.</p>
+
+  <h3>5.1 Sources of return and the investment horizon</h3>
+  <div class="grid">
+    <div class="card"><h4>Three sources of return</h4><ol class="small" style="margin:0"><li>Coupons and principal received</li><li>Interest on reinvested coupons</li><li>Gain or loss if sold before maturity (vs carrying value)</li></ol></div>
+    <div class="card"><h4>Two opposing risks</h4><p class="small" style="margin:0"><b>Market price risk:</b> rates up → price down. Matters for short horizons.<br><b>Reinvestment risk:</b> rates down → coupons reinvested at less. Matters for long horizons.</p></div>
+    <div class="fx"><div class="fx-name">Duration gap</div><div class="fx-eq">Macaulay duration − Investment horizon</div><div class="fx-note">Positive gap: price risk dominates (hurt by rising rates). Negative gap: reinvestment risk dominates (hurt by falling rates).</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Why Macaulay duration is the "safe" horizon</div>
+    <div class="viz-sub">A 10-year 5% annual bond bought at par. Rates shift once right after purchase. The lines show your annual return depending on how long you hold.</div>
+    <div class="ctl"><label for="hzS">Size of rate shift</label><input type="range" id="hzS" min="0.5" max="3" step="0.25" value="1"><output id="hzSo"></output></div>
+    <svg id="hzSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c3)"></span>Rates rise</span><span><span class="sw" style="background:var(--c4)"></span>No change (5%)</span><span><span class="sw" style="background:var(--c2)"></span>Rates fall</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Macaulay duration</div><div class="v" id="hzM"></div></div>
+      <div class="stat"><div class="l">Hold 1 year: rise / fall</div><div class="v" id="hz1" style="font-size:16px"></div></div>
+      <div class="stat"><div class="l">Hold 8 years: rise / fall</div><div class="v" id="hz8" style="font-size:16px"></div></div>
+      <div class="stat"><div class="l">Hold 10 years: rise / fall</div><div class="v" id="hz10" style="font-size:16px"></div></div>
+    </div>
+  </div>
+
+  <h3>5.2 Duration formulas</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Macaulay duration</div><div class="fx-eq">MacDur = Σ t × <span class="frac"><span>PV(CF<sub>t</sub>)</span><span>Bond price</span></span></div><div class="fx-note">Weighted-average time (in years or periods) to receive the cash flows.</div></div>
+    <div class="fx"><div class="fx-name">Modified duration</div><div class="fx-eq">ModDur = <span class="frac"><span>MacDur</span><span>1 + r</span></span></div><div class="fx-note">r = yield per period. Approx. % price change for a 1% (100 bp) yield change.</div></div>
+    <div class="fx"><div class="fx-name">Approximate modified duration</div><div class="fx-eq"><span class="frac"><span>PV<sub>−</sub> − PV<sub>+</sub></span><span>2 × ΔYield × PV<sub>0</sub></span></span></div><div class="fx-note">PV<sub>−</sub> = price when yield falls; PV<sub>+</sub> = when it rises.</div></div>
+    <div class="fx"><div class="fx-name">Effective duration</div><div class="fx-eq"><span class="frac"><span>PV<sub>−</sub> − PV<sub>+</sub></span><span>2 × ΔCurve × PV<sub>0</sub></span></span></div><div class="fx-note">Shifts the benchmark curve. Use for bonds with embedded options and MBS.</div></div>
+    <div class="fx"><div class="fx-name">Money duration</div><div class="fx-eq">AnnModDur × PV<sub>Full</sub></div><div class="fx-note">Dollar change for a 100 bp move = money duration × 0.01.</div></div>
+    <div class="fx"><div class="fx-name">Price value of a basis point</div><div class="fx-eq">PVBP = <span class="frac"><span>PV<sub>−</sub> − PV<sub>+</sub></span><span>2</span></span></div><div class="fx-note">Price change for a 1 bp yield change.</div></div>
+  </div>
+
+  <div class="viz">
+    <div class="viz-title">Macaulay duration as a balance point</div>
+    <div class="viz-sub">Each bar is the present value of one cash flow. Duration is where the seesaw balances.</div>
+    <div class="ctl"><label for="sdC">Coupon rate</label><input type="range" id="sdC" min="0" max="12" step="0.5" value="5"><output id="sdCo"></output></div>
+    <div class="ctl"><label for="sdN">Maturity</label><input type="range" id="sdN" min="1" max="20" step="1" value="8"><output id="sdNo"></output></div>
+    <div class="ctl"><label for="sdY">Yield</label><input type="range" id="sdY" min="1" max="12" step="0.5" value="5"><output id="sdYo"></output></div>
+    <svg id="sdSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1);height:10px"></span>PV of coupons</span><span><span class="sw" style="background:var(--c2);height:10px"></span>PV of principal</span><span><span class="sw" style="background:var(--c3);height:10px"></span>Balance point = Macaulay duration</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Price</div><div class="v" id="sdP"></div></div>
+      <div class="stat"><div class="l">Macaulay duration</div><div class="v" id="sdM"></div></div>
+      <div class="stat"><div class="l">Modified duration</div><div class="v" id="sdD"></div></div>
+    </div>
+  </div>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>Duration is higher when…</h4>
+      <ul class="small" style="margin:0">
+        <li>Maturity is <b>longer</b> (usually)</li>
+        <li>Coupon is <b>lower</b> (more value arrives at the end)</li>
+        <li>Yield is <b>lower</b> (distant cash flows are discounted less)</li>
+        <li>There's <b>no embedded option</b> (calls and puts shorten effective duration)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Special cases</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Zero-coupon bond:</b> MacDur = maturity</li>
+        <li><b>Perpetuity:</b> MacDur = (1 + r)/r</li>
+        <li><b>Floating-rate note:</b> about the time to the next reset</li>
+        <li><b>Between coupon dates:</b> duration falls as time passes, then jumps up after each coupon</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>5.3 Convexity and the full price-change estimate</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Approximate convexity</div><div class="fx-eq"><span class="frac"><span>PV<sub>−</sub> + PV<sub>+</sub> − 2 × PV<sub>0</sub></span><span>(ΔYield)² × PV<sub>0</sub></span></span></div><div class="fx-note">Effective convexity: same with ΔCurve.</div></div>
+    <div class="fx"><div class="fx-name">% price change</div><div class="fx-eq">%ΔPV<sub>Full</sub> ≈ (−AnnModDur × ΔYield) + ½ × AnnConvexity × (ΔYield)²</div><div class="fx-note">Use decimals: 50 bp = 0.005. The convexity term is always positive for an option-free bond, so it adds to gains and reduces losses.</div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Higher convexity is better</b> for the investor: the price rises more when yields fall and drops less when they rise.</li>
+    <li>Convexity is higher with longer maturity, lower coupon, lower yield and more spread-out cash flows.</li>
+    <li><b>Annualizing:</b> AnnModDur = periodic ModDur / periods per year; AnnConvexity = periodic convexity / (periods per year)².</li>
+  </ul>
+
+  <h3>5.4 Curve-based and empirical measures</h3>
+  <div class="tbl"><table>
+    <tr><th>Measure</th><th>What it measures</th><th>Use it for</th></tr>
+    <tr><td>Macaulay duration</td><td>Weighted-average time to cash flows</td><td>Matching an investment horizon</td></tr>
+    <tr><td>Modified duration</td><td>% price change per change in the bond's own yield</td><td>Option-free bonds</td></tr>
+    <tr><td>Effective duration</td><td>% price change per shift in the benchmark curve</td><td>Callable, putable bonds, MBS: cash flows change with rates</td></tr>
+    <tr><td>Key rate duration</td><td>Sensitivity to one maturity on the curve</td><td>Non-parallel shifts (steepening, flattening). Key rate durations add up to effective duration.</td></tr>
+    <tr><td>Empirical duration</td><td>Estimated from historical price data</td><td>Credit-risky bonds. Often lower than analytical duration for high yield, because spreads tend to tighten when government yields rise</td></tr>
+    <tr><td>Money duration, PVBP</td><td>Dollar sensitivity</td><td>Hedging and position sizing</td></tr>
+  </table></div>
+  <div class="callout trap"><b>Trap.</b> A bond with an embedded option needs <b>effective</b> duration. Its expected cash flows change when rates change, so a yield-based (modified) duration is wrong.</div>
+
+  <h3>5.5 Embedded options and convexity</h3>
+  <div class="viz">
+    <div class="viz-title">Straight vs callable vs putable</div>
+    <div class="viz-sub">Illustrative 10-year 5% bonds. The call caps the price when yields fall; the put floors it when yields rise.</div>
+    <svg id="eoSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--text)"></span>Straight (option-free), dashed</span><span><span class="sw" style="background:var(--c3)"></span>Callable</span><span><span class="sw" style="background:var(--c2)"></span>Putable</span></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th></th><th>Callable</th><th>Putable</th></tr>
+    <tr><td>Option held by</td><td>Issuer</td><td>Investor</td></tr>
+    <tr><td>Value</td><td>Straight − call</td><td>Straight + put</td></tr>
+    <tr><td>Yield vs straight bond</td><td>Higher</td><td>Lower</td></tr>
+    <tr><td>Effective duration</td><td>Lower, especially when yields fall</td><td>Lower, especially when yields rise</td></tr>
+    <tr><td>Convexity</td><td><b>Negative</b> at low yields (price compression)</td><td>Positive, higher than straight at high yields</td></tr>
+    <tr><td>OAS vs Z-spread</td><td>OAS &lt; Z-spread</td><td>OAS &gt; Z-spread</td></tr>
+  </table></div>
+
+  <h3>5.6 Portfolios, yield volatility and credit spreads</h3>
+  <ul class="small">
+    <li><b>Portfolio duration</b> ≈ market-value-weighted average of the bonds' durations. It assumes a parallel shift in the yield curve.</li>
+    <li><b>Yield volatility matters too:</b> a bond's price risk depends on duration <i>and</i> how much its yield moves. Short-term yields are usually more volatile than long-term yields.</li>
+    <li><b>Credit spread changes</b> use the same formula, with ΔSpread in place of ΔYield: %ΔPV ≈ −ModDur × ΔSpread + ½ × Convexity × (ΔSpread)².</li>
+  </ul>
+</section>
+
+<!-- ================= PART 6 ================= -->
+<section class="mod" id="p6">
+  <div class="modtag">Part 6 · Learning modules 14–16</div>
+  <h2>Credit risk and credit analysis</h2>
+  <p class="muted">How likely default is, how much you lose if it happens, and how to analyze governments and companies.</p>
+
+  <h3>6.1 Measuring credit risk</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Expected loss</div><div class="fx-eq">EL = POD × LGD</div><div class="fx-note">POD = probability of default.</div></div>
+    <div class="fx"><div class="fx-name">Loss given default</div><div class="fx-eq">LGD = Exposure × (1 − Recovery rate)</div><div class="fx-note">Loss severity = 1 − recovery rate.</div></div>
+    <div class="fx"><div class="fx-name">Credit spread (approx.)</div><div class="fx-eq">Spread ≈ POD × (1 − RR)</div><div class="fx-note">The yield premium roughly compensates for expected loss.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Expected loss calculator</div>
+    <div class="viz-sub">Per 100 of exposure.</div>
+    <div class="ctl"><label for="elP">Probability of default</label><input type="range" id="elP" min="0" max="20" step="0.5" value="2"><output id="elPo"></output></div>
+    <div class="ctl"><label for="elR">Recovery rate</label><input type="range" id="elR" min="0" max="100" step="5" value="40"><output id="elRo"></output></div>
+    <div class="bar"><div id="elRec" style="background:var(--c2);color:var(--bg)"></div><div id="elLoss" style="background:var(--c3);color:var(--bg)"></div></div>
+    <div class="legend"><span><span class="sw" style="background:var(--c2);height:10px"></span>Recovered if default</span><span><span class="sw" style="background:var(--c3);height:10px"></span>Lost if default (LGD)</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Loss given default</div><div class="v" id="elLGD"></div></div>
+      <div class="stat"><div class="l">Expected loss</div><div class="v" id="elEL"></div></div>
+      <div class="stat"><div class="l">Approx. spread needed</div><div class="v" id="elSP"></div></div>
+    </div>
+  </div>
+
+  <div class="grid two">
+    <div class="card"><h4>Default risk vs spread risk</h4><p class="small" style="margin:0"><b>Default risk</b>: POD and loss severity. <b>Spread risk</b>: the bond's price falls because its spread widens, from <b>credit migration</b> (a downgrade) or <b>market liquidity risk</b> (wider bid–offer spreads).</p></div>
+    <div class="card"><h4>The Cs of credit analysis</h4><p class="small" style="margin:0"><b>Capacity</b> to pay (cash flow), <b>capital</b> (cushion of equity and assets), <b>collateral</b> (assets pledged), <b>covenants</b> (terms protecting lenders), plus <b>character</b> (management's track record and integrity).</p></div>
+  </div>
+
+  <div class="viz">
+    <div class="viz-title">Spread change and price</div>
+    <div class="viz-sub">Same duration and convexity math as yields. Widening spreads cut prices.</div>
+    <div class="ctl"><label for="scD">Modified duration</label><input type="range" id="scD" min="1" max="15" step="0.5" value="6"><output id="scDo"></output></div>
+    <div class="ctl"><label for="scC">Convexity</label><input type="range" id="scC" min="0" max="200" step="5" value="50"><output id="scCo"></output></div>
+    <div class="ctl"><label for="scS">Spread change</label><input type="range" id="scS" min="-200" max="200" step="10" value="50"><output id="scSo"></output></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Duration effect</div><div class="v" id="scE1"></div></div>
+      <div class="stat"><div class="l">Convexity effect</div><div class="v" id="scE2"></div></div>
+      <div class="stat"><div class="l">Total % price change</div><div class="v" id="scT"></div></div>
+    </div>
+  </div>
+
+  <h3>6.2 Credit ratings</h3>
+  <div class="tbl"><table>
+    <tr><th>Category</th><th>S&amp;P / Fitch</th><th>Moody's</th></tr>
+    <tr><td><span class="pill g">Investment grade</span></td><td>AAA, AA, A, BBB (down to BBB−)</td><td>Aaa, Aa, A, Baa (down to Baa3)</td></tr>
+    <tr><td><span class="pill w">High yield ("junk")</span></td><td>BB+ and below</td><td>Ba1 and below</td></tr>
+    <tr><td><span class="pill b">Default</span></td><td>D</td><td>C</td></tr>
+  </table></div>
+  <ul class="small">
+    <li><b>Issuer rating vs issue rating:</b> the issuer rating applies to senior unsecured debt. Individual issues are <b>notched</b> up (secured) or down (subordinated).</li>
+    <li><b>Structural subordination:</b> holding company debt ranks behind the debt of its operating subsidiaries, because the subsidiaries' cash goes to their own creditors first.</li>
+    <li><b>Ratings' limits:</b> they can lag market prices, can be wrong, and can't predict events like takeovers or leveraged buyouts. Spreads often move before ratings change.</li>
+  </ul>
+
+  <h3>6.3 Seniority and recovery</h3>
+  <div class="viz">
+    <div class="viz-title">Priority of claims in default</div>
+    <div class="viz-sub">Higher up = paid first = higher expected recovery and lower yield. Bars are illustrative, not exact recovery rates.</div>
+    <div class="ladder">
+      <div class="rung"><div class="b" style="width:46%"></div><span><b>First lien / senior secured</b></span></div>
+      <div class="rung"><div class="b" style="width:38%"></div><span><b>Second lien</b></span></div>
+      <div class="rung"><div class="b" style="width:30%"></div><span><b>Senior unsecured</b></span></div>
+      <div class="rung"><div class="b" style="width:22%"></div><span><b>Senior subordinated</b></span></div>
+      <div class="rung"><div class="b" style="width:15%"></div><span><b>Subordinated</b></span></div>
+      <div class="rung"><div class="b" style="width:9%"></div><span><b>Junior subordinated</b></span></div>
+    </div>
+    <p class="small" style="margin:10px 0 0">Bonds at the same level rank <b>pari passu</b> (equally). In practice, the absolute priority rule is sometimes broken in bankruptcy negotiations, and junior creditors may get something before seniors are paid in full.</p>
+  </div>
+
+  <h3>6.4 What drives credit spreads</h3>
+  <ul class="small">
+    <li><b>Credit cycle and economy:</b> spreads widen in downturns and narrow in expansions.</li>
+    <li><b>Market conditions:</b> falling stock markets and higher volatility widen spreads.</li>
+    <li><b>Dealer capital and liquidity:</b> less market-making capacity means wider spreads.</li>
+    <li><b>Supply and demand:</b> heavy new issuance can widen spreads.</li>
+    <li>High-yield spreads move much more than investment-grade spreads.</li>
+  </ul>
+
+  <h3>6.5 Government (sovereign) credit analysis</h3>
+  <div class="grid">
+    <div class="card"><h4>Institutional and political</h4><p class="small" style="margin:0">Rule of law, political stability, transparency, willingness to pay.</p></div>
+    <div class="card"><h4>Economic</h4><p class="small" style="margin:0">GDP per capita, growth, diversification of the economy.</p></div>
+    <div class="card"><h4>Fiscal</h4><p class="small" style="margin:0">Debt/GDP, interest expense/revenue, deficits, ability to raise taxes.</p></div>
+    <div class="card"><h4>Monetary</h4><p class="small" style="margin:0">Central bank independence and credibility; exchange-rate flexibility.</p></div>
+    <div class="card"><h4>External</h4><p class="small" style="margin:0">Reserve currency status, FX reserves, external debt, current account.</p></div>
+  </div>
+
+  <h3>6.6 Corporate credit analysis</h3>
+  <div class="tbl"><table>
+    <tr><th>Ratio</th><th>Formula</th><th>Better credit when</th></tr>
+    <tr><td>Debt / EBITDA</td><td>Total debt / EBITDA</td><td>Lower</td></tr>
+    <tr><td>FFO / Debt</td><td>Funds from operations / Total debt</td><td>Higher</td></tr>
+    <tr><td>Debt / Capital</td><td>Debt / (Debt + Equity)</td><td>Lower</td></tr>
+    <tr><td>EBITDA / Interest</td><td>EBITDA / Interest expense</td><td>Higher</td></tr>
+    <tr><td>EBIT / Interest</td><td>EBIT / Interest expense</td><td>Higher</td></tr>
+    <tr><td>EBITDA margin</td><td>EBITDA / Revenue</td><td>Higher (and stable)</td></tr>
+  </table></div>
+  <p class="small">Also judge the qualitative side: business model, industry structure, competitive position, management, ESG risks and the debt's place in the capital structure.</p>
+</section>
+
+<!-- ================= PART 7 ================= -->
+<section class="mod" id="p7">
+  <div class="modtag">Part 7 · Learning modules 17–19</div>
+  <h2>Securitization, ABS and MBS</h2>
+  <p class="muted">Pooling loans into bonds, splitting the risk into tranches, and prepayment risk.</p>
+
+  <h3>7.1 How securitization works</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1 · Borrowers</div><p class="small" style="margin:6px 0 0">Take out mortgages, auto loans, credit card balances.</p></div>
+    <div class="step"><div class="n">2 · Originator (seller)</div><p class="small" style="margin:6px 0 0">Makes the loans, then sells the pool.</p></div>
+    <div class="step"><div class="n">3 · SPE (issuer)</div><p class="small" style="margin:6px 0 0">A bankruptcy-remote entity that buys the pool and issues the securities.</p></div>
+    <div class="step"><div class="n">4 · Investors</div><p class="small" style="margin:6px 0 0">Buy tranches and receive the pool's payments.</p></div>
+  </div>
+  <p class="small" style="margin-top:10px">The <b>servicer</b> collects payments and handles delinquencies; the <b>trustee</b> protects investors' interests. Because the SPE is separate, investors are protected if the originator goes bankrupt.</p>
+  <div class="grid two">
+    <div class="card"><h4>Benefits</h4><ul class="small" style="margin:0"><li>Lower funding costs for originators</li><li>Frees up bank capital to make more loans</li><li>Investors get access to loan pools with the risk level they choose</li><li>More liquid than individual loans</li></ul></div>
+    <div class="card"><h4>Covered bonds vs ABS</h4><ul class="small" style="margin:0"><li>Covered bond assets stay <b>on the bank's balance sheet</b> in a cover pool</li><li><b>Dual recourse:</b> investors can claim on the bank and the pool</li><li><b>Dynamic pool:</b> bad assets must be replaced</li><li>So covered bonds usually have lower credit risk and yields</li></ul></div>
+  </div>
+
+  <h3>7.2 Tranching and credit enhancement</h3>
+  <p class="small"><b>Credit tranching (subordination):</b> losses hit the lowest tranche first and work up, the "waterfall". <b>Time tranching:</b> splits prepayment risk by paying principal to tranches in sequence.</p>
+  <div class="viz">
+    <div class="viz-title">The loss waterfall</div>
+    <div class="viz-sub">Set the tranche sizes and the pool's losses. Losses are absorbed from the bottom (right) up.</div>
+    <div class="ctl"><label for="wfS">Subordinated (equity) size</label><input type="range" id="wfS" min="0" max="30" step="1" value="10"><output id="wfSo"></output></div>
+    <div class="ctl"><label for="wfM">Mezzanine size</label><input type="range" id="wfM" min="0" max="40" step="1" value="15"><output id="wfMo"></output></div>
+    <div class="ctl"><label for="wfL">Pool losses</label><input type="range" id="wfL" min="0" max="60" step="1" value="12"><output id="wfLo"></output></div>
+    <div class="bar" id="wfBar"><div id="wfBS" style="background:var(--c1);color:var(--bg)"></div><div id="wfBM" style="background:var(--c2);color:var(--bg)"></div><div id="wfBJ" style="background:var(--c3);color:var(--bg)"></div><div class="loss" id="wfBL"></div></div>
+    <div class="tbl" style="margin-top:12px"><table style="min-width:420px">
+      <tr><th>Tranche</th><th class="num">Size</th><th class="num">Loss</th><th style="width:40%">% of tranche lost</th></tr>
+      <tr><td>Senior</td><td class="num" id="wfSzS"></td><td class="num" id="wfLsS"></td><td><div class="mini"><div id="wfPS"></div></div><span class="small muted" id="wfPSt"></span></td></tr>
+      <tr><td>Mezzanine</td><td class="num" id="wfSzM"></td><td class="num" id="wfLsM"></td><td><div class="mini"><div id="wfPM"></div></div><span class="small muted" id="wfPMt"></span></td></tr>
+      <tr><td>Subordinated</td><td class="num" id="wfSzJ"></td><td class="num" id="wfLsJ"></td><td><div class="mini"><div id="wfPJ"></div></div><span class="small muted" id="wfPJt"></span></td></tr>
+    </table></div>
+    <p class="small" style="margin:0" id="wfNote"></p>
+  </div>
+  <div class="grid two">
+    <div class="card"><h4>Internal credit enhancement</h4><ul class="small" style="margin:0"><li><b>Subordination</b> (the tranche structure)</li><li><b>Overcollateralization:</b> pool worth more than the bonds issued</li><li><b>Excess spread:</b> pool interest above what bondholders are paid</li><li><b>Reserve accounts:</b> cash set aside for losses</li></ul></div>
+    <div class="card"><h4>External credit enhancement</h4><ul class="small" style="margin:0"><li><b>Third-party guarantees</b></li><li><b>Letters of credit</b> from a bank</li><li>Bond insurance</li></ul><p class="small muted" style="margin:6px 0 0">Exposes investors to the third party's credit risk.</p></div>
+  </div>
+
+  <h3>7.3 Asset-backed securities</h3>
+  <div class="grid">
+    <div class="card"><h4>Auto loan ABS</h4><p class="small" style="margin:0"><b>Amortizing</b>: principal paid down monthly, plus prepayments when cars are sold or refinanced.</p></div>
+    <div class="card"><h4>Credit card ABS</h4><p class="small" style="margin:0"><b>Non-amortizing</b>. During the <b>lockout (revolving) period</b>, principal is reinvested in new receivables; investors get interest only. Then principal is paid out. <b>Early amortization</b> triggers start repayment early if the pool performs badly.</p></div>
+    <div class="card"><h4>Collateralized debt obligations</h4><p class="small" style="margin:0">Backed by a pool of debt run by a <b>collateral manager</b>: CLOs (leveraged loans, most common), CBOs (bonds). The equity tranche gets what's left after the debt tranches are paid.</p></div>
+  </div>
+
+  <h3>7.4 Residential mortgages and MBS</h3>
+  <div class="grid two">
+    <div class="card"><h4>Mortgage features</h4><ul class="small" style="margin:0"><li>Rate: fixed, adjustable (ARM), hybrid</li><li>Amortization: full, partial (balloon), interest-only</li><li>Prepayment penalties (some markets)</li><li><b>Recourse</b> (lender can claim the borrower's other assets) vs <b>non-recourse</b> (only the property)</li><li><b>Loan-to-value (LTV):</b> lower LTV = lower default risk</li></ul></div>
+    <div class="card"><h4>Agency vs non-agency RMBS</h4><ul class="small" style="margin:0"><li><b>Agency:</b> guaranteed by a government agency or GSE (e.g. Ginnie Mae, Fannie Mae, Freddie Mac); loans must meet standards (conforming)</li><li><b>Non-agency:</b> no guarantee, so they need credit enhancement and carry credit risk</li></ul></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Pass-through rate</div><div class="fx-eq">WAC − Servicing and guarantee fees</div><div class="fx-note">WAC = weighted-average coupon; WAM = weighted-average maturity of the pool.</div></div>
+    <div class="fx"><div class="fx-name">Conditional prepayment rate</div><div class="fx-eq">CPR = 1 − (1 − SMM)<sup>12</sup></div><div class="fx-note">SMM = single monthly mortality: % of the remaining balance prepaid that month.</div></div>
+    <div class="fx"><div class="fx-name">PSA benchmark</div><div class="fx-eq">100 PSA: CPR = 0.2% × month, max 6%</div><div class="fx-note">Reaches 6% at month 30. 200 PSA = twice as fast.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Prepayment speed (PSA)</div>
+    <div class="viz-sub">Annual prepayment rate by loan age. Falling mortgage rates push the PSA speed up; rising rates slow it.</div>
+    <div class="ctl"><label for="psA">PSA speed</label><input type="range" id="psA" min="50" max="500" step="25" value="150"><output id="psAo"></output></div>
+    <svg id="psSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Selected PSA</span><span><span class="sw" style="background:var(--c4)"></span>100 PSA benchmark</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">CPR at month 10</div><div class="v" id="ps10"></div></div>
+      <div class="stat"><div class="l">CPR from month 30</div><div class="v" id="ps30"></div></div>
+      <div class="stat"><div class="l">SMM from month 30</div><div class="v" id="psS"></div></div>
+    </div>
+  </div>
+  <div class="grid two">
+    <div class="card"><h4><span class="pill w">Contraction risk</span></h4><p class="small" style="margin:0"><b>Rates fall</b> → borrowers refinance → prepayments speed up → the MBS is repaid sooner, and the money must be reinvested at lower rates. Price gains are limited (negative convexity, like a callable bond).</p></div>
+    <div class="card"><h4><span class="pill b">Extension risk</span></h4><p class="small" style="margin:0"><b>Rates rise</b> → prepayments slow → the MBS lasts longer just when its price is falling and you'd rather have cash to reinvest at higher rates.</p></div>
+  </div>
+
+  <h3>7.5 Collateralized mortgage obligations (CMOs)</h3>
+  <div class="tbl"><table>
+    <tr><th>Structure</th><th>How it redistributes prepayment risk</th></tr>
+    <tr><td><b>Sequential-pay</b></td><td>Tranche A gets all principal first, then B, then C. Short tranches have less extension risk; long tranches have less contraction risk.</td></tr>
+    <tr><td><b>PAC tranche</b> (planned amortization class)</td><td>Follows a set principal schedule as long as prepayments stay within a range (the PAC collar). Most predictable cash flows.</td></tr>
+    <tr><td><b>Support (companion) tranche</b></td><td>Absorbs prepayment surprises so the PAC can stay on schedule. Most prepayment risk, so the highest yield.</td></tr>
+    <tr><td><b>Floater / inverse floater</b></td><td>A fixed-rate tranche split into one that rises with rates and one that falls.</td></tr>
+  </table></div>
+  <div class="callout trap"><b>Trap.</b> A CMO doesn't remove prepayment risk; it only <b>moves</b> it between tranches. The PAC is protected because the support tranche takes the hit.</div>
+
+  <h3>7.6 Commercial MBS</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Debt service coverage ratio</div><div class="fx-eq">DSCR = <span class="frac"><span>Net operating income</span><span>Debt service</span></span></div><div class="fx-note">Above 1 = property income covers the payments. Higher is safer.</div></div>
+    <div class="fx"><div class="fx-name">Loan-to-value</div><div class="fx-eq">LTV = <span class="frac"><span>Loan amount</span><span>Property value</span></span></div><div class="fx-note">Lower is safer.</div></div>
+    <div class="card"><h4>Key differences from RMBS</h4><p class="small" style="margin:0">Loans are usually <b>non-recourse</b>, so credit analysis focuses on the property's income. Strong <b>call protection</b> limits prepayment risk. <b>Balloon risk</b>: the borrower can't refinance the final balloon, which extends the loan (a form of extension risk).</p></div>
+  </div>
+  <p class="small" style="margin-top:10px"><b>Call protection.</b> At the loan level: prepayment lockout, defeasance, prepayment penalty points, yield maintenance charges. At the structure level: sequential credit tranches.</p>
+</section>
+
+<!-- ================= FORMULA SHEET ================= -->
+<section class="mod" id="sheet">
+  <div class="modtag">Review</div>
+  <h2>Formula sheet</h2>
+  <p class="muted">Every formula in the topic on one page. Use decimals throughout.</p>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Bond price</td><td>Σ PMT/(1+r)<sup>t</sup> + FV/(1+r)<sup>N</sup></td></tr>
+    <tr><td>Price with spot rates</td><td>Σ CF<sub>t</sub>/(1+z<sub>t</sub>)<sup>t</sup></td></tr>
+    <tr><td>Full price</td><td>PV<sub>Flat</sub> + AI = PV × (1+r)<sup>t/T</sup></td></tr>
+    <tr><td>Accrued interest</td><td>(t/T) × PMT</td></tr>
+    <tr><td>Current yield</td><td>Annual coupon / Flat price</td></tr>
+    <tr><td>Periodicity conversion</td><td>(1 + APR<sub>m</sub>/m)<sup>m</sup> = (1 + APR<sub>n</sub>/n)<sup>n</sup></td></tr>
+    <tr><td>Discount-basis price</td><td>FV × (1 − (Days/Year) × DR)</td></tr>
+    <tr><td>Add-on price</td><td>FV / (1 + (Days/Year) × AOR)</td></tr>
+    <tr><td>Add-on rate from prices</td><td>(Year/Days) × (FV − PV)/PV</td></tr>
+    <tr><td>FRN coupon</td><td>MRR + Quoted margin</td></tr>
+    <tr><td>Forward rate</td><td>(1+z<sub>B</sub>)<sup>B</sup> = (1+z<sub>A</sub>)<sup>A</sup>(1+IFR<sub>A,B−A</sub>)<sup>B−A</sup></td></tr>
+    <tr><td>Par rate</td><td>(1 − d<sub>N</sub>) / Σ d<sub>t</sub></td></tr>
+    <tr><td>Macaulay duration</td><td>Σ t × PV(CF<sub>t</sub>)/Price</td></tr>
+    <tr><td>Modified duration</td><td>MacDur / (1 + r)</td></tr>
+    <tr><td>Approx. modified duration</td><td>(PV<sub>−</sub> − PV<sub>+</sub>) / (2 × ΔYield × PV<sub>0</sub>)</td></tr>
+    <tr><td>Effective duration</td><td>(PV<sub>−</sub> − PV<sub>+</sub>) / (2 × ΔCurve × PV<sub>0</sub>)</td></tr>
+    <tr><td>Approx. convexity</td><td>(PV<sub>−</sub> + PV<sub>+</sub> − 2PV<sub>0</sub>) / ((ΔYield)² × PV<sub>0</sub>)</td></tr>
+    <tr><td>% price change</td><td>−AnnModDur × ΔYield + ½ × AnnConvexity × (ΔYield)²</td></tr>
+    <tr><td>Money duration</td><td>AnnModDur × PV<sub>Full</sub></td></tr>
+    <tr><td>PVBP</td><td>(PV<sub>−</sub> − PV<sub>+</sub>) / 2 for a 1 bp change</td></tr>
+    <tr><td>Perpetuity duration</td><td>MacDur = (1 + r)/r</td></tr>
+    <tr><td>Duration gap</td><td>MacDur − Investment horizon</td></tr>
+    <tr><td>Expected loss</td><td>POD × LGD; LGD = Exposure × (1 − RR)</td></tr>
+    <tr><td>Spread change</td><td>−ModDur × ΔSpread + ½ × Convexity × (ΔSpread)²</td></tr>
+    <tr><td>Conversion value</td><td>Conversion ratio × Share price</td></tr>
+    <tr><td>Conversion price</td><td>Par / Conversion ratio</td></tr>
+    <tr><td>Repo interest</td><td>Amount × Repo rate × Days/360</td></tr>
+    <tr><td>CPR</td><td>1 − (1 − SMM)<sup>12</sup></td></tr>
+    <tr><td>PSA</td><td>CPR = min(0.2% × month, 6%) × PSA/100</td></tr>
+    <tr><td>DSCR</td><td>Net operating income / Debt service</td></tr>
+    <tr><td>LTV</td><td>Loan / Property value</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div>
+  <h2>Practice questions</h2>
+  <p class="muted">Work each one before opening the answer.</p>
+
+  <details class="q"><summary><span class="qn">1</span>A 5-year bond pays a 6% annual coupon. If the market discount rate is 5%, its price per 100 par is closest to: A. 95.90  B. 100.00  C. 104.33<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> N = 5, I/Y = 5, PMT = 6, FV = 100 → PV = 104.33. Coupon above yield means a premium. A is the price at a 7% yield.</div></details>
+
+  <details class="q"><summary><span class="qn">2</span>A bond's coupon rate is below its market discount rate. The bond trades at: A. a premium  B. par  C. a discount<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Investors need extra return beyond the coupon, which comes from buying below par.</div></details>
+
+  <details class="q"><summary><span class="qn">3</span>A 90-day T-bill is quoted at a 4% discount rate on a 360-day year. Its price per 100 is: A. 96.00  B. 99.00  C. 99.01<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 100 × (1 − 90/360 × 0.04) = 100 × 0.99 = 99.00. C uses the add-on formula (100/1.01). A forgets the 90/360.</div></details>
+
+  <details class="q"><summary><span class="qn">4</span>The 1-year spot rate is 2% and the 2-year spot rate is 3%. The 1y1y forward rate is closest to: A. 2.50%  B. 3.00%  C. 4.01%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 1.03² / 1.02 − 1 = 1.0609/1.02 − 1 = 4.01%.</div></details>
+
+  <details class="q"><summary><span class="qn">5</span>The spot curve slopes upward. For the same maturity, which rate is lowest? A. Par rate  B. Spot rate  C. Forward rate<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Upward-sloping: forward &gt; spot &gt; par.</div></details>
+
+  <details class="q"><summary><span class="qn">6</span>A 3-year bond pays a 5% annual coupon and yields 5%. Its Macaulay duration is closest to: A. 2.72  B. 2.86  C. 3.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> PVs: 4.762, 4.535, 90.703 (sum 100). Weighted: (1 × 4.762 + 2 × 4.535 + 3 × 90.703)/100 = 2.86. A is the modified duration (2.86/1.05). C would be a zero-coupon bond.</div></details>
+
+  <details class="q"><summary><span class="qn">7</span>Annual modified duration is 7 and annual convexity is 60. If the yield rises 100 bp, the price change is closest to: A. −7.30%  B. −7.00%  C. −6.70%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> −7 × 0.01 + ½ × 60 × 0.01² = −0.07 + 0.003 = −6.70%. A subtracts the convexity term instead of adding it.</div></details>
+
+  <details class="q"><summary><span class="qn">8</span>A bond is priced at 100. If yields fall 25 bp its price is 102.50; if they rise 25 bp it's 97.60. Approximate modified duration is closest to: A. 4.9  B. 9.8  C. 19.6<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> (102.50 − 97.60) / (2 × 0.0025 × 100) = 4.90 / 0.5 = 9.8. C forgets the 2 in the denominator.</div></details>
+
+  <details class="q"><summary><span class="qn">9</span>All yield 5%. Which has the highest duration? A. 10-year, 3% coupon  B. 10-year, 6% coupon  C. 5-year, 3% coupon<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Longer maturity and lower coupon both raise duration.</div></details>
+
+  <details class="q"><summary><span class="qn">10</span>An investor's horizon is 4 years and the bond's Macaulay duration is 6. The investor is most exposed to: A. rising rates  B. falling rates  C. neither<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Duration gap = +2, so price risk dominates: they must sell before the bond's duration, and rising rates lower the sale price.</div></details>
+
+  <details class="q"><summary><span class="qn">11</span>The most appropriate duration measure for a callable bond is: A. Macaulay  B. modified  C. effective<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Its cash flows change with rates, so you need a curve-based measure.</div></details>
+
+  <details class="q"><summary><span class="qn">12</span>Compared with its Z-spread, a callable bond's OAS is: A. higher  B. lower  C. the same<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> OAS = Z-spread − the call's value (in spread terms). Part of the callable bond's extra spread is just pay for the call, not credit risk.</div></details>
+
+  <details class="q"><summary><span class="qn">13</span>When yields fall well below a callable bond's coupon rate, the bond most likely shows: A. positive convexity  B. negative convexity  C. zero duration<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The price is capped near the call price, so it rises less than it would fall.</div></details>
+
+  <details class="q"><summary><span class="qn">14</span>Probability of default is 2% and recovery rate is 40%. Expected loss as a % of exposure is: A. 0.8%  B. 1.2%  C. 2.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 2% × (1 − 0.40) = 1.2%. A uses the recovery rate instead of the loss.</div></details>
+
+  <details class="q"><summary><span class="qn">15</span>Which ranks highest in priority of claims? A. Senior unsecured  B. Second lien  C. Senior subordinated<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Secured debt (first, then second lien) ranks ahead of all unsecured debt.</div></details>
+
+  <details class="q"><summary><span class="qn">16</span>A bond's modified duration is 6. If its credit spread widens 50 bp, ignoring convexity, its price changes by about: A. −0.3%  B. −3.0%  C. −30%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> −6 × 0.005 = −3.0%.</div></details>
+
+  <details class="q"><summary><span class="qn">17</span>A 100M pool has a 10M subordinated tranche, 15M mezzanine and 75M senior. Pool losses are 12M. The mezzanine tranche loses: A. 0  B. 2M  C. 12M<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The subordinated tranche absorbs the first 10M; the next 2M hits mezzanine. Senior loses nothing.</div></details>
+
+  <details class="q"><summary><span class="qn">18</span>Which is an external credit enhancement? A. Overcollateralization  B. Excess spread  C. Letter of credit<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> A and B are internal (built into the deal's structure).</div></details>
+
+  <details class="q"><summary><span class="qn">19</span>Mortgage rates fall sharply. An MBS investor faces: A. extension risk  B. contraction risk  C. no prepayment risk<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Borrowers refinance, so principal comes back early and is reinvested at lower rates.</div></details>
+
+  <details class="q"><summary><span class="qn">20</span>A mortgage pool's SMM is 0.5%. Its CPR is closest to: A. 0.50%  B. 5.84%  C. 6.00%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 1 − (1 − 0.005)<sup>12</sup> = 1 − 0.9416 = 5.84%. C multiplies by 12, which overstates it because of compounding.</div></details>
+
+  <details class="q"><summary><span class="qn">21</span>In a CMO, which tranche absorbs most of the prepayment risk? A. PAC tranche  B. Support tranche  C. Senior sequential tranche<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The support (companion) tranche takes prepayment surprises so the PAC stays on schedule.</div></details>
+
+  <details class="q"><summary><span class="qn">22</span>Compared with an ABS, a covered bond typically has: A. dual recourse  B. assets removed from the bank's balance sheet  C. a static pool<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Investors have a claim on the issuing bank and on the cover pool, which stays on the balance sheet and is dynamic.</div></details>
+
+  <details class="q"><summary><span class="qn">23</span>A $1,000 par convertible has a conversion ratio of 25 and the stock trades at $36. The conversion value is: A. $900  B. $1,000  C. $1,440<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 25 × $36 = $900. The conversion price is $1,000 / 25 = $40.</div></details>
+
+  <details class="q"><summary><span class="qn">24</span>An FRN has a quoted margin of 50 bp and the market's discount margin is 70 bp. The FRN trades at: A. a premium  B. par  C. a discount<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> It pays less over the reference rate than the market requires.</div></details>
+
+  <details class="q"><summary><span class="qn">25</span>Which feature benefits the issuer? A. Put provision  B. Call provision  C. Coupon floor on an FRN<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The issuer can refinance when rates fall. Puts and floors benefit investors.</div></details>
+
+  <details class="q"><summary><span class="qn">26</span>Which most likely leads to a higher repo haircut? A. Shorter repo term  B. Higher-quality collateral  C. Lower credit quality of the borrower<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> A riskier borrower means the lender wants more protection. Longer terms and lower-quality collateral also raise haircuts.</div></details>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div>
+  <h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. To keep it, click <b>Save progress into this file</b>: that downloads an updated copy of this guide with your progress built in. Re-upload that copy to Claude to continue from where you left off.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <button class="primary" id="saveFile">Save progress into this file</button>
+    <button id="copyProg">Copy progress for Claude</button>
+    <span class="small muted" id="saveMsg" style="align-self:center"></span>
+  </div>
+</section>
+
+<footer>CFA Level I fixed income guide · Created with Claude on 2026-10-18. Based on the CFA Program Level I curriculum topics; check the CFA Institute site for the current outline.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Fixed Income study guide",
+  "file_version": 1,
+  "created": "2026-10-18",
+  "companion_files": ["CFA-L1-Portfolio-Management-Guide.html"],
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas (fractions, not plain text) and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "11-14%",
+  "modules": [
+    {"id": "p1", "name": "Part 1: Bond features, cash flows and types (LM 1-2)", "key": ["basic features", "indenture, affirmative vs negative covenants, secured vs unsecured", "domestic, foreign, Eurobond, global bonds; tax", "bullet, amortizing, balloon, sinking fund", "FRN, step-up, credit-linked, PIK, deferred, inflation-linked", "callable, putable, convertible (conversion value/price/premium), CoCos"]},
+    {"id": "p2", "name": "Part 2: Issuance, trading and markets (LM 3-5)", "key": ["underwritten, best-efforts, auction, shelf, private placement", "OTC secondary market, bid-offer", "corporate short-term funding: bank lines, commercial paper, rollover risk", "repos: repo rate drivers, haircut drivers", "sovereign bills/notes/bonds, on-the-run, single vs multiple price auctions", "non-sovereign GO vs revenue, agency, supranational"]},
+    {"id": "p3", "name": "Part 3: Bond prices and yields (LM 6-8)", "key": ["pricing with YTM and spot rates", "premium/par/discount, price-yield rules", "full vs flat price, accrued interest, day counts, matrix pricing", "YTM, periodicity conversion, current yield, YTC, YTW", "G-spread, I-spread, Z-spread, OAS", "FRN quoted vs discount margin", "money market discount vs add-on yields"], "visuals": ["price-yield curve with duration/convexity estimates (sliders)", "pull to par (yield slider)"]},
+    {"id": "p4", "name": "Part 4: Term structure (LM 9)", "key": ["spot, par, forward rates", "forward rate formula, par rate from spots", "ordering on upward/downward curves"], "visuals": ["spot/par/forward curves (level and slope sliders)"]},
+    {"id": "p5", "name": "Part 5: Duration and convexity (LM 10-13)", "key": ["sources of return, reinvestment vs price risk, duration gap", "Macaulay, modified, approximate, effective, key rate, empirical duration", "money duration, PVBP", "convexity and % price change formula, annualizing", "duration properties and special cases", "callable/putable effects, negative convexity", "portfolio duration, yield volatility, spread duration"], "visuals": ["horizon return vs holding period (shock slider)", "Macaulay duration seesaw (sliders)", "straight vs callable vs putable price-yield"]},
+    {"id": "p6", "name": "Part 6: Credit risk and analysis (LM 14-16)", "key": ["POD, LGD, expected loss, spread approximation", "default vs spread risk, Cs of credit", "ratings, notching, structural subordination", "priority of claims", "spread drivers", "sovereign analysis factors", "corporate leverage and coverage ratios"], "visuals": ["expected loss calculator", "spread change price impact", "seniority ladder"]},
+    {"id": "p7", "name": "Part 7: Securitization, ABS, MBS (LM 17-19)", "key": ["parties and SPE, benefits", "covered bonds vs ABS", "credit tranching, internal vs external credit enhancement", "auto ABS, credit card ABS, CDOs/CLOs", "mortgage features, agency vs non-agency", "SMM, CPR, PSA, contraction vs extension risk", "CMOs: sequential, PAC, support, floaters", "CMBS: DSCR, LTV, call protection, balloon risk"], "visuals": ["loss waterfall (sliders)", "PSA prepayment curve (slider)"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const pct = (v, d) => (v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) {
+  if (!(max - min > 1e-9)) max = min + 1;
+  const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p;
+  const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step };
+}
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 330, L = o.ml || 56, R = 18, T = 14, B = 44;
+  const pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw;
+  const Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => {
+    const n = document.createElementNS(NS, t);
+    for (const k in a) n.setAttribute(k, a[k]);
+    if (st) for (const k in st) n.style[k] = st[k];
+    (p || svg).appendChild(n);
+    return n;
+  };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9);
+  const defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) {
+    const n = Math.round((o.xr[1] - o.xr[0]) / o.xt);
+    for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); }
+  }
+  if (o.yt) {
+    const n = Math.round((o.yr[1] - o.yr[0]) / o.yt);
+    for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); }
+  }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' });
+  el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.zero && o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  return { X: X, Y: Y, el: el, text: text, line: line, dot: dot, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+/* ---------- Bond math ---------- */
+function bondP(c, N, y) { let p = 0; for (let t = 1; t <= N; t++) p += 100 * c / Math.pow(1 + y, t); return p + 100 / Math.pow(1 + y, N); }
+function bondStats(c, N, y) {
+  let p = 0, d = 0, cx = 0;
+  for (let t = 1; t <= N; t++) { const cf = 100 * c + (t === N ? 100 : 0), pv = cf / Math.pow(1 + y, t); p += pv; d += t * pv; cx += t * (t + 1) * cf / Math.pow(1 + y, t + 2); }
+  const mac = d / p; return { p: p, mac: mac, mod: mac / (1 + y), conv: cx / p };
+}
+const sgn = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(2) + '%';
+
+/* ---------- Price–yield ---------- */
+bind(['pyC', 'pyN', 'pyY', 'pyD'], function () {
+  const c = +$('pyC').value / 100, N = +$('pyN').value, y0 = +$('pyY').value / 100, dbp = +$('pyD').value;
+  setText('pyCo', pct(c, 1)); setText('pyNo', N + (N === 1 ? ' year' : ' years')); setText('pyYo', pct(y0, 2)); setText('pyDo', (dbp > 0 ? '+' : '') + dbp + ' bp');
+  const s = bondStats(c, N, y0), y1 = Math.max(0.0005, y0 + dbp / 10000), dy = y1 - y0, P1 = bondP(c, N, y1);
+  const curve = []; for (let i = 1; i <= 60; i++) { const y = i * 0.0025; curve.push([y, bondP(c, N, y)]); }
+  const ps = curve.map(q => q[1]), r = nice(Math.min.apply(null, ps) * 0.9, Math.max.apply(null, ps));
+  const ch = chart($('pySvg'), { xr: [0, 0.15], yr: [r.lo, r.hi], xt: 0.03, yt: r.step, fx: v => pct(v), fy: v => v.toFixed(decs(r.step)), xl: 'Yield to maturity', yl: 'Price (per 100 par)' });
+  ch.line(curve, 'var(--c1)', 3);
+  const tan = [], cvx = [];
+  for (let i = -20; i <= 20; i++) { const yy = y0 + i * 0.0025; if (yy < 0) continue; const dd = yy - y0; tan.push([yy, s.p * (1 - s.mod * dd)]); cvx.push([yy, s.p * (1 - s.mod * dd + 0.5 * s.conv * dd * dd)]); }
+  ch.line(tan, 'var(--c3)', 2, '6 4'); ch.line(cvx, 'var(--c2)', 2.5, '2 4');
+  ch.el('line', { x1: ch.X(y1), x2: ch.X(y1), y1: ch.T, y2: ch.T + ch.ph }, ch.g, { stroke: 'var(--c4)', strokeDasharray: '3 3' });
+  const pd = s.p * (1 - s.mod * dy), pc = s.p * (1 - s.mod * dy + 0.5 * s.conv * dy * dy);
+  ch.dot(y0, s.p, 'var(--c1)', 6); if (ch.inside(y0, s.p)) ch.text(ch.X(y0) + 10, ch.Y(s.p) - 10, 'Today ' + s.p.toFixed(2), {}, 't1');
+  ch.dot(y1, pd, 'var(--c3)', 5); ch.dot(y1, pc, 'var(--c2)', 5); ch.dot(y1, P1, 'var(--c1)', 5);
+  if (ch.inside(y1, P1)) ch.text(ch.X(y1) + (dy >= 0 ? 10 : -10), ch.Y(P1) + 4, 'New ' + P1.toFixed(2), { 'text-anchor': dy >= 0 ? 'start' : 'end' }, 't1');
+  setText('pyP', s.p.toFixed(2)); setText('pyMD', s.mod.toFixed(2)); setText('pyCX', s.conv.toFixed(1));
+  setText('pyA', sgn(P1 / s.p - 1)); setText('pyE1', sgn(-s.mod * dy)); setText('pyE2', sgn(-s.mod * dy + 0.5 * s.conv * dy * dy));
+  const diff = Math.abs(c - y0) < 1e-9 ? 0 : c > y0 ? 1 : -1;
+  $('pyType').innerHTML = diff > 0 ? '<span class="pill g">Premium</span> Coupon is above the yield, so the price is above 100.'
+    : diff < 0 ? '<span class="pill w">Discount</span> Coupon is below the yield, so the price is below 100.'
+    : '<span class="pill a">Par</span> Coupon equals the yield, so the price is 100.';
+});
+
+/* ---------- Pull to par ---------- */
+bind(['ptY'], function () {
+  const y = +$('ptY').value / 100; setText('ptYo', pct(y, 1));
+  const bonds = [[0.08, 'var(--c2)'], [0.06, 'var(--c4)'], [0.04, 'var(--c3)']];
+  const series = bonds.map(b => { const pts = []; for (let t = 0; t <= 10; t++) pts.push([t, t === 10 ? 100 : bondP(b[0], 10 - t, y)]); return pts; });
+  const all = [].concat.apply([], series.map(s => s.map(q => q[1]))), r = nice(Math.min.apply(null, all) - 2, Math.max.apply(null, all) + 2, 4);
+  const ch = chart($('ptSvg'), { h: 300, xr: [0, 10], yr: [r.lo, r.hi], xt: 1, yt: r.step, fy: v => v.toFixed(decs(r.step)), xl: 'Years since purchase', yl: 'Price' });
+  ch.line([[0, 100], [10, 100]], 'var(--c4)', 1, '3 3', 0.6);
+  const leg = [];
+  series.forEach((s, i) => {
+    const c = bonds[i][0], kind = Math.abs(c - y) < 1e-9 ? 'par' : c > y ? 'premium' : 'discount';
+    ch.line(s, bonds[i][1], 2.5); ch.dot(0, s[0][1], bonds[i][1], 4);
+    ch.text(ch.X(0) + 8, ch.Y(s[0][1]) + (i === 0 ? -8 : i === 2 ? 16 : -8), s[0][1].toFixed(2), {}, 't1');
+    leg.push('<span><span class="sw" style="background:' + bonds[i][1] + '"></span>' + Math.round(c * 100) + '% coupon (' + kind + ')</span>');
+  });
+  ch.dot(10, 100, 'var(--text)', 5); ch.text(ch.X(10) - 8, ch.Y(100) - 10, 'Par at maturity', { 'text-anchor': 'end' }, 't1');
+  $('ptLeg').innerHTML = leg.join('');
+});
+
+/* ---------- Spot, par, forward ---------- */
+bind(['tsL', 'tsS'], function () {
+  const L = +$('tsL').value / 100, S = +$('tsS').value / 100;
+  setText('tsLo', pct(L, 2)); setText('tsSo', (S >= 0 ? '+' : '−') + Math.abs(S * 100).toFixed(2) + '%');
+  const z = [], f = [], p = []; let sumd = 0;
+  for (let t = 1; t <= 10; t++) {
+    const zt = L + S * (1 - Math.exp(-(t - 1) / 3)) / (1 - Math.exp(-3));
+    const dfac = 1 / Math.pow(1 + zt, t); sumd += dfac;
+    z.push([t, zt]); p.push([t, (1 - dfac) / sumd]);
+    f.push([t, t === 1 ? zt : Math.pow(1 + zt, t) / Math.pow(1 + z[t - 2][1], t - 1) - 1]);
+  }
+  const all = [].concat(z, f, p).map(q => q[1]), r = nice(Math.min.apply(null, all) - 0.0025, Math.max.apply(null, all) + 0.0025, 5);
+  const ch = chart($('tsSvg'), { h: 310, xr: [1, 10], yr: [r.lo, r.hi], xt: 1, yt: r.step, fx: v => v, fy: v => pct(v, decs(r.step * 100)), xl: 'Maturity (years)', yl: 'Rate', zero: true });
+  ch.line(p, 'var(--c2)', 2.5); ch.line(z, 'var(--c1)', 3); ch.line(f, 'var(--c3)', 2.5, '6 4');
+  [z, p, f].forEach((s, i) => s.forEach(q => ch.dot(q[0], q[1], ['var(--c1)', 'var(--c2)', 'var(--c3)'][i], 3)));
+  setText('tsZ2', pct(z[1][1], 2)); setText('tsF', pct(f[1][1], 2)); setText('tsP2', pct(p[1][1], 2));
+});
+
+/* ---------- Horizon return ---------- */
+bind(['hzS'], function () {
+  const sh = +$('hzS').value / 100, c = 0.05, N = 10, y = 0.05; setText('hzSo', '±' + (sh * 100).toFixed(2) + '%');
+  const hr = (y1, H) => { const C = 100 * c, fvc = C * (Math.pow(1 + y1, H) - 1) / y1, PH = H === N ? 100 : bondP(c, N - H, y1); return Math.pow((fvc + PH) / 100, 1 / H) - 1; };
+  const ys = [y + sh, y, Math.max(0.005, y - sh)], cols = ['var(--c3)', 'var(--c4)', 'var(--c2)'];
+  const series = ys.map(yy => { const pts = []; for (let H = 1; H <= N; H++) pts.push([H, hr(yy, H)]); return pts; });
+  const all = [].concat.apply([], series.map(s => s.map(q => q[1]))), r = nice(Math.min.apply(null, all), Math.max.apply(null, all), 5);
+  const ch = chart($('hzSvg'), { h: 310, xr: [1, 10], yr: [r.lo, r.hi], xt: 1, yt: r.step, fy: v => pct(v, decs(r.step * 100)), xl: 'Years held (investment horizon)', yl: 'Annual return earned', zero: true });
+  const mac = bondStats(c, N, y).mac;
+  ch.el('line', { x1: ch.X(mac), x2: ch.X(mac), y1: ch.T, y2: ch.T + ch.ph }, ch.g, { stroke: 'var(--accent)', strokeDasharray: '5 4', strokeWidth: 1.5 });
+  ch.text(ch.X(mac) - 6, ch.T + 14, 'Macaulay duration ' + mac.toFixed(1) + ' yrs', { 'text-anchor': 'end' }, 't1');
+  series.forEach((s, i) => { ch.line(s, cols[i], i === 1 ? 2 : 3, i === 1 ? '4 4' : null); s.forEach(q => ch.dot(q[0], q[1], cols[i], 3)); });
+  ch.text(ch.X(1.3), ch.Y(series[0][0][1]) + 4, 'price loss dominates', {});
+  ch.text(ch.X(1.3), ch.Y(series[2][0][1]) + 4, 'price gain dominates', {});
+  setText('hzM', mac.toFixed(2) + ' yrs');
+  const f2 = (a, b) => pct(a, 1) + ' / ' + pct(b, 1);
+  setText('hz1', f2(series[0][0][1], series[2][0][1])); setText('hz8', f2(series[0][7][1], series[2][7][1])); setText('hz10', f2(series[0][9][1], series[2][9][1]));
+});
+
+/* ---------- Duration seesaw ---------- */
+bind(['sdC', 'sdN', 'sdY'], function () {
+  const c = +$('sdC').value / 100, N = +$('sdN').value, y = +$('sdY').value / 100;
+  setText('sdCo', pct(c, 1)); setText('sdNo', N + (N === 1 ? ' year' : ' years')); setText('sdYo', pct(y, 1));
+  const s = bondStats(c, N, y), xt = N <= 10 ? 1 : 2, xmax = Math.ceil((N + 1) / xt) * xt;
+  const bars = []; let mx = 0;
+  for (let t = 1; t <= N; t++) { const cp = 100 * c / Math.pow(1 + y, t), pp = t === N ? 100 / Math.pow(1 + y, N) : 0; bars.push([t, cp, pp]); mx = Math.max(mx, cp + pp); }
+  const r = nice(0, mx, 4);
+  const ch = chart($('sdSvg'), { h: 300, xr: [0, xmax], yr: [0, r.hi], xt: xt, yt: r.step, fy: v => v.toFixed(decs(r.step)), xl: 'Time of cash flow (years)', yl: 'Present value' });
+  const bw = Math.max(3, Math.min(30, ch.pw / xmax * 0.6));
+  bars.forEach(b => {
+    if (b[1] > 0) ch.el('rect', { x: ch.X(b[0]) - bw / 2, y: ch.Y(b[1]), width: bw, height: ch.Y(0) - ch.Y(b[1]), rx: 2 }, null, { fill: 'var(--c1)' });
+    if (b[2] > 0) ch.el('rect', { x: ch.X(b[0]) - bw / 2, y: ch.Y(b[1] + b[2]), width: bw, height: ch.Y(b[1]) - ch.Y(b[1] + b[2]), rx: 2 }, null, { fill: 'var(--c2)' });
+  });
+  const fxp = ch.X(s.mac), base = ch.T + ch.ph;
+  ch.el('line', { x1: fxp, x2: fxp, y1: ch.T, y2: base }, null, { stroke: 'var(--c3)', strokeDasharray: '5 4', strokeWidth: 1.5 });
+  ch.el('polygon', { points: fxp + ',' + (base + 1) + ' ' + (fxp - 9) + ',' + (base + 14) + ' ' + (fxp + 9) + ',' + (base + 14) }, null, { fill: 'var(--c3)' });
+  ch.text(fxp - 8, ch.T + 14, 'Duration ' + s.mac.toFixed(2) + ' yrs', { 'text-anchor': 'end' }, 't1');
+  setText('sdP', s.p.toFixed(2)); setText('sdM', s.mac.toFixed(2) + ' yrs'); setText('sdD', s.mod.toFixed(2));
+});
+
+/* ---------- Embedded options ---------- */
+(function () {
+  const c = 0.05, N = 10, k = 2, CP = 103, PP = 95;
+  const smin = (a, b) => { const m = Math.min(a, b); return m - k * Math.log(Math.exp(-(a - m) / k) + Math.exp(-(b - m) / k)); };
+  const smax = (a, b) => { const m = Math.max(a, b); return m + k * Math.log(Math.exp((a - m) / k) + Math.exp((b - m) / k)); };
+  const st = [], ca = [], pu = [];
+  for (let i = 4; i <= 48; i++) { const y = i * 0.0025, P = bondP(c, N, y); st.push([y, P]); ca.push([y, smin(P, CP)]); pu.push([y, smax(P, PP)]); }
+  const ch = chart($('eoSvg'), { h: 310, xr: [0.01, 0.12], yr: [60, 140], xt: 0.01, yt: 20, fx: v => pct(v), fy: v => v, xl: 'Yield', yl: 'Price' });
+  ch.line([[0.01, CP], [0.12, CP]], 'var(--c3)', 1, '3 3', 0.6); ch.line([[0.01, PP], [0.12, PP]], 'var(--c2)', 1, '3 3', 0.6);
+  ch.line(ca, 'var(--c3)', 4); ch.line(pu, 'var(--c2)', 4); ch.line(st, 'var(--text)', 1.5, '5 4', 0.8);
+  ch.text(ch.X(0.012), ch.Y(CP) - 8, 'Call price caps the callable bond', {}, 't1');
+  ch.text(ch.X(0.118), ch.Y(PP) + 18, 'Put price floors the putable bond', { 'text-anchor': 'end' }, 't1');
+  ch.text(ch.X(0.012), ch.Y(90), 'negative convexity region (callable)', {});})();
+
+/* ---------- Expected loss ---------- */
+bind(['elP', 'elR'], function () {
+  const p = +$('elP').value / 100, rr = +$('elR').value / 100; setText('elPo', pct(p, 1)); setText('elRo', pct(rr));
+  const lgd = 100 * (1 - rr), el = p * (1 - rr);
+  const a = $('elRec'), b = $('elLoss'); a.style.width = rr * 100 + '%'; b.style.width = (1 - rr) * 100 + '%';
+  a.textContent = rr >= 0.15 ? 'Recovered ' + Math.round(rr * 100) : ''; b.textContent = 1 - rr >= 0.15 ? 'LGD ' + Math.round(lgd) : '';
+  setText('elLGD', lgd.toFixed(0) + ' per 100'); setText('elEL', pct(el, 2)); setText('elSP', Math.round(el * 10000) + ' bp');
+});
+
+/* ---------- Spread change ---------- */
+bind(['scD', 'scC', 'scS'], function () {
+  const D = +$('scD').value, C = +$('scC').value, ds = +$('scS').value / 10000;
+  setText('scDo', D.toFixed(1)); setText('scCo', C); setText('scSo', (ds > 0 ? '+' : '') + Math.round(ds * 10000) + ' bp');
+  const e1 = -D * ds, e2 = 0.5 * C * ds * ds; setText('scE1', sgn(e1)); setText('scE2', sgn(e2)); setText('scT', sgn(e1 + e2));
+});
+
+/* ---------- Waterfall ---------- */
+bind(['wfS', 'wfM', 'wfL'], function () {
+  let sub = +$('wfS').value, mez = +$('wfM').value; const L = +$('wfL').value;
+  if (sub + mez > 100) mez = 100 - sub; const sen = 100 - sub - mez;
+  setText('wfSo', sub + '%'); setText('wfMo', mez + '%'); setText('wfLo', L + '%');
+  const lj = Math.min(L, sub), lm = Math.min(Math.max(L - sub, 0), mez), ls = Math.min(Math.max(L - sub - mez, 0), sen);
+  const seg = (id, w, label) => { const e = $(id); e.style.width = w + '%'; e.textContent = w >= 9 ? label : ''; };
+  seg('wfBS', sen, 'Senior ' + sen + '%'); seg('wfBM', mez, 'Mezz ' + mez + '%'); seg('wfBJ', sub, 'Sub ' + sub + '%');
+  $('wfBL').style.width = Math.min(L, 100) + '%'; $('wfBL').style.display = L > 0 ? 'block' : 'none';
+  const row = (k, size, loss) => {
+    setText('wfSz' + k, size + '%'); setText('wfLs' + k, loss + '%');
+    const share = size > 0 ? loss / size : 0; $('wfP' + k).style.width = share * 100 + '%'; setText('wfP' + k + 't', size > 0 ? Math.round(share * 100) + '% lost' : 'no tranche');
+  };
+  row('S', sen, ls); row('M', mez, lm); row('J', sub, lj);
+  setText('wfNote', 'The senior tranche is protected by ' + (sub + mez) + '% of subordination: it loses nothing until pool losses exceed that.');
+});
+
+/* ---------- PSA ---------- */
+bind(['psA'], function () {
+  const psa = +$('psA').value; setText('psAo', psa + ' PSA');
+  const cpr = (m, s) => Math.min(0.002 * m, 0.06) * s / 100;
+  const sel = [], base = []; for (let m = 0; m <= 120; m++) { sel.push([m, cpr(m, psa)]); base.push([m, cpr(m, 100)]); }
+  const r = nice(0, Math.max(cpr(30, psa), 0.06) * 1.1, 5);
+  const ch = chart($('psSvg'), { h: 290, xr: [0, 120], yr: [0, r.hi], xt: 12, yt: r.step, fy: v => pct(v, decs(r.step * 100)), xl: 'Loan age (months)', yl: 'CPR (annual)' });
+  ch.line(base, 'var(--c4)', 2, '6 4'); ch.line(sel, 'var(--c1)', 3);
+  ch.el('line', { x1: ch.X(30), x2: ch.X(30), y1: ch.T, y2: ch.T + ch.ph }, ch.g, { stroke: 'var(--c4)', strokeDasharray: '3 3' });
+  ch.text(ch.X(30) + 6, ch.T + 14, 'month 30: ramp ends', {});
+  const c30 = cpr(30, psa);
+  setText('ps10', pct(cpr(10, psa), 2)); setText('ps30', pct(c30, 2)); setText('psS', pct(1 - Math.pow(1 - c30, 1 / 12), 3));
+});
+
+/* ---------- Progress, notes, save ---------- */
+const DATA = JSON.parse($('study-data').textContent);
+const LS = 'cfa-fi-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'sheet', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+const list = $('progList');
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); list.appendChild(row);
+});
+$('notes').value = state.notes || '';
+$('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try {
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Fixed-Income-Guide.html';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.');
+  } catch (e) { setText('saveMsg', 'Download blocked here. Open the file in your browser and try again.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(); const txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const done = () => setText('saveMsg', 'Copied. Paste it into your chat with Claude.');
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); });
+  else { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CFA Level I Guides</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CFA Guides">
+<meta name="theme-color" content="#534AB7">
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--text:#1f1e1b;--muted:#5f5e5a;--border:rgba(31,30,27,.12);--accent:#534AB7;--accent-bg:#EEEDFE;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--text:#ecebe6;--muted:#b4b2a9;--border:rgba(236,235,230,.12);--accent:#AFA9EC;--accent-bg:#26215C;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--text:#ecebe6;--muted:#b4b2a9;--border:rgba(236,235,230,.12);--accent:#AFA9EC;--accent-bg:#26215C;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;color-scheme:dark}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:28px;margin:4px 0 6px}
+p{color:var(--muted);margin:0 0 16px}
+.status{display:inline-block;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;margin-bottom:20px;background:var(--warn-bg);color:var(--warn)}
+.status.ok{background:var(--good-bg);color:var(--good)}
+.list{display:flex;flex-direction:column;gap:10px}
+a.g{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;color:var(--text);text-decoration:none}
+a.g:hover,a.g:focus-visible{border-color:var(--accent);background:var(--accent-bg);outline:none}
+a.g b{font-size:17px}
+a.g span{font-size:13px;color:var(--muted);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">CFA Level I</div>
+  <h1>Study guides</h1>
+  <p>Formulas, interactive charts, drills and practice questions, ordered by exam weight.</p>
+  <div class="status" id="status">Checking offline readiness…</div>
+  <div class="list">
+    <a class="g" href="CFA-L1-Ethics-Guide.html"><b>Ethics</b><span>15–20%</span></a>
+    <a class="g" href="CFA-L1-FSA-Guide.html"><b>Financial statement analysis</b><span>11–14%</span></a>
+    <a class="g" href="CFA-L1-Fixed-Income-Guide.html"><b>Fixed income</b><span>11–14%</span></a>
+    <a class="g" href="CFA-L1-Portfolio-Management-Guide.html"><b>Portfolio management</b><span>8–12%</span></a>
+    <a class="g" href="CFA-L1-Quant-Guide.html"><b>Quantitative methods</b><span>6–9%</span></a>
+  </div>
+</div>
+<script>
+(async function () {
+  const s = document.getElementById('status');
+  if (!('serviceWorker' in navigator)) { s.textContent = 'Offline mode needs a web address (not a file). Open this from your site link.'; return; }
+  try {
+    await navigator.serviceWorker.register('sw.js');
+    await navigator.serviceWorker.ready;
+    const need = [...document.querySelectorAll('a.g')].map(a => a.getAttribute('href'));
+    for (let i = 0; i < 20; i++) {
+      const hits = await Promise.all(need.map(u => caches.match(u)));
+      if (hits.every(Boolean)) { s.textContent = '✓ Ready for offline use'; s.className = 'status ok'; return; }
+      await new Promise(r => setTimeout(r, 500));
+    }
+    s.textContent = 'Not all guides saved yet. Stay online and reload this page.';
+  } catch (e) { s.textContent = 'Offline mode is unavailable here. Open this from your site link.'; }
+})();
+</script>
+</body>
+</html>

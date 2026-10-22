@@ -1,0 +1,1121 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — QUANTITATIVE METHODS STUDY GUIDE
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+  Read that block first to restore context, then rebuild or extend visuals as asked.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Quant Methods Guide</title>
+<style>
+:root{
+  --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;
+  --border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);
+  --accent:#534AB7;--accent-bg:#EEEDFE;
+  --c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;
+  --good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+    --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+    --accent:#AFA9EC;--accent-bg:#26215C;
+    --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;
+    --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+  --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+  --accent:#AFA9EC;--accent-bg:#26215C;
+  --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;
+  --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:40px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:17px;max-width:720px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}
+nav.toc .row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}
+.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}
+.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}
+.fx-eq .frac{margin:0 4px;line-height:1.4}
+.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}
+.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}
+.frac>span:last-child{padding:3px 6px 0}
+.sqrt{border-top:1px solid currentColor;padding:0 3px;margin-left:1px}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;border-radius:0;margin:12px 0}
+.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.tip{border-left-color:var(--good);background:var(--good-bg)}
+.callout b{font-weight:600}
+.callout.trap b{color:var(--bad)}
+.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}
+.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}
+.ctl label{font-size:14px;color:var(--muted);min-width:170px}
+.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+.ctl output{font-size:14px;font-weight:600;min-width:64px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
+.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.stat .l{font-size:12px;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg .grid{stroke:var(--border);stroke-width:1}
+svg .axis{stroke:var(--border-strong);stroke-width:1}
+svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}
+svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}
+button:hover{background:var(--surface-2)}
+button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .step{flex:1 1 150px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.pill.g{background:var(--good-bg);color:var(--good)}
+.pill.w{background:var(--warn-bg);color:var(--warn)}
+.pill.b{background:var(--bad-bg);color:var(--bad)}
+.pill.a{background:var(--accent-bg);color:var(--accent)}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}
+details.q summary{cursor:pointer;font-weight:500;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}
+details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}
+details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;transition:width .2s}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I</div>
+  <h1>Quantitative methods guide</h1>
+  <p class="lead">Formulas, visuals, worked examples and exam traps for all 11 quantitative methods learning modules, grouped into seven parts. Save this file and re-upload it to Claude to pick up where you left off.</p>
+  <div class="chips">
+    <span class="chip acc">Exam weight 6–9%</span>
+    <span class="chip">About 11–16 of 180 questions</span>
+    <span class="chip">11 learning modules</span>
+    <span class="chip">Tools used in every other topic</span>
+  </div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a>
+  <a href="#q1">1 · Rates, returns, TVM</a>
+  <a href="#q2">2 · Statistical measures</a>
+  <a href="#q3">3 · Probability and portfolios</a>
+  <a href="#q4">4 · Distributions and simulation</a>
+  <a href="#q5">5 · Estimation and testing</a>
+  <a href="#q6">6 · Regression</a>
+  <a href="#q7">7 · Big data</a>
+  <a href="#sheet">Formula sheet</a>
+  <a href="#practice">Practice</a>
+  <a href="#progress">My progress</a>
+</div></nav>
+
+<!-- ================= GAME PLAN ================= -->
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <p class="muted">What candidates who passed wish they'd known going in.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>What actually gets tested</h4>
+      <ul class="small">
+        <li>Quant's weight is modest, but <b>time value of money, returns and statistics</b> come up again in fixed income, equity, corporate issuers and portfolio management. Learning them well pays off across the exam.</li>
+        <li><b>Hypothesis testing</b> and <b>regression</b> are mostly about reading results: which test, which distribution, reject or not, what R² and the F-statistic mean.</li>
+        <li>Expect quick calculations: means, variance, Bayes, expected value, EAR, annuities, confidence intervals, test statistics.</li>
+        <li>Big data is pure vocabulary: supervised vs unsupervised learning, overfitting.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Highest-yield items, ranked</h4>
+      <ol class="small">
+        <li>Hypothesis testing: steps, p-values, Type I and II errors, choosing the right test</li>
+        <li>Simple linear regression: slope, ANOVA, R², F-test, SEE</li>
+        <li>Time value of money: annuities, perpetuities, EAR, continuous compounding</li>
+        <li>Arithmetic, geometric and harmonic means; money- vs time-weighted returns</li>
+        <li>Variance, standard deviation, coefficient of variation, skewness, kurtosis</li>
+        <li>Bayes' formula and probability trees</li>
+        <li>Confidence intervals, standard error, central limit theorem</li>
+        <li>Covariance, correlation, portfolio variance, safety-first ratio</li>
+        <li>Lognormal distribution, Monte Carlo, bootstrapping</li>
+        <li>Big data and machine learning vocabulary</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout trap"><b>Top traps.</b> Dividing by n instead of n − 1 for a sample variance. Using the arithmetic mean for multi-period performance (use geometric). Saying "accept the null" (you only <i>fail to reject</i> it). Mixing up one- and two-tailed critical values. Forgetting the annuity-due adjustment. Treating correlation as causation. Using n − 1 degrees of freedom in a simple regression (it's n − 2).</div>
+  <div class="callout tip"><b>BA II Plus.</b> Annuity due: <span class="kbd">2nd</span> <span class="kbd">BGN</span> <span class="kbd">2nd</span> <span class="kbd">SET</span> (switch back to END after). EAR: <span class="kbd">2nd</span> <span class="kbd">ICONV</span>, enter NOM and C/Y, compute EFF. Mean, standard deviation, regression: <span class="kbd">2nd</span> <span class="kbd">DATA</span> to enter X and Y, then <span class="kbd">2nd</span> <span class="kbd">STAT</span>: 1-V gives x̄, Sx (sample) and σx (population); LIN gives intercept a, slope b and correlation r. Use <span class="kbd">e<sup>x</sup></span> and <span class="kbd">LN</span> for continuous compounding.</div>
+</section>
+
+<!-- ================= PART 1 ================= -->
+<section class="mod" id="q1">
+  <div class="modtag">Part 1 · Learning modules 1–2</div>
+  <h2>Rates, returns and time value of money</h2>
+  <p class="muted">What an interest rate is made of, how to measure returns, and how to move money through time.</p>
+
+  <h3>1.1 Interest rates</h3>
+  <div class="fx"><div class="fx-name">Building blocks of an interest rate</div><div class="fx-eq">r = Real risk-free rate + Inflation premium + Default risk premium + Liquidity premium + Maturity premium</div><div class="fx-note">Nominal risk-free rate ≈ real risk-free rate + inflation premium (e.g. a T-bill).</div></div>
+  <p class="small" style="margin-top:10px">An interest rate can be read three ways: the <b>required return</b> investors demand, the <b>discount rate</b> used to find present values, and the <b>opportunity cost</b> of spending money now instead of investing it.</p>
+
+  <h3>1.2 Return measures</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Holding period return</div><div class="fx-eq">R = <span class="frac"><span>P<sub>1</sub> − P<sub>0</sub> + D<sub>1</sub></span><span>P<sub>0</sub></span></span></div></div>
+    <div class="fx"><div class="fx-name">Arithmetic mean</div><div class="fx-eq">R̄ = <span class="frac"><span>ΣR<sub>t</sub></span><span>T</span></span></div><div class="fx-note">Best estimate of a single future period's return.</div></div>
+    <div class="fx"><div class="fx-name">Geometric mean</div><div class="fx-eq">[(1+R<sub>1</sub>)(1+R<sub>2</sub>)…(1+R<sub>T</sub>)]<sup>1/T</sup> − 1</div><div class="fx-note">Compound growth rate. Best for past multi-period performance.</div></div>
+    <div class="fx"><div class="fx-name">Harmonic mean</div><div class="fx-eq">X̄<sub>H</sub> = <span class="frac"><span>n</span><span>Σ(1/X<sub>i</sub>)</span></span></div><div class="fx-note">Average cost per share when you invest the same dollar amount each period (cost averaging).</div></div>
+    <div class="fx"><div class="fx-name">Money-weighted return</div><div class="fx-eq">The IRR of the investor's cash flows</div><div class="fx-note">Affected by when money goes in and out.</div></div>
+    <div class="fx"><div class="fx-name">Time-weighted return</div><div class="fx-eq">[(1+R<sub>1</sub>)…(1+R<sub>n</sub>)]<sup>1/years</sup> − 1</div><div class="fx-note">Ignores cash-flow timing. Standard for judging managers.</div></div>
+  </div>
+  <div class="callout"><b>Ordering rule.</b> Unless every return is the same: arithmetic mean &gt; geometric mean &gt; harmonic mean. The gap widens as returns get more volatile. A useful approximation: geometric ≈ arithmetic − σ²/2.</div>
+  <ul class="small">
+    <li><b>Trimmed mean:</b> drop a set % of the highest and lowest values, then average. <b>Winsorized mean:</b> replace the extremes with the nearest remaining values. Both reduce the effect of outliers.</li>
+    <li><b>Other returns:</b> gross (before fees) vs net (after fees); pre-tax vs after-tax; real = (1 + nominal)/(1 + inflation) − 1; leveraged return = R<sub>p</sub> + (V<sub>B</sub>/V<sub>E</sub>)(R<sub>p</sub> − r<sub>D</sub>).</li>
+    <li><b>Annualizing:</b> (1 + R<sub>period</sub>)<sup>periods per year</sup> − 1.</li>
+  </ul>
+
+  <div class="viz">
+    <div class="viz-title">Volatility drag: why the geometric mean is lower</div>
+    <div class="viz-sub">Returns alternate between average + volatility and average − volatility. The arithmetic mean stays the same; your actual wealth grows at the geometric mean.</div>
+    <div class="ctl"><label for="vdM">Arithmetic mean return</label><input type="range" id="vdM" min="0" max="15" step="1" value="8"><output id="vdMo"></output></div>
+    <div class="ctl"><label for="vdV">Volatility (±)</label><input type="range" id="vdV" min="0" max="40" step="2" value="20"><output id="vdVo"></output></div>
+    <svg id="vdSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4)"></span>Growing at the arithmetic mean</span><span><span class="sw" style="background:var(--c1)"></span>Actual wealth</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Arithmetic mean</div><div class="v" id="vdA"></div></div>
+      <div class="stat"><div class="l">Geometric mean</div><div class="v" id="vdG"></div></div>
+      <div class="stat"><div class="l">Approx. AM − σ²/2</div><div class="v" id="vdX"></div></div>
+      <div class="stat"><div class="l">$100 after 20 years</div><div class="v" id="vdW"></div></div>
+    </div>
+  </div>
+
+  <h3>1.3 Compounding</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Effective annual rate</div><div class="fx-eq">EAR = (1 + <span class="frac"><span>Stated rate</span><span>m</span></span>)<sup>m</sup> − 1</div><div class="fx-note">m = compounding periods per year.</div></div>
+    <div class="fx"><div class="fx-name">Continuous compounding</div><div class="fx-eq">EAR = e<sup>r</sup> − 1 &nbsp;·&nbsp; FV = PV × e<sup>rT</sup></div></div>
+    <div class="fx"><div class="fx-name">Continuously compounded return</div><div class="fx-eq">r = ln(1 + HPR) = ln(P<sub>1</sub>/P<sub>0</sub>)</div><div class="fx-note">These add up over time: r<sub>0,T</sub> = r<sub>1</sub> + r<sub>2</sub> + … + r<sub>T</sub>.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">EAR calculator</div>
+    <div class="viz-sub">More frequent compounding raises the effective rate, up to a limit set by continuous compounding.</div>
+    <div class="ctl"><label for="earR">Stated annual rate</label><input type="range" id="earR" min="1" max="24" step="0.5" value="12"><output id="earRo"></output></div>
+    <div class="stats" id="earStats"></div>
+  </div>
+
+  <h3>1.4 Time value of money</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Future and present value</div><div class="fx-eq">FV = PV(1 + r)<sup>N</sup> &nbsp;·&nbsp; PV = <span class="frac"><span>FV</span><span>(1 + r)<sup>N</sup></span></span></div></div>
+    <div class="fx"><div class="fx-name">Ordinary annuity (payments at period end)</div><div class="fx-eq">PV = PMT × <span class="frac"><span>1 − (1 + r)<sup>−N</sup></span><span>r</span></span></div></div>
+    <div class="fx"><div class="fx-name">Annuity due (payments at period start)</div><div class="fx-eq">PV<sub>due</sub> = PV<sub>ordinary</sub> × (1 + r)</div><div class="fx-note">Each payment arrives one period sooner.</div></div>
+    <div class="fx"><div class="fx-name">Perpetuity</div><div class="fx-eq">PV = <span class="frac"><span>PMT</span><span>r</span></span></div><div class="fx-note">e.g. preferred stock: dividend / required return.</div></div>
+    <div class="fx"><div class="fx-name">Growing perpetuity (Gordon growth)</div><div class="fx-eq">PV<sub>0</sub> = <span class="frac"><span>D<sub>1</sub></span><span>r − g</span></span></div><div class="fx-note">Requires r &gt; g. Uses <b>next</b> year's dividend.</div></div>
+    <div class="fx"><div class="fx-name">Implied return and growth</div><div class="fx-eq">r = <span class="frac"><span>D<sub>1</sub></span><span>P<sub>0</sub></span></span> + g &nbsp;·&nbsp; g = r − <span class="frac"><span>D<sub>1</sub></span><span>P<sub>0</sub></span></span></div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Annuity due vs ordinary:</b> rent and insurance premiums are paid at the start (annuity due); bond coupons and loan payments at the end (ordinary).</li>
+    <li><b>Uneven cash flows:</b> discount each one separately and add them up, or use the CF worksheet for NPV.</li>
+    <li><b>Multistage growth:</b> discount the high-growth dividends one by one, then add a Gordon-model terminal value discounted from the year it applies.</li>
+    <li><b>Cash flow additivity:</b> cash flows at the same date can be added. Two investments with identical cash flows must have the same price (no arbitrage). This is the basis for forward rates, e.g. investing 2 years at z<sub>2</sub> = investing 1 year at z<sub>1</sub>, then 1 year at the 1y1y forward.</li>
+  </ul>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="mod" id="q2">
+  <div class="modtag">Part 2 · Learning module 3</div>
+  <h2>Statistical measures of asset returns</h2>
+  <p class="muted">Center, spread, shape and co-movement.</p>
+
+  <h3>2.1 Central tendency and location</h3>
+  <div class="grid">
+    <div class="card"><h4>Mean, median, mode</h4><p class="small" style="margin:0"><b>Median</b> = middle value (average the two middle values if n is even); not affected by outliers. <b>Mode</b> = most frequent value; a distribution can have more than one.</p></div>
+    <div class="fx"><div class="fx-name">Quantile position</div><div class="fx-eq">L<sub>y</sub> = (n + 1) × <span class="frac"><span>y</span><span>100</span></span></div><div class="fx-note">Position of the y-th percentile in sorted data. Interpolate if it falls between two values.</div></div>
+    <div class="card"><h4>Quantiles and box plots</h4><p class="small" style="margin:0">Quartiles (4 parts), quintiles (5), deciles (10), percentiles (100). <b>Interquartile range</b> = Q3 − Q1. A box plot shows the median, the IQR box, and whiskers to the extremes.</p></div>
+  </div>
+
+  <h3>2.2 Dispersion</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Mean absolute deviation</div><div class="fx-eq">MAD = <span class="frac"><span>Σ|X<sub>i</sub> − X̄|</span><span>n</span></span></div></div>
+    <div class="fx"><div class="fx-name">Sample variance</div><div class="fx-eq">s² = <span class="frac"><span>Σ(X<sub>i</sub> − X̄)²</span><span>n − 1</span></span></div><div class="fx-note">Divide by n − 1 for a sample. Standard deviation s = √s².</div></div>
+    <div class="fx"><div class="fx-name">Target downside deviation</div><div class="fx-eq">s<sub>Target</sub> = <span class="sqrt"><span class="frac"><span>Σ<sub>X<sub>i</sub> &lt; B</sub>(X<sub>i</sub> − B)²</span><span>n − 1</span></span></span></div><div class="fx-note">Only counts returns below the target B. Measures downside risk.</div></div>
+    <div class="fx"><div class="fx-name">Coefficient of variation</div><div class="fx-eq">CV = <span class="frac"><span>s</span><span>X̄</span></span></div><div class="fx-note">Risk per unit of return. Lower is better. Lets you compare series with different averages.</div></div>
+  </div>
+
+  <h3>2.3 Shape: skewness and kurtosis</h3>
+  <div class="viz">
+    <div class="viz-title">Skewness moves the mean, median and mode apart</div>
+    <div class="viz-sub">Drag to skew the distribution. The mean is pulled furthest toward the long tail.</div>
+    <div class="ctl"><label for="skA">Skew</label><input type="range" id="skA" min="-8" max="8" step="0.5" value="4"><output id="skAo"></output></div>
+    <div class="small" id="skType" style="margin-bottom:6px"></div>
+    <svg id="skSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c3)"></span>Mean</span><span><span class="sw" style="background:var(--c2)"></span>Median</span><span><span class="sw" style="background:var(--c1)"></span>Mode</span></div>
+  </div>
+  <div class="grid two">
+    <div class="card small">
+      <h4>Skewness</h4>
+      <span class="pill g">Positive (right)</span> long right tail: <b>mean &gt; median &gt; mode</b>. Many small losses, a few large gains.<br>
+      <span class="pill b">Negative (left)</span> long left tail: <b>mean &lt; median &lt; mode</b>. Many small gains, a few large losses. Common for stock returns, and bad for investors.
+    </div>
+    <div class="card small">
+      <h4>Kurtosis</h4>
+      Normal distribution kurtosis = 3, excess kurtosis = 0 (<b>mesokurtic</b>).<br>
+      <span class="pill w">Leptokurtic</span> excess kurtosis &gt; 0: fatter tails and a taller peak. Extreme returns are more common than the normal distribution predicts.<br>
+      <span class="pill a">Platykurtic</span> excess kurtosis &lt; 0: thinner tails.
+    </div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Fat tails (leptokurtic) vs normal</div>
+    <div class="viz-sub">Both distributions have the same mean and standard deviation.</div>
+    <svg id="kuSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4)"></span>Normal (excess kurtosis 0)</span><span><span class="sw" style="background:var(--c3)"></span>Leptokurtic (excess kurtosis 3)</span></div>
+  </div>
+
+  <h3>2.4 Covariance and correlation</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Sample covariance</div><div class="fx-eq">s<sub>XY</sub> = <span class="frac"><span>Σ(X<sub>i</sub> − X̄)(Y<sub>i</sub> − Ȳ)</span><span>n − 1</span></span></div></div>
+    <div class="fx"><div class="fx-name">Correlation</div><div class="fx-eq">r<sub>XY</sub> = <span class="frac"><span>s<sub>XY</sub></span><span>s<sub>X</sub> s<sub>Y</sub></span></span></div><div class="fx-note">Always between −1 and +1. No units.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">What correlation looks like</div>
+    <div class="viz-sub">40 random points with the chosen correlation. Add one outlier to see how much it can distort the result.</div>
+    <div class="ctl"><label for="coR">Correlation</label><input type="range" id="coR" min="-1" max="1" step="0.05" value="0.6"><output id="coRo"></output></div>
+    <div class="ctl"><label for="coO">Add an outlier</label><input type="checkbox" id="coO" style="width:18px;height:18px;accent-color:var(--accent)"></div>
+    <svg id="coSvg"></svg>
+    <div class="stats"><div class="stat"><div class="l">Sample correlation r</div><div class="v" id="coS"></div></div><div class="stat"><div class="l">Fitted slope</div><div class="v" id="coB"></div></div></div>
+  </div>
+  <div class="callout trap"><b>Limits of correlation.</b> It only measures <i>linear</i> relationships (a perfect curve can show r ≈ 0). Outliers can distort it. <b>Spurious correlation</b>: two series can be correlated by chance, or because a third variable drives both. Correlation is not causation.</div>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="mod" id="q3">
+  <div class="modtag">Part 3 · Learning modules 4–5</div>
+  <h2>Probability, expected value and portfolio math</h2>
+  <p class="muted">Probability rules, trees, Bayes' formula, covariance from probabilities, and safety-first.</p>
+
+  <h3>3.1 Probability rules</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Multiplication rule (joint probability)</div><div class="fx-eq">P(AB) = P(A | B) × P(B)</div><div class="fx-note">If A and B are independent: P(AB) = P(A) × P(B).</div></div>
+    <div class="fx"><div class="fx-name">Addition rule</div><div class="fx-eq">P(A or B) = P(A) + P(B) − P(AB)</div><div class="fx-note">If mutually exclusive, P(AB) = 0.</div></div>
+    <div class="fx"><div class="fx-name">Total probability rule</div><div class="fx-eq">P(A) = Σ P(A | S<sub>i</sub>) × P(S<sub>i</sub>)</div><div class="fx-note">S<sub>i</sub> = mutually exclusive, exhaustive scenarios.</div></div>
+    <div class="fx"><div class="fx-name">Odds</div><div class="fx-eq">Odds for E = <span class="frac"><span>P(E)</span><span>1 − P(E)</span></span></div><div class="fx-note">Odds of 1 to 3 → P = 1/4.</div></div>
+  </div>
+  <p class="small" style="margin-top:10px"><b>Independent</b> events: one doesn't change the other's probability, P(A | B) = P(A). <b>Mutually exclusive</b> events can't both happen. Don't confuse the two: mutually exclusive events are actually very dependent.</p>
+
+  <h3>3.2 Expected value, variance and trees</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Expected value</div><div class="fx-eq">E(X) = Σ P(x<sub>i</sub>) × x<sub>i</sub></div></div>
+    <div class="fx"><div class="fx-name">Variance from probabilities</div><div class="fx-eq">σ² = Σ P(x<sub>i</sub>) × [x<sub>i</sub> − E(X)]²</div><div class="fx-note">No n − 1 here: probabilities are the weights.</div></div>
+    <div class="fx"><div class="fx-name">Conditional expectation</div><div class="fx-eq">E(X) = Σ E(X | S<sub>i</sub>) × P(S<sub>i</sub>)</div><div class="fx-note">A probability tree: multiply along the branches, add across the ends.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Worked example: scenario analysis</div>
+    <div class="tbl" style="margin:0"><table>
+      <tr><th>Scenario</th><th class="num">Probability</th><th class="num">Return</th><th class="num">P × R</th><th class="num">P × (R − E)²</th></tr>
+      <tr><td>Boom</td><td class="num">0.30</td><td class="num">20%</td><td class="num">6.0</td><td class="num">0.30 × 11² = 36.3</td></tr>
+      <tr><td>Normal</td><td class="num">0.50</td><td class="num">10%</td><td class="num">5.0</td><td class="num">0.50 × 1² = 0.5</td></tr>
+      <tr><td>Recession</td><td class="num">0.20</td><td class="num">−10%</td><td class="num">−2.0</td><td class="num">0.20 × 19² = 72.2</td></tr>
+      <tr><th>Total</th><th></th><th></th><th class="num">E(R) = 9.0%</th><th class="num">σ² = 109 → σ = 10.44%</th></tr>
+    </table></div>
+  </div>
+
+  <h3>3.3 Bayes' formula</h3>
+  <div class="fx"><div class="fx-name">Updating a probability with new information</div><div class="fx-eq">P(Event | Info) = <span class="frac"><span>P(Info | Event)</span><span>P(Info)</span></span> × P(Event)</div><div class="fx-note">P(Info) comes from the total probability rule: P(Info | Event)P(Event) + P(Info | not Event)P(not Event).</div></div>
+  <div class="viz">
+    <div class="viz-title">Bayes as areas</div>
+    <div class="viz-sub">Each column is a group of the population. The shaded parts got the signal. The updated probability is the shaded share that belongs to the event.</div>
+    <div class="ctl"><label for="byP">Prior P(Event)</label><input type="range" id="byP" min="1" max="99" step="1" value="40"><output id="byPo"></output></div>
+    <div class="ctl"><label for="byT">P(Info | Event)</label><input type="range" id="byT" min="1" max="99" step="1" value="80"><output id="byTo"></output></div>
+    <div class="ctl"><label for="byF">P(Info | not Event)</label><input type="range" id="byF" min="1" max="99" step="1" value="30"><output id="byFo"></output></div>
+    <svg id="bySvg"></svg>
+    <div class="stats">
+      <div class="stat"><div class="l">P(Info) — total</div><div class="v" id="byI"></div></div>
+      <div class="stat"><div class="l">Updated P(Event | Info)</div><div class="v" id="byPost"></div></div>
+      <div class="stat"><div class="l">Calculation</div><div class="v" id="byCalc" style="font-size:14px"></div></div>
+    </div>
+  </div>
+
+  <h3>3.4 Portfolio mathematics</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Portfolio expected return</div><div class="fx-eq">E(R<sub>p</sub>) = Σ w<sub>i</sub> E(R<sub>i</sub>)</div></div>
+    <div class="fx"><div class="fx-name">Two-asset variance</div><div class="fx-eq">σ<sub>p</sub>² = w<sub>1</sub>²σ<sub>1</sub>² + w<sub>2</sub>²σ<sub>2</sub>² + 2w<sub>1</sub>w<sub>2</sub>Cov<sub>1,2</sub></div><div class="fx-note">Cov<sub>1,2</sub> = ρ<sub>1,2</sub>σ<sub>1</sub>σ<sub>2</sub>. Three assets: three variance terms plus three covariance terms.</div></div>
+    <div class="fx"><div class="fx-name">Covariance from a joint probability table</div><div class="fx-eq">Cov(R<sub>A</sub>, R<sub>B</sub>) = Σ P(R<sub>A</sub>, R<sub>B</sub>) [R<sub>A</sub> − E(R<sub>A</sub>)][R<sub>B</sub> − E(R<sub>B</sub>)]</div></div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Roy's safety-first ratio</div><div class="fx-eq">SFRatio = <span class="frac"><span>E(R<sub>p</sub>) − R<sub>L</sub></span><span>σ<sub>p</sub></span></span></div><div class="fx-note">R<sub>L</sub> = minimum acceptable (threshold) return. Choose the portfolio with the <b>highest</b> ratio: it has the lowest chance of falling below R<sub>L</sub>.</div></div>
+    <div class="card small"><h4>Shortfall probability</h4>If returns are normal, P(R<sub>p</sub> &lt; R<sub>L</sub>) = N(−SFRatio). With R<sub>L</sub> = risk-free rate, the SFRatio is the Sharpe ratio.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Safety-first: which portfolio wins?</div>
+    <div class="viz-sub">The steepest line from the threshold return marks the best portfolio. Change the threshold and the winner can change.</div>
+    <div class="ctl"><label for="sfL">Threshold return R<sub>L</sub></label><input type="range" id="sfL" min="0" max="6" step="0.5" value="3"><output id="sfLo"></output></div>
+    <svg id="sfSvg"></svg>
+    <div class="stats" id="sfStats"></div>
+  </div>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section class="mod" id="q4">
+  <div class="modtag">Part 4 · Learning module 6 and background</div>
+  <h2>Distributions and simulation</h2>
+  <p class="muted">The normal and lognormal distributions, Monte Carlo simulation and bootstrapping.</p>
+
+  <h3>4.1 The normal distribution</h3>
+  <div class="grid">
+    <div class="card"><h4>Key facts</h4><ul class="small" style="margin:0"><li>Symmetric: mean = median = mode</li><li>Fully described by mean and variance</li><li>Skewness 0, kurtosis 3</li><li>A linear combination of normal variables is normal</li></ul></div>
+    <div class="card"><h4>How much falls within…</h4><ul class="small" style="margin:0"><li>±1σ: about 68%</li><li>±1.65σ: 90%</li><li>±1.96σ: 95%</li><li>±2.58σ: 99%</li></ul></div>
+    <div class="fx"><div class="fx-name">Standardizing (z-score)</div><div class="fx-eq">z = <span class="frac"><span>X − μ</span><span>σ</span></span></div><div class="fx-note">Number of standard deviations from the mean.</div></div>
+  </div>
+
+  <h3>4.2 The lognormal distribution</h3>
+  <div class="grid two">
+    <div class="card small">If ln(X) is normal, X is <b>lognormal</b>. It's bounded below by zero and skewed to the right, which makes it a good model for <b>asset prices</b> (a price can't go below zero). If continuously compounded returns are normal, prices are lognormal.</div>
+    <div class="fx"><div class="fx-name">Lognormal mean and median</div><div class="fx-eq">Mean = e<sup>μ + σ²/2</sup> &nbsp;·&nbsp; Median = e<sup>μ</sup></div><div class="fx-note">μ and σ are the mean and standard deviation of ln(X). Mean &gt; median (right skew).</div></div>
+  </div>
+  <div class="fx" style="margin-top:12px"><div class="fx-name">Scaling volatility over time (independent returns)</div><div class="fx-eq">σ<sub>T</sub> = σ × √T</div><div class="fx-note">e.g. annual volatility ≈ daily volatility × √250. Returns add up over time; volatility grows with the square root.</div></div>
+
+  <h3>4.3 Monte Carlo simulation</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1</div><p class="small" style="margin:4px 0 0">Choose what to model (e.g. a portfolio's value in 10 years)</p></div>
+    <div class="step"><div class="n">2</div><p class="small" style="margin:4px 0 0">Pick distributions and parameters for the inputs</p></div>
+    <div class="step"><div class="n">3</div><p class="small" style="margin:4px 0 0">Generate random values for the inputs</p></div>
+    <div class="step"><div class="n">4</div><p class="small" style="margin:4px 0 0">Compute the outcome</p></div>
+    <div class="step"><div class="n">5</div><p class="small" style="margin:4px 0 0">Repeat thousands of times; study the distribution of outcomes</p></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Monte Carlo: where $100 could end up</div>
+    <div class="viz-sub">2,000 simulated paths with normally distributed continuously compounded returns. The result is lognormal: never below zero, long right tail.</div>
+    <div class="ctl"><label for="mcM">Mean annual log return</label><input type="range" id="mcM" min="0" max="12" step="1" value="6"><output id="mcMo"></output></div>
+    <div class="ctl"><label for="mcS">Annual volatility</label><input type="range" id="mcS" min="5" max="40" step="1" value="20"><output id="mcSo"></output></div>
+    <div class="ctl"><label for="mcY">Years</label><input type="range" id="mcY" min="1" max="30" step="1" value="10"><output id="mcYo"></output></div>
+    <svg id="mcSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c3)"></span>Mean</span><span><span class="sw" style="background:var(--c2)"></span>Median</span><span><span class="sw" style="background:var(--c4)"></span>5th percentile</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Mean</div><div class="v" id="mcMean"></div></div>
+      <div class="stat"><div class="l">Median</div><div class="v" id="mcMed"></div></div>
+      <div class="stat"><div class="l">5th percentile</div><div class="v" id="mcP5"></div></div>
+      <div class="stat"><div class="l">Chance of a loss</div><div class="v" id="mcLoss"></div></div>
+    </div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Monte Carlo: uses and limits</h4>Used for complex securities, pension planning and risk (VaR). <b>Limits:</b> results are only as good as the assumed distributions (garbage in, garbage out); it gives numbers, not an explanation of cause and effect.</div>
+    <div class="card small"><h4>Historical simulation and bootstrapping</h4><b>Historical simulation</b> reuses actual past outcomes. <b>Bootstrapping</b> draws repeatedly <b>with replacement</b> from the observed sample to build many "new" samples, then studies the statistic across them. It needs no distribution assumption, but it assumes the sample represents the population.</div>
+  </div>
+</section>
+
+<!-- ================= PART 5 ================= -->
+<section class="mod" id="q5">
+  <div class="modtag">Part 5 · Learning modules 7–9</div>
+  <h2>Estimation, inference and hypothesis testing</h2>
+  <p class="muted">Sampling, the central limit theorem, confidence intervals, hypothesis tests, and tests of independence.</p>
+
+  <h3>5.1 Sampling</h3>
+  <div class="grid">
+    <div class="card"><h4>Probability sampling</h4><ul class="small" style="margin:0"><li><b>Simple random:</b> every member equally likely</li><li><b>Stratified random:</b> split into groups (strata), sample from each in proportion. Used to build bond index portfolios.</li><li><b>Cluster:</b> split into clusters, sample whole clusters (one-stage) or sample within chosen clusters (two-stage). Cheaper, less accurate.</li></ul></div>
+    <div class="card"><h4>Non-probability sampling</h4><ul class="small" style="margin:0"><li><b>Convenience:</b> whatever is easy to get</li><li><b>Judgmental:</b> an expert picks the sample</li></ul><p class="small muted" style="margin:6px 0 0">Faster and cheaper, but may not represent the population.</p></div>
+    <div class="card"><h4>Sampling error and biases</h4><p class="small" style="margin:0"><b>Sampling error</b> = sample statistic − population parameter. Biases: <b>data snooping</b> (testing many patterns until one "works"), <b>survivorship</b> (only surviving funds or firms), <b>look-ahead</b> (using data not yet available at the time), <b>time-period</b> (results specific to one period).</p></div>
+  </div>
+
+  <h3>5.2 The central limit theorem and standard error</h3>
+  <div class="grid two">
+    <div class="card small">For a large enough sample (n ≥ 30), the <b>sample mean</b> is approximately normal, <b>whatever the shape of the population</b>, with mean μ and variance σ²/n.</div>
+    <div class="fx"><div class="fx-name">Standard error of the sample mean</div><div class="fx-eq">σ<sub>X̄</sub> = <span class="frac"><span>σ</span><span>√n</span></span> &nbsp;(or <span class="frac"><span>s</span><span>√n</span></span> if σ is unknown)</div><div class="fx-note">Bigger samples → smaller standard error → more precise estimates.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">The central limit theorem in action</div>
+    <div class="viz-sub">The population is heavily skewed (exponential, mean 1). Each bar chart shows 3,000 sample means. As n grows, they pile up into a narrow normal curve.</div>
+    <div class="ctl"><label for="clN">Sample size n</label><input type="range" id="clN" min="0" max="5" step="1" value="2"><output id="clNo"></output></div>
+    <svg id="clSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1);height:10px"></span>Simulated sample means</span><span><span class="sw" style="background:var(--c3)"></span>Normal curve, mean 1, standard error 1/√n</span></div>
+    <div class="stats"><div class="stat"><div class="l">Standard error (theory)</div><div class="v" id="clSE"></div></div><div class="stat"><div class="l">Std. dev. of simulated means</div><div class="v" id="clSD"></div></div></div>
+  </div>
+
+  <h3>5.3 Point estimates and confidence intervals</h3>
+  <div class="grid">
+    <div class="card small"><h4>Good estimators are…</h4><b>Unbiased:</b> expected value equals the parameter.<br><b>Efficient:</b> smallest variance among unbiased estimators.<br><b>Consistent:</b> more accurate as n grows.</div>
+    <div class="fx"><div class="fx-name">Confidence interval</div><div class="fx-eq">X̄ ± Reliability factor × <span class="frac"><span>s</span><span>√n</span></span></div><div class="fx-note">Point estimate ± critical value × standard error.</div></div>
+    <div class="card small"><h4>Which reliability factor?</h4><b>z</b>: normal population with known σ, or any large sample.<br><b>t</b>: σ unknown (t is fine for large samples too). t has fatter tails than z, approaching z as degrees of freedom grow.<br>Small sample from a non-normal population: no reliable interval.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Confidence / significance</th><th class="num">Two-tailed z</th><th class="num">One-tailed z</th></tr>
+    <tr><td>90% / α = 10%</td><td class="num">±1.645</td><td class="num">1.282</td></tr>
+    <tr><td>95% / α = 5%</td><td class="num">±1.96</td><td class="num">1.645</td></tr>
+    <tr><td>99% / α = 1%</td><td class="num">±2.576</td><td class="num">2.326</td></tr>
+  </table></div>
+  <p class="small"><b>Resampling for standard errors:</b> the bootstrap (draw with replacement) or the jackknife (leave one observation out at a time).</p>
+
+  <h3>5.4 Hypothesis testing</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1 · Hypotheses</div><p class="small" style="margin:4px 0 0">H<sub>0</sub> (always has the "=") vs H<sub>a</sub> (what you hope to show)</p></div>
+    <div class="step"><div class="n">2 · Test statistic</div><p class="small" style="margin:4px 0 0">Choose the test and its distribution</p></div>
+    <div class="step"><div class="n">3 · Significance</div><p class="small" style="margin:4px 0 0">Set α, e.g. 5%</p></div>
+    <div class="step"><div class="n">4 · Decision rule</div><p class="small" style="margin:4px 0 0">Critical value(s)</p></div>
+    <div class="step"><div class="n">5 · Calculate</div><p class="small" style="margin:4px 0 0">Collect data, compute the statistic</p></div>
+    <div class="step"><div class="n">6 · Decide</div><p class="small" style="margin:4px 0 0">Reject H<sub>0</sub> or fail to reject; then judge economic significance</p></div>
+  </div>
+  <div class="fx" style="margin-top:12px"><div class="fx-name">General test statistic</div><div class="fx-eq">Test statistic = <span class="frac"><span>Sample statistic − Hypothesized value</span><span>Standard error</span></span></div></div>
+
+  <div class="viz">
+    <div class="viz-title">Rejection regions and p-values</div>
+    <div class="viz-sub">Choose the test type and significance level, then move the test statistic. Red = reject H<sub>0</sub>.</div>
+    <div class="ctl"><label for="htT">Test type</label><select id="htT"><option value="two">Two-tailed (H₀: μ = μ₀)</option><option value="right">Right-tailed (H₀: μ ≤ μ₀)</option><option value="left">Left-tailed (H₀: μ ≥ μ₀)</option></select></div>
+    <div class="ctl"><label for="htA">Significance level α</label><select id="htA"><option value="0.10">10%</option><option value="0.05" selected>5%</option><option value="0.01">1%</option></select></div>
+    <div class="ctl"><label for="htZ">Test statistic (z)</label><input type="range" id="htZ" min="-4" max="4" step="0.05" value="2.2"><output id="htZo"></output></div>
+    <svg id="htSvg"></svg>
+    <div class="stats">
+      <div class="stat"><div class="l">Critical value(s)</div><div class="v" id="htC"></div></div>
+      <div class="stat"><div class="l">p-value</div><div class="v" id="htP"></div></div>
+      <div class="stat"><div class="l">Decision</div><div class="v" id="htD" style="font-size:15px"></div></div>
+    </div>
+  </div>
+
+  <div class="grid two">
+    <div class="card small">
+      <h4>Errors</h4>
+      <div class="tbl" style="margin:0"><table style="min-width:300px">
+        <tr><th>Decision</th><th>H<sub>0</sub> true</th><th>H<sub>0</sub> false</th></tr>
+        <tr><td>Fail to reject</td><td><span class="pill g">Correct</span></td><td><span class="pill w">Type II error (β)</span></td></tr>
+        <tr><td>Reject</td><td><span class="pill b">Type I error (α)</span></td><td><span class="pill g">Correct: power = 1 − β</span></td></tr>
+      </table></div>
+    </div>
+    <div class="card small">
+      <h4>p-value</h4>
+      The smallest significance level at which you could reject H<sub>0</sub>.<br><b>Reject if p-value &lt; α.</b><br>A smaller α means fewer Type I errors but more Type II errors (for a given sample size). The only way to cut both is a <b>bigger sample</b>.
+    </div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Type I error, Type II error and power</div>
+    <div class="viz-sub">Right-tailed test. The left curve is the world where H<sub>0</sub> is true; the right curve is where the true mean is higher. A larger sample pushes the curves apart.</div>
+    <div class="ctl"><label for="pwD">True effect (in standard errors)</label><input type="range" id="pwD" min="0" max="4" step="0.1" value="2"><output id="pwDo"></output></div>
+    <div class="ctl"><label for="pwA">Significance level α</label><select id="pwA"><option value="0.10">10%</option><option value="0.05" selected>5%</option><option value="0.01">1%</option></select></div>
+    <svg id="pwSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c3);height:10px;opacity:.6"></span>α: Type I error</span><span><span class="sw" style="background:var(--c5);height:10px;opacity:.6"></span>β: Type II error</span><span><span class="sw" style="background:var(--c2);height:10px;opacity:.6"></span>Power</span></div>
+    <div class="stats"><div class="stat"><div class="l">α (Type I)</div><div class="v" id="pwAl"></div></div><div class="stat"><div class="l">β (Type II)</div><div class="v" id="pwB"></div></div><div class="stat"><div class="l">Power (1 − β)</div><div class="v" id="pwP"></div></div></div>
+  </div>
+
+  <h3>5.5 Which test?</h3>
+  <div class="tbl"><table>
+    <tr><th>Testing</th><th>Statistic</th><th>Distribution, df</th></tr>
+    <tr><td>One mean</td><td>t = (X̄ − μ<sub>0</sub>) / (s/√n)</td><td>t, n − 1</td></tr>
+    <tr><td>Difference in means (independent samples, equal variances)</td><td>t = [(X̄<sub>1</sub> − X̄<sub>2</sub>) − (μ<sub>1</sub> − μ<sub>2</sub>)] / √(s<sub>p</sub>²/n<sub>1</sub> + s<sub>p</sub>²/n<sub>2</sub>)</td><td>t, n<sub>1</sub> + n<sub>2</sub> − 2</td></tr>
+    <tr><td>Mean of differences (paired / dependent samples)</td><td>t = (d̄ − μ<sub>d0</sub>) / (s<sub>d</sub>/√n)</td><td>t, n − 1</td></tr>
+    <tr><td>One variance</td><td>χ² = (n − 1)s² / σ<sub>0</sub>²</td><td>Chi-square, n − 1</td></tr>
+    <tr><td>Two variances</td><td>F = s<sub>1</sub>² / s<sub>2</sub>² (larger on top)</td><td>F, n<sub>1</sub> − 1 and n<sub>2</sub> − 1</td></tr>
+    <tr><td>Correlation (Pearson or Spearman rank)</td><td>t = r√(n − 2) / √(1 − r²)</td><td>t, n − 2</td></tr>
+    <tr><td>Independence (contingency table)</td><td>χ² = Σ (O − E)² / E</td><td>Chi-square, (r − 1)(c − 1)</td></tr>
+  </table></div>
+  <p class="small">Pooled variance: s<sub>p</sub>² = [(n<sub>1</sub> − 1)s<sub>1</sub>² + (n<sub>2</sub> − 1)s<sub>2</sub>²] / (n<sub>1</sub> + n<sub>2</sub> − 2). Expected count in a contingency table: E<sub>ij</sub> = (row total × column total) / grand total.</p>
+  <div class="grid two">
+    <div class="card small"><h4>Parametric vs non-parametric</h4><b>Parametric</b> tests make assumptions about the distribution (e.g. normal) and test parameters like the mean. <b>Non-parametric</b> tests use ranks or counts. Use them when assumptions fail, data have outliers, data are ranks, or the question isn't about a parameter. Example: Spearman rank correlation.</div>
+    <div class="card small"><h4>Multiple testing</h4>Run enough tests and some will look significant by chance (false discoveries). The <b>false discovery rate</b> approach (Benjamini–Hochberg) adjusts the p-value cutoffs. Also separate <b>statistical</b> significance from <b>economic</b> significance: a tiny effect can be "significant" yet unprofitable after costs.</div>
+  </div>
+</section>
+
+<!-- ================= PART 6 ================= -->
+<section class="mod" id="q6">
+  <div class="modtag">Part 6 · Learning module 10</div>
+  <h2>Simple linear regression</h2>
+  <p class="muted">Fitting a line, judging the fit, testing the slope, and predicting.</p>
+
+  <h3>6.1 The model</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Regression line</div><div class="fx-eq">Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>X<sub>i</sub> + ε<sub>i</sub></div><div class="fx-note">Y = dependent (explained) variable; X = independent (explanatory) variable.</div></div>
+    <div class="fx"><div class="fx-name">Slope</div><div class="fx-eq">b<sub>1</sub> = <span class="frac"><span>Cov(X, Y)</span><span>Var(X)</span></span></div></div>
+    <div class="fx"><div class="fx-name">Intercept</div><div class="fx-eq">b<sub>0</sub> = Ȳ − b<sub>1</sub>X̄</div><div class="fx-note">The line always passes through (X̄, Ȳ).</div></div>
+  </div>
+  <p class="small" style="margin-top:10px">Ordinary least squares chooses the line that minimizes the <b>sum of squared residuals</b> (SSE). Residual = actual Y − predicted Y.</p>
+  <div class="card soft small"><b>Four assumptions:</b> (1) <b>Linearity</b> between X and Y. (2) <b>Homoskedasticity</b>: residuals have constant variance. (3) <b>Independence</b>: residuals aren't correlated with each other. (4) <b>Normality</b>: residuals are normally distributed. Residual plots reveal violations, such as a fan shape (heteroskedasticity) or a pattern over time.</div>
+
+  <h3>6.2 Goodness of fit: ANOVA</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Sum of squares</div><div class="fx-eq">SST = SSR + SSE</div><div class="fx-note">Total = explained (regression) + unexplained (error).</div></div>
+    <div class="fx"><div class="fx-name">Coefficient of determination</div><div class="fx-eq">R² = <span class="frac"><span>SSR</span><span>SST</span></span></div><div class="fx-note">% of Y's variation explained by X. In simple regression, R² = r².</div></div>
+    <div class="fx"><div class="fx-name">Standard error of the estimate</div><div class="fx-eq">SEE = √MSE = <span class="sqrt"><span class="frac"><span>SSE</span><span>n − 2</span></span></span></div><div class="fx-note">Typical size of a residual. Smaller = better fit.</div></div>
+    <div class="fx"><div class="fx-name">F-statistic</div><div class="fx-eq">F = <span class="frac"><span>MSR</span><span>MSE</span></span> = <span class="frac"><span>SSR / 1</span><span>SSE / (n − 2)</span></span></div><div class="fx-note">Tests whether the slope is zero. In simple regression, F = t² of the slope.</div></div>
+    <div class="fx"><div class="fx-name">t-test of the slope</div><div class="fx-eq">t = <span class="frac"><span>b<sub>1</sub> − B<sub>1</sub></span><span>s<sub>b1</sub></span></span></div><div class="fx-note">df = n − 2. Usually B<sub>1</sub> = 0. Same structure for the intercept.</div></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Source</th><th class="num">df</th><th class="num">Sum of squares</th><th class="num">Mean square</th></tr>
+    <tr><td>Regression</td><td class="num">1</td><td class="num">SSR</td><td class="num">MSR = SSR / 1</td></tr>
+    <tr><td>Error (residual)</td><td class="num">n − 2</td><td class="num">SSE</td><td class="num">MSE = SSE / (n − 2)</td></tr>
+    <tr><td>Total</td><td class="num">n − 1</td><td class="num">SST</td><td class="num"></td></tr>
+  </table></div>
+
+  <div class="viz">
+    <div class="viz-title">Regression, residuals and ANOVA</div>
+    <div class="viz-sub">20 points generated from Y = 2 + slope × X + noise. More noise means bigger residuals, lower R² and a weaker slope test.</div>
+    <div class="ctl"><label for="rgB">True slope</label><input type="range" id="rgB" min="-1" max="2" step="0.1" value="0.8"><output id="rgBo"></output></div>
+    <div class="ctl"><label for="rgN">Noise</label><input type="range" id="rgN" min="0.2" max="5" step="0.1" value="1.5"><output id="rgNo"></output></div>
+    <svg id="rgSvg"></svg>
+    <div class="bar" style="margin-top:8px"><div id="rgSSR" style="background:var(--c2);color:var(--bg)"></div><div id="rgSSE" style="background:var(--c3);color:var(--bg)"></div></div>
+    <div class="legend"><span><span class="sw" style="background:var(--c2);height:10px"></span>SSR (explained)</span><span><span class="sw" style="background:var(--c3);height:10px"></span>SSE (unexplained)</span></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Fitted line</div><div class="v" id="rgEq" style="font-size:15px"></div></div>
+      <div class="stat"><div class="l">R²</div><div class="v" id="rgR2"></div></div>
+      <div class="stat"><div class="l">SEE</div><div class="v" id="rgSEE"></div></div>
+      <div class="stat"><div class="l">Slope t-stat</div><div class="v" id="rgT"></div></div>
+      <div class="stat"><div class="l">F-stat (= t²)</div><div class="v" id="rgF"></div></div>
+    </div>
+  </div>
+
+  <h3>6.3 Prediction</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Predicted value</div><div class="fx-eq">Ŷ = b<sub>0</sub> + b<sub>1</sub>X<sub>p</sub></div><div class="fx-note">Prediction interval: Ŷ ± t<sub>c</sub> × s<sub>f</sub>.</div></div>
+    <div class="fx"><div class="fx-name">Standard error of the forecast</div><div class="fx-eq">s<sub>f</sub>² = SEE² [1 + <span class="frac"><span>1</span><span>n</span></span> + <span class="frac"><span>(X<sub>p</sub> − X̄)²</span><span>(n − 1)s<sub>X</sub>²</span></span>]</div><div class="fx-note">Wider when X<sub>p</sub> is far from the mean of X.</div></div>
+  </div>
+
+  <h3>6.4 Functional forms and dummy variables</h3>
+  <div class="tbl"><table>
+    <tr><th>Model</th><th>Equation</th><th>Slope means…</th></tr>
+    <tr><td><b>Log-lin</b></td><td>ln Y = b<sub>0</sub> + b<sub>1</sub>X</td><td>A 1-unit change in X changes Y by about b<sub>1</sub> × 100%. Fits constant growth over time.</td></tr>
+    <tr><td><b>Lin-log</b></td><td>Y = b<sub>0</sub> + b<sub>1</sub> ln X</td><td>A 1% change in X changes Y by about b<sub>1</sub>/100 units.</td></tr>
+    <tr><td><b>Log-log</b></td><td>ln Y = b<sub>0</sub> + b<sub>1</sub> ln X</td><td>A 1% change in X changes Y by b<sub>1</sub>% (elasticity).</td></tr>
+    <tr><td><b>Indicator (dummy)</b></td><td>Y = b<sub>0</sub> + b<sub>1</sub>D, with D = 0 or 1</td><td>b<sub>0</sub> = mean of Y when D = 0; b<sub>1</sub> = difference in means between the groups.</td></tr>
+  </table></div>
+  <div class="callout trap"><b>Traps.</b> The sign of the correlation equals the sign of the slope, but R² is always positive: r = ±√R². Don't use a regression to predict far outside the X values in the data. A significant slope doesn't prove X causes Y.</div>
+</section>
+
+<!-- ================= PART 7 ================= -->
+<section class="mod" id="q7">
+  <div class="modtag">Part 7 · Learning module 11</div>
+  <h2>Introduction to big data techniques</h2>
+  <p class="muted">Big data, alternative data, machine learning and its pitfalls.</p>
+
+  <div class="grid">
+    <div class="card"><h4>Characteristics of big data</h4><ul class="small" style="margin:0"><li><b>Volume:</b> huge quantity</li><li><b>Velocity:</b> arrives fast, often real time</li><li><b>Variety:</b> structured (tables), semi-structured, unstructured (text, images, video)</li><li><b>Veracity:</b> can the data be trusted?</li></ul></div>
+    <div class="card"><h4>Sources of alternative data</h4><ul class="small" style="margin:0"><li><b>Individuals:</b> social media, reviews, web searches</li><li><b>Business processes:</b> transactions, credit card data, corporate records</li><li><b>Sensors:</b> satellites, geolocation, the Internet of Things</li></ul></div>
+    <div class="card"><h4>Working with the data</h4><p class="small" style="margin:0">Capture → curation (cleaning errors) → storage → search → transfer. Visualize with tag (word) clouds and mind maps. <b>Natural language processing</b> turns text (earnings calls, filings, news) into signals.</p></div>
+  </div>
+
+  <h3>7.1 Machine learning</h3>
+  <div class="tbl"><table>
+    <tr><th>Type</th><th>How it learns</th><th>Typical tasks</th></tr>
+    <tr><td><b>Supervised</b></td><td>From <b>labeled</b> data (inputs with known outputs)</td><td>Regression (predict a number), classification (default / no default, fraud / not fraud)</td></tr>
+    <tr><td><b>Unsupervised</b></td><td>From <b>unlabeled</b> data, finding structure on its own</td><td>Clustering (group similar companies), dimension reduction</td></tr>
+    <tr><td><b>Deep learning</b></td><td>Neural networks with many layers</td><td>Images, speech, complex patterns</td></tr>
+    <tr><td><b>Reinforcement learning</b></td><td>Trial and error, maximizing a reward</td><td>Trading strategies, games</td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">Overfitting vs underfitting</div>
+    <div class="viz-sub">As a model gets more complex, it fits the training data ever better. Error on new data falls at first, then rises once the model starts fitting noise.</div>
+    <svg id="ofSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Error on training data (in-sample)</span><span><span class="sw" style="background:var(--c3)"></span>Error on new data (out-of-sample)</span></div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Overfitting</h4>Model is too complex and learns the noise. Great in-sample, poor out-of-sample. Fix: simpler model, more data, cross-validation.</div>
+    <div class="card small"><h4>Training, validation and test samples</h4>Train the model on one set, tune it on a validation set, and judge it on a test set it has never seen.</div>
+  </div>
+</section>
+
+<!-- ================= FORMULA SHEET ================= -->
+<section class="mod" id="sheet">
+  <div class="modtag">Review</div>
+  <h2>Formula sheet</h2>
+  <p class="muted">Every formula in the topic on one page.</p>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Interest rate</td><td>Real r<sub>f</sub> + inflation + default + liquidity + maturity premiums</td></tr>
+    <tr><td>Holding period return</td><td>(P<sub>1</sub> − P<sub>0</sub> + D<sub>1</sub>) / P<sub>0</sub></td></tr>
+    <tr><td>Geometric mean</td><td>[Π(1 + R<sub>t</sub>)]<sup>1/T</sup> − 1</td></tr>
+    <tr><td>Harmonic mean</td><td>n / Σ(1/X<sub>i</sub>)</td></tr>
+    <tr><td>EAR</td><td>(1 + stated/m)<sup>m</sup> − 1; continuous: e<sup>r</sup> − 1</td></tr>
+    <tr><td>Continuously compounded return</td><td>ln(1 + HPR)</td></tr>
+    <tr><td>Real return</td><td>(1 + nominal)/(1 + inflation) − 1</td></tr>
+    <tr><td>Leveraged return</td><td>R<sub>p</sub> + (V<sub>B</sub>/V<sub>E</sub>)(R<sub>p</sub> − r<sub>D</sub>)</td></tr>
+    <tr><td>PV of ordinary annuity</td><td>PMT × [1 − (1 + r)<sup>−N</sup>]/r</td></tr>
+    <tr><td>Annuity due</td><td>Ordinary × (1 + r)</td></tr>
+    <tr><td>Perpetuity / growing perpetuity</td><td>PMT/r; D<sub>1</sub>/(r − g)</td></tr>
+    <tr><td>Mean absolute deviation</td><td>Σ|X − X̄| / n</td></tr>
+    <tr><td>Sample variance</td><td>Σ(X − X̄)² / (n − 1)</td></tr>
+    <tr><td>Target semideviation</td><td>√[Σ<sub>X&lt;B</sub>(X − B)² / (n − 1)]</td></tr>
+    <tr><td>Coefficient of variation</td><td>s / X̄</td></tr>
+    <tr><td>Quantile location</td><td>(n + 1) × y/100</td></tr>
+    <tr><td>Sample covariance</td><td>Σ(X − X̄)(Y − Ȳ) / (n − 1)</td></tr>
+    <tr><td>Correlation</td><td>Cov / (s<sub>X</sub>s<sub>Y</sub>)</td></tr>
+    <tr><td>Expected value / variance</td><td>ΣP x; ΣP(x − E)²</td></tr>
+    <tr><td>Bayes</td><td>P(E|I) = P(I|E)P(E) / P(I)</td></tr>
+    <tr><td>Two-asset variance</td><td>w<sub>1</sub>²σ<sub>1</sub>² + w<sub>2</sub>²σ<sub>2</sub>² + 2w<sub>1</sub>w<sub>2</sub>Cov<sub>1,2</sub></td></tr>
+    <tr><td>Safety-first ratio</td><td>[E(R<sub>p</sub>) − R<sub>L</sub>] / σ<sub>p</sub></td></tr>
+    <tr><td>z-score</td><td>(X − μ)/σ</td></tr>
+    <tr><td>Lognormal mean</td><td>e<sup>μ + σ²/2</sup></td></tr>
+    <tr><td>Volatility scaling</td><td>σ√T</td></tr>
+    <tr><td>Standard error of mean</td><td>σ/√n or s/√n</td></tr>
+    <tr><td>Confidence interval</td><td>X̄ ± critical value × s/√n</td></tr>
+    <tr><td>Test of a mean</td><td>t = (X̄ − μ<sub>0</sub>)/(s/√n), df n − 1</td></tr>
+    <tr><td>Paired comparison</td><td>t = (d̄ − μ<sub>d0</sub>)/(s<sub>d</sub>/√n), df n − 1</td></tr>
+    <tr><td>Test of a variance</td><td>χ² = (n − 1)s²/σ<sub>0</sub>², df n − 1</td></tr>
+    <tr><td>Equality of variances</td><td>F = s<sub>1</sub>²/s<sub>2</sub>²</td></tr>
+    <tr><td>Test of correlation</td><td>t = r√(n − 2)/√(1 − r²), df n − 2</td></tr>
+    <tr><td>Chi-square independence</td><td>Σ(O − E)²/E, df (r − 1)(c − 1)</td></tr>
+    <tr><td>Regression slope / intercept</td><td>Cov(X,Y)/Var(X); Ȳ − b<sub>1</sub>X̄</td></tr>
+    <tr><td>R²</td><td>SSR/SST = r²</td></tr>
+    <tr><td>SEE</td><td>√[SSE/(n − 2)]</td></tr>
+    <tr><td>F-statistic</td><td>MSR/MSE = [SSR/1]/[SSE/(n − 2)]</td></tr>
+    <tr><td>Slope t-test</td><td>(b<sub>1</sub> − B<sub>1</sub>)/s<sub>b1</sub>, df n − 2</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div>
+  <h2>Practice questions</h2>
+  <p class="muted">Work each one before opening the answer.</p>
+
+  <details class="q"><summary><span class="qn">1</span>A stated annual rate of 12% compounded monthly has an effective annual rate closest to: A. 12.00%  B. 12.36%  C. 12.68%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> (1 + 0.12/12)<sup>12</sup> − 1 = 1.01<sup>12</sup> − 1 = 12.68%. B is semiannual compounding.</div></details>
+
+  <details class="q"><summary><span class="qn">2</span>A 10% rate compounded continuously has an effective annual rate closest to: A. 10.00%  B. 10.25%  C. 10.52%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> e<sup>0.10</sup> − 1 = 10.52%.</div></details>
+
+  <details class="q"><summary><span class="qn">3</span>A fund returns +20% then −10%. Its geometric mean return is closest to: A. 3.92%  B. 5.00%  C. 10.00%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> √(1.20 × 0.90) − 1 = √1.08 − 1 = 3.92%. B is the arithmetic mean.</div></details>
+
+  <details class="q"><summary><span class="qn">4</span>An investor puts $1,000 into a stock at $10 and another $1,000 at $20. The average cost per share is closest to: A. $13.33  B. $15.00  C. $16.67<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Harmonic mean: 2 / (1/10 + 1/20) = 2 / 0.15 = $13.33. Check: 100 + 50 = 150 shares for $2,000.</div></details>
+
+  <details class="q"><summary><span class="qn">5</span>You receive $1,000 at the <i>start</i> of each year for 5 years. At 6%, the present value is closest to: A. $4,212  B. $4,465  C. $5,000<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Ordinary annuity PV = 4,212.36; annuity due = 4,212.36 × 1.06 = 4,465.11.</div></details>
+
+  <details class="q"><summary><span class="qn">6</span>A stock trades at $50. Next year's dividend is $2 and the required return is 8%. The implied growth rate is: A. 4%  B. 6%  C. 8%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> g = r − D<sub>1</sub>/P<sub>0</sub> = 8% − 2/50 = 8% − 4% = 4%.</div></details>
+
+  <details class="q"><summary><span class="qn">7</span>For the sample 2, 4, 6, the sample variance is: A. 2.67  B. 4.00  C. 8.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Mean = 4; squared deviations 4 + 0 + 4 = 8; 8/(3 − 1) = 4. A divides by n (population formula).</div></details>
+
+  <details class="q"><summary><span class="qn">8</span>A return distribution has mean 10% and median 8%. It is most likely: A. positively skewed  B. negatively skewed  C. symmetric<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Mean &gt; median: the long right tail pulls the mean up.</div></details>
+
+  <details class="q"><summary><span class="qn">9</span>A distribution with excess kurtosis of 2 is: A. platykurtic  B. mesokurtic  C. leptokurtic<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Positive excess kurtosis = fatter tails than normal.</div></details>
+
+  <details class="q"><summary><span class="qn">10</span>Fund X: mean 8%, standard deviation 12%. Fund Y: mean 5%, standard deviation 6%. Which has less risk per unit of return? A. X  B. Y  C. They're equal<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> CV<sub>X</sub> = 12/8 = 1.5; CV<sub>Y</sub> = 6/5 = 1.2. Lower CV is better.</div></details>
+
+  <details class="q"><summary><span class="qn">11</span>Scenarios: 30% chance of 20%, 50% chance of 10%, 20% chance of −10%. The expected return is: A. 6.7%  B. 9.0%  C. 10.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 0.3(20) + 0.5(10) + 0.2(−10) = 6 + 5 − 2 = 9%. A is the simple average of the three returns.</div></details>
+
+  <details class="q"><summary><span class="qn">12</span>40% of managers outperform. 80% of outperformers get a positive signal, as do 30% of underperformers. Given a positive signal, the probability a manager outperforms is: A. 40%  B. 64%  C. 80%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> P(signal) = 0.8 × 0.4 + 0.3 × 0.6 = 0.32 + 0.18 = 0.50. Posterior = 0.32/0.50 = 64%. C confuses P(signal | outperform) with P(outperform | signal).</div></details>
+
+  <details class="q"><summary><span class="qn">13</span>Threshold return 3%. A: E(R) 9%, σ 12%. B: 7%, 6%. C: 12%, 20%. By Roy's safety-first criterion, choose: A. A  B. B  C. C<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> SFR: A = 6/12 = 0.50; B = 4/6 = 0.67; C = 9/20 = 0.45. Highest ratio wins.</div></details>
+
+  <details class="q"><summary><span class="qn">14</span>Population σ is 20% and the sample size is 100. The standard error of the sample mean is: A. 0.2%  B. 2%  C. 20%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 20% / √100 = 2%.</div></details>
+
+  <details class="q"><summary><span class="qn">15</span>Sample mean 10%, s = 15%, n = 36. The 95% confidence interval is closest to: A. 5.1% to 14.9%  B. 7.5% to 12.5%  C. −19.4% to 39.4%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 10 ± 1.96 × 15/√36 = 10 ± 1.96 × 2.5 = 10 ± 4.9. C forgets to divide by √n.</div></details>
+
+  <details class="q"><summary><span class="qn">16</span>A Type I error is: A. rejecting a true null  B. failing to reject a false null  C. rejecting a false null<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Its probability is α, the significance level. B is a Type II error.</div></details>
+
+  <details class="q"><summary><span class="qn">17</span>A test's p-value is 0.03. At the 1% significance level you should: A. reject H<sub>0</sub>  B. fail to reject H<sub>0</sub>  C. accept H<sub>a</sub> automatically<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Reject only if p &lt; α. 0.03 &gt; 0.01. (At 5% you would reject.)</div></details>
+
+  <details class="q"><summary><span class="qn">18</span>Testing H<sub>0</sub>: μ = 0 with X̄ = 1.5%, s = 6%, n = 36. The t-statistic is: A. 0.25  B. 1.50  C. 9.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> t = 1.5 / (6/√36) = 1.5 / 1 = 1.50. A forgets √n.</div></details>
+
+  <details class="q"><summary><span class="qn">19</span>To test whether two populations have equal variances, use the: A. t-test  B. chi-square test  C. F-test<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> F = s<sub>1</sub>²/s<sub>2</sub>². Chi-square tests a single variance.</div></details>
+
+  <details class="q"><summary><span class="qn">20</span>Comparing returns of the same stocks before and after an event calls for a: A. paired comparisons test  B. difference in means test  C. F-test<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> The samples are dependent (same stocks), so test the mean of the differences.</div></details>
+
+  <details class="q"><summary><span class="qn">21</span>Sample correlation 0.30 with n = 38. The t-statistic for testing zero correlation is closest to: A. 0.30  B. 1.80  C. 1.89<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 0.30 × √36 / √(1 − 0.09) = 1.80 / 0.954 = 1.89. B forgets the denominator.</div></details>
+
+  <details class="q"><summary><span class="qn">22</span>A chi-square test of independence on a table with 3 rows and 4 columns has degrees of freedom: A. 6  B. 7  C. 12<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> (3 − 1)(4 − 1) = 6.</div></details>
+
+  <details class="q"><summary><span class="qn">23</span>Cov(X, Y) = 0.0036, Var(X) = 0.0045, mean X = 4%, mean Y = 5%. The intercept is closest to: A. 0.8%  B. 1.8%  C. 5.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Slope = 0.0036/0.0045 = 0.8. Intercept = 5% − 0.8 × 4% = 1.8%.</div></details>
+
+  <details class="q"><summary><span class="qn">24</span>A regression with n = 22 has SST = 100 and SSE = 40. The F-statistic is: A. 1.5  B. 20  C. 30<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> SSR = 60; MSR = 60/1; MSE = 40/(22 − 2) = 2; F = 60/2 = 30. R² = 0.60, SEE = √2 = 1.41.</div></details>
+
+  <details class="q"><summary><span class="qn">25</span>Which model best fits a variable that grows at a constant rate over time? A. Log-lin  B. Lin-log  C. Log-log<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> ln Y = b<sub>0</sub> + b<sub>1</sub> × time; b<sub>1</sub> ≈ the growth rate.</div></details>
+
+  <details class="q"><summary><span class="qn">26</span>Grouping companies by similarity without any labeled outcomes is an example of: A. supervised learning  B. unsupervised learning  C. reinforcement learning<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Clustering with no labels = unsupervised.</div></details>
+
+  <details class="q"><summary><span class="qn">27</span>A model fits its training data very well but predicts poorly on new data. It is most likely: A. underfit  B. overfit  C. well specified<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It learned the noise in the training data.</div></details>
+
+  <details class="q"><summary><span class="qn">28</span>The lognormal distribution is commonly used for asset prices because it: A. is symmetric  B. is bounded below by zero  C. has thin tails<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Prices can't be negative; the lognormal is also right-skewed.</div></details>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div>
+  <h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. To keep it, click <b>Save progress into this file</b>: that downloads an updated copy of this guide with your progress built in. Re-upload that copy to Claude to continue from where you left off.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <button class="primary" id="saveFile">Save progress into this file</button>
+    <button id="copyProg">Copy progress for Claude</button>
+    <span class="small muted" id="saveMsg" style="align-self:center"></span>
+  </div>
+</section>
+
+<footer>CFA Level I quantitative methods guide · Created with Claude on 2026-10-18. Based on the CFA Program Level I curriculum topics; check the CFA Institute site for the current outline.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Quantitative Methods study guide",
+  "file_version": 1,
+  "created": "2026-10-18",
+  "companion_files": ["CFA-L1-Portfolio-Management-Guide.html", "CFA-L1-Fixed-Income-Guide.html"],
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas (fractions, not plain text) and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "6-9%",
+  "modules": [
+    {"id": "q1", "name": "Part 1: Rates, returns and time value of money (LM 1-2)", "key": ["interest rate components", "HPR, arithmetic, geometric, harmonic, trimmed, winsorized means", "money- vs time-weighted returns", "EAR, continuous compounding, log returns", "annuities (ordinary vs due), perpetuities, Gordon growth, implied return and growth", "cash flow additivity, no arbitrage"], "visuals": ["volatility drag (AM vs GM, sliders)", "EAR calculator"]},
+    {"id": "q2", "name": "Part 2: Statistical measures of asset returns (LM 3)", "key": ["mean, median, mode, quantiles, IQR, box plots", "MAD, sample variance (n-1), target semideviation, CV", "skewness and mean/median/mode ordering", "kurtosis: lepto/meso/platykurtic", "covariance, correlation, spurious correlation, outliers"], "visuals": ["skewness slider", "fat tails vs normal", "correlation scatter with outlier toggle"]},
+    {"id": "q3", "name": "Part 3: Probability, expected value and portfolio math (LM 4-5)", "key": ["multiplication, addition, total probability rules, odds", "expected value and variance from probabilities, trees", "Bayes' formula", "portfolio return and variance, covariance from joint probabilities", "Roy's safety-first ratio, shortfall probability"], "visuals": ["Bayes area diagram (sliders)", "safety-first chart (threshold slider)"]},
+    {"id": "q4", "name": "Part 4: Distributions and simulation (LM 6)", "key": ["normal distribution facts and z-scores", "lognormal distribution, mean vs median", "volatility scaling sqrt(T)", "Monte Carlo steps, uses, limits", "historical simulation, bootstrapping"], "visuals": ["Monte Carlo terminal wealth histogram (sliders)"]},
+    {"id": "q5", "name": "Part 5: Estimation, inference and hypothesis testing (LM 7-9)", "key": ["sampling methods and biases", "central limit theorem, standard error", "estimator properties, confidence intervals, z vs t", "hypothesis test steps, p-values, Type I/II errors, power", "test selection table: mean, difference, paired, variance, F, correlation, chi-square independence", "parametric vs non-parametric, multiple testing"], "visuals": ["CLT sampling distribution (n slider)", "rejection regions and p-value", "Type I/II error and power"]},
+    {"id": "q6", "name": "Part 6: Simple linear regression (LM 10)", "key": ["slope and intercept", "four assumptions", "ANOVA: SST, SSR, SSE, R2, SEE, F", "slope t-test, df n-2", "prediction interval", "log-lin, lin-log, log-log, dummy variables"], "visuals": ["regression with residuals and ANOVA (slope and noise sliders)"]},
+    {"id": "q7", "name": "Part 7: Big data techniques (LM 11)", "key": ["volume, velocity, variety, veracity", "alternative data sources", "supervised, unsupervised, deep, reinforcement learning", "overfitting vs underfitting, training/validation/test"], "visuals": ["overfitting chart"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) { e.addEventListener('input', fn); e.addEventListener('change', fn); } }); fn(); }
+function nice(min, max, n) {
+  if (!(max - min > 1e-9)) max = min + 1;
+  const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p;
+  const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step };
+}
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+const fmtN = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d);
+
+/* statistics helpers */
+function erf(x) { const s = x < 0 ? -1 : 1; x = Math.abs(x); const t = 1 / (1 + 0.3275911 * x); const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x); return s * y; }
+const Phi = z => 0.5 * (1 + erf(z / Math.SQRT2));
+const phi = z => Math.exp(-0.5 * z * z) / Math.sqrt(2 * Math.PI);
+function invPhi(p) { let lo = -10, hi = 10; for (let i = 0; i < 80; i++) { const m = (lo + hi) / 2; if (Phi(m) < p) lo = m; else hi = m; } return (lo + hi) / 2; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function normals(r) { return function () { const u = 1 - r(), v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }; }
+
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 330, L = o.ml || 56, R = 18, T = 14, B = 44;
+  const pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw;
+  const Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => {
+    const n = document.createElementNS(NS, t);
+    for (const k in a) n.setAttribute(k, a[k]);
+    if (st) for (const k in st) n.style[k] = st[k];
+    (p || svg).appendChild(n);
+    return n;
+  };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9);
+  const defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) {
+    const n = Math.round((o.xr[1] - o.xr[0]) / o.xt);
+    for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); }
+  }
+  if (o.yt) {
+    const n = Math.round((o.yr[1] - o.yr[0]) / o.yt);
+    for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); }
+  }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' });
+  if (!o.noY) el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const area = (pts, color, op) => { if (!pts.length) return null; const b = Math.max(o.yr[0], 0); return el('path', { d: d(pts) + 'L' + X(pts[pts.length - 1][0]).toFixed(1) + ' ' + Y(b).toFixed(1) + 'L' + X(pts[0][0]).toFixed(1) + ' ' + Y(b).toFixed(1) + 'Z' }, g, { fill: color, opacity: op || 0.3, stroke: 'none' }); };
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 2 });
+  return { X: X, Y: Y, el: el, text: text, line: line, area: area, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+/* ---------- Volatility drag ---------- */
+bind(['vdM', 'vdV'], function () {
+  const m = +$('vdM').value / 100, v = +$('vdV').value / 100; setText('vdMo', pct(m)); setText('vdVo', '±' + pct(v));
+  const wa = [[0, 100]], w = [[0, 100]]; let x = 100;
+  for (let t = 1; t <= 20; t++) { x *= 1 + m + (t % 2 ? v : -v); w.push([t, x]); wa.push([t, 100 * Math.pow(1 + m, t)]); }
+  const all = wa.concat(w).map(q => q[1]), r = nice(0, Math.max.apply(null, all), 5);
+  const ch = chart($('vdSvg'), { h: 290, xr: [0, 20], yr: [0, r.hi], xt: 2, yt: r.step, fy: v2 => '$' + v2.toFixed(0), xl: 'Year', yl: 'Wealth' });
+  ch.line(wa, 'var(--c4)', 2, '6 4'); ch.line(w, 'var(--c1)', 3);
+  const gm = Math.sqrt((1 + m + v) * (1 + m - v)) - 1;
+  ch.text(ch.X(20) - 4, ch.Y(wa[20][1]) - 8, '$' + wa[20][1].toFixed(0), { 'text-anchor': 'end' });
+  ch.text(ch.X(20) - 4, ch.Y(w[20][1]) + 18, '$' + w[20][1].toFixed(0), { 'text-anchor': 'end' }, 't1');
+  setText('vdA', pct(m, 2)); setText('vdG', pct(gm, 2)); setText('vdX', pct(m - v * v / 2, 2)); setText('vdW', '$' + w[20][1].toFixed(0));
+});
+
+/* ---------- EAR ---------- */
+bind(['earR'], function () {
+  const r = +$('earR').value / 100; setText('earRo', pct(r, 1));
+  const rows = [['Annual', 1], ['Semiannual', 2], ['Quarterly', 4], ['Monthly', 12], ['Daily', 365], ['Continuous', 0]];
+  $('earStats').innerHTML = rows.map(q => { const e = q[1] ? Math.pow(1 + r / q[1], q[1]) - 1 : Math.exp(r) - 1; return '<div class="stat"><div class="l">' + q[0] + '</div><div class="v">' + pct(e, 3) + '</div></div>'; }).join('');
+});
+
+/* ---------- Skewness ---------- */
+bind(['skA'], function () {
+  const a = +$('skA').value; setText('skAo', a.toFixed(1));
+  const pdf = x => 2 * phi(x) * Phi(a * x), xs = [], dx = 0.01;
+  let cum = 0, med = null, mode = 0, best = -1;
+  for (let x = -4; x <= 4.0001; x += dx) { const p = pdf(x); xs.push([x, p]); cum += p * dx; if (med === null && cum >= 0.5) med = x; if (p > best) { best = p; mode = x; } }
+  const del = a / Math.sqrt(1 + a * a), mean = del * Math.sqrt(2 / Math.PI);
+  const r = nice(0, best, 4);
+  const ch = chart($('skSvg'), { h: 280, xr: [-4, 4], yr: [0, r.hi], xt: 1, yt: r.step, fy: v => v.toFixed(decs(r.step)), xl: 'Return (standard units)', yl: 'Density', noY: false });
+  ch.area(xs, 'var(--c1)', 0.15); ch.line(xs, 'var(--c1)', 2.5);
+  ch.vline(mode, 'var(--c1)', '5 3'); ch.vline(med, 'var(--c2)', '5 3'); ch.vline(mean, 'var(--c3)', '5 3');
+  const sk = (4 - Math.PI) / 2 * Math.pow(mean, 3) / Math.pow(1 - 2 * del * del / Math.PI, 1.5);
+  $('skType').innerHTML = Math.abs(a) < 0.01 ? '<span class="pill a">Symmetric</span> Mean = median = mode. Skewness 0.'
+    : a > 0 ? '<span class="pill g">Positive skew</span> Long right tail: mean &gt; median &gt; mode. Skewness ' + sk.toFixed(2) + '.'
+    : '<span class="pill b">Negative skew</span> Long left tail: mean &lt; median &lt; mode. Skewness ' + sk.toFixed(2) + '.';
+});
+
+/* ---------- Kurtosis ---------- */
+(function () {
+  const b = 1 / Math.SQRT2, n = [], l = [];
+  for (let x = -5; x <= 5.0001; x += 0.02) { n.push([x, phi(x)]); l.push([x, Math.exp(-Math.abs(x) / b) / (2 * b)]); }
+  const ch = chart($('kuSvg'), { h: 260, xr: [-5, 5], yr: [0, 0.75], xt: 1, yt: 0.25, fy: v => v.toFixed(2), xl: 'Standard deviations from the mean', yl: 'Density' });
+  ch.line(n, 'var(--c4)', 2.5); ch.line(l, 'var(--c3)', 2.5);
+  ch.text(ch.X(0.25), ch.Y(0.71), 'taller peak', {}, 't1');
+  ch.text(ch.X(3.2), ch.Y(0.09), 'fatter tails', { 'text-anchor': 'middle' }, 't1');
+  ch.text(ch.X(-3.2), ch.Y(0.09), 'fatter tails', { 'text-anchor': 'middle' }, 't1');
+})();
+
+/* ---------- Correlation ---------- */
+bind(['coR', 'coO'], function () {
+  const rho = +$('coR').value, out = $('coO').checked; setText('coRo', fmtN(rho, 2));
+  const nr = normals(rng(42)), pts = [];
+  for (let i = 0; i < 40; i++) { const x = nr(), e = nr(); pts.push([x, rho * x + Math.sqrt(Math.max(0, 1 - rho * rho)) * e]); }
+  if (out) pts.push([3.4, rho >= 0 ? -3.4 : 3.4]);
+  const n = pts.length, mx = pts.reduce((s, p) => s + p[0], 0) / n, my = pts.reduce((s, p) => s + p[1], 0) / n;
+  let sxy = 0, sxx = 0, syy = 0; pts.forEach(p => { sxy += (p[0] - mx) * (p[1] - my); sxx += (p[0] - mx) ** 2; syy += (p[1] - my) ** 2; });
+  const r = sxy / Math.sqrt(sxx * syy), b1 = sxy / sxx, b0 = my - b1 * mx;
+  const ch = chart($('coSvg'), { h: 300, xr: [-4, 4], yr: [-4, 4], xt: 1, yt: 1, xl: 'X', yl: 'Y' });
+  ch.line([[-4, b0 - 4 * b1], [4, b0 + 4 * b1]], 'var(--c3)', 2);
+  pts.forEach((p, i) => ch.dot(p[0], p[1], out && i === n - 1 ? 'var(--c3)' : 'var(--c1)', out && i === n - 1 ? 7 : 4));
+  if (out) ch.text(ch.X(3.4) - 10, ch.Y(rho >= 0 ? -3.4 : 3.4) + (rho >= 0 ? -10 : 18), 'outlier', { 'text-anchor': 'end' }, 't1');
+  setText('coS', fmtN(r, 2)); setText('coB', fmtN(b1, 2));
+});
+
+/* ---------- Bayes ---------- */
+bind(['byP', 'byT', 'byF'], function () {
+  const p = +$('byP').value / 100, t = +$('byT').value / 100, f = +$('byF').value / 100;
+  setText('byPo', pct(p)); setText('byTo', pct(t)); setText('byFo', pct(f));
+  const svg = $('bySvg'); while (svg.firstChild) svg.removeChild(svg.firstChild);
+  svg.setAttribute('viewBox', '0 0 640 250');
+  const el = (tg, a, st) => { const n = document.createElementNS(NS, tg); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; svg.appendChild(n); return n; };
+  const tx = (x, y, s, a, c) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', c || 't2'); n.textContent = s; return n; };
+  const L = 10, T = 30, W = 620, H = 180, w1 = W * p;
+  el('rect', { x: L, y: T, width: w1, height: H }, { fill: 'var(--surface-2)', stroke: 'var(--border-strong)' });
+  el('rect', { x: L + w1, y: T, width: W - w1, height: H }, { fill: 'var(--surface-2)', stroke: 'var(--border-strong)' });
+  el('rect', { x: L, y: T + H * (1 - t), width: w1, height: H * t }, { fill: 'var(--c2)', opacity: 0.75 });
+  el('rect', { x: L + w1, y: T + H * (1 - f), width: W - w1, height: H * f }, { fill: 'var(--c3)', opacity: 0.6 });
+  if (w1 > 70) tx(L + w1 / 2, T - 10, 'Event ' + pct(p), { 'text-anchor': 'middle' }, 't1');
+  if (W - w1 > 70) tx(L + w1 + (W - w1) / 2, T - 10, 'Not event ' + pct(1 - p), { 'text-anchor': 'middle' }, 't1');
+  if (w1 > 90 && t > 0.15) tx(L + w1 / 2, T + H - H * t / 2 + 4, 'Info & event ' + pct(p * t, 1), { 'text-anchor': 'middle' }, 't1');
+  if (W - w1 > 110 && f > 0.15) tx(L + w1 + (W - w1) / 2, T + H - H * f / 2 + 4, 'Info & not event ' + pct((1 - p) * f, 1), { 'text-anchor': 'middle' }, 't1');
+  tx(L, T + H + 22, 'Shaded = received the information (signal). Green share of all shading = updated probability.', {});
+  const pi = p * t + (1 - p) * f, post = p * t / pi;
+  setText('byI', pct(pi, 1)); setText('byPost', pct(post, 1));
+  setText('byCalc', pct(t) + ' × ' + pct(p) + ' ÷ ' + pct(pi, 1));
+});
+
+/* ---------- Safety-first ---------- */
+bind(['sfL'], function () {
+  const RL = +$('sfL').value / 100; setText('sfLo', pct(RL, 1));
+  const ports = [['A', 0.09, 0.12], ['B', 0.07, 0.06], ['C', 0.12, 0.20]];
+  const sfr = ports.map(q => (q[1] - RL) / q[2]); let bi = 0; sfr.forEach((s, i) => { if (s > sfr[bi]) bi = i; });
+  const ch = chart($('sfSvg'), { h: 290, xr: [0, 0.25], yr: [0, 0.16], xt: 0.05, yt: 0.04, fx: v => pct(v), fy: v => pct(v), xl: 'Standard deviation', yl: 'Expected return' });
+  ports.forEach((q, i) => { const s = sfr[i]; ch.line([[0, RL], [0.25, RL + s * 0.25]], i === bi ? 'var(--c2)' : 'var(--c4)', i === bi ? 3 : 1.5, i === bi ? null : '5 4'); });
+  ch.dot(0, RL, 'var(--c3)', 6); ch.text(ch.X(0) + 8, ch.Y(RL) + 18, 'Threshold ' + pct(RL, 1), {}, 't1');
+  ports.forEach((q, i) => { ch.dot(q[2], q[1], i === bi ? 'var(--c2)' : 'var(--c1)', 7); ch.text(ch.X(q[2]) + 10, ch.Y(q[1]) + 4, q[0], {}, 't1'); });
+  $('sfStats').innerHTML = ports.map((q, i) => '<div class="stat"><div class="l">' + q[0] + ': ' + pct(q[1]) + ' return, ' + pct(q[2]) + ' σ</div><div class="v">SFR ' + sfr[i].toFixed(2) + (i === bi ? ' ✓' : '') + '</div><div class="small muted">P(below R<sub>L</sub>) ≈ ' + pct(Phi(-sfr[i]), 1) + '</div></div>').join('');
+});
+
+/* ---------- Monte Carlo ---------- */
+bind(['mcM', 'mcS', 'mcY'], function () {
+  const mu = +$('mcM').value / 100, sg = +$('mcS').value / 100, Y = +$('mcY').value;
+  setText('mcMo', pct(mu)); setText('mcSo', pct(sg)); setText('mcYo', Y + (Y === 1 ? ' year' : ' years'));
+  const nr = normals(rng(7)), N = 2000, v = [];
+  for (let i = 0; i < N; i++) { let s = 0; for (let t = 0; t < 30; t++) { const z = nr(); if (t < Y) s += mu + sg * z; } v.push(100 * Math.exp(s)); }
+  const sorted = v.slice().sort((a, b) => a - b), mean = v.reduce((a, b) => a + b, 0) / N, med = sorted[N / 2], p5 = sorted[Math.floor(N * 0.05)], p99 = sorted[Math.floor(N * 0.99)];
+  const loss = v.filter(x => x < 100).length / N;
+  const xr = nice(0, p99, 5), bins = 40, bw = xr.hi / bins, counts = new Array(bins).fill(0);
+  v.forEach(x => { const k = Math.floor(x / bw); if (k >= 0 && k < bins) counts[k]++; });
+  const yr = nice(0, Math.max.apply(null, counts), 4);
+  const ch = chart($('mcSvg'), { h: 300, xr: [0, xr.hi], yr: [0, yr.hi], xt: xr.step, yt: yr.step, fx: x => '$' + x.toFixed(0), xl: 'Value of $100 at the end', yl: 'Number of paths' });
+  counts.forEach((c, k) => { if (c > 0) ch.el('rect', { x: ch.X(k * bw) + 1, y: ch.Y(c), width: Math.max(1, ch.X(bw) - ch.X(0) - 2), height: ch.Y(0) - ch.Y(c) }, ch.g, { fill: 'var(--c1)', opacity: 0.8 }); });
+  ch.vline(mean, 'var(--c3)', '5 3'); ch.vline(med, 'var(--c2)', '5 3'); ch.vline(p5, 'var(--c4)', '5 3');
+  ch.vline(100, 'var(--text)', '2 3', 1);
+  ch.text(ch.X(100) + 4, ch.T + 12, 'start $100', {});
+  setText('mcMean', '$' + mean.toFixed(0)); setText('mcMed', '$' + med.toFixed(0)); setText('mcP5', '$' + p5.toFixed(0)); setText('mcLoss', pct(loss, 1));
+});
+
+/* ---------- CLT ---------- */
+const CLT_NS = [1, 2, 5, 10, 30, 100];
+bind(['clN'], function () {
+  const n = CLT_NS[+$('clN').value]; setText('clNo', 'n = ' + n);
+  const r = rng(11), means = [];
+  for (let i = 0; i < 3000; i++) { let s = 0; for (let j = 0; j < n; j++) s += -Math.log(1 - r()); means.push(s / n); }
+  const bins = 50, xmax = 4, bw = xmax / bins, counts = new Array(bins).fill(0);
+  means.forEach(x => { const k = Math.floor(x / bw); if (k >= 0 && k < bins) counts[k]++; });
+  const dens = counts.map(c => c / (3000 * bw)), se = 1 / Math.sqrt(n);
+  const curve = []; for (let x = 0; x <= xmax; x += 0.02) curve.push([x, phi((x - 1) / se) / se]);
+  const top = Math.max(Math.max.apply(null, dens), phi(0) / se), yr = nice(0, top, 4);
+  const ch = chart($('clSvg'), { h: 290, xr: [0, xmax], yr: [0, yr.hi], xt: 0.5, yt: yr.step, fx: x => x.toFixed(1), fy: v => v.toFixed(decs(yr.step)), xl: 'Sample mean', yl: 'Density' });
+  dens.forEach((c, k) => { if (c > 0) ch.el('rect', { x: ch.X(k * bw) + 0.5, y: ch.Y(c), width: Math.max(1, ch.X(bw) - ch.X(0) - 1), height: ch.Y(0) - ch.Y(c) }, ch.g, { fill: 'var(--c1)', opacity: 0.75 }); });
+  ch.line(curve, 'var(--c3)', 2.5);
+  const m = means.reduce((a, b) => a + b, 0) / 3000, sd = Math.sqrt(means.reduce((a, b) => a + (b - m) ** 2, 0) / 2999);
+  setText('clSE', se.toFixed(3)); setText('clSD', sd.toFixed(3));
+});
+
+/* ---------- Hypothesis test ---------- */
+bind(['htT', 'htA', 'htZ'], function () {
+  const type = $('htT').value, a = +$('htA').value, z = +$('htZ').value; setText('htZo', fmtN(z, 2));
+  const ch = chart($('htSvg'), { h: 280, xr: [-4, 4], yr: [0, 0.5], xt: 1, yt: 0.1, fy: v => v.toFixed(1), xl: 'Test statistic (z)', yl: 'Density' });
+  const curve = []; for (let x = -4; x <= 4.0001; x += 0.02) curve.push([x, phi(x)]);
+  const reg = (lo, hi) => curve.filter(q => q[0] >= lo && q[0] <= hi);
+  let crit, p, rej;
+  if (type === 'two') { const c = invPhi(1 - a / 2); crit = '±' + c.toFixed(3); ch.area(reg(-4, -c), 'var(--c3)', 0.55); ch.area(reg(c, 4), 'var(--c3)', 0.55); p = 2 * (1 - Phi(Math.abs(z))); rej = Math.abs(z) > c; ch.vline(-c, 'var(--c3)', '4 3', 1.5); ch.vline(c, 'var(--c3)', '4 3', 1.5); }
+  else if (type === 'right') { const c = invPhi(1 - a); crit = c.toFixed(3); ch.area(reg(c, 4), 'var(--c3)', 0.55); p = 1 - Phi(z); rej = z > c; ch.vline(c, 'var(--c3)', '4 3', 1.5); }
+  else { const c = invPhi(a); crit = c.toFixed(3).replace('-', '−'); ch.area(reg(-4, c), 'var(--c3)', 0.55); p = Phi(z); rej = z < c; ch.vline(c, 'var(--c3)', '4 3', 1.5); }
+  ch.line(curve, 'var(--c1)', 2.5);
+  ch.vline(z, 'var(--text)', null, 2.5); ch.text(ch.X(z), ch.T + 12, 'your z = ' + fmtN(z, 2), { 'text-anchor': z > 2.5 ? 'end' : z < -2.5 ? 'start' : 'middle' }, 't1');
+  setText('htC', crit); setText('htP', p < 0.0001 ? '< 0.0001' : p.toFixed(4));
+  $('htD').innerHTML = rej ? '<span class="pill b">Reject H₀</span>' : '<span class="pill g">Fail to reject H₀</span>';
+});
+
+/* ---------- Power ---------- */
+bind(['pwD', 'pwA'], function () {
+  const dlt = +$('pwD').value, a = +$('pwA').value; setText('pwDo', dlt.toFixed(1));
+  const c = invPhi(1 - a), beta = Phi(c - dlt);
+  const ch = chart($('pwSvg'), { h: 280, xr: [-4, 8], yr: [0, 0.5], xt: 1, yt: 0.1, fy: v => v.toFixed(1), xl: 'Test statistic', yl: 'Density' });
+  const h0 = [], ha = []; for (let x = -4; x <= 8.0001; x += 0.02) { h0.push([x, phi(x)]); ha.push([x, phi(x - dlt)]); }
+  ch.area(ha.filter(q => q[0] <= c), 'var(--c5)', 0.45); ch.area(ha.filter(q => q[0] >= c), 'var(--c2)', 0.35); ch.area(h0.filter(q => q[0] >= c), 'var(--c3)', 0.6);
+  ch.line(h0, 'var(--c4)', 2.5); ch.line(ha, 'var(--c1)', 2.5);
+  ch.vline(c, 'var(--text)', '5 3', 1.5); ch.text(ch.X(c) + 6, ch.Y(0.475), 'critical value ' + c.toFixed(2), {}, 't1');
+  ch.text(ch.X(0), ch.Y(0.415), 'H₀ true', { 'text-anchor': 'middle' }, 't1');
+  if (dlt >= 1) ch.text(ch.X(dlt), ch.Y(0.415), 'H₀ false', { 'text-anchor': 'middle' }, 't1');
+  setText('pwAl', pct(a, 0)); setText('pwB', pct(beta, 1)); setText('pwP', pct(1 - beta, 1));
+});
+
+/* ---------- Regression ---------- */
+bind(['rgB', 'rgN'], function () {
+  const b = +$('rgB').value, s = +$('rgN').value; setText('rgBo', fmtN(b, 1)); setText('rgNo', s.toFixed(1));
+  const r = rng(5), nr = normals(rng(99)), pts = [];
+  for (let i = 0; i < 20; i++) { const x = 1 + 9 * r(); pts.push([x, 2 + b * x + s * nr()]); }
+  const n = 20, mx = pts.reduce((t, p) => t + p[0], 0) / n, my = pts.reduce((t, p) => t + p[1], 0) / n;
+  let sxy = 0, sxx = 0, sst = 0; pts.forEach(p => { sxy += (p[0] - mx) * (p[1] - my); sxx += (p[0] - mx) ** 2; sst += (p[1] - my) ** 2; });
+  const b1 = sxy / sxx, b0 = my - b1 * mx; let sse = 0; pts.forEach(p => { sse += (p[1] - b0 - b1 * p[0]) ** 2; });
+  const ssr = sst - sse, mse = sse / (n - 2), see = Math.sqrt(mse), sb = see / Math.sqrt(sxx), t = b1 / sb, F = ssr / mse, r2 = ssr / sst;
+  const ys = pts.map(p => p[1]).concat([b0, b0 + 10 * b1]), yr = nice(Math.min.apply(null, ys) - 1, Math.max.apply(null, ys) + 1, 5);
+  const ch = chart($('rgSvg'), { h: 300, xr: [0, 11], yr: [yr.lo, yr.hi], xt: 1, yt: yr.step, fy: v => v.toFixed(decs(yr.step)), xl: 'X', yl: 'Y' });
+  pts.forEach(p => ch.el('line', { x1: ch.X(p[0]), x2: ch.X(p[0]), y1: ch.Y(p[1]), y2: ch.Y(b0 + b1 * p[0]) }, ch.g, { stroke: 'var(--c3)', strokeWidth: 1.2, opacity: 0.8 }));
+  ch.line([[0, b0], [11, b0 + 11 * b1]], 'var(--c2)', 2.5);
+  ch.line([[0, my], [11, my]], 'var(--c4)', 1, '3 3');
+  ch.text(ch.X(10.9), ch.Y(my) - 6, 'mean of Y', { 'text-anchor': 'end' });
+  pts.forEach(p => ch.dot(p[0], p[1], 'var(--c1)', 4.5));
+  const a1 = $('rgSSR'), a2 = $('rgSSE'); a1.style.width = r2 * 100 + '%'; a2.style.width = (1 - r2) * 100 + '%';
+  a1.textContent = r2 > 0.12 ? 'SSR ' + ssr.toFixed(1) : ''; a2.textContent = 1 - r2 > 0.12 ? 'SSE ' + sse.toFixed(1) : '';
+  setText('rgEq', 'Ŷ = ' + fmtN(b0, 2) + (b1 >= 0 ? ' + ' : ' − ') + Math.abs(b1).toFixed(2) + 'X');
+  setText('rgR2', r2.toFixed(2)); setText('rgSEE', see.toFixed(2)); setText('rgT', fmtN(t, 2)); setText('rgF', F.toFixed(1));
+});
+
+/* ---------- Overfitting ---------- */
+(function () {
+  const tr = [], te = [];
+  for (let c = 0; c <= 10.0001; c += 0.1) { tr.push([c, 0.9 * Math.exp(-0.35 * c) + 0.05]); te.push([c, 0.9 * Math.exp(-0.35 * c) + 0.05 + 0.006 * c * c]); }
+  const ch = chart($('ofSvg'), { h: 260, xr: [0, 10], yr: [0, 1], xl: 'Model complexity →', yl: 'Prediction error' });
+  ch.line(tr, 'var(--c1)', 3); ch.line(te, 'var(--c3)', 3);
+  let bi = 0; te.forEach((q, i) => { if (q[1] < te[bi][1]) bi = i; });
+  ch.vline(te[bi][0], 'var(--c2)', '5 3', 1.5);
+  ch.text(ch.X(1.2), ch.Y(0.95), 'underfit', { 'text-anchor': 'middle' }, 't1');
+  ch.text(ch.X(te[bi][0]), ch.Y(0.95), 'best fit', { 'text-anchor': 'middle' }, 't1');
+  ch.text(ch.X(8.6), ch.Y(0.95), 'overfit', { 'text-anchor': 'middle' }, 't1');
+})();
+
+/* ---------- Progress, notes, save ---------- */
+const DATA = JSON.parse($('study-data').textContent);
+const LS = 'cfa-quant-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'sheet', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+const list = $('progList');
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); list.appendChild(row);
+});
+$('notes').value = state.notes || '';
+$('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try {
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Quant-Guide.html';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.');
+  } catch (e) { setText('saveMsg', 'Download blocked here. Open the file in your browser and try again.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(); const txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const done = () => setText('saveMsg', 'Copied. Paste it into your chat with Claude.');
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); });
+  else { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); }
+});
+</script>
+</body>
+</html>

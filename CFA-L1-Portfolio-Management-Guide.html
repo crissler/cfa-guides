@@ -1,0 +1,1016 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — PORTFOLIO MANAGEMENT STUDY GUIDE
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+  Read that block first to restore context, then rebuild or extend visuals as asked.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Portfolio Management Guide</title>
+<style>
+:root{
+  --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;
+  --border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);
+  --accent:#534AB7;--accent-bg:#EEEDFE;
+  --c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;
+  --good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+    --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+    --accent:#AFA9EC;--accent-bg:#26215C;
+    --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+    --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+  --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+  --accent:#AFA9EC;--accent-bg:#26215C;
+  --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+  --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:40px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:17px;max-width:720px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}
+nav.toc .row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}
+.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}
+.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}
+.fx-eq .frac{margin:0 4px;line-height:1.4}
+.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}
+.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}
+.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;border-radius:0;margin:12px 0}
+.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.tip{border-left-color:var(--good);background:var(--good-bg)}
+.callout b{font-weight:600}
+.callout.trap b{color:var(--bad)}
+.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}
+.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}
+.ctl label{font-size:14px;color:var(--muted);min-width:170px}
+.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+.ctl output{font-size:14px;font-weight:600;min-width:52px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
+.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.stat .l{font-size:12px;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg .grid{stroke:var(--border);stroke-width:1}
+svg .axis{stroke:var(--border-strong);stroke-width:1}
+svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}
+svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+input[type=number]{width:90px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}
+button:hover{background:var(--surface-2)}
+button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.err{color:var(--bad);font-size:13px}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .step{flex:1 1 200px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;position:relative}
+.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.pill.g{background:var(--good-bg);color:var(--good)}
+.pill.w{background:var(--warn-bg);color:var(--warn)}
+.pill.b{background:var(--bad-bg);color:var(--bad)}
+.pill.a{background:var(--accent-bg);color:var(--accent)}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}
+details.q summary{cursor:pointer;font-weight:500;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}
+details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}
+details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;transition:width .2s}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I</div>
+  <h1>Portfolio management guide</h1>
+  <p class="lead">Formulas, visuals, worked examples and exam traps for all six portfolio management learning modules. Save this file and re-upload it to Claude to pick up where you left off.</p>
+  <div class="chips">
+    <span class="chip acc">Exam weight 8–12%</span>
+    <span class="chip">About 14–22 of 180 questions</span>
+    <span class="chip">6 learning modules</span>
+    <span class="chip">Mostly concepts, some calculations</span>
+  </div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a>
+  <a href="#m1">1 · Risk and return I</a>
+  <a href="#m2">2 · Risk and return II</a>
+  <a href="#m3">3 · PM overview</a>
+  <a href="#m4">4 · Planning and construction</a>
+  <a href="#m5">5 · Behavioral biases</a>
+  <a href="#m6">6 · Risk management</a>
+  <a href="#sheet">Formula sheet</a>
+  <a href="#practice">Practice</a>
+  <a href="#progress">My progress</a>
+</div></nav>
+
+<!-- ================= GAME PLAN ================= -->
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <p class="muted">What candidates who passed wish they'd known going in.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>What actually gets tested</h4>
+      <ul class="small">
+        <li><b>Modules 1–2</b> (risk and return, CAPM) carry most of the calculations.</li>
+        <li><b>Modules 3–6</b> are almost all definitions and "which one is it" questions. They're the cheapest points in the topic if you memorize the lists.</li>
+        <li>Every question has three choices (A, B, C) and there's no penalty for guessing, so never leave one blank.</li>
+        <li>Wrong choices are usually built from a specific mistake: forgetting a square root, using percent instead of decimals, or using σ where β belongs.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Highest-yield items, ranked</h4>
+      <ol class="small">
+        <li>Two-asset portfolio variance and the role of correlation</li>
+        <li>CAPM / SML: required return, over- vs undervalued</li>
+        <li>Sharpe, Treynor, M², Jensen's alpha: formula and when to use each</li>
+        <li>Beta from covariance or correlation</li>
+        <li>Utility, risk aversion and indifference curves</li>
+        <li>CAL vs CML vs SML vs SCL</li>
+        <li>Systematic vs nonsystematic risk</li>
+        <li>Time-weighted vs money-weighted return</li>
+        <li>Behavioral biases: cognitive vs emotional</li>
+        <li>IPS objectives and constraints; investor types</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout trap"><b>Top traps.</b> Using percent in the utility formula (use decimals). Forgetting the square root after computing variance. Using Sharpe (total risk) when the portfolio is only part of a diversified whole (use Treynor). Calling VaR the "maximum" loss (it's a <i>minimum</i> loss in the tail). Treating a risk-free asset's utility as depending on A (it doesn't).</div>
+  <div class="callout tip"><b>BA II Plus.</b> Money-weighted return = IRR: <span class="kbd">CF</span> enter CF0, C01, F01 …, then <span class="kbd">IRR</span> <span class="kbd">CPT</span>. Geometric mean: multiply the (1 + R) terms, then <span class="kbd">y<sup>x</sup></span> with 1/T, then subtract 1. Set decimals to 4 or more (<span class="kbd">2nd</span> <span class="kbd">FORMAT</span>) so rounding doesn't push you to the wrong choice.</div>
+</section>
+
+<!-- ================= MODULE 1 ================= -->
+<section class="mod" id="m1">
+  <div class="modtag">Learning module 1</div>
+  <h2>Portfolio risk and return: Part I</h2>
+  <p class="muted">Returns, risk, risk aversion, utility, diversification, the efficient frontier and the CAL.</p>
+
+  <h3>1.1 Return measures</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Holding period return</div><div class="fx-eq">HPR = <span class="frac"><span>P<sub>1</sub> − P<sub>0</sub> + D<sub>1</sub></span><span>P<sub>0</sub></span></span></div></div>
+    <div class="fx"><div class="fx-name">Arithmetic mean</div><div class="fx-eq">R̄ = <span class="frac"><span>R<sub>1</sub> + R<sub>2</sub> + … + R<sub>T</sub></span><span>T</span></span></div></div>
+    <div class="fx"><div class="fx-name">Geometric mean</div><div class="fx-eq">[(1+R<sub>1</sub>)(1+R<sub>2</sub>)…(1+R<sub>T</sub>)]<sup>1/T</sup> − 1</div><div class="fx-note">Compound growth rate. Always ≤ arithmetic; the gap grows with volatility.</div></div>
+    <div class="fx"><div class="fx-name">Money-weighted return (IRR)</div><div class="fx-eq">Σ <span class="frac"><span>CF<sub>t</sub></span><span>(1 + IRR)<sup>t</sup></span></span> = 0</div><div class="fx-note">Affected by the timing and size of the investor's cash flows.</div></div>
+    <div class="fx"><div class="fx-name">Time-weighted return</div><div class="fx-eq">[(1+HPR<sub>1</sub>)…(1+HPR<sub>n</sub>)]<sup>1/years</sup> − 1</div><div class="fx-note">Split at every cash flow. Industry standard for judging managers.</div></div>
+    <div class="fx"><div class="fx-name">Annualized return</div><div class="fx-eq">(1 + R<sub>period</sub>)<sup>periods per year</sup> − 1</div><div class="fx-note">e.g. a 100-day return: (1 + R)<sup>365/100</sup> − 1.</div></div>
+    <div class="fx"><div class="fx-name">Continuously compounded</div><div class="fx-eq">r<sub>cc</sub> = ln(1 + HPR)</div></div>
+    <div class="fx"><div class="fx-name">Real return</div><div class="fx-eq">(1 + r<sub>real</sub>) = <span class="frac"><span>1 + r<sub>nominal</sub></span><span>1 + inflation</span></span></div><div class="fx-note">Approximation: nominal − inflation.</div></div>
+    <div class="fx"><div class="fx-name">Leveraged return</div><div class="fx-eq">R<sub>L</sub> = R<sub>p</sub> + <span class="frac"><span>V<sub>B</sub></span><span>V<sub>E</sub></span></span>(R<sub>p</sub> − r<sub>D</sub>)</div><div class="fx-note">V<sub>B</sub> = borrowed, V<sub>E</sub> = equity, r<sub>D</sub> = borrowing cost.</div></div>
+  </div>
+  <p class="small muted" style="margin-top:10px">Also know: gross return (before fees) vs net return (after fees); pre-tax vs after-tax return.</p>
+
+  <div class="viz">
+    <div class="viz-title">Worked example: time-weighted vs money-weighted</div>
+    <div class="viz-sub">Buy 1 share at $100. One year later it's $120 and you buy a second share. A year after that it's $108 and you sell both. No dividends.</div>
+    <div class="tbl"><table>
+      <tr><th>Time</th><th class="num">Price</th><th>Action</th><th class="num">Cash flow</th><th class="num">Period return</th></tr>
+      <tr><td>0</td><td class="num">$100</td><td>Buy 1 share</td><td class="num">−100</td><td class="num"></td></tr>
+      <tr><td>1</td><td class="num">$120</td><td>Buy 1 more</td><td class="num">−120</td><td class="num">+20%</td></tr>
+      <tr><td>2</td><td class="num">$108</td><td>Sell 2 shares</td><td class="num">+216</td><td class="num">−10%</td></tr>
+    </table></div>
+    <div class="grid">
+      <div class="stat"><div class="l">Time-weighted (annual)</div><div class="v">+3.92%</div><div class="small muted">√(1.20 × 0.90) − 1</div></div>
+      <div class="stat"><div class="l">Money-weighted (IRR)</div><div class="v">−1.25%</div><div class="small muted">CF0 −100, C01 −120, C02 +216</div></div>
+    </div>
+    <p class="small" style="margin-top:10px">The MWR is lower because more money was invested right before the bad year. The manager didn't control that timing, which is why TWR is used to evaluate managers.</p>
+  </div>
+
+  <h3>1.2 Historical risk, return and distributions</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>Long-run ranking (US data, both return and risk)</h4>
+      <p class="small" style="margin:0">Small-cap stocks &gt; large-cap stocks &gt; long-term corporate bonds &gt; long-term government bonds &gt; T-bills.</p>
+      <p class="small muted" style="margin:6px 0 0">This positive risk–return relationship is the evidence for <b>risk aversion</b>.</p>
+    </div>
+    <div class="card">
+      <h4>Returns aren't normal</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Negative skew:</b> large losses more common than large gains.</li>
+        <li><b>Excess kurtosis (fat tails):</b> extreme outcomes happen more often than the normal distribution predicts.</li>
+        <li><b>Liquidity:</b> illiquid assets have higher trading costs and price impact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>1.3 Risk aversion and utility</h3>
+  <div class="tbl"><table>
+    <tr><th>Investor</th><th>A</th><th>Same expected return, different risk</th><th>Indifference curves</th></tr>
+    <tr><td><span class="pill a">Risk-averse</span></td><td>A &gt; 0</td><td>Picks the lower-risk choice; needs a premium to take risk</td><td>Slope up, convex</td></tr>
+    <tr><td><span class="pill w">Risk-neutral</span></td><td>A = 0</td><td>Indifferent; only expected return matters</td><td>Flat</td></tr>
+    <tr><td><span class="pill b">Risk-seeking</span></td><td>A &lt; 0</td><td>Picks the riskier choice</td><td>Slope down</td></tr>
+  </table></div>
+  <div class="fx"><div class="fx-name">Utility</div><div class="fx-eq">U = E(r) − ½ · A · σ²</div><div class="fx-note">Use decimals: 10% = 0.10, σ = 20% → σ² = 0.04. Higher U is better. Pick the investment with the highest U for that investor.</div></div>
+  <div class="callout"><b>Key fact.</b> For a risk-free asset σ = 0, so U = r<sub>f</sub> for every investor regardless of A. Risk aversion only matters for risky assets. Assume investors are risk-averse unless told otherwise.</div>
+
+  <div class="viz">
+    <div class="viz-title">Indifference curves</div>
+    <div class="viz-sub">Each curve is one utility level. Investors want the highest curve (up and to the left). Curves for one investor never cross.</div>
+    <div class="ctl"><label for="icA">Risk aversion (A)</label><input type="range" id="icA" min="-4" max="10" step="1" value="4"><output id="icAo"></output></div>
+    <div class="small" id="icType" style="margin-bottom:6px"></div>
+    <svg id="icSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1);opacity:.45"></span>U = 4%</span><span><span class="sw" style="background:var(--c1);opacity:.7"></span>U = 8%</span><span><span class="sw" style="background:var(--c1)"></span>U = 12%</span><span>Where a curve meets the y-axis, utility = the risk-free return</span></div>
+  </div>
+
+  <h3>1.4 Two-asset portfolios</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Portfolio return</div><div class="fx-eq">E(R<sub>p</sub>) = w<sub>1</sub>R<sub>1</sub> + w<sub>2</sub>R<sub>2</sub></div></div>
+    <div class="fx"><div class="fx-name">Portfolio variance</div><div class="fx-eq">σ<sub>p</sub>² = w<sub>1</sub>²σ<sub>1</sub>² + w<sub>2</sub>²σ<sub>2</sub>² + 2w<sub>1</sub>w<sub>2</sub>ρ<sub>1,2</sub>σ<sub>1</sub>σ<sub>2</sub></div><div class="fx-note">Take the square root for σ<sub>p</sub>.</div></div>
+    <div class="fx"><div class="fx-name">Covariance and correlation</div><div class="fx-eq">Cov<sub>1,2</sub> = ρ<sub>1,2</sub>σ<sub>1</sub>σ<sub>2</sub> &nbsp;⇔&nbsp; ρ<sub>1,2</sub> = <span class="frac"><span>Cov<sub>1,2</sub></span><span>σ<sub>1</sub>σ<sub>2</sub></span></span></div><div class="fx-note">So the last variance term can be written 2w<sub>1</sub>w<sub>2</sub>Cov<sub>1,2</sub>.</div></div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card soft small"><b>ρ = +1:</b> σ<sub>p</sub> is just the weighted average of the σs. No diversification benefit.<br><b>ρ &lt; +1:</b> σ<sub>p</sub> is below the weighted average. Lower ρ means more benefit.<br><b>ρ = −1:</b> some mix has σ<sub>p</sub> = 0.</div>
+    <div class="card soft small"><b>Shortcut:</b> if a question gives σ<sub>p</sub> equal to the weighted average of the σs, the answer is ρ = +1.<br><b>Outcome tables:</b> you can build the portfolio's return in each scenario directly, then find its variance. No covariance needed.</div>
+  </div>
+
+  <div class="viz">
+    <div class="viz-title">Minimum-variance frontier (two assets)</div>
+    <div class="viz-sub">Asset A: 6% return, 10% σ. Asset B: 14% return, 25% σ. Move ρ to bend the curve; move the weight to slide your portfolio along it.</div>
+    <div class="ctl"><label for="frR">Correlation (ρ)</label><input type="range" id="frR" min="-1" max="1" step="0.05" value="0.2"><output id="frRo"></output></div>
+    <div class="ctl"><label for="frW">Weight in asset A</label><input type="range" id="frW" min="0" max="100" step="1" value="50"><output id="frWo"></output></div>
+    <svg id="frSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c2)"></span>Efficient frontier (upper half)</span><span><span class="sw" style="background:var(--c4)"></span>Inefficient (lower half)</span><span><span class="sw" style="background:var(--c3);height:8px;width:8px;border-radius:50%"></span>Global minimum-variance portfolio</span></div>
+    <div class="stats"><div class="stat"><div class="l">Portfolio return</div><div class="v" id="frE"></div></div><div class="stat"><div class="l">Portfolio σ</div><div class="v" id="frS"></div></div><div class="stat"><div class="l">Min-variance weight in A</div><div class="v" id="frG"></div></div></div>
+  </div>
+
+  <h3>1.5 Many assets and diversification</h3>
+  <div class="fx"><div class="fx-name">Equal-weighted portfolio of N assets</div><div class="fx-eq">σ<sub>p</sub>² = <span class="frac"><span>σ̄²</span><span>N</span></span> + <span class="frac"><span>N − 1</span><span>N</span></span> · <span style="text-decoration:overline">Cov</span></div><div class="fx-note">As N grows, the first term vanishes and σ<sub>p</sub>² → average covariance. Covariance (how assets move together) is the risk you can't diversify away.</div></div>
+  <div class="viz">
+    <div class="viz-title">How diversification hits a floor</div>
+    <div class="viz-sub">Each stock has σ = 30%. The average correlation sets how low portfolio risk can go.</div>
+    <div class="ctl"><label for="dvR">Average correlation (ρ)</label><input type="range" id="dvR" min="0" max="1" step="0.05" value="0.25"><output id="dvRo"></output></div>
+    <svg id="dvSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c2);height:10px;opacity:.35"></span>Diversifiable (nonsystematic) risk</span><span><span class="sw" style="background:var(--c3);height:10px;opacity:.35"></span>Systematic risk floor</span></div>
+    <div class="stats"><div class="stat"><div class="l">1 stock</div><div class="v">30.0%</div></div><div class="stat"><div class="l">10 stocks</div><div class="v" id="dv10"></div></div><div class="stat"><div class="l">30 stocks</div><div class="v" id="dv30"></div></div><div class="stat"><div class="l">Floor (N → ∞)</div><div class="v" id="dvF"></div></div></div>
+  </div>
+
+  <h3>1.6 Efficient frontier, CAL and the optimal portfolio</h3>
+  <div class="grid">
+    <div class="card"><h4>Minimum-variance frontier</h4><p class="small" style="margin:0">Lowest risk for each level of return. The leftmost point is the <b>global minimum-variance portfolio</b>.</p></div>
+    <div class="card"><h4>Efficient frontier</h4><p class="small" style="margin:0">The part above the global minimum-variance portfolio: highest return for each level of risk. Rational investors only choose from here.</p></div>
+    <div class="card"><h4>Capital allocation line</h4><p class="small" style="margin:0">A straight line from r<sub>f</sub> through a risky portfolio P. Every point is a mix of T-bills and P. The best CAL is the steepest one, tangent to the frontier.</p></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">CAL</div><div class="fx-eq">E(R<sub>p</sub>) = R<sub>f</sub> + <span class="frac"><span>E(R<sub>i</sub>) − R<sub>f</sub></span><span>σ<sub>i</sub></span></span> · σ<sub>p</sub></div><div class="fx-note">Slope = Sharpe ratio of risky portfolio i.</div></div>
+    <div class="fx"><div class="fx-name">Risk on the CAL</div><div class="fx-eq">σ<sub>p</sub> = w · σ<sub>i</sub></div><div class="fx-note">You choose σ<sub>p</sub> by choosing w; the risk-free asset adds no risk. w &gt; 1 = borrowing.</div></div>
+    <div class="fx"><div class="fx-name">Optimal weight in the risky portfolio</div><div class="fx-eq">w* = <span class="frac"><span>E(R<sub>i</sub>) − R<sub>f</sub></span><span>A · σ<sub>i</sub>²</span></span></div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">The capital allocation line</div>
+    <div class="viz-sub">The tangency portfolio P doesn't depend on risk aversion. Only your position on the line does.</div>
+    <div class="ctl"><label for="calRf">Risk-free rate</label><input type="range" id="calRf" min="0" max="5" step="0.5" value="3"><output id="calRfo"></output></div>
+    <div class="ctl"><label for="calA">Risk aversion (A)</label><input type="range" id="calA" min="1" max="12" step="1" value="4"><output id="calAo"></output></div>
+    <svg id="calSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Optimal CAL</span><span><span class="sw" style="background:var(--c4)"></span>A worse CAL</span><span><span class="sw" style="background:var(--c2)"></span>Efficient frontier</span><span><span class="sw" style="background:var(--c3)"></span>Your indifference curve</span></div>
+    <div class="stats"><div class="stat"><div class="l">Slope (Sharpe ratio)</div><div class="v" id="calSh"></div></div><div class="stat"><div class="l">Weight in P</div><div class="v" id="calW"></div></div><div class="stat"><div class="l">Position</div><div class="v" id="calPos" style="font-size:15px"></div></div></div>
+  </div>
+  <div class="callout"><b>Two-fund separation.</b> Everyone holds the same two "funds": the risk-free asset and the optimal risky portfolio. The <i>investment decision</i> (which risky portfolio) is the same for all; the <i>financing decision</i> (how much in it) depends on each investor's risk aversion.</div>
+</section>
+
+<!-- ================= MODULE 2 ================= -->
+<section class="mod" id="m2">
+  <div class="modtag">Learning module 2</div>
+  <h2>Portfolio risk and return: Part II</h2>
+  <p class="muted">CML, systematic risk, beta, CAPM and the SML, and performance measures.</p>
+
+  <h3>2.1 Capital market line</h3>
+  <div class="fx"><div class="fx-name">CML</div><div class="fx-eq">E(R<sub>p</sub>) = R<sub>f</sub> + <span class="frac"><span>E(R<sub>m</sub>) − R<sub>f</sub></span><span>σ<sub>m</sub></span></span> · σ<sub>p</sub></div><div class="fx-note">The CAL whose risky portfolio is the <b>market portfolio</b>. With homogeneous expectations, everyone's optimal CAL is the CML.</div></div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Left of M:</b> lending portfolios (part T-bills). <b>Right of M:</b> borrowing portfolios (leveraged).</li>
+    <li>If the borrowing rate is above r<sub>f</sub>, the line kinks and gets flatter to the right of M.</li>
+    <li>Holding the market portfolio = passive management. Deviating from it = active management.</li>
+  </ul>
+
+  <h3>2.2 Systematic vs nonsystematic risk</h3>
+  <div class="grid two">
+    <div class="card"><h4>Systematic (market) risk</h4><p class="small" style="margin:0">Affects the whole market: interest rates, recessions, inflation. <b>Can't be diversified away, so it's priced</b> (you earn a return for bearing it). Measured by β.</p></div>
+    <div class="card"><h4>Nonsystematic (unique) risk</h4><p class="small" style="margin:0">Specific to one company or industry: a lawsuit, a failed product. <b>Diversifiable, so it's not priced.</b> No reward for holding it.</p></div>
+  </div>
+  <div class="fx" style="margin-top:12px"><div class="fx-name">Total risk decomposition</div><div class="fx-eq">σ<sub>i</sub>² = β<sub>i</sub>²σ<sub>m</sub>² + σ<sub>ε</sub>²</div><div class="fx-note">Total = systematic + nonsystematic.</div></div>
+  <div class="viz">
+    <div class="viz-title">Splitting a stock's risk</div>
+    <div class="viz-sub">A stock with σ = 40%, market σ = 20%. Change β to see how much of its variance is systematic.</div>
+    <div class="ctl"><label for="rdB">Beta (β)</label><input type="range" id="rdB" min="0" max="2" step="0.1" value="1"><output id="rdBo"></output></div>
+    <div class="bar" id="rdBar"><div id="rdSys" style="background:var(--c3);color:var(--bg)"></div><div id="rdUns" style="background:var(--c2);color:var(--bg)"></div></div>
+    <div class="legend"><span><span class="sw" style="background:var(--c3);height:10px"></span>Systematic: β²σ<sub>m</sub>² (priced)</span><span><span class="sw" style="background:var(--c2);height:10px"></span>Nonsystematic: σ<sub>ε</sub>² (not priced)</span></div>
+  </div>
+
+  <h3>2.3 Return-generating models and beta</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Multifactor model</div><div class="fx-eq">E(R<sub>i</sub>) − R<sub>f</sub> = Σ β<sub>ij</sub> · E(F<sub>j</sub>)</div><div class="fx-note">Fama–French: market, size (SMB), value (HML). Carhart adds momentum.</div></div>
+    <div class="fx"><div class="fx-name">Market model (single index)</div><div class="fx-eq">R<sub>i</sub> = α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub> + ε<sub>i</sub></div><div class="fx-note">Regression of a stock's returns on the market's.</div></div>
+    <div class="fx"><div class="fx-name">Beta</div><div class="fx-eq">β<sub>i</sub> = <span class="frac"><span>Cov(R<sub>i</sub>, R<sub>m</sub>)</span><span>σ<sub>m</sub>²</span></span> = <span class="frac"><span>ρ<sub>i,m</sub>σ<sub>i</sub></span><span>σ<sub>m</sub></span></span></div><div class="fx-note">Market β = 1, risk-free β = 0. Portfolio β = weighted average of betas.</div></div>
+  </div>
+  <div class="callout trap"><b>Trap.</b> Beta divides by σ<sub>m</sub>² (variance) in the covariance version, but by σ<sub>m</sub> in the correlation version. Mixing them up is a classic wrong answer.</div>
+
+  <h3>2.4 CAPM and the security market line</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>CAPM assumptions</h4>
+      <ul class="small" style="margin:0">
+        <li>Investors are risk-averse, utility-maximizing and rational</li>
+        <li>Markets are frictionless: no taxes or transaction costs</li>
+        <li>Single-period horizon for everyone</li>
+        <li>Homogeneous expectations</li>
+        <li>Assets are infinitely divisible</li>
+        <li>Competitive markets: investors are price takers</li>
+      </ul>
+    </div>
+    <div class="fx">
+      <div class="fx-name">SML (CAPM)</div>
+      <div class="fx-eq">E(R<sub>i</sub>) = R<sub>f</sub> + β<sub>i</sub>[E(R<sub>m</sub>) − R<sub>f</sub>]</div>
+      <div class="fx-note">E(R<sub>m</sub>) − R<sub>f</sub> is the market risk premium, the slope of the SML. Works for <b>any</b> asset or portfolio, efficient or not.</div>
+    </div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Security selection with the SML</div>
+    <div class="viz-sub">Enter a stock's beta and your forecast return. Above the SML = undervalued (buy); below = overvalued (sell).</div>
+    <div class="ctl" style="gap:10px">
+      <span class="small muted">R<sub>f</sub> %</span><input type="number" id="smlRf" value="3" step="0.5">
+      <span class="small muted">E(R<sub>m</sub>) %</span><input type="number" id="smlRm" value="9" step="0.5">
+      <span class="small muted">β</span><input type="number" id="smlB" value="1.4" step="0.1">
+      <span class="small muted">Forecast %</span><input type="number" id="smlF" value="13" step="0.5">
+    </div>
+    <div class="err" id="smlErr"></div>
+    <svg id="smlSvg"></svg>
+    <div class="stats"><div class="stat"><div class="l">Required return (CAPM)</div><div class="v" id="smlReq"></div></div><div class="stat"><div class="l">Alpha (forecast − required)</div><div class="v" id="smlA"></div></div><div class="stat"><div class="l">Verdict</div><div class="v" id="smlV" style="font-size:15px"></div></div></div>
+  </div>
+
+  <h3>2.5 The four lines</h3>
+  <div class="grid two" id="linesGrid">
+    <div class="viz" style="margin:0"><div class="viz-title">Capital allocation line (CAL)</div><div class="viz-sub">σ on x-axis · any risky portfolio</div><svg id="ln1"></svg></div>
+    <div class="viz" style="margin:0"><div class="viz-title">Capital market line (CML)</div><div class="viz-sub">σ on x-axis · the market portfolio</div><svg id="ln2"></svg></div>
+    <div class="viz" style="margin:0"><div class="viz-title">Security market line (SML)</div><div class="viz-sub">β on x-axis · any asset</div><svg id="ln3"></svg></div>
+    <div class="viz" style="margin:0"><div class="viz-title">Security characteristic line (SCL)</div><div class="viz-sub">Market excess vs stock excess return</div><svg id="ln4"></svg></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Line</th><th>x-axis</th><th>Formula</th><th>Slope</th><th>Applies to</th></tr>
+    <tr><td><b>CAL</b></td><td>σ</td><td>R<sub>f</sub> + [(E(R<sub>i</sub>) − R<sub>f</sub>)/σ<sub>i</sub>]σ<sub>p</sub></td><td>Sharpe ratio of portfolio i</td><td>Mixes of r<sub>f</sub> and one risky portfolio</td></tr>
+    <tr><td><b>CML</b></td><td>σ</td><td>R<sub>f</sub> + [(E(R<sub>m</sub>) − R<sub>f</sub>)/σ<sub>m</sub>]σ<sub>p</sub></td><td>Sharpe ratio of the market</td><td>Efficient portfolios only</td></tr>
+    <tr><td><b>SML</b></td><td>β</td><td>R<sub>f</sub> + β<sub>i</sub>[E(R<sub>m</sub>) − R<sub>f</sub>]</td><td>Market risk premium</td><td>Any asset or portfolio</td></tr>
+    <tr><td><b>SCL</b></td><td>R<sub>m</sub> − R<sub>f</sub></td><td>R<sub>i</sub> − R<sub>f</sub> = α<sub>i</sub> + β<sub>i</sub>(R<sub>m</sub> − R<sub>f</sub>)</td><td>β of the stock</td><td>One security (regression)</td></tr>
+  </table></div>
+  <div class="callout tip"><b>Fast test.</b> σ on the x-axis → CAL or CML (total risk). β on the x-axis → SML (systematic risk only).</div>
+
+  <h3>2.6 Performance measures</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Sharpe ratio</div><div class="fx-eq"><span class="frac"><span>R<sub>p</sub> − R<sub>f</sub></span><span>σ<sub>p</sub></span></span></div><div class="fx-note">Total risk. Excess return per unit of σ.</div></div>
+    <div class="fx"><div class="fx-name">Treynor ratio</div><div class="fx-eq"><span class="frac"><span>R<sub>p</sub> − R<sub>f</sub></span><span>β<sub>p</sub></span></span></div><div class="fx-note">Systematic risk. Excess return per unit of β.</div></div>
+    <div class="fx"><div class="fx-name">M² (Modigliani)</div><div class="fx-eq">(R<sub>p</sub> − R<sub>f</sub>)<span class="frac"><span>σ<sub>m</sub></span><span>σ<sub>p</sub></span></span> − (R<sub>m</sub> − R<sub>f</sub>)</div><div class="fx-note">Total risk, in percent. Same ranking as Sharpe.</div></div>
+    <div class="fx"><div class="fx-name">Jensen's alpha</div><div class="fx-eq">α<sub>p</sub> = R<sub>p</sub> − [R<sub>f</sub> + β<sub>p</sub>(R<sub>m</sub> − R<sub>f</sub>)]</div><div class="fx-note">Systematic risk, in percent. Actual return minus CAPM return.</div></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Measure</th><th>Risk used</th><th>Units</th><th>Use when the portfolio is…</th></tr>
+    <tr><td>Sharpe</td><td>Total (σ)</td><td>Ratio</td><td>The investor's whole portfolio / not well diversified</td></tr>
+    <tr><td>M²</td><td>Total (σ)</td><td>%</td><td>Same as Sharpe, but you want a % gap vs the market</td></tr>
+    <tr><td>Treynor</td><td>Systematic (β)</td><td>Ratio</td><td>Well diversified, or one piece of a larger diversified portfolio</td></tr>
+    <tr><td>Jensen's alpha</td><td>Systematic (β)</td><td>%</td><td>Same as Treynor, but you want a % return vs CAPM</td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">Worked example</div>
+    <div class="viz-sub">R<sub>f</sub> = 2%, market return 9%, market σ = 16%.</div>
+    <div class="tbl"><table>
+      <tr><th>Portfolio</th><th class="num">Return</th><th class="num">σ</th><th class="num">β</th><th class="num">Sharpe</th><th class="num">Treynor</th><th class="num">M²</th><th class="num">Alpha</th></tr>
+      <tr><td>X</td><td class="num">12%</td><td class="num">20%</td><td class="num">1.2</td><td class="num">0.50</td><td class="num">8.33</td><td class="num">1.00%</td><td class="num">1.60%</td></tr>
+      <tr><td>Y</td><td class="num">10%</td><td class="num">12%</td><td class="num">0.8</td><td class="num">0.67</td><td class="num">10.00</td><td class="num">3.67%</td><td class="num">2.40%</td></tr>
+      <tr><td>Market</td><td class="num">9%</td><td class="num">16%</td><td class="num">1.0</td><td class="num">0.44</td><td class="num">7.00</td><td class="num">0</td><td class="num">0</td></tr>
+    </table></div>
+    <p class="small" style="margin:0">X has the higher raw return, but Y wins on every risk-adjusted measure. Exams love this setup.</p>
+  </div>
+</section>
+
+<!-- ================= MODULE 3 ================= -->
+<section class="mod" id="m3">
+  <div class="modtag">Learning module 3</div>
+  <h2>Portfolio management: an overview</h2>
+  <p class="muted">The portfolio approach, the investment process, types of investors and the asset management industry.</p>
+
+  <h3>3.1 The portfolio approach</h3>
+  <p class="small">Judge investments by how they affect the <b>whole portfolio</b>, not one at a time. Diversification lowers risk without necessarily lowering return.</p>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Diversification ratio</div><div class="fx-eq"><span class="frac"><span>Risk of an equal-weighted portfolio</span><span>Risk of a single security chosen at random</span></span></div><div class="fx-note">Lower = more diversification benefit.</div></div>
+    <div class="callout trap" style="margin:0"><b>Limit.</b> Diversification can fail in a crisis: correlations rise toward 1 when markets crash, just when you need diversification most.</div>
+  </div>
+
+  <h3>3.2 The investment management process</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1 · Planning</div><ul class="small" style="margin:6px 0 0"><li>Understand the client's needs</li><li>Write the <b>IPS</b></li><li>Form capital market expectations</li><li>Set the strategic asset allocation</li></ul></div>
+    <div class="step"><div class="n">2 · Execution</div><ul class="small" style="margin:6px 0 0"><li>Asset allocation</li><li>Security analysis (top-down or bottom-up)</li><li>Portfolio construction and trading</li></ul></div>
+    <div class="step"><div class="n">3 · Feedback</div><ul class="small" style="margin:6px 0 0"><li>Monitoring and rebalancing</li><li>Performance measurement and reporting</li></ul></div>
+  </div>
+
+  <h3>3.3 Types of investors</h3>
+  <div class="tbl"><table>
+    <tr><th>Investor</th><th>Risk tolerance</th><th>Time horizon</th><th>Liquidity needs</th><th>Income needs</th></tr>
+    <tr><td>Individuals</td><td>Varies</td><td>Varies</td><td>Varies</td><td>Varies</td></tr>
+    <tr><td>Defined benefit pension</td><td>High</td><td>Long</td><td>Low</td><td>Depends on workforce age</td></tr>
+    <tr><td>Endowments and foundations</td><td>High</td><td>Long (perpetual)</td><td>Low</td><td>Meet spending commitments</td></tr>
+    <tr><td>Banks</td><td>Low</td><td>Short</td><td>High</td><td>Pay interest on deposits</td></tr>
+    <tr><td>Insurance companies</td><td>Low</td><td>Long (life) / short (P&amp;C)</td><td>High</td><td>Low</td></tr>
+    <tr><td>Investment companies</td><td>Depends on fund</td><td>Varies</td><td>High</td><td>Varies</td></tr>
+    <tr><td>Sovereign wealth funds</td><td>Varies (often high)</td><td>Long</td><td>Low</td><td>Varies</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card"><h4>Defined benefit (DB) plan</h4><p class="small" style="margin:0">Employer promises a set benefit. <b>Employer bears the investment risk.</b></p></div>
+    <div class="card"><h4>Defined contribution (DC) plan</h4><p class="small" style="margin:0">Employer contributes a set amount; the payout depends on performance. <b>Employee bears the investment risk.</b></p></div>
+  </div>
+
+  <h3>3.4 The asset management industry</h3>
+  <div class="grid">
+    <div class="card"><h4>Active vs passive</h4><p class="small" style="margin:0">Active tries to beat a benchmark; passive tracks it at low cost. Assets keep shifting toward passive.</p></div>
+    <div class="card"><h4>Traditional vs alternative</h4><p class="small" style="margin:0">Traditional: stocks, bonds, cash. Alternative: hedge funds, private equity, real estate, commodities, infrastructure. Alternatives charge higher fees.</p></div>
+    <div class="card"><h4>Buy side vs sell side</h4><p class="small" style="margin:0">Buy side manages money (asset managers). Sell side sells services to them (brokers, banks, research).</p></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Product</th><th>Key feature</th></tr>
+    <tr><td>Open-end mutual fund</td><td>Buy and redeem shares from the fund at NAV; fund shares created or redeemed as needed</td></tr>
+    <tr><td>Closed-end fund</td><td>Fixed number of shares that trade on an exchange; can trade at a premium or discount to NAV</td></tr>
+    <tr><td>Exchange-traded fund (ETF)</td><td>Trades on an exchange all day; usually tracks an index; creation and redemption keeps price near NAV</td></tr>
+    <tr><td>Separately managed account</td><td>Portfolio owned directly by the client; can be customized (taxes, ESG); higher minimums</td></tr>
+    <tr><td>Hedge fund</td><td>Few restrictions, can short and use leverage; for accredited investors; high fees</td></tr>
+    <tr><td>Private equity / buyout</td><td>Buys whole companies, often with debt, improves them, then sells</td></tr>
+    <tr><td>Venture capital</td><td>Funds early-stage companies</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= MODULE 4 ================= -->
+<section class="mod" id="m4">
+  <div class="modtag">Learning module 4</div>
+  <h2>Basics of portfolio planning and construction</h2>
+  <p class="muted">The investment policy statement, asset allocation and ESG.</p>
+
+  <h3>4.1 The investment policy statement (IPS)</h3>
+  <p class="small">A written plan agreed between client and manager. Its main purpose: it guides every investment decision and helps the client stick to the plan. Typical parts: introduction, statement of purpose, duties and responsibilities, procedures, <b>investment objectives</b>, <b>investment constraints</b>, investment guidelines, evaluation and review, and appendices (asset allocation, rebalancing).</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>Objectives: return and risk</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Return:</b> absolute (e.g. 7%) or relative to a benchmark. Distinguish required return (what's needed) from desired.</li>
+        <li><b>Risk:</b> absolute measures (σ, VaR) or relative (tracking error vs a benchmark).</li>
+        <li><b>Ability</b> to take risk is objective: horizon, wealth, income, needs.</li>
+        <li><b>Willingness</b> to take risk is subjective: attitudes, questionnaires, past behavior.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Constraints: remember "TTLLU"</h4>
+      <ul class="small" style="margin:0">
+        <li><b>T</b>ime horizon</li>
+        <li><b>T</b>ax concerns</li>
+        <li><b>L</b>iquidity needs</li>
+        <li><b>L</b>egal and regulatory factors</li>
+        <li><b>U</b>nique circumstances (ESG preferences, restrictions)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Ability vs willingness to take risk</div>
+    <div class="tbl" style="margin:0"><table style="min-width:420px">
+      <tr><th></th><th>Low willingness</th><th>High willingness</th></tr>
+      <tr><th>Low ability</th><td><span class="pill g">Below-average risk</span></td><td><span class="pill w">Use the lower (ability wins)</span><br><span class="small muted">Educate the client</span></td></tr>
+      <tr><th>High ability</th><td><span class="pill w">Usually the lower</span><br><span class="small muted">Discuss and educate first</span></td><td><span class="pill g">Above-average risk</span></td></tr>
+    </table></div>
+    <p class="small" style="margin:8px 0 0">When ability and willingness conflict, the conservative choice usually wins. Ability can never be overridden by willingness.</p>
+  </div>
+
+  <h3>4.2 Asset allocation and construction</h3>
+  <div class="grid">
+    <div class="card"><h4>Strategic asset allocation</h4><p class="small" style="margin:0">Long-term target weights for each asset class. Built from the IPS and capital market expectations. Explains most of the variation in portfolio returns over time.</p></div>
+    <div class="card"><h4>Tactical asset allocation</h4><p class="small" style="margin:0">Short-term deliberate deviations from the strategic weights to exploit expected opportunities.</p></div>
+    <div class="card"><h4>Security selection</h4><p class="small" style="margin:0">Deviating from benchmark weights <i>within</i> an asset class.</p></div>
+    <div class="card"><h4>Rebalancing</h4><p class="small" style="margin:0">Returning to target weights, often when drift goes beyond a set range (corridor).</p></div>
+    <div class="card"><h4>Risk budgeting</h4><p class="small" style="margin:0">Deciding how much total risk to take and allocating it to where it's expected to be rewarded best.</p></div>
+    <div class="card"><h4>Core-satellite</h4><p class="small" style="margin:0">A passive or low-cost core plus active satellite positions around it.</p></div>
+  </div>
+  <div class="callout"><b>Defining asset classes.</b> Assets within a class should be similar (homogeneous); classes should not overlap (mutually exclusive) and should have low correlations with each other so the allocation diversifies.</div>
+
+  <h3>4.3 ESG in portfolio construction</h3>
+  <div class="tbl"><table>
+    <tr><th>Approach</th><th>What it does</th></tr>
+    <tr><td>Negative (exclusionary) screening</td><td>Excludes sectors or companies (e.g. tobacco, weapons)</td></tr>
+    <tr><td>Positive screening / best-in-class</td><td>Selects companies with the best ESG practices relative to peers</td></tr>
+    <tr><td>ESG integration</td><td>Builds ESG factors into normal financial analysis</td></tr>
+    <tr><td>Thematic investing</td><td>Targets a theme, such as clean energy or water</td></tr>
+    <tr><td>Impact investing</td><td>Seeks measurable social or environmental impact plus a financial return</td></tr>
+    <tr><td>Engagement / active ownership</td><td>Uses shareholder rights (voting, dialogue) to influence companies</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= MODULE 5 ================= -->
+<section class="mod" id="m5">
+  <div class="modtag">Learning module 5</div>
+  <h2>The behavioral biases of individuals</h2>
+  <p class="muted">Classification questions are near-free points once you know which bucket each bias goes in.</p>
+
+  <div class="grid two">
+    <div class="card"><h4>Cognitive errors</h4><p class="small" style="margin:0">Faulty reasoning, statistics or memory. <b>Easier to fix:</b> better information, education and advice can <b>moderate</b> them.</p></div>
+    <div class="card"><h4>Emotional biases</h4><p class="small" style="margin:0">Come from feelings and impulses. <b>Harder to fix:</b> usually you <b>adapt</b> to them rather than correct them.</p></div>
+  </div>
+
+  <h3>5.1 Cognitive: belief perseverance</h3>
+  <div class="tbl"><table>
+    <tr><th>Bias</th><th>What it is</th><th>Exam cue</th></tr>
+    <tr><td><b>Conservatism</b></td><td>Sticking with prior views; underreacting to new information</td><td>"Slow to update after the earnings surprise"</td></tr>
+    <tr><td><b>Confirmation</b></td><td>Seeking out information that supports your view, ignoring what contradicts it</td><td>"Only reads bullish reports"; concentrated position</td></tr>
+    <tr><td><b>Representativeness</b></td><td>Judging by similarity to a stereotype; base-rate neglect</td><td>"A good company must be a good stock"</td></tr>
+    <tr><td><b>Illusion of control</b></td><td>Believing you can influence outcomes you can't</td><td>Trades too much; overweights own company's stock</td></tr>
+    <tr><td><b>Hindsight</b></td><td>"I knew it all along"</td><td>Overestimates how predictable past events were</td></tr>
+  </table></div>
+
+  <h3>5.2 Cognitive: information-processing errors</h3>
+  <div class="tbl"><table>
+    <tr><th>Bias</th><th>What it is</th><th>Exam cue</th></tr>
+    <tr><td><b>Anchoring and adjustment</b></td><td>Sticking close to an initial number</td><td>"Won't sell until it gets back to the purchase price"</td></tr>
+    <tr><td><b>Mental accounting</b></td><td>Treating money differently based on its source or bucket</td><td>Separate "safe" and "fun" buckets; ignores correlations</td></tr>
+    <tr><td><b>Framing</b></td><td>Decision changes with how the question is presented</td><td>Gain vs loss wording changes the choice</td></tr>
+    <tr><td><b>Availability</b></td><td>Judging likelihood by how easily examples come to mind</td><td>Invests in what's in the news or familiar</td></tr>
+  </table></div>
+
+  <h3>5.3 Emotional biases</h3>
+  <div class="tbl"><table>
+    <tr><th>Bias</th><th>What it is</th><th>Exam cue</th></tr>
+    <tr><td><b>Loss aversion</b></td><td>Losses hurt more than equal gains feel good</td><td>Holds losers too long, sells winners too soon (disposition effect)</td></tr>
+    <tr><td><b>Overconfidence</b></td><td>Overestimating your knowledge or ability</td><td>Trades too much, underdiversifies</td></tr>
+    <tr><td><b>Self-control</b></td><td>Favoring short-term spending over long-term goals</td><td>Saves too little; then takes too much risk to catch up</td></tr>
+    <tr><td><b>Status quo</b></td><td>Doing nothing by default</td><td>Never changes the inherited portfolio</td></tr>
+    <tr><td><b>Endowment</b></td><td>Valuing what you own more than you'd pay for it</td><td>Won't sell inherited shares</td></tr>
+    <tr><td><b>Regret aversion</b></td><td>Avoiding decisions that might later be regretted</td><td>Herding; stays too conservative after a loss</td></tr>
+  </table></div>
+  <div class="callout trap"><b>Trap.</b> Overconfidence has a cognitive side (illusion of knowledge) but the curriculum classifies it as <b>emotional</b>. Illusion of control is <b>cognitive</b>.</div>
+
+  <h3>5.4 Behavioral finance and market anomalies</h3>
+  <ul class="small">
+    <li><b>Momentum:</b> trend-chasing and herding, linked to availability and regret.</li>
+    <li><b>Bubbles and crashes:</b> overconfidence, confirmation, self-attribution; then panic selling.</li>
+    <li><b>Value vs growth:</b> the halo effect (good company ⇒ good stock, a form of representativeness) makes growth stocks overpriced. Home bias favors domestic stocks.</li>
+  </ul>
+</section>
+
+<!-- ================= MODULE 6 ================= -->
+<section class="mod" id="m6">
+  <div class="modtag">Learning module 6</div>
+  <h2>Introduction to risk management</h2>
+  <p class="muted">The point is to take the <i>right</i> risks in the right amounts, not to minimize risk.</p>
+
+  <h3>6.1 The risk management framework</h3>
+  <div class="flow">
+    <div class="step"><div class="n">Governance</div><p class="small" style="margin:6px 0 0">Top-down oversight by the board: sets risk tolerance and structure.</p></div>
+    <div class="step"><div class="n">Identify and measure</div><p class="small" style="margin:6px 0 0">Find and quantify the risks being taken.</p></div>
+    <div class="step"><div class="n">Infrastructure, policies</div><p class="small" style="margin:6px 0 0">Systems, data, people and procedures.</p></div>
+    <div class="step"><div class="n">Monitor, mitigate, communicate</div><p class="small" style="margin:6px 0 0">Track exposures, adjust them, report them; strategic analysis.</p></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card"><h4>Risk tolerance</h4><p class="small" style="margin:0">Which risks the organization is willing to take, and how much. Set by governance. The starting point.</p></div>
+    <div class="card"><h4>Risk budgeting</h4><p class="small" style="margin:0">Allocating the total risk allowed across activities or asset classes (e.g. by β, σ or VaR).</p></div>
+    <div class="card"><h4>Risk exposure</h4><p class="small" style="margin:0">How much an outcome is affected by a risk factor.</p></div>
+  </div>
+
+  <h3>6.2 Types of risk</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>Financial risks</h4>
+      <ul class="small" style="margin:0">
+        <li><b>Market:</b> prices, rates, FX, commodities</li>
+        <li><b>Credit:</b> counterparty doesn't pay</li>
+        <li><b>Liquidity:</b> can't sell without a big price concession</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Non-financial risks</h4>
+      <ul class="small" style="margin:0">
+        <li>Settlement, legal, compliance (regulatory, accounting, tax)</li>
+        <li>Model risk, tail risk</li>
+        <li>Operational (people, systems, cyber), solvency</li>
+        <li>Sovereign and political</li>
+        <li>For individuals: mortality, longevity, morbidity (health)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout"><b>Interactions.</b> Risks are linked: a market drop can trigger margin calls (liquidity), counterparty failures (credit) and solvency problems at once. Questions often ask which risk a scenario <i>also</i> creates.</div>
+
+  <h3>6.3 Measuring risk</h3>
+  <div class="tbl"><table>
+    <tr><th>Asset or exposure</th><th>Measure</th><th>Sensitivity to</th></tr>
+    <tr><td>Any portfolio</td><td>Standard deviation</td><td>Total volatility</td></tr>
+    <tr><td>Equities</td><td>Beta</td><td>Market moves</td></tr>
+    <tr><td>Bonds</td><td>Duration, convexity</td><td>Interest rates (first and second order)</td></tr>
+    <tr><td>Options</td><td>Delta, gamma</td><td>Underlying price (first and second order)</td></tr>
+    <tr><td>Options</td><td>Vega / rho / theta</td><td>Volatility / interest rate / time</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Value at risk (VaR)</div><div class="fx-eq" style="font-size:15px;font-family:var(--sans)">"There's a 5% chance of losing at least $1M in one day."</div><div class="fx-note">Minimum loss at a given probability over a given period. Not the maximum loss.</div></div>
+    <div class="fx"><div class="fx-name">Conditional VaR (expected shortfall)</div><div class="fx-eq" style="font-size:15px;font-family:var(--sans)">Average loss <i>when</i> the loss exceeds VaR.</div><div class="fx-note">Also: scenario analysis and stress testing for events VaR misses.</div></div>
+  </div>
+
+  <h3>6.4 Modifying risk</h3>
+  <div class="tbl"><table>
+    <tr><th>Method</th><th>How</th><th>Example</th></tr>
+    <tr><td><b>Prevention and avoidance</b></td><td>Don't take the risk at all</td><td>Not entering a risky market</td></tr>
+    <tr><td><b>Acceptance</b></td><td>Keep the risk: self-insure or diversify</td><td>Holding reserves for expected losses</td></tr>
+    <tr><td><b>Risk transfer</b></td><td>Pay another party to bear it</td><td>Buying insurance</td></tr>
+    <tr><td><b>Risk shifting</b></td><td>Change the distribution of outcomes</td><td>Derivatives: puts, futures, swaps</td></tr>
+  </table></div>
+  <div class="callout tip"><b>Choosing.</b> Pick the method with the best cost–benefit. Insurance = transfer; derivatives = shifting.</div>
+</section>
+
+<!-- ================= FORMULA SHEET ================= -->
+<section class="mod" id="sheet">
+  <div class="modtag">Review</div>
+  <h2>Formula sheet</h2>
+  <p class="muted">Every formula in the topic on one page. Use decimals throughout.</p>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Holding period return</td><td>(P<sub>1</sub> − P<sub>0</sub> + D<sub>1</sub>) / P<sub>0</sub></td></tr>
+    <tr><td>Geometric mean</td><td>[(1+R<sub>1</sub>)…(1+R<sub>T</sub>)]<sup>1/T</sup> − 1</td></tr>
+    <tr><td>Annualized return</td><td>(1 + R<sub>period</sub>)<sup>periods per year</sup> − 1</td></tr>
+    <tr><td>Continuously compounded</td><td>ln(1 + HPR)</td></tr>
+    <tr><td>Real return</td><td>(1 + nominal) / (1 + inflation) − 1</td></tr>
+    <tr><td>Leveraged return</td><td>R<sub>p</sub> + (V<sub>B</sub>/V<sub>E</sub>)(R<sub>p</sub> − r<sub>D</sub>)</td></tr>
+    <tr><td>Utility</td><td>U = E(r) − ½Aσ²</td></tr>
+    <tr><td>Two-asset return</td><td>w<sub>1</sub>R<sub>1</sub> + w<sub>2</sub>R<sub>2</sub></td></tr>
+    <tr><td>Two-asset variance</td><td>w<sub>1</sub>²σ<sub>1</sub>² + w<sub>2</sub>²σ<sub>2</sub>² + 2w<sub>1</sub>w<sub>2</sub>ρσ<sub>1</sub>σ<sub>2</sub></td></tr>
+    <tr><td>Covariance</td><td>Cov<sub>1,2</sub> = ρ<sub>1,2</sub>σ<sub>1</sub>σ<sub>2</sub></td></tr>
+    <tr><td>N-asset equal weight variance</td><td>σ̄²/N + ((N−1)/N) · average Cov</td></tr>
+    <tr><td>CAL</td><td>R<sub>f</sub> + [(E(R<sub>i</sub>) − R<sub>f</sub>)/σ<sub>i</sub>] σ<sub>p</sub></td></tr>
+    <tr><td>Optimal risky weight</td><td>w* = (E(R<sub>i</sub>) − R<sub>f</sub>) / (Aσ<sub>i</sub>²)</td></tr>
+    <tr><td>CML</td><td>R<sub>f</sub> + [(E(R<sub>m</sub>) − R<sub>f</sub>)/σ<sub>m</sub>] σ<sub>p</sub></td></tr>
+    <tr><td>Total risk</td><td>σ<sub>i</sub>² = β<sub>i</sub>²σ<sub>m</sub>² + σ<sub>ε</sub>²</td></tr>
+    <tr><td>Beta</td><td>Cov(R<sub>i</sub>,R<sub>m</sub>)/σ<sub>m</sub>² = ρ<sub>i,m</sub>σ<sub>i</sub>/σ<sub>m</sub></td></tr>
+    <tr><td>Market model</td><td>R<sub>i</sub> = α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub> + ε<sub>i</sub></td></tr>
+    <tr><td>CAPM / SML</td><td>R<sub>f</sub> + β<sub>i</sub>[E(R<sub>m</sub>) − R<sub>f</sub>]</td></tr>
+    <tr><td>Sharpe</td><td>(R<sub>p</sub> − R<sub>f</sub>) / σ<sub>p</sub></td></tr>
+    <tr><td>Treynor</td><td>(R<sub>p</sub> − R<sub>f</sub>) / β<sub>p</sub></td></tr>
+    <tr><td>M²</td><td>(R<sub>p</sub> − R<sub>f</sub>)(σ<sub>m</sub>/σ<sub>p</sub>) − (R<sub>m</sub> − R<sub>f</sub>)</td></tr>
+    <tr><td>Jensen's alpha</td><td>R<sub>p</sub> − [R<sub>f</sub> + β<sub>p</sub>(R<sub>m</sub> − R<sub>f</sub>)]</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div>
+  <h2>Practice questions</h2>
+  <p class="muted">Work each one before opening the answer.</p>
+
+  <details class="q"><summary><span class="qn">1</span>An investment has an expected return of 10% and σ of 20%. For an investor with A = 4, the utility is closest to: A. 2%  B. 6%  C. −70%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> U = 0.10 − ½ × 4 × 0.20² = 0.10 − 0.08 = 0.02. Choice C is what you get using percent instead of decimals.</div></details>
+
+  <details class="q"><summary><span class="qn">2</span>The utility of a T-bill yielding 3% is: A. higher for more risk-averse investors  B. 3% for all investors  C. zero for risk-neutral investors<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> σ = 0, so the risk penalty is zero for every A and U = 3%.</div></details>
+
+  <details class="q"><summary><span class="qn">3</span>60% in asset 1 (σ = 20%) and 40% in asset 2 (σ = 30%), ρ = 0.3. Portfolio σ is closest to: A. 21.5%  B. 24.0%  C. 4.6%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Variance = 0.36(0.04) + 0.16(0.09) + 2(0.6)(0.4)(0.3)(0.2)(0.3) = 0.0144 + 0.0144 + 0.01728 = 0.04608. √0.04608 = 21.47%. B is the weighted average of the σs (ρ = 1). C is the variance, not the σ.</div></details>
+
+  <details class="q"><summary><span class="qn">4</span>Average variance of stocks is 0.04 and average covariance is 0.01. For a very large equal-weighted portfolio, σ is closest to: A. 0%  B. 10%  C. 20%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> As N → ∞, variance → average covariance = 0.01, so σ = 10%. Covariance risk can't be diversified away.</div></details>
+
+  <details class="q"><summary><span class="qn">5</span>R<sub>f</sub> = 2%, E(R<sub>i</sub>) = 10%, σ<sub>i</sub> = 20%, A = 4. The optimal weight in the risky portfolio is: A. 25%  B. 50%  C. 100%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> w* = (0.10 − 0.02) / (4 × 0.04) = 0.08 / 0.16 = 0.50.</div></details>
+
+  <details class="q"><summary><span class="qn">6</span>Covariance of a stock with the market is 0.0144 and market σ is 15%. The stock's beta is: A. 0.10  B. 0.64  C. 0.96<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> β = 0.0144 / 0.15² = 0.0144 / 0.0225 = 0.64. C divides by σ instead of σ².</div></details>
+
+  <details class="q"><summary><span class="qn">7</span>R<sub>f</sub> = 3%, E(R<sub>m</sub>) = 9%, β = 1.5. You forecast a 13% return. The stock is: A. overvalued  B. fairly valued  C. undervalued<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Required = 3% + 1.5 × 6% = 12%. Forecast 13% plots above the SML, so it's undervalued.</div></details>
+
+  <details class="q"><summary><span class="qn">8</span>To evaluate one manager who runs a small part of a large, well-diversified pension fund, the most appropriate measure is: A. Sharpe ratio  B. M²  C. Treynor ratio<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> In a diversified whole, only systematic risk (β) matters. Sharpe and M² use total risk.</div></details>
+
+  <details class="q"><summary><span class="qn">9</span>Which line uses beta as its measure of risk? A. CAL  B. CML  C. SML<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> The CAL and CML use σ (total risk).</div></details>
+
+  <details class="q"><summary><span class="qn">10</span>A client invested more just before a strong year. Compared with the time-weighted return, the money-weighted return will be: A. higher  B. lower  C. the same<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> MWR rewards having more money invested in good periods. TWR ignores cash-flow timing.</div></details>
+
+  <details class="q"><summary><span class="qn">11</span>An investor refuses to sell a stock until it gets back to what they paid. This is best described as: A. anchoring  B. availability  C. status quo<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Anchoring on the purchase price (a cognitive error). If the question stresses the pain of realizing a loss, the answer would be loss aversion (emotional).</div></details>
+
+  <details class="q"><summary><span class="qn">12</span>Which investor typically has the highest liquidity needs? A. Endowment  B. Bank  C. Defined benefit pension plan<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Banks must meet deposit withdrawals. Endowments and DB plans have long horizons and low liquidity needs.</div></details>
+
+  <details class="q"><summary><span class="qn">13</span>A client has high ability but low willingness to take risk. The adviser should most likely: A. set a high-risk allocation  B. discuss and educate, likely adopting the lower risk level  C. ignore willingness<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Conflicts are usually resolved toward the more conservative level, after educating the client.</div></details>
+
+  <details class="q"><summary><span class="qn">14</span>Buying put options on a stock position is an example of: A. risk transfer  B. risk shifting  C. risk acceptance<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Derivatives shift the distribution of outcomes. Insurance would be risk transfer.</div></details>
+
+  <details class="q"><summary><span class="qn">15</span>A 1-day 5% VaR of $2 million means: A. the most you can lose in a day is $2M  B. there's a 5% chance of losing at least $2M in a day  C. the average loss on bad days is $2M<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> VaR is a minimum loss in the tail. C describes conditional VaR.</div></details>
+
+  <details class="q"><summary><span class="qn">16</span>Portfolio return 10%, σ 12%, β 0.8; R<sub>f</sub> 2%; market return 9%, σ 16%. Jensen's alpha is: A. 1.0%  B. 2.4%  C. 3.7%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 10% − [2% + 0.8 × 7%] = 10% − 7.6% = 2.4%. C is the M² for the same portfolio.</div></details>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div>
+  <h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. To keep it, click <b>Save progress into this file</b>: that downloads an updated copy of this guide with your progress built in. Re-upload that copy to Claude to continue from where you left off.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <button class="primary" id="saveFile">Save progress into this file</button>
+    <button id="copyProg">Copy progress for Claude</button>
+    <span class="small muted" id="saveMsg" style="align-self:center"></span>
+  </div>
+</section>
+
+<footer>CFA Level I portfolio management guide · Created with Claude on 2026-10-18. Based on the CFA Program Level I curriculum topics; check the CFA Institute site for the current outline.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Portfolio Management study guide",
+  "file_version": 1,
+  "created": "2026-10-18",
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas (fractions, not plain text) and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "8-12%",
+  "modules": [
+    {"id": "m1", "name": "Portfolio Risk and Return: Part I", "key": ["HPR, arithmetic/geometric mean, TWR vs MWR, annualized, real, leveraged returns", "historical risk-return, skew, kurtosis", "risk aversion, utility U=E(r)-0.5*A*sigma^2, indifference curves", "two-asset variance, covariance, correlation", "N-asset diversification", "min-variance and efficient frontier, GMV", "CAL, optimal weight w*=(E(Ri)-Rf)/(A*sigma^2), two-fund separation"], "visuals": ["indifference curves (A slider)", "two-asset frontier (rho and weight sliders)", "diversification floor (rho slider)", "CAL (Rf and A sliders)"]},
+    {"id": "m2", "name": "Portfolio Risk and Return: Part II", "key": ["CML", "systematic vs nonsystematic risk, total risk decomposition", "multifactor and market models, beta", "CAPM assumptions, SML, security selection", "CAL/CML/SML/SCL comparison", "Sharpe, Treynor, M2, Jensen's alpha"], "visuals": ["risk decomposition bar (beta slider)", "SML security selection (inputs)", "four lines panels"]},
+    {"id": "m3", "name": "Portfolio Management: An Overview", "key": ["portfolio approach, diversification ratio", "planning-execution-feedback process", "investor types table", "DB vs DC", "asset management industry and pooled products"]},
+    {"id": "m4", "name": "Basics of Portfolio Planning and Construction", "key": ["IPS components", "return and risk objectives, ability vs willingness", "constraints: time, tax, liquidity, legal, unique", "SAA, TAA, security selection, rebalancing, risk budgeting, core-satellite", "ESG approaches"]},
+    {"id": "m5", "name": "The Behavioral Biases of Individuals", "key": ["cognitive belief perseverance: conservatism, confirmation, representativeness, illusion of control, hindsight", "cognitive processing: anchoring, mental accounting, framing, availability", "emotional: loss aversion, overconfidence, self-control, status quo, endowment, regret aversion", "market anomalies"]},
+    {"id": "m6", "name": "Introduction to Risk Management", "key": ["framework and governance", "risk tolerance, budgeting", "financial vs non-financial risks", "measures: sigma, beta, duration, Greeks, VaR, CVaR", "prevention/avoidance, acceptance, transfer, shifting"]}
+  ],
+  "known_weak_spots": [
+    "Risk aversion: sign of the risk-return relationship (qbank Portfolio Risk and Return I, Q2: chose 'negative', correct 'positive')",
+    "Utility of a risk-free asset is the same for every investor (Q3: chose 'zero for risk-seeking')",
+    "Two-asset diversification from outcome tables (Q20-21: initially picked assets 1 and 3 for lowest sigma)",
+    "Student said they are 'not very good' at Portfolio Risk and Return questions"
+  ],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const pct = (v, d) => (v * 100).toFixed(d === undefined ? 0 : d) + '%';
+
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 330, L = o.ml || 56, R = 18, T = 14, B = 44;
+  const pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw;
+  const Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => {
+    const n = document.createElementNS(NS, t);
+    for (const k in a) n.setAttribute(k, a[k]);
+    if (st) for (const k in st) n.style[k] = st[k];
+    (p || svg).appendChild(n);
+    return n;
+  };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9);
+  const defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) {
+    const n = Math.round((o.xr[1] - o.xr[0]) / o.xt);
+    for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); }
+  }
+  if (o.yt) {
+    const n = Math.round((o.yr[1] - o.yr[0]) / o.yt);
+    for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); }
+  }
+  if (o.cross) {
+    el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+    el('line', { x1: X(0), x2: X(0), y1: T, y2: T + ph, 'class': 'axis' });
+  } else {
+    el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' });
+    el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  }
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const area = (pts, color, op) => el('path', { d: d(pts) + 'Z' }, g, { fill: color, opacity: op || 0.25, stroke: 'none' });
+  const dot = (x, y, color, r) => el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, area: area, dot: dot, g: g, L: L, T: T, pw: pw, ph: ph };
+}
+
+function bind(ids, fn) { ids.forEach(id => { const e = document.getElementById(id); if (e) e.addEventListener('input', fn); }); fn(); }
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+
+/* ---------- Indifference curves ---------- */
+bind(['icA'], function () {
+  const A = +$('icA').value; setText('icAo', A);
+  const c = chart($('icSvg'), { xr: [0, 0.4], yr: [0, 0.4], xt: 0.1, yt: 0.1, fx: v => pct(v), fy: v => pct(v), xl: 'Risk (standard deviation, σ)', yl: 'Expected return' });
+  [[0.04, 0.45], [0.08, 0.7], [0.12, 1]].forEach(u => {
+    const pts = []; for (let i = 0; i <= 80; i++) { const s = 0.4 * i / 80; pts.push([s, u[0] + 0.5 * A * s * s]); }
+    c.line(pts, 'var(--c1)', 2.5, null, u[1]); c.dot(0, u[0], 'var(--c1)', 4);
+  });
+  const t = A > 0 ? '<span class="pill a">Risk-averse</span> Curves slope up and get steeper as A rises: more risk needs more return.'
+    : A === 0 ? '<span class="pill w">Risk-neutral</span> Flat lines: only expected return matters.'
+    : '<span class="pill b">Risk-seeking</span> Curves slope down: will give up return to take on risk.';
+  $('icType').innerHTML = t;
+});
+
+/* ---------- Two-asset frontier ---------- */
+const FA = { E: 0.06, s: 0.10 }, FB = { E: 0.14, s: 0.25 };
+function twoPt(w, rho) { const E = w * FA.E + (1 - w) * FB.E; const v = w * w * FA.s * FA.s + (1 - w) * (1 - w) * FB.s * FB.s + 2 * w * (1 - w) * rho * FA.s * FB.s; return [Math.sqrt(Math.max(v, 0)), E]; }
+bind(['frR', 'frW'], function () {
+  const rho = +$('frR').value, w = +$('frW').value / 100;
+  setText('frRo', rho.toFixed(2)); setText('frWo', Math.round(w * 100) + '%');
+  const c = chart($('frSvg'), { xr: [0, 0.3], yr: [0, 0.16], xt: 0.05, yt: 0.04, fx: v => pct(v), fy: v => pct(v), xl: 'Risk (standard deviation, σ)', yl: 'Expected return' });
+  const cov = rho * FA.s * FB.s; let gw = (FB.s * FB.s - cov) / (FA.s * FA.s + FB.s * FB.s - 2 * cov);
+  if (!isFinite(gw)) gw = 1; gw = Math.min(1, Math.max(0, gw));
+  const lo = [], up = [];
+  for (let i = 0; i <= 200; i++) { const ww = i / 200, p = twoPt(ww, rho); if (ww >= gw) lo.push(p); if (ww <= gw) up.push(p); }
+  c.line(lo, 'var(--c4)', 2, '6 4'); c.line(up, 'var(--c2)', 3);
+  c.dot(FA.s, FA.E, 'var(--c1)', 6); c.text(c.X(FA.s) + 10, c.Y(FA.E) + 16, 'A', {}, 't1');
+  c.dot(FB.s, FB.E, 'var(--c1)', 6); c.text(c.X(FB.s) - 10, c.Y(FB.E) - 10, 'B', { 'text-anchor': 'end' }, 't1');
+  const G = twoPt(gw, rho); c.dot(G[0], G[1], 'var(--c3)', 6); c.text(c.X(G[0]) - 10, c.Y(G[1]) + 4, 'Global min variance', { 'text-anchor': 'end' }, 't1');
+  const P = twoPt(w, rho); c.el('circle', { cx: c.X(P[0]), cy: c.Y(P[1]), r: 8 }, null, { fill: 'none', stroke: 'var(--text)', strokeWidth: 2 });
+  setText('frE', pct(P[1], 2)); setText('frS', pct(P[0], 2)); setText('frG', Math.round(gw * 100) + '%');
+});
+
+/* ---------- Diversification ---------- */
+bind(['dvR'], function () {
+  const rho = +$('dvR').value, s = 0.30; setText('dvRo', rho.toFixed(2));
+  const sp = N => Math.sqrt(s * s / N + (N - 1) / N * rho * s * s), fl = Math.sqrt(rho) * s;
+  const c = chart($('dvSvg'), { xr: [0, 50], yr: [0, 0.32], xt: 10, yt: 0.08, fx: v => v, fy: v => pct(v), xl: 'Number of stocks (N)', yl: 'Portfolio σ' });
+  const curve = []; for (let N = 1; N <= 50; N++) curve.push([N, sp(N)]);
+  c.area([[0, 0], [0, fl], [50, fl], [50, 0]], 'var(--c3)', 0.25);
+  c.area([[1, fl]].concat(curve).concat([[50, fl]]), 'var(--c2)', 0.25);
+  c.line(curve, 'var(--c2)', 3); c.line([[0, fl], [50, fl]], 'var(--c3)', 2, '6 4');
+  c.text(c.X(30), c.Y(fl) + 18, 'systematic risk — can’t diversify away', { 'text-anchor': 'middle' }, 't1');
+  setText('dv10', pct(sp(10), 1)); setText('dv30', pct(sp(30), 1)); setText('dvF', pct(fl, 1));
+});
+
+/* ---------- CAL ---------- */
+const sigF = E => Math.sqrt(0.0064 + 3.2 * Math.pow(E - 0.07, 2));
+function tangency(rf) { let b = null; for (let E = 0.07; E <= 0.2; E += 0.0002) { const S = (E - rf) / sigF(E); if (!b || S > b.S) b = { E: E, s: sigF(E), S: S }; } return b; }
+function frontierPts(lowerToo) { const a = []; for (let E = lowerToo ? 0 : 0.07; E <= 0.2; E += 0.002) a.push([sigF(E), E]); return a; }
+bind(['calRf', 'calA'], function () {
+  const rf = +$('calRf').value / 100, A = +$('calA').value, MX = 0.35;
+  setText('calRfo', (rf * 100).toFixed(1) + '%'); setText('calAo', A);
+  const c = chart($('calSvg'), { h: 350, xr: [0, MX], yr: [0, 0.2], xt: 0.05, yt: 0.04, fx: v => pct(v), fy: v => pct(v), xl: 'Risk (standard deviation, σ)', yl: 'Expected return' });
+  c.line(frontierPts(false), 'var(--c2)', 2.5);
+  const b = tangency(rf), wS = (0.08 - rf) / sigF(0.08);
+  c.line([[0, rf], [MX, rf + wS * MX]], 'var(--c4)', 1.5, '5 4');
+  c.line([[0, rf], [MX, rf + b.S * MX]], 'var(--c1)', 3);
+  const so = b.S / A, U = rf + b.S * so - 0.5 * A * so * so, w = so / b.s;
+  const ic = []; for (let s = 0; s <= MX; s += 0.005) ic.push([s, U + 0.5 * A * s * s]); c.line(ic, 'var(--c3)', 2);
+  c.dot(0, rf, 'var(--c1)'); c.text(c.X(0) + 8, c.Y(rf) + 16, 'Rf', {}, 't1');
+  c.dot(b.s, b.E, 'var(--c1)', 6); c.text(c.X(b.s) + 10, c.Y(b.E) + 20, 'P (tangency)', {}, 't1');
+  const sx = Math.min(so, MX * 0.97); c.dot(sx, rf + b.S * sx, 'var(--c3)', 6); c.text(c.X(sx) - 10, c.Y(rf + b.S * sx) - 10, 'Your optimal point', { 'text-anchor': 'end' }, 't1');
+  c.text(c.X(b.s * 0.4), c.Y(rf + b.S * b.s * 0.4) - 12, 'lending', { 'text-anchor': 'middle' });
+  const bx = Math.min(b.s * 1.6, MX * 0.9, (0.18 - rf) / b.S); c.text(c.X(bx) + 14, c.Y(rf + b.S * bx) + 22, 'borrowing', { 'text-anchor': 'start' });
+  setText('calSh', b.S.toFixed(2)); setText('calW', Math.round(w * 100) + '%');
+  setText('calPos', w < 0.995 ? 'Lending: ' + Math.round((1 - w) * 100) + '% in T-bills' : w > 1.005 ? 'Borrowing: ' + Math.round((w - 1) * 100) + '% extra' : '100% in P');
+});
+
+/* ---------- Risk decomposition ---------- */
+bind(['rdB'], function () {
+  const b = +$('rdB').value, sm = 0.20, si = 0.40; setText('rdBo', b.toFixed(1));
+  const tot = si * si, sys = Math.min(b * b * sm * sm, tot), uns = tot - sys, sp = sys / tot * 100;
+  const S = $('rdSys'), N = $('rdUns');
+  S.style.width = sp + '%'; N.style.width = (100 - sp) + '%';
+  S.textContent = sp >= 12 ? 'Systematic ' + Math.round(sp) + '%' : '';
+  N.textContent = 100 - sp >= 12 ? 'Nonsystematic ' + Math.round(100 - sp) + '%' : '';
+});
+
+/* ---------- SML security selection ---------- */
+bind(['smlRf', 'smlRm', 'smlB', 'smlF'], function () {
+  const rf = parseFloat($('smlRf').value) / 100, rm = parseFloat($('smlRm').value) / 100, b = parseFloat($('smlB').value), f = parseFloat($('smlF').value) / 100;
+  if ([rf, rm, b, f].some(isNaN)) { setText('smlErr', 'Enter a number in each box.'); return; }
+  if (b < 0 || b > 3) { setText('smlErr', 'Use a beta between 0 and 3.'); return; }
+  setText('smlErr', '');
+  const req = rf + b * (rm - rf), a = f - req, top = Math.max(0.2, rf + 3 * (rm - rf), f, req) * 1.1, bot = Math.min(0, f, rf) - 0.01;
+  const c = chart($('smlSvg'), { xr: [0, 3], yr: [bot, top], xt: 0.5, fx: v => v.toFixed(1), xl: 'Beta (β)', yl: 'Expected return' });
+  const yt = top > 0.3 ? 0.1 : 0.05; for (let v = 0; v <= top; v += yt) { c.el('line', { x1: c.L, x2: c.L + c.pw, y1: c.Y(v), y2: c.Y(v), 'class': 'grid' }); c.text(c.L - 8, c.Y(v) + 4, pct(v), { 'text-anchor': 'end' }); }
+  c.line([[0, rf], [3, rf + 3 * (rm - rf)]], 'var(--c1)', 3);
+  c.dot(0, rf, 'var(--c1)'); c.text(c.X(0) + 8, c.Y(rf) + 16, 'Rf', {}, 't1');
+  c.dot(1, rm, 'var(--c1)'); c.text(c.X(1) + 8, c.Y(rm) + 16, 'M (β = 1)', {}, 't1');
+  c.el('line', { x1: c.X(b), x2: c.X(b), y1: c.Y(req), y2: c.Y(f) }, null, { stroke: 'var(--c4)', strokeDasharray: '3 3' });
+  const col = Math.abs(a) < 0.0005 ? 'var(--c4)' : a > 0 ? 'var(--c2)' : 'var(--c3)';
+  c.dot(b, f, col, 7); c.text(c.X(b) + 10, c.Y(f) + 4, 'Your forecast', {}, 't1');
+  setText('smlReq', pct(req, 2)); setText('smlA', (a >= 0 ? '+' : '') + pct(a, 2));
+  setText('smlV', Math.abs(a) < 0.0005 ? 'Fairly valued' : a > 0 ? 'Undervalued: buy' : 'Overvalued: sell');
+});
+
+/* ---------- Four lines ---------- */
+(function () {
+  const rf = 0.03, small = { w: 320, h: 230, ml: 40 };
+  const pf = (svg, xl) => chart(svg, Object.assign({ xr: [0, 0.3], yr: [0, 0.17], xl: xl, yl: 'Expected return' }, small));
+  const b = tangency(rf);
+  let c = pf($('ln1'), 'Standard deviation (σ)');
+  c.line(frontierPts(true).filter(p => p[1] < 0.07), 'var(--c4)', 1.5, '4 3'); c.line(frontierPts(false), 'var(--c2)', 2.5);
+  const sub = { s: sigF(0.08), E: 0.08 }, s1 = (sub.E - rf) / sub.s;
+  c.line([[0, rf], [0.3, rf + s1 * 0.3]], 'var(--c4)', 1.5, '5 4'); c.line([[0, rf], [0.3, rf + b.S * 0.3]], 'var(--c1)', 2.5);
+  c.dot(0, rf, 'var(--c1)', 4); c.text(c.X(0) + 6, c.Y(rf) + 14, 'Rf', {}, 't1');
+  c.dot(sub.s, sub.E, 'var(--c4)', 4); c.text(c.X(sub.s) + 6, c.Y(sub.E) + 14, 'worse CAL');
+  c.dot(b.s, b.E, 'var(--c1)', 5); c.text(c.X(b.s) - 6, c.Y(b.E) - 8, 'optimal P', { 'text-anchor': 'end' }, 't1');
+  c = pf($('ln2'), 'Standard deviation (σ)');
+  c.line(frontierPts(true).filter(p => p[1] < 0.07), 'var(--c4)', 1.5, '4 3'); c.line(frontierPts(false), 'var(--c2)', 2.5);
+  c.line([[0, rf], [0.3, rf + b.S * 0.3]], 'var(--c1)', 2.5);
+  c.dot(0, rf, 'var(--c1)', 4); c.text(c.X(0) + 6, c.Y(rf) + 14, 'Rf', {}, 't1');
+  c.dot(b.s, b.E, 'var(--c1)', 6); c.text(c.X(b.s) - 6, c.Y(b.E) - 8, 'M (market)', { 'text-anchor': 'end' }, 't1');
+  c.text(c.X(0.21), c.Y(0.05), 'slope = Sharpe ratio of M', { 'text-anchor': 'middle' });
+  c = chart($('ln3'), Object.assign({ xr: [0, 2], yr: [0, 0.18], xl: 'Beta (β)', yl: 'Expected return' }, small));
+  const Rm = 0.09; c.line([[0, rf], [2, rf + 2 * (Rm - rf)]], 'var(--c1)', 2.5);
+  c.dot(0, rf, 'var(--c1)', 4); c.text(c.X(0) + 6, c.Y(rf) + 14, 'Rf', {}, 't1');
+  c.dot(1, Rm, 'var(--c1)', 5); c.text(c.X(1) + 7, c.Y(Rm) + 14, 'M (β = 1)', {}, 't1');
+  c.dot(1.35, 0.145, 'var(--c2)', 4); c.text(c.X(1.35), c.Y(0.145) - 8, 'above: undervalued', { 'text-anchor': 'middle' });
+  c.dot(0.55, 0.035, 'var(--c3)', 4); c.text(c.X(0.55) + 8, c.Y(0.035) + 4, 'below: overvalued');
+  c = chart($('ln4'), Object.assign({ xr: [-0.1, 0.1], yr: [-0.13, 0.13], cross: true, xl: 'Market excess return', yl: 'Stock excess return' }, small));
+  const al = 0.015, be = 1.2; let seed = 7; const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280 - 0.5; };
+  for (let i = 0; i < 22; i++) { const x = (i / 21 - 0.5) * 0.17; c.dot(x, al + be * x + rnd() * 0.05, 'var(--c4)', 2.8); }
+  c.line([[-0.1, al - be * 0.1], [0.1, al + be * 0.1]], 'var(--c1)', 2.5);
+  c.dot(0, al, 'var(--c1)', 4); c.text(c.X(0) + 7, c.Y(al) - 6, 'α (intercept)', {}, 't1');
+  c.text(c.X(0.06), c.Y(al + be * 0.06) + 22, 'slope = β', { 'text-anchor': 'middle' });
+})();
+
+/* ---------- Progress, notes, save ---------- */
+const DATA = JSON.parse($('study-data').textContent);
+const LS = 'cfa-pm-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'sheet', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+const list = $('progList');
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); list.appendChild(row);
+});
+$('notes').value = state.notes || '';
+$('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try {
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Portfolio-Management-Guide.html';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.');
+  } catch (e) { setText('saveMsg', 'Download blocked here. Open the file in your browser and try again.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(); const txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const done = () => setText('saveMsg', 'Copied. Paste it into your chat with Claude.');
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); });
+  else { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); }
+});
+</script>
+</body>
+</html>

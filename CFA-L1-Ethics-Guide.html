@@ -1,0 +1,871 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — ETHICAL AND PROFESSIONAL STANDARDS STUDY GUIDE
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes, drill score and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+  Read that block first to restore context, then rebuild or extend content as asked.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Ethics Guide</title>
+<style>
+:root{
+  --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;
+  --border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);
+  --accent:#534AB7;--accent-bg:#EEEDFE;
+  --c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;
+  --good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+    --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+    --accent:#AFA9EC;--accent-bg:#26215C;
+    --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+    --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+  --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+  --accent:#AFA9EC;--accent-bg:#26215C;
+  --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;
+  --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:40px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:17px;max-width:720px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}
+nav.toc .row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}
+.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.card.soft{background:var(--surface-2);border-color:transparent}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;border-radius:0;margin:12px 0}
+.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.tip{border-left-color:var(--good);background:var(--good-bg)}
+.callout b{font-weight:600}
+.callout.trap b{color:var(--bad)}
+.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}
+.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}
+button:hover{background:var(--surface-2)}
+button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+button.sel{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.pill.g{background:var(--good-bg);color:var(--good)}
+.pill.w{background:var(--warn-bg);color:var(--warn)}
+.pill.b{background:var(--bad-bg);color:var(--bad)}
+.pill.a{background:var(--accent-bg);color:var(--accent)}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+.map .grp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px}
+.map .grp h4{font-size:14px;margin-bottom:8px}
+.map a{display:block;font-size:13px;color:var(--text);text-decoration:none;padding:5px 8px;border-radius:6px;margin:2px 0;background:var(--surface-2)}
+.map a:hover{background:var(--accent-bg);color:var(--accent)}
+.map a b{color:var(--accent);margin-right:6px}
+.std{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin:12px 0;scroll-margin-top:60px}
+.std.flash{outline:2px solid var(--accent)}
+.std .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.std .code{font-weight:700;color:var(--accent);font-size:15px}
+.std .name{font-weight:600;font-size:17px}
+.std .sum{font-size:15px;margin-bottom:10px}
+.std .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.std .cols h5{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 4px}
+.std ul{font-size:14px;margin:0}
+.std .trap{margin-top:10px;font-size:14px;border-left:3px solid var(--bad);background:var(--bad-bg);padding:8px 12px}
+.std .trap b{color:var(--bad)}
+.tree .q{font-weight:600;margin-bottom:10px}
+.tree .opts{display:flex;gap:8px;flex-wrap:wrap}
+.tree .path{font-size:13px;color:var(--muted);margin-bottom:8px}
+.tree .res{padding:10px 14px;border-radius:8px;margin-bottom:10px;font-size:15px}
+.tree .res.g{background:var(--good-bg);color:var(--good)}
+.tree .res.w{background:var(--warn-bg);color:var(--warn)}
+.tree .res.b{background:var(--bad-bg);color:var(--bad)}
+.err{color:var(--bad);font-size:13px}
+.drill .scn{font-size:16px;background:var(--surface-2);padding:12px 14px;border-radius:8px;margin:8px 0 12px}
+.fb{margin-top:10px;padding:10px 14px;border-radius:8px;font-size:14px}
+.fb.g{background:var(--good-bg);color:var(--good)}
+.fb.b{background:var(--bad-bg);color:var(--bad)}
+.dq{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)}
+.dq .btns{display:flex;gap:6px}
+.dq .why{grid-column:1 / -1;font-size:13px}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}
+details.q summary{cursor:pointer;font-weight:500;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}
+details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}
+details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.ladder{display:flex;flex-direction:column;gap:8px}
+.ladder .r{display:flex;align-items:center;gap:12px}
+.ladder .b{height:40px;border-radius:8px;display:flex;align-items:center;padding:0 14px;font-weight:600;font-size:14px;color:var(--bg)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.dq{grid-template-columns:1fr}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.std{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I</div>
+  <h1>Ethics guide</h1>
+  <p class="lead">All seven Standards of Professional Conduct, the Code of Ethics, GIPS and the Professional Conduct Program, with decision trees, drills and exam traps. Save this file and re-upload it to Claude to pick up where you left off.</p>
+  <div class="chips">
+    <span class="chip acc">Exam weight 15–20%</span>
+    <span class="chip">About 27–36 of 180 questions</span>
+    <span class="chip">5 learning modules</span>
+    <span class="chip">23 standards</span>
+  </div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a>
+  <a href="#e1">1 · Ethics and trust</a>
+  <a href="#e2">2 · Code and Standards</a>
+  <a href="#e3">3 · Standards I–II</a>
+  <a href="#e4">4 · Standard III</a>
+  <a href="#e5">5 · Standards IV–V</a>
+  <a href="#e6">6 · Standards VI–VII</a>
+  <a href="#e7">7 · GIPS</a>
+  <a href="#sheet">Cheat sheet</a>
+  <a href="#drills">Drills</a>
+  <a href="#practice">Practice</a>
+  <a href="#progress">My progress</a>
+</div></nav>
+
+<!-- ================= GAME PLAN ================= -->
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <p class="muted">What candidates who passed wish they'd known going in.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>Why ethics matters so much</h4>
+      <ul class="small">
+        <li>It's one of the <b>largest topics</b> at Level I, and the same Standards are tested at all three levels. Learn them properly once.</li>
+        <li>CFA Institute has historically said it may use ethics performance to decide <b>borderline pass/fail results</b>, so strong ethics can tip a close score.</li>
+        <li>Questions are short <b>scenarios</b>: identify the standard involved, then decide whether there's a violation and what the person should do.</li>
+        <li>The exam questions are modeled on the examples in the <b>Standards of Practice Handbook</b> (free on the CFA Institute site). Reading it is the single best ethics study step.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Highest-yield items, ranked</h4>
+      <ol class="small">
+        <li>II(A) Material nonpublic information and the mosaic theory</li>
+        <li>I(B) Gifts and independence vs IV(B) written consent</li>
+        <li>III(B) Fair dealing: trade and IPO allocation</li>
+        <li>I(A) Strictest law, dissociation</li>
+        <li>VII(B) How to refer to the CFA designation</li>
+        <li>IV(A) Leaving an employer; IV(C) supervisors</li>
+        <li>III(A) Soft dollars, proxy voting, who the client is</li>
+        <li>III(C) Suitability and unsolicited trades</li>
+        <li>VI(B) Priority of transactions; VI(C) referral fees</li>
+        <li>GIPS: who can claim compliance, composites, verification</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout tip"><b>How to answer ethics questions.</b> (1) Ask who is owed a duty: clients first, then employer, then yourself. (2) Find the standard the scenario is testing. (3) Check whether the action <i>required</i> is disclosure, written consent, or refusal (see the cheat sheet). (4) Watch the wording: "most likely violated", "least likely", "best action". A "no violation" choice is often the right answer when the person disclosed properly or followed policy.</div>
+  <div class="callout trap"><b>Top traps.</b> Thinking local law is enough when the Code is stricter. Treating disclosure as enough when written consent is required (IV(B)). Thinking "fair" means "equal" (III(B)). Assuming any information from a company insider is MNPI (it must be material <i>and</i> nonpublic). Writing "CFA Level II" or "a CFA". Assuming individuals can claim GIPS compliance.</div>
+</section>
+
+<!-- ================= PART 1 ================= -->
+<section class="mod" id="e1">
+  <div class="modtag">Part 1 · Learning module 1</div>
+  <h2>Ethics and trust in the investment profession</h2>
+  <p class="muted">Why ethics matters, what makes a profession, and a framework for making decisions.</p>
+
+  <div class="grid two">
+    <div class="card"><h4>Why trust matters</h4><p class="small" style="margin:0">Clients hand over money and rely on advice they can't easily check. Without trust, they invest less, demand more protection, and markets work worse. Ethical conduct builds trust, which benefits clients, firms, the profession and society.</p></div>
+    <div class="card"><h4>What makes a profession</h4><ul class="small" style="margin:0"><li>Specialized knowledge and skills</li><li>High entry standards (e.g. exams, experience)</li><li>A code of ethics and standards of conduct</li><li>Monitoring and enforcement of conduct</li><li>A professional body that develops members and serves society</li></ul></div>
+  </div>
+
+  <h3>1.1 Ethics vs law</h3>
+  <div class="viz">
+    <div class="viz-title">Legal isn't the same as ethical</div>
+    <div class="viz-sub">Laws set a minimum and often lag behind new practices. Ethics often asks for more.</div>
+    <svg id="vennSvg" viewBox="0 0 640 270" role="img" aria-label="Venn diagram of legal and ethical actions">
+      <rect x="1" y="1" width="638" height="268" rx="12" style="fill:var(--surface-2);stroke:var(--border)"/>
+      <circle cx="250" cy="138" r="105" style="fill:var(--c4);opacity:.22;stroke:var(--c4);stroke-width:2"/>
+      <circle cx="390" cy="138" r="105" style="fill:var(--c2);opacity:.22;stroke:var(--c2);stroke-width:2"/>
+      <text x="200" y="38" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">Legal</text>
+      <text x="440" y="38" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">Ethical</text>
+      <text x="200" y="134" text-anchor="middle" style="fill:var(--text);font:600 13px var(--sans)">Legal but</text>
+      <text x="200" y="152" text-anchor="middle" style="fill:var(--text);font:600 13px var(--sans)">unethical</text>
+      <text x="320" y="134" text-anchor="middle" style="fill:var(--good);font:700 13px var(--sans)">Legal and</text>
+      <text x="320" y="152" text-anchor="middle" style="fill:var(--good);font:700 13px var(--sans)">ethical</text>
+      <text x="440" y="134" text-anchor="middle" style="fill:var(--text);font:600 13px var(--sans)">Ethical but</text>
+      <text x="440" y="152" text-anchor="middle" style="fill:var(--text);font:600 13px var(--sans)">illegal</text>
+      <text x="320" y="258" text-anchor="middle" style="fill:var(--muted);font:13px var(--sans)">Outside both circles: illegal and unethical</text>
+    </svg>
+  </div>
+
+  <h3>1.2 The ethical decision-making framework</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1 · Identify</div><p class="small" style="margin:4px 0 0">Relevant facts, stakeholders and the duties you owe them, ethical principles, and conflicts of interest.</p></div>
+    <div class="step"><div class="n">2 · Consider</div><p class="small" style="margin:4px 0 0">Situational influences, additional guidance (compliance, mentors, the Code), and alternative actions.</p></div>
+    <div class="step"><div class="n">3 · Decide and act</div><p class="small" style="margin:4px 0 0">Choose and take the action that best fulfills your duties.</p></div>
+    <div class="step"><div class="n">4 · Reflect</div><p class="small" style="margin:4px 0 0">Was the outcome what you expected? What would you do differently next time?</p></div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card small"><h4>What gets in the way</h4><b>Overconfidence</b> ("I'm an ethical person, so this must be fine"). <b>Situational influences</b>: money, prestige, loyalty to a boss or colleagues, peer pressure. <b>Short-term focus</b>: bonuses and quarterly targets crowd out long-term consequences.</div>
+    <div class="card small"><h4>Ethical vs unethical decisions</h4>Ethical decisions consider the impact on all stakeholders, not just yourself or your firm. A useful test: would you be comfortable if the decision were reported on the front page of a newspaper?</div>
+  </div>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="mod" id="e2">
+  <div class="modtag">Part 2 · Learning module 2</div>
+  <h2>The Code of Ethics, Standards and Professional Conduct Program</h2>
+  <p class="muted">The six principles of the Code, the map of the seven Standards, and how violations are handled.</p>
+
+  <h3>2.1 The Code of Ethics (paraphrased)</h3>
+  <div class="grid">
+    <div class="card small"><b>1 · Integrity.</b> Act with integrity, competence, diligence and respect, and ethically, toward the public, clients, prospects, employers, employees, colleagues and other market participants.</div>
+    <div class="card small"><b>2 · Clients first.</b> Put the integrity of the profession and clients' interests above your own.</div>
+    <div class="card small"><b>3 · Care and judgment.</b> Use reasonable care and independent professional judgment in analysis, recommendations and actions.</div>
+    <div class="card small"><b>4 · Professional conduct.</b> Practice, and encourage others to practice, in a professional and ethical way that reflects well on you and the profession.</div>
+    <div class="card small"><b>5 · Market integrity.</b> Promote the integrity and viability of global capital markets for the benefit of society.</div>
+    <div class="card small"><b>6 · Competence.</b> Maintain and improve your own competence, and strive to improve that of other investment professionals.</div>
+  </div>
+
+  <h3>2.2 Map of the Standards</h3>
+  <p class="small muted">Click any standard to jump to its summary.</p>
+  <div class="map" id="stdMap"></div>
+
+  <h3>2.3 Priority of duties</h3>
+  <div class="viz">
+    <div class="ladder">
+      <div class="r"><div class="b" style="width:100%;background:var(--c2)">1 · Clients (and the integrity of markets)</div></div>
+      <div class="r"><div class="b" style="width:75%;background:var(--c1)">2 · Employer</div></div>
+      <div class="r"><div class="b" style="width:50%;background:var(--c4)">3 · You</div></div>
+    </div>
+    <p class="small" style="margin:10px 0 0">When duties conflict, serve them in this order. Loyalty to your employer never requires harming clients or breaking the law.</p>
+  </div>
+
+  <h3>2.4 Professional Conduct Program</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1 · Trigger</div><p class="small" style="margin:4px 0 0">Self-disclosure on the annual Professional Conduct Statement, written complaints, public information (news, regulators), exam proctor reports, or analysis of exam results and materials.</p></div>
+    <div class="step"><div class="n">2 · Investigation</div><p class="small" style="margin:4px 0 0">Professional Conduct staff investigate. They may ask for documents and an explanation; you must cooperate.</p></div>
+    <div class="step"><div class="n">3 · Outcome</div><p class="small" style="margin:4px 0 0">No action, a cautionary letter, further investigation, or a proposed sanction.</p></div>
+    <div class="step"><div class="n">4 · Hearing</div><p class="small" style="margin:4px 0 0">If you accept the sanction, it's imposed. If you reject it, a hearing panel of the Disciplinary Review Committee decides.</p></div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card small"><h4>Sanctions for members</h4>Public censure, suspension of membership and of the right to use the CFA designation, or revocation.</div>
+    <div class="card small"><h4>Sanctions for candidates</h4>Suspension from, or a permanent ban on, taking CFA exams; exam results can be voided.</div>
+  </div>
+  <p class="small">Members sign the Professional Conduct Statement every year; candidates sign it when they register for an exam.</p>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="mod" id="e3">
+  <div class="modtag">Part 3 · Learning module 3</div>
+  <h2>Standard I: Professionalism · Standard II: Integrity of capital markets</h2>
+  <p class="muted">Seven standards on the law, independence, honesty, competence, inside information and manipulation.</p>
+  <div id="grpI"></div>
+
+  <div class="viz">
+    <div class="viz-title">Which rule do I follow? (Standard I(A))</div>
+    <div class="viz-sub">Compare the laws that apply to you with the Code and Standards.</div>
+    <div class="grid two">
+      <label class="small">Law where you live and work<br><select id="lawA" style="width:100%"><option value="none">No securities laws</option><option value="less" selected>Less strict than the Code</option><option value="more">Stricter than the Code</option></select></label>
+      <label class="small">Another law that applies (e.g. where the client or business is)<br><select id="lawB" style="width:100%"><option value="none" selected>No securities laws, or doesn't apply</option><option value="less">Less strict than the Code</option><option value="more">Stricter than the Code</option></select></label>
+    </div>
+    <div class="tree" style="margin-top:12px"><div class="res" id="lawOut"></div></div>
+  </div>
+
+  <div id="grpII"></div>
+
+  <div class="viz tree" id="treeMnpi" data-title="Is it material nonpublic information? (Standard II(A))"></div>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section class="mod" id="e4">
+  <div class="modtag">Part 4 · Learning module 3</div>
+  <h2>Standard III: Duties to clients</h2>
+  <p class="muted">Loyalty, fair dealing, suitability, performance presentation and confidentiality.</p>
+  <div id="grpIII"></div>
+  <div class="viz tree" id="treeTrade" data-title="A client asks for a trade you think is unsuitable (Standard III(C))"></div>
+</section>
+
+<!-- ================= PART 5 ================= -->
+<section class="mod" id="e5">
+  <div class="modtag">Part 5 · Learning module 3</div>
+  <h2>Standard IV: Duties to employers · Standard V: Investment analysis</h2>
+  <p class="muted">Loyalty to your employer, outside compensation, supervision, research, client communication and records.</p>
+  <div id="grpIV"></div>
+  <div class="viz tree" id="treeGift" data-title="Someone offers you a gift or extra pay (Standards I(B) and IV(B))"></div>
+  <div class="viz tree" id="treeViol" data-title="You discover a violation (Standards I(A) and IV(C))"></div>
+  <div id="grpV"></div>
+</section>
+
+<!-- ================= PART 6 ================= -->
+<section class="mod" id="e6">
+  <div class="modtag">Part 6 · Learning module 3</div>
+  <h2>Standard VI: Conflicts of interest · Standard VII: CFA Institute responsibilities</h2>
+  <p class="muted">Disclosure, priority of transactions, referral fees, exam conduct and the CFA designation.</p>
+  <div id="grpVI"></div>
+  <div id="grpVII"></div>
+  <div class="viz">
+    <div class="viz-title">Using the CFA designation correctly (Standard VII(B))</div>
+    <div class="viz-sub">Decide whether each statement is acceptable.</div>
+    <div id="desQuiz"></div>
+    <p class="small" style="margin:10px 0 0" id="desScore"></p>
+  </div>
+</section>
+
+<!-- ================= PART 7 ================= -->
+<section class="mod" id="e7">
+  <div class="modtag">Part 7 · Learning modules 4–5</div>
+  <h2>Global Investment Performance Standards (GIPS) and ethics application</h2>
+  <p class="muted">Why GIPS exist, who can claim compliance, composites and verification.</p>
+
+  <div class="grid two">
+    <div class="card"><h4>Why GIPS exist</h4><p class="small" style="margin:0">Voluntary, global standards created by CFA Institute so that investment performance is presented with <b>fair representation and full disclosure</b>. They stop practices like showing only the best accounts or the best time periods, and they let investors <b>compare firms</b> on a like-for-like basis across countries.</p></div>
+    <div class="card"><h4>Who can claim compliance</h4><ul class="small" style="margin:0"><li><b>Firms</b> (and asset owners), never individuals, software, or a single product</li><li>Compliance is <b>firm-wide</b>: the firm must meet <b>all</b> applicable requirements</li><li>No partial claims ("complies except for…")</li><li>Must use the required compliance statement wording</li></ul></div>
+  </div>
+
+  <h3>7.1 Composites</h3>
+  <div class="viz">
+    <div class="viz-title">Every portfolio goes into a composite</div>
+    <div class="viz-sub">A composite groups portfolios managed to a similar strategy or mandate. All actual, fee-paying, discretionary portfolios must be in at least one composite, so the firm can't hide its losers.</div>
+    <div class="grid">
+      <div class="card soft small"><h4>Large-cap growth composite</h4><span class="pill a">Client A</span> <span class="pill a">Client D</span> <span class="pill a">Client F</span> <span class="pill a">Client H</span></div>
+      <div class="card soft small"><h4>Core bond composite</h4><span class="pill g">Client B</span> <span class="pill g">Client C</span> <span class="pill g">Client G</span></div>
+      <div class="card soft small"><h4>Balanced composite</h4><span class="pill w">Client E</span> <span class="pill w">Client I</span></div>
+      <div class="card soft small"><h4>Not in a composite</h4><span class="pill b">Client J: non-discretionary</span><br><span class="muted">Only allowed when the portfolio isn't fee-paying or discretionary (e.g. client restrictions stop the firm from applying its strategy).</span></div>
+    </div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Performance history</h4>A firm must first present at least <b>5 years</b> of GIPS-compliant performance (or since inception if shorter), then add a year each year until it shows at least <b>10 years</b>.</div>
+    <div class="card small"><h4>Verification</h4>An <b>optional</b> review by an independent third party. It covers the <b>whole firm</b>: whether composites are built correctly and whether policies and calculation procedures meet GIPS. It isn't done composite by composite, and it isn't required to claim compliance, but it adds credibility.</div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Benefits for firms</h4>Credibility with prospects, ability to compete globally, and better internal controls and data.</div>
+    <div class="card small"><h4>Benefits for investors</h4>Confidence that performance is complete and fairly presented, and easier comparison between managers.</div>
+  </div>
+  <div class="callout"><b>GIPS vs Standard III(D).</b> III(D) requires fair, accurate and complete performance presentation. Complying with GIPS is one way to meet it, but the Standards don't require GIPS compliance.</div>
+
+  <h3>7.2 Ethics application</h3>
+  <p class="small">The final module is case studies that combine several standards at once. Practice spotting <b>every</b> standard a scenario touches: one action often violates two (e.g. trading ahead of clients on inside information breaks II(A) and VI(B)).</p>
+</section>
+
+<!-- ================= CHEAT SHEET ================= -->
+<section class="mod" id="sheet">
+  <div class="modtag">Review</div>
+  <h2>Cheat sheet: what each situation requires</h2>
+  <p class="muted">Most ethics questions turn on whether you must disclose, get written consent, refuse, or simply follow a rule.</p>
+  <div class="tbl"><table>
+    <tr><th>Situation</th><th>What's required</th><th>Standard</th></tr>
+    <tr><td>Gift from a client as thanks for past performance</td><td><span class="pill g">Disclose</span> to employer</td><td>I(B)</td></tr>
+    <tr><td>Bonus from a client tied to <i>future</i> performance</td><td><span class="pill w">Written consent</span> from employer</td><td>IV(B)</td></tr>
+    <tr><td>Outside work (board seat, consulting) that could compete with your employer</td><td><span class="pill w">Written consent</span> from employer; disclose conflicts to clients</td><td>IV(B), VI(A)</td></tr>
+    <tr><td>More-than-modest gift from a broker, issuer or vendor seeking influence</td><td><span class="pill b">Refuse</span></td><td>I(B)</td></tr>
+    <tr><td>Issuer-paid research</td><td>Flat fee only, not tied to conclusions; <span class="pill g">disclose</span></td><td>I(B)</td></tr>
+    <tr><td>Referral fees paid or received</td><td><span class="pill g">Disclose</span> nature and value to employer, clients and prospects <b>before</b> they engage</td><td>VI(C)</td></tr>
+    <tr><td>You own shares (or have another interest) in a security you recommend</td><td><span class="pill g">Disclose</span> prominently, in plain language</td><td>VI(A)</td></tr>
+    <tr><td>You're a supervisor and compliance procedures are inadequate</td><td><span class="pill b">Decline</span> supervisory responsibility in writing until fixed</td><td>IV(C)</td></tr>
+    <tr><td>Your firm or a colleague is breaking the law or the Code</td><td><span class="pill b">Dissociate</span>; report to supervisor/compliance</td><td>I(A)</td></tr>
+    <tr><td>You possess material nonpublic information</td><td><span class="pill b">Don't trade</span> or cause others to; encourage public disclosure</td><td>II(A)</td></tr>
+    <tr><td>Planning to leave and compete</td><td>May prepare; <span class="pill b">no soliciting</span> clients or taking records before leaving</td><td>IV(A)</td></tr>
+    <tr><td>Client confidential information</td><td>Keep it confidential unless illegal activity, required by law, or client permits</td><td>III(E)</td></tr>
+    <tr><td>Unsolicited unsuitable client trade</td><td><span class="pill w">Discuss</span> suitability before executing</td><td>III(C)</td></tr>
+    <tr><td>Hot IPO or block trade allocation</td><td>Pro rata to all suitable clients; clients before you and your family</td><td>III(B), VI(B)</td></tr>
+    <tr><td>Record retention with no law that applies</td><td>Keep at least <b>7 years</b>; records belong to the firm</td><td>V(C)</td></tr>
+    <tr><td>Proxy voting</td><td>Vote in clients' best interest; cost–benefit decides whether to vote</td><td>III(A)</td></tr>
+    <tr><td>Using client brokerage (soft dollars)</td><td>Only for research that benefits those clients; seek best execution</td><td>III(A)</td></tr>
+    <tr><td>Group research you disagree with</td><td>Can put your name on it if it has a reasonable basis; document dissent</td><td>V(A)</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= DRILLS ================= -->
+<section class="mod" id="drills">
+  <div class="modtag">Practice the core skill</div>
+  <h2>Which standard is it?</h2>
+  <p class="muted">The most important ethics skill is spotting the standard a scenario is testing. Pick one, check it, then move on.</p>
+  <div class="viz drill">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><div class="small muted" id="drPos"></div><div class="small" id="drScore"></div></div>
+    <div class="scn" id="drScn"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <select id="drSel" aria-label="Choose a standard" style="min-width:260px"></select>
+      <button class="primary" id="drCheck">Check</button>
+      <button id="drNext">Next scenario</button>
+      <button id="drReset">Start over</button>
+    </div>
+    <div class="err" id="drErr"></div>
+    <div id="drFb"></div>
+  </div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div>
+  <h2>Practice questions</h2>
+  <p class="muted">Work each one before opening the answer.</p>
+
+  <details class="q"><summary><span class="qn">1</span>An analyst works in Country A, whose laws are less strict than the Code. Her clients are in Country B, whose laws are stricter than the Code and apply to this business. She should follow: A. Country A law  B. the Code and Standards  C. Country B law<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Follow the strictest applicable rule. Country B's law applies and is stricter than the Code. Standard I(A).</div></details>
+
+  <details class="q"><summary><span class="qn">2</span>A portfolio manager learns that her firm is front-running client orders. Her most appropriate action is to: A. report the firm to regulators immediately  B. dissociate from the activity, for example by reporting it to compliance and refusing to take part  C. do nothing, because she isn't personally involved<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The Standards require dissociation. Reporting to regulators isn't required by the Standards (though it may be by law). Doing nothing can count as participation. Standard I(A).</div></details>
+
+  <details class="q"><summary><span class="qn">3</span>A grateful client gives an adviser concert tickets for last year's strong returns. The adviser: A. must refuse  B. may accept, and should disclose it to her employer  C. needs written consent from her employer first<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A thank-you for past performance poses little threat to independence. Disclose to the employer. C would apply if the gift were tied to future performance (IV(B)). Standard I(B).</div></details>
+
+  <details class="q"><summary><span class="qn">4</span>A broker offers a fund manager a luxury golf weekend, hoping to win more of the fund's trades. The manager should: A. accept and disclose it  B. accept if her employer consents  C. refuse<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> A lavish gift from someone seeking to influence your decisions could reasonably compromise your independence. Standard I(B).</div></details>
+
+  <details class="q"><summary><span class="qn">5</span>A company pays an analyst to write a research report on it. The arrangement most consistent with the Standards is: A. a flat fee agreed in advance, disclosed in the report  B. a fee that rises if the stock price rises  C. payment in the company's shares<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Pay must not depend on the conclusions or the stock's performance, and the arrangement must be disclosed. Standard I(B).</div></details>
+
+  <details class="q"><summary><span class="qn">6</span>Which is <i>least likely</i> a violation of Standard I(C) Misrepresentation? A. Using a chart from a competitor's report without citing it  B. Using index return data from a recognized financial data service without citing it  C. Telling clients a corporate bond fund "can't lose money"<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Factual data from recognized financial and statistical reporting services can be used without acknowledgment. A is plagiarism; C guarantees performance of a risky investment.</div></details>
+
+  <details class="q"><summary><span class="qn">7</span>A charterholder files for personal bankruptcy after losing his job. No fraud was involved. This is: A. a violation of I(D) Misconduct  B. not a violation  C. a violation of I(E) Competence<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Personal financial trouble without dishonesty or fraud doesn't reflect on professional integrity. Standard I(D).</div></details>
+
+  <details class="q"><summary><span class="qn">8</span>At a restaurant, an analyst overhears a CEO say his company will announce a big acquisition next week. The analyst: A. may trade, since she got it by accident  B. may tell clients but not trade herself  C. must not trade or cause others to trade<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> It's material and nonpublic regardless of how she learned it. Standard II(A).</div></details>
+
+  <details class="q"><summary><span class="qn">9</span>An analyst combines public filings with nonmaterial observations from store visits and concludes a retailer will miss earnings. Recommending a sale is: A. a violation of II(A)  B. allowed under the mosaic theory  C. allowed only after the earnings release<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Combining public information with nonmaterial nonpublic information is allowed, even if the conclusion would be material on its own.</div></details>
+
+  <details class="q"><summary><span class="qn">10</span>A trader repeatedly buys and sells a thinly traded stock between accounts he controls to make it look actively traded. This violates: A. II(A)  B. II(B)  C. III(B)<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Transaction-based manipulation: creating a false impression of volume to mislead the market.</div></details>
+
+  <details class="q"><summary><span class="qn">11</span>For a company's defined benefit pension plan, the manager's duty of loyalty is owed to: A. the company's management  B. the plan's participants and beneficiaries  C. the plan's trustees only<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The "client" is the plan's participants and beneficiaries. Standard III(A).</div></details>
+
+  <details class="q"><summary><span class="qn">12</span>Which use of client brokerage commissions (soft dollars) is acceptable? A. Research that benefits the clients whose trades paid for it  B. The firm's office rent  C. Marketing materials<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Brokerage belongs to the client and may only buy research and services that benefit the client. Standard III(A).</div></details>
+
+  <details class="q"><summary><span class="qn">13</span>A hot IPO is oversubscribed. The best allocation is: A. to the firm's largest clients first  B. pro rata to all clients for whom it's suitable, before any personal or family accounts  C. equally to every client, suitable or not<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Fair dealing and priority of transactions. Standards III(B) and VI(B).</div></details>
+
+  <details class="q"><summary><span class="qn">14</span>A firm offers a premium service with faster research delivery for a higher fee. Under fair dealing this is: A. a violation, because all clients must be treated equally  B. acceptable if disclosed and available to all clients  C. acceptable only for institutional clients<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Fair doesn't mean equal. Different service levels are fine if disclosed and offered to everyone, and they don't disadvantage other clients. Standard III(B).</div></details>
+
+  <details class="q"><summary><span class="qn">15</span>A conservative client insists on a large speculative purchase that would materially change his portfolio's risk. The adviser should: A. execute it without comment  B. refuse to execute it  C. discuss its unsuitability; if the client insists, update the IPS or reconsider the relationship<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Standard III(C) Suitability, for unsolicited trades.</div></details>
+
+  <details class="q"><summary><span class="qn">16</span>A manager presents performance for her five best accounts and omits closed accounts. This violates: A. III(D)  B. V(B)  C. I(D)<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Performance presentation must be fair, accurate and complete.</div></details>
+
+  <details class="q"><summary><span class="qn">17</span>An adviser gives client records to CFA Institute's Professional Conduct staff during an investigation. This: A. violates III(E)  B. doesn't violate III(E)  C. requires the client's written permission first<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Cooperating with a Professional Conduct Program investigation isn't a breach of confidentiality.</div></details>
+
+  <details class="q"><summary><span class="qn">18</span>Before resigning to start her own firm, an analyst emails her employer's clients inviting them to follow her. This: A. violates IV(A)  B. is fine if she has no non-compete agreement  C. is fine if she uses her personal email<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Soliciting clients before leaving breaches the duty of loyalty. After she leaves, she may contact them using public information or memory, unless a non-compete applies.</div></details>
+
+  <details class="q"><summary><span class="qn">19</span>A client offers his portfolio manager a bonus if the portfolio beats its benchmark next year. The manager must: A. refuse  B. disclose it to clients  C. get written consent from her employer before accepting<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Compensation tied to future performance could create a conflict with the employer's interests. Standard IV(B).</div></details>
+
+  <details class="q"><summary><span class="qn">20</span>A new head of compliance finds the firm's compliance procedures inadequate. She should: A. accept the role and fix things over time  B. decline in writing to accept supervisory responsibility until adequate procedures are adopted  C. resign<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Standard IV(C) Responsibilities of Supervisors.</div></details>
+
+  <details class="q"><summary><span class="qn">21</span>An analyst disagrees with her team's buy recommendation, which was reached through a sound, well-researched process. She: A. must remove her name from the report  B. may keep her name on it and document her dissent  C. must publish her own opposing report<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The test is whether the group's recommendation has a reasonable and adequate basis. Standard V(A).</div></details>
+
+  <details class="q"><summary><span class="qn">22</span>With no regulatory requirement in place, CFA Institute recommends keeping records for at least: A. 3 years  B. 5 years  C. 7 years<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Standard V(C) Record Retention.</div></details>
+
+  <details class="q"><summary><span class="qn">23</span>A manager's son has a fee-paying account at the firm. When the manager makes a block purchase, he excludes his son's account to avoid any appearance of favoritism. This: A. is required by VI(B)  B. disadvantages a client and is inconsistent with the Standards  C. is a best practice<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Family members' client accounts should be treated like any other client account, neither favored nor disadvantaged.</div></details>
+
+  <details class="q"><summary><span class="qn">24</span>An adviser receives a fee from an accountant for each client referred, and tells only his employer. This: A. complies with VI(C)  B. violates VI(C) because clients and prospects must also be told  C. violates IV(B) only<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Referral arrangements must be disclosed to employer, clients and prospects.</div></details>
+
+  <details class="q"><summary><span class="qn">25</span>After the exam, a candidate posts that "there were a lot of questions on duration and convexity." This: A. is fine, since it's general  B. violates VII(A)  C. violates VII(B)<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Revealing which topics or formulas were tested breaches exam confidentiality. Saying the exam was hard is fine.</div></details>
+
+  <details class="q"><summary><span class="qn">26</span>Which is an acceptable reference? A. "Jane Lee, CFA Level II"  B. "Jane Lee, Level II candidate in the CFA Program"  C. "Jane Lee, CFA (expected 2027)"<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> There's no partial designation. Standard VII(B).</div></details>
+
+  <details class="q"><summary><span class="qn">27</span>Who can claim compliance with GIPS? A. An individual portfolio manager  B. An investment management firm, for the whole firm  C. A firm, for selected composites only<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Compliance is firm-wide; individuals and partial claims aren't allowed.</div></details>
+
+  <details class="q"><summary><span class="qn">28</span>GIPS verification is: A. required and done composite by composite  B. optional and done for the firm as a whole  C. required every year<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Verification is recommended but voluntary, and covers the entire firm.</div></details>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div>
+  <h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. To keep it, click <b>Save progress into this file</b>: that downloads an updated copy of this guide with your progress (and your best drill score) built in. Re-upload that copy to Claude to continue from where you left off.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Standards you mix up, questions you got wrong"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <button class="primary" id="saveFile">Save progress into this file</button>
+    <button id="copyProg">Copy progress for Claude</button>
+    <span class="small muted" id="saveMsg" style="align-self:center"></span>
+  </div>
+</section>
+
+<footer>CFA Level I ethics guide · Created with Claude on 2026-10-18. The Code and Standards are paraphrased, not quoted; the Standards of Practice Handbook on the CFA Institute site is the authoritative source. Check the CFA Institute site for the current curriculum outline.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Ethical and Professional Standards study guide",
+  "file_version": 1,
+  "created": "2026-10-18",
+  "companion_files": ["CFA-L1-Portfolio-Management-Guide.html", "CFA-L1-Fixed-Income-Guide.html", "CFA-L1-Quant-Guide.html"],
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes, drill results and known_weak_spots to restore context. Student prefers visuals and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked. Standards text in this file is paraphrased; refer to the Standards of Practice Handbook for authoritative wording.",
+  "exam_weight": "15-20%",
+  "modules": [
+    {"id": "e1", "name": "Part 1: Ethics and trust (LM 1)", "key": ["trust and the profession", "ethics vs law", "decision framework: identify, consider, decide and act, reflect", "obstacles: overconfidence, situational influences, short-term focus"]},
+    {"id": "e2", "name": "Part 2: Code of Ethics, Standards map, Professional Conduct Program (LM 2)", "key": ["six Code principles", "priority: clients, employer, self", "PCP triggers, investigation, outcomes, hearing panel, sanctions"]},
+    {"id": "e3", "name": "Part 3: Standards I-II (LM 3)", "key": ["I(A) strictest law, dissociation", "I(B) gifts, issuer-paid research", "I(C) misrepresentation, plagiarism, guarantees", "I(D) misconduct", "I(E) competence", "II(A) MNPI, mosaic theory", "II(B) market manipulation"]},
+    {"id": "e4", "name": "Part 4: Standard III (LM 3)", "key": ["III(A) loyalty, prudence, care; soft dollars; proxies", "III(B) fair dealing, allocations", "III(C) suitability, unsolicited trades", "III(D) performance presentation", "III(E) confidentiality exceptions"]},
+    {"id": "e5", "name": "Part 5: Standards IV-V (LM 3)", "key": ["IV(A) loyalty to employer, leaving", "IV(B) written consent", "IV(C) supervisors", "V(A) reasonable basis, group research", "V(B) communication", "V(C) records, 7 years"]},
+    {"id": "e6", "name": "Part 6: Standards VI-VII (LM 3)", "key": ["VI(A) disclose conflicts", "VI(B) priority of transactions, family accounts", "VI(C) referral fees", "VII(A) exam conduct", "VII(B) designation usage"]},
+    {"id": "e7", "name": "Part 7: GIPS and ethics application (LM 4-5)", "key": ["purpose: fair representation, full disclosure, comparability", "firm-wide compliance, no partial claims", "composites", "5 to 10 years history", "verification optional, firm-wide"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "drill": {"best_score": null, "out_of": 26, "last_score": null, "missed": []},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/* ---------- Standards data (paraphrased) ---------- */
+const GROUPS = [
+  ["I", "Professionalism"], ["II", "Integrity of capital markets"], ["III", "Duties to clients"],
+  ["IV", "Duties to employers"], ["V", "Investment analysis, recommendations and actions"], ["VI", "Conflicts of interest"],
+  ["VII", "Responsibilities as a CFA Institute member or candidate"]
+];
+const STD = [
+  { c: "I(A)", n: "Knowledge of the Law", g: "I",
+    s: "Know and follow all laws, rules and regulations that apply to you, including the Code and Standards. Where they differ, follow the stricter. Don't knowingly take part in or help anyone else's violation, and dissociate from any violation you know about.",
+    p: ["Follow the strictest of the applicable law and the Code and Standards.", "Dissociating can mean telling your supervisor or compliance, refusing to take part, or, in extreme cases, leaving the firm. Staying silent can count as participating.", "The Standards don't require you to report violations to regulators, though it may be appropriate or required by law.", "You aren't expected to be a lawyer, but you are expected to know the laws that apply to your work."],
+    r: ["Stay informed about applicable laws and regulations", "Keep reference materials current", "Document compliance procedures", "Ask compliance or legal counsel when unsure", "Firms: adopt a code of ethics and whistleblowing procedures"],
+    t: "Doing nothing isn't neutral. And the Code still applies where local law is silent or weaker." },
+  { c: "I(B)", n: "Independence and Objectivity", g: "I",
+    s: "Use reasonable care and judgment to stay independent and objective. Don't offer, solicit or accept any gift, benefit or compensation that could reasonably be expected to compromise your own or someone else's independence.",
+    p: ["Modest gifts and ordinary business entertainment are fine.", "Client gifts for past performance: accept and disclose to your employer.", "More-than-modest gifts from parties seeking influence (brokers, issuers, vendors): refuse.", "Issuer-paid research: a flat fee agreed in advance, not tied to conclusions, and disclosed.", "Pay your own way for company visits; use commercial transport where it exists.", "Resist pressure from investment banking colleagues, sales, big clients, or your firm's own holdings."],
+    r: ["Firewalls between research and investment banking", "Restricted lists", "Written gift policy with value limits", "Analyst pay not linked to banking deals", "Disclose conflicts"],
+    t: "A client gift tied to future performance falls under IV(B) and needs written consent." },
+  { c: "I(C)", n: "Misrepresentation", g: "I",
+    s: "Don't knowingly make misrepresentations about investment analysis, recommendations, actions or other professional activities.",
+    p: ["Includes false statements, leaving out material facts, and plagiarism.", "Don't guarantee performance of an investment that is inherently uncertain. Describing the terms of a truly guaranteed instrument (e.g. a government bond's coupons) is fine.", "Credit others' work. Factual data from recognized financial or statistical services can be used without citation.", "Don't misstate your qualifications, experience or your firm's services.", "Third-party research or models: disclose the source and do due diligence."],
+    r: ["Written list of the firm's available services and staff qualifications", "Keep copies of sources and cite them", "Check third-party information before using it"],
+    t: "Using another firm's research under your own name is misrepresentation even if the analysis is right." },
+  { c: "I(D)", n: "Misconduct", g: "I",
+    s: "Don't engage in professional conduct involving dishonesty, fraud or deceit, or any act that reflects badly on your professional reputation, integrity or competence.",
+    p: ["Covers professional conduct, plus personal conduct that shows dishonesty (fraud, theft, lying).", "Personal problems without dishonesty, such as a personal bankruptcy without fraud, are generally not violations.", "Behavior such as substance abuse that affects your work can be."],
+    r: ["Firm code of ethics", "List of violations and sanctions", "Background checks on new hires"],
+    t: "Not every legal or personal problem is a violation. The test is dishonesty or harm to professional reputation." },
+  { c: "I(E)", n: "Competence", g: "I",
+    s: "Act with, and maintain and improve, the competence needed to fulfil your professional responsibilities.",
+    p: ["Only take on work you have the knowledge and skill to do, or get help.", "Keep skills current as products and markets change.", "Competence includes knowing the limits of your expertise."],
+    r: ["Continuing education", "Review new products before recommending them", "Consult experts when needed"],
+    t: "Taking a mandate (e.g. complex derivatives) without the skills to manage it." },
+  { c: "II(A)", n: "Material Nonpublic Information", g: "II",
+    s: "If you possess material nonpublic information that could affect an investment's value, don't act on it or cause others to act on it.",
+    p: ["Material: likely to affect the price, or a reasonable investor would want to know it. A specific, reliable source makes information more likely to be material.", "Nonpublic: not yet disseminated so that investors have had a chance to act on it.", "Mosaic theory: combining public information with nonmaterial nonpublic information is allowed, even if the conclusion would be material on its own.", "Encourage the issuer to make the information public.", "Applies to anyone who has the information, not just insiders, including knowledge of pending large trades or upcoming rating changes."],
+    r: ["Firewalls (information barriers)", "Restricted and watch lists", "Preclearance and monitoring of personal trading", "Records of who has access to sensitive information"],
+    t: "How you got it doesn't matter. Overheard or accidental MNPI is still off-limits." },
+  { c: "II(B)", n: "Market Manipulation", g: "II",
+    s: "Don't engage in practices that distort prices or artificially inflate trading volume with the intent to mislead market participants.",
+    p: ["Information-based: spreading false or misleading information, such as pump-and-dump schemes.", "Transaction-based: trades that create a false impression of price or volume, wash trades, or cornering a market.", "Intent is the key test. Legitimate strategies (tax-loss selling, arbitrage, providing liquidity) aren't manipulation."],
+    r: ["Written policies on trading practices", "Trade monitoring", "Training"],
+    t: "A large trade that moves the price isn't manipulation unless the intent was to mislead." },
+  { c: "III(A)", n: "Loyalty, Prudence, and Care", g: "III",
+    s: "Owe clients a duty of loyalty and act with reasonable care and prudent judgment. Act for clients' benefit and put their interests ahead of your employer's and your own.",
+    p: ["Identify the client. For a pension plan, it's the participants and beneficiaries. For a fund, manage to the fund's stated mandate.", "Brokerage commissions belong to the client. Use soft dollars only for research that benefits the clients paying for it, and seek best execution.", "Vote proxies in clients' best interest; cost–benefit analysis can justify not voting. Disclose your proxy policy.", "Prudence: the care, skill and diligence a knowledgeable person would use."],
+    r: ["Follow clients' investment objectives", "Diversify", "Disclose conflicts and compensation", "Vote proxies and keep records", "Review accounts regularly"],
+    t: "The employer's interests never come before the client's." },
+  { c: "III(B)", n: "Fair Dealing", g: "III",
+    s: "Deal fairly and objectively with all clients when providing analysis, making recommendations, taking investment action or doing other professional work.",
+    p: ["Fair doesn't mean equal. Different service levels are fine if disclosed, available to all who want them, and they don't disadvantage other clients.", "Send new or changed recommendations to all relevant clients at the same time.", "Allocate block trades and oversubscribed IPOs pro rata, at the same price, to all clients for whom they're suitable. Don't favor large clients or your own and family accounts."],
+    r: ["Limit who knows about upcoming recommendations", "Shorten the time between decision and dissemination", "Disseminate simultaneously", "Written trade allocation procedures", "Disclose service levels", "Keep lists of clients and their holdings"],
+    t: "Calling your biggest clients first after a rating change is a violation." },
+  { c: "III(C)", n: "Suitability", g: "III",
+    s: "In an advisory relationship, learn the client's experience, objectives and constraints, keep that information current, and recommend only investments suitable for the client's whole portfolio. When managing to a mandate, stay within it.",
+    p: ["Put objectives and constraints in an investment policy statement; review it at least annually and when circumstances change.", "Judge suitability for the portfolio as a whole, not one investment at a time.", "Unsolicited trades: if unsuitable, discuss before executing. If it materially changes the portfolio, update the IPS or reconsider the relationship.", "Funds and mandates: invest only within the stated strategy (no style drift)."],
+    r: ["IPS with client identification, risk and return objectives, constraints and benchmarks", "Regular IPS updates"],
+    t: "A manager of a stated value fund buying growth stocks violates III(C)." },
+  { c: "III(D)", n: "Performance Presentation", g: "III",
+    s: "Make reasonable efforts to ensure performance information is fair, accurate and complete.",
+    p: ["Don't cherry-pick accounts or time periods; include terminated accounts.", "Label simulated or hypothetical results clearly.", "State whether returns are before or after fees.", "Brief presentations are fine if full details are available on request.", "Complying with GIPS is a good way to meet this standard, but it isn't required."],
+    r: ["Apply GIPS", "Consider the audience's knowledge", "Present weighted composites", "Keep records supporting performance"],
+    t: "Showing a past employer's track record as your own without disclosure." },
+  { c: "III(E)", n: "Preservation of Confidentiality", g: "III",
+    s: "Keep information about current, former and prospective clients confidential, unless (1) it concerns the client's illegal activities, (2) disclosure is required by law, or (3) the client permits it.",
+    p: ["Applies to former and prospective clients too.", "Cooperating with a CFA Institute Professional Conduct Program investigation is not a breach.", "Protect electronic records and data."],
+    r: ["Privacy and data security policies", "Limit access to client information"],
+    t: "Sharing client details with colleagues who don't serve that client." },
+  { c: "IV(A)", n: "Loyalty", g: "IV",
+    s: "Act for the benefit of your employer. Don't deprive it of the advantage of your skills, disclose its confidential information, or otherwise harm it.",
+    p: ["You may prepare to leave and compete while still employed, as long as you don't solicit clients, take records or files, or use the employer's time or resources.", "After leaving, you can contact former clients using public sources or memory, unless a non-compete agreement applies.", "Independent work that competes with your employer needs its consent.", "Whistleblowing to protect clients or market integrity can be justified.", "Loyalty to the employer never requires harming clients."],
+    r: ["Follow firm policies on competition, termination and incident reporting", "Know who owns social media and client contact accounts"],
+    t: "Downloading a client list before resigning is a violation even if you never use it." },
+  { c: "IV(B)", n: "Additional Compensation Arrangements", g: "IV",
+    s: "Don't accept gifts, benefits, compensation or consideration that compete with, or might create a conflict with, your employer's interests unless you get written consent from all parties involved.",
+    p: ["Examples: a client bonus tied to future performance; outside consulting or board seats that could compete.", "Consent must be written. Disclosure or verbal approval isn't enough."],
+    r: ["Report the nature, amount and duration of the compensation to your employer in writing"],
+    t: "Telling your boss isn't enough: get written consent." },
+  { c: "IV(C)", n: "Responsibilities of Supervisors", g: "IV",
+    s: "Make reasonable efforts to ensure anyone you supervise complies with laws, rules, regulations and the Code and Standards.",
+    p: ["Adequate compliance procedures are needed. If they're inadequate, decline in writing to accept supervisory responsibility until they're fixed.", "On learning of a violation: investigate promptly and take steps to stop it and prevent it recurring (limit the person's activities, increase supervision). A warning alone isn't enough.", "You can delegate supervisory tasks but not the responsibility.", "Covers everyone you supervise, members or not."],
+    r: ["Code of ethics and compliance procedures", "A compliance officer", "Training", "Incentives that reward ethical behavior"],
+    t: "Relying on an employee's promise not to repeat a violation isn't enough." },
+  { c: "V(A)", n: "Diligence and Reasonable Basis", g: "V",
+    s: "Be diligent, independent and thorough in analysis, recommendations and actions, and have a reasonable and adequate basis, supported by research, for them.",
+    p: ["The level of diligence depends on the investment and its complexity.", "Third-party research: check it's sound (assumptions, rigor, timeliness, objectivity) before relying on it.", "Group research: you can keep your name on a group report you disagree with if the consensus had a reasonable basis and an objective process. You may document your dissent.", "Quantitative models: understand their assumptions and limits, and test them under different scenarios.", "Selecting external advisers or subadvisers requires due diligence."],
+    r: ["Policies for research and for reviewing third-party research", "Model testing criteria", "Due diligence for adviser selection"],
+    t: "You're not required to remove your name from a group report; the test is reasonable basis." },
+  { c: "V(B)", n: "Communication with Clients and Prospective Clients", g: "V",
+    s: "Explain the basic format and general principles of your investment process, and promptly disclose changes that could materially affect it. Use judgment about what's important, separate fact from opinion, and explain risks and limitations.",
+    p: ["Describe risks and limitations (e.g. leverage, liquidity, model risk).", "Present projections and opinions as such, not as facts.", "Tell clients promptly about material changes, such as a new strategy or the departure of key staff.", "Applies to any form of communication, including social media."],
+    r: ["Clear presentation of risks", "Regular updates", "Reports tailored to the client"],
+    t: "Presenting an earnings estimate as a fact." },
+  { c: "V(C)", n: "Record Retention", g: "V",
+    s: "Develop and maintain appropriate records to support your analysis, recommendations, actions and client communications.",
+    p: ["Records belong to the employer; don't take them when you leave.", "Any medium counts: paper, electronic, social media.", "If no regulation applies, CFA Institute recommends keeping records for at least seven years."],
+    r: ["Firm record-retention policy", "Electronic backups"],
+    t: "At a new firm, rebuild research from public sources, not from your old employer's files." },
+  { c: "VI(A)", n: "Avoid or Disclose Conflicts", g: "VI",
+    s: "Avoid conflicts where possible, and make full and fair disclosure of anything that could reasonably be expected to impair your independence and objectivity or interfere with your duties to clients, prospects and employer. Disclosures must be prominent, in plain language, and clear.",
+    p: ["Examples: owning shares you recommend, board seats, compensation tied to recommendations, investment banking relationships, broker incentives.", "Disclose to clients and prospects and to your employer."],
+    r: ["Report personal holdings to the employer", "Disclose compensation arrangements"],
+    t: "A disclosure buried in fine print isn't full and fair." },
+  { c: "VI(B)", n: "Priority of Transactions", g: "VI",
+    s: "Transactions for clients and employers come before transactions where you are the beneficial owner.",
+    p: ["Don't front-run client orders.", "Personal trading isn't banned; clients just come first and mustn't be disadvantaged.", "Family members' fee-paying client accounts are treated like any other client: not favored, not disadvantaged.", "Limit participation in IPOs and private placements (often requires preapproval)."],
+    r: ["Blackout or restricted periods", "Preclearance of personal trades", "Reporting holdings and duplicate statements", "Written personal-trading policy, disclosed to clients"],
+    t: "Leaving a family member's client account out of a block trade disadvantages that client." },
+  { c: "VI(C)", n: "Referral Fees", g: "VI",
+    s: "Disclose to your employer, clients and prospects any compensation, consideration or benefit received from or paid to others for recommending products or services.",
+    p: ["Disclose before the client enters a formal agreement.", "Include the nature and estimated value, cash or in kind.", "Lets clients judge possible bias and the full cost of the service."],
+    r: ["Firm policy on referral arrangements", "Update disclosures periodically"],
+    t: "Telling only your employer and not the clients is incomplete." },
+  { c: "VII(A)", n: "Conduct as Participants in CFA Institute Programs", g: "VII",
+    s: "Don't engage in conduct that compromises the reputation or integrity of CFA Institute or the CFA designation, or the integrity, validity or security of CFA Institute programs.",
+    p: ["Covers cheating, breaking exam rules, revealing confidential exam content (specific questions, or which topics or formulas were or weren't tested), and false statements on the Professional Conduct Statement.", "You may express opinions about CFA Institute, its policies, or how hard the exam was in general.", "Volunteers must keep confidential information private."],
+    r: [],
+    t: "“Lots of duration questions” is a violation; “the exam was hard” is fine." },
+  { c: "VII(B)", n: "Reference to CFA Institute, the CFA Designation, and the CFA Program", g: "VII",
+    s: "Don't misrepresent or exaggerate what membership in CFA Institute, holding the CFA designation, or being a candidate means.",
+    p: ["To use the designation, charterholders must stay members: pay dues and file the annual Professional Conduct Statement.", "“CFA” is an adjective: “Jane Lee, CFA” or “a CFA charterholder”, never “a CFA”.", "No partial designations: “CFA Level II” or “CFA (expected 2027)” aren't allowed. “Level II candidate in the CFA Program” is fine.", "You may state facts (e.g. passed all three levels on the first try) but not claim superior performance because of the charter.", "You're a candidate only while registered for an exam or awaiting results."],
+    r: [],
+    t: "Any wording that implies a partial or expected designation." }
+];
+
+/* ---------- Render map and standard cards ---------- */
+const slug = c => 'std-' + c.replace(/[()]/g, '');
+$('stdMap').innerHTML = GROUPS.map(g => '<div class="grp"><h4>' + g[0] + ' · ' + esc(g[1]) + '</h4>' +
+  STD.filter(s => s.g === g[0]).map(s => '<a href="#' + slug(s.c) + '" data-t="' + slug(s.c) + '"><b>' + s.c + '</b>' + esc(s.n) + '</a>').join('') + '</div>').join('');
+$('stdMap').addEventListener('click', e => { const a = e.target.closest('a'); if (!a) return; const t = $(a.dataset.t); if (t) { t.classList.add('flash'); setTimeout(() => t.classList.remove('flash'), 1600); } });
+GROUPS.forEach(g => {
+  const box = $('grp' + g[0]); if (!box) return;
+  box.innerHTML = (g[0] === 'III' ? '' : '<h3>Standard ' + g[0] + ': ' + esc(g[1]) + '</h3>') + STD.filter(s => s.g === g[0]).map(s =>
+    '<div class="std" id="' + slug(s.c) + '"><div class="head"><span class="code">' + s.c + '</span><span class="name">' + esc(s.n) + '</span></div>' +
+    '<div class="sum">' + esc(s.s) + '</div><div class="cols"><div><h5>Key points</h5><ul>' + s.p.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' +
+    (s.r.length ? '<div><h5>Recommended procedures</h5><ul>' + s.r.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' : '') +
+    '</div><div class="trap"><b>Exam trap:</b> ' + esc(s.t) + '</div></div>').join('');
+});
+
+/* ---------- Strictest law ---------- */
+function lawUpdate() {
+  const a = $('lawA').value, b = $('lawB').value, o = $('lawOut');
+  let msg, tone;
+  if (a === 'more' && b === 'more') { msg = 'Both laws are stricter than the Code: follow whichever is stricter on each point.'; tone = 'w'; }
+  else if (a === 'more') { msg = 'Follow the law where you live and work: it is stricter than the Code.'; tone = 'w'; }
+  else if (b === 'more') { msg = 'Follow the other applicable law (e.g. the client\'s country): it is stricter than the Code.'; tone = 'w'; }
+  else { msg = 'Follow the Code and Standards: no applicable law is stricter.'; tone = 'g'; }
+  o.className = 'res ' + tone; o.textContent = msg + ' Where the Code is stricter on some point, follow the Code on that point.';
+}
+$('lawA').addEventListener('change', lawUpdate); $('lawB').addEventListener('change', lawUpdate); lawUpdate();
+
+/* ---------- Decision trees ---------- */
+const TREES = {
+  treeMnpi: {
+    start: { q: "Would the information likely affect the security's price, or would a reasonable investor want it before deciding?", o: [["Yes", "pub"], ["No", "notmat"], ["Not sure", "unsure"]] },
+    unsure: { r: "Weigh how specific it is, how reliable the source is, and how big the price effect could be. Vague or unreliable information is less likely to be material. When in doubt, check with compliance before acting.", tone: "w" },
+    notmat: { r: "Not material, so you may use it. Combining it with public information to reach a conclusion is the mosaic theory, which is allowed even if your conclusion would be material on its own.", tone: "g" },
+    pub: { q: "Has it been disseminated to the market (press release, regulatory filing, public website) so investors have had a chance to act?", o: [["Yes", "ok"], ["No", "mnpi"]] },
+    ok: { r: "Material but public: you may act on it.", tone: "g" },
+    mnpi: { r: "Material nonpublic information. Don't trade and don't cause anyone else to trade (no tips or recommendations). Encourage the company to make it public, and follow your firm's firewall, watch-list and restricted-list procedures.", tone: "b" }
+  },
+  treeTrade: {
+    start: { q: "Is the requested trade suitable for the client's portfolio and IPS?", o: [["Yes", "ok"], ["No", "q2"]] },
+    ok: { r: "Execute it.", tone: "g" },
+    q2: { q: "Would it materially change the portfolio's risk or strategy?", o: [["No, it's small", "minor"], ["Yes", "major"]] },
+    minor: { r: "Explain why it's unsuitable. If the client still insists, you may execute it after the discussion. Document the conversation.", tone: "w" },
+    major: { r: "Discuss it first. If the client insists, update the IPS to reflect the new objectives, or, if you can't serve the client appropriately, consider ending the relationship.", tone: "b" }
+  },
+  treeGift: {
+    start: { q: "Who is offering the gift, benefit or compensation?", o: [["A client", "cl"], ["A broker, issuer or vendor seeking business", "ot"], ["An outside party paying for work that could compete with my employer", "comp"]] },
+    cl: { q: "Is it a thank-you for past performance, or tied to future performance?", o: [["Thank-you for the past", "clp"], ["Tied to future performance", "clf"]] },
+    clp: { r: "You may accept. Disclose it to your employer. Standard I(B).", tone: "g" },
+    clf: { r: "Get written consent from your employer before accepting, because it could change how you treat this client compared with others. Standard IV(B).", tone: "w" },
+    ot: { q: "Is it of modest value, such as ordinary business entertainment?", o: [["Yes", "otok"], ["No", "otno"]] },
+    otok: { r: "Generally acceptable. Follow your firm's gift policy and value limits, and disclose as required.", tone: "g" },
+    otno: { r: "Refuse it. It could reasonably be expected to compromise your independence. For company visits, pay your own travel and lodging. Standard I(B).", tone: "b" },
+    comp: { r: "Get written consent from your employer (and all parties involved) before accepting, and disclose the conflict to clients where relevant. Standards IV(B) and VI(A).", tone: "w" }
+  },
+  treeViol: {
+    start: { q: "You find that a colleague or your firm is violating the law or the Code and Standards. Do you supervise the person involved?", o: [["Yes", "sup"], ["No", "not"]] },
+    sup: { r: "Investigate promptly, stop the activity, and prevent it from happening again: limit the person's activities and increase supervision. A warning alone isn't enough. Standard IV(C).", tone: "w" },
+    not: { r: "Dissociate: don't take part, and report it to your supervisor or compliance. If it continues, you may need to refuse the assignment or leave the firm. The Standards don't require reporting to regulators, though the law may. Client information can be disclosed if it concerns the client's illegal activity. Standards I(A) and III(E).", tone: "b" }
+  }
+};
+function renderTree(id, node, path) {
+  const box = $(id), t = TREES[id], n = t[node];
+  let h = '<div class="viz-title">' + esc(box.dataset.title) + '</div><div class="viz-sub">Answer each question to see what the Standards require.</div>';
+  if (path.length) h += '<div class="path">' + path.map(esc).join(' → ') + '</div>';
+  if (n.q) h += '<div class="q">' + esc(n.q) + '</div><div class="opts">' + n.o.map((o, i) => '<button data-i="' + i + '">' + esc(o[0]) + '</button>').join('') + '</div>';
+  else h += '<div class="res ' + n.tone + '">' + esc(n.r) + '</div><button data-restart="1">Start over</button>';
+  box.innerHTML = h;
+  box.onclick = e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.restart) return renderTree(id, 'start', []);
+    const o = n.o[+b.dataset.i]; renderTree(id, o[1], path.concat([o[0]]));
+  };
+}
+Object.keys(TREES).forEach(id => renderTree(id, 'start', []));
+
+/* ---------- Designation quiz ---------- */
+const DES = [
+  ["Jane Lee, CFA", true, "Correct use: the designation follows the name."],
+  ["Jane Lee is a CFA.", false, "“CFA” is not a noun. Say “a CFA charterholder”."],
+  ["Jane Lee is a CFA charterholder.", true, "Correct."],
+  ["Jane Lee, CFA Level II", false, "There's no partial designation."],
+  ["Jane Lee, Level II candidate in the CFA Program", true, "Correct, while she's registered for or awaiting results of the Level II exam."],
+  ["Jane Lee, CFA (expected 2027)", false, "Implies a partial or future designation."],
+  ["Jane passed all three CFA exams on her first attempt.", true, "A factual statement is fine."],
+  ["As a CFA charterholder, Jane delivers superior investment returns.", false, "You can't claim superior performance because of the charter."],
+  ["Jane stopped paying dues and filing her Professional Conduct Statement but still signs emails “Jane Lee, CFA”.", false, "She must remain a member in good standing to use the designation."],
+  ["Jane completed the CFA Program in three consecutive years.", true, "A factual statement is fine."]
+];
+const desAns = new Array(DES.length).fill(null);
+function renderDes() {
+  $('desQuiz').innerHTML = DES.map((d, i) => {
+    const a = desAns[i];
+    const fb = a === null ? '' : '<div class="why ' + (a === d[1] ? '' : '') + '"><span class="pill ' + (a === d[1] ? 'g' : 'b') + '">' + (a === d[1] ? 'Right' : 'Not quite') + '</span> ' + (d[1] ? 'Acceptable. ' : 'Violation. ') + esc(d[2]) + '</div>';
+    return '<div class="dq"><div>' + esc(d[0]) + '</div><div class="btns"><button data-i="' + i + '" data-v="1" class="' + (a === true ? 'sel' : '') + '">Acceptable</button><button data-i="' + i + '" data-v="0" class="' + (a === false ? 'sel' : '') + '">Violation</button></div>' + fb + '</div>';
+  }).join('');
+  const done = desAns.filter(x => x !== null).length, right = desAns.filter((x, i) => x === DES[i][1]).length;
+  setText('desScore', done ? 'Score: ' + right + ' of ' + done + ' answered correctly' + (done === DES.length ? ' (all done).' : '.') : '');
+}
+$('desQuiz').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; desAns[+b.dataset.i] = b.dataset.v === '1'; renderDes(); });
+renderDes();
+
+/* ---------- Which-standard drill ---------- */
+const DRILL = [
+  ["An analyst accepts a company's offer of first-class flights and a luxury hotel for a site visit.", "I(B)", "Pay your own way; lavish issuer-paid travel threatens independence."],
+  ["A manager tells prospects his corporate bond fund “can't lose money”.", "I(C)", "Guaranteeing the performance of a risky investment is misrepresentation."],
+  ["A charterholder is convicted of embezzling from a charity she volunteers for.", "I(D)", "Dishonest personal conduct reflects on professional integrity."],
+  ["An analyst takes on a complex derivatives mandate without the knowledge to manage it.", "I(E)", "You must have the competence for the work you take on."],
+  ["An analyst in a country with weak securities laws follows only local law, which allows something the Code prohibits.", "I(A)", "Follow the stricter of the law and the Code."],
+  ["A manager buys shares after a friend at a law firm tells her about an unannounced merger.", "II(A)", "Trading on material nonpublic information."],
+  ["A trader buys and sells the same thinly traded stock between his own accounts to make it look active.", "II(B)", "Creating artificial volume to mislead the market."],
+  ["An adviser uses client brokerage commissions to pay for new office furniture.", "III(A)", "Soft dollars must benefit the clients who generate them."],
+  ["A manager allocates a hot IPO only to her largest clients.", "III(B)", "Allocate pro rata to all clients for whom it's suitable."],
+  ["An adviser puts a retired client with low risk tolerance into speculative options without discussing it.", "III(C)", "Investments must suit the client's objectives and constraints."],
+  ["A firm advertises a composite that leaves out its worst-performing accounts.", "III(D)", "Performance must be fair, accurate and complete."],
+  ["An analyst tells a friend about a client's large inheritance.", "III(E)", "Client information is confidential."],
+  ["An employee downloads the client list the week before resigning to start a competing firm.", "IV(A)", "Taking employer records breaches the duty of loyalty."],
+  ["A manager accepts a client's offer of a bonus for beating the benchmark next year without telling her employer.", "IV(B)", "Needs written consent from the employer."],
+  ["A compliance head sees repeated violations by a trader and doesn't investigate.", "IV(C)", "Supervisors must investigate and prevent recurrence."],
+  ["An analyst issues a buy recommendation based on a single rumor from an online forum.", "V(A)", "No reasonable and adequate basis."],
+  ["A fund switches from value to momentum investing without telling clients.", "V(B)", "Material changes to the process must be disclosed promptly."],
+  ["After publishing a report, an analyst deletes the models and notes that support it.", "V(C)", "Keep records that support recommendations."],
+  ["An analyst recommends a company where her husband is on the board, without disclosing it.", "VI(A)", "Conflicts must be fully and fairly disclosed."],
+  ["A manager buys a stock for his own account just before executing a large client buy order.", "VI(B)", "Front-running: clients come first."],
+  ["An adviser receives a payment from a lawyer for each client he refers, and doesn't tell clients.", "VI(C)", "Referral fees must be disclosed to clients and prospects."],
+  ["A candidate posts online which topics appeared heavily on her exam.", "VII(A)", "Exam content is confidential."],
+  ["A candidate's business card reads “Alex Kim, CFA Level II”.", "VII(B)", "There's no partial designation."],
+  ["An analyst uses index return data from a recognized financial data service in a report without citing it.", "None", "Factual data from recognized reporting services doesn't need attribution."],
+  ["A candidate tells a friend that Level I was harder than expected.", "None", "General opinions about difficulty are allowed."],
+  ["After leaving her firm (no non-compete), a manager contacts former clients she remembers.", "None", "Allowed after leaving, using memory or public information."]
+];
+const OPTS = STD.map(s => [s.c, s.c + ' ' + s.n]).concat([["None", "No violation"]]);
+$('drSel').innerHTML = '<option value="">Choose a standard…</option>' + OPTS.map(o => '<option value="' + o[0] + '">' + esc(o[1]) + '</option>').join('');
+let drOrder = DRILL.map((_, i) => i), drI = 0, drRight = 0, drDone = 0, drChecked = false, drMissed = [];
+function shuffle(a) { let s = 20261018; const r = () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+shuffle(drOrder);
+function drShow() {
+  const d = DRILL[drOrder[drI]];
+  setText('drPos', 'Scenario ' + (drI + 1) + ' of ' + DRILL.length); setText('drScn', d[0]);
+  setText('drScore', drDone ? 'Score: ' + drRight + ' / ' + drDone : ''); $('drSel').value = ''; $('drFb').innerHTML = ''; setText('drErr', ''); drChecked = false;
+}
+$('drSel').addEventListener('change', () => setText('drErr', ''));
+$('drCheck').addEventListener('click', () => {
+  if (drChecked) return;
+  const v = $('drSel').value; if (!v) { setText('drErr', 'Choose a standard first.'); return; }
+  const d = DRILL[drOrder[drI]], ok = v === d[1]; drChecked = true; drDone++; if (ok) drRight++; else drMissed.push(d[1]);
+  const label = d[1] === 'None' ? 'No violation' : d[1] + ' ' + STD.find(s => s.c === d[1]).n;
+  $('drFb').innerHTML = '<div class="fb ' + (ok ? 'g' : 'b') + '"><b>' + (ok ? 'Correct. ' : 'Not quite. ') + '</b>Answer: ' + esc(label) + '. ' + esc(d[2]) + '</div>';
+  setText('drScore', 'Score: ' + drRight + ' / ' + drDone);
+  if (drDone === DRILL.length) { const prev = state.drill && typeof state.drill.best_score === 'number' ? state.drill.best_score : 0; state.drill = { best_score: Math.max(prev, drRight), out_of: DRILL.length, last_score: drRight, missed: drMissed.slice() }; persist(); setText('drScore', 'Finished: ' + drRight + ' / ' + DRILL.length + '. Saved to your progress.'); }
+});
+$('drNext').addEventListener('click', () => { drI = (drI + 1) % DRILL.length; drShow(); });
+$('drReset').addEventListener('click', () => { drI = 0; drRight = 0; drDone = 0; drMissed = []; drShow(); });
+
+/* ---------- Progress, notes, save ---------- */
+const DATA = JSON.parse($('study-data').textContent);
+const LS = 'cfa-ethics-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', drill: DATA.drill || {}, saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+drShow();
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'sheet', name: 'Cheat sheet memorized' }, { id: 'drills', name: 'Which-standard drill done' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+const list = $('progList');
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); list.appendChild(row);
+});
+$('notes').value = state.notes || '';
+$('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.drill = state.drill || d.drill; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try {
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Ethics-Guide.html';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.');
+  } catch (e) { setText('saveMsg', 'Download blocked here. Open the file in your browser and try again.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(); const txt = JSON.stringify({ guide: d.guide, progress: d.progress, drill: d.drill, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const done = () => setText('saveMsg', 'Copied. Paste it into your chat with Claude.');
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); });
+  else { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); }
+});
+</script>
+</body>
+</html>

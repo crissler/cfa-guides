@@ -1,0 +1,1090 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — FINANCIAL STATEMENT ANALYSIS STUDY GUIDE
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+  Read that block first to restore context, then rebuild or extend visuals as asked.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA FSA Guide</title>
+<style>
+:root{
+  --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;
+  --border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);
+  --accent:#534AB7;--accent-bg:#EEEDFE;
+  --c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;
+  --good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+    --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+    --accent:#AFA9EC;--accent-bg:#26215C;
+    --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;
+    --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;
+  --border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);
+  --accent:#AFA9EC;--accent-bg:#26215C;
+  --c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;
+  --good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:40px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:17px;max-width:720px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}
+nav.toc .row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}
+.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}
+.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}
+.fx-eq .frac{margin:0 4px;line-height:1.4}
+.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}
+.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}
+.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;border-radius:0;margin:12px 0}
+.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.tip{border-left-color:var(--good);background:var(--good-bg)}
+.callout b{font-weight:600}
+.callout.trap b{color:var(--bad)}
+.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}
+.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}
+.ctl label{font-size:14px;color:var(--muted);min-width:190px}
+.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
+.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.stat .l{font-size:12px;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg .grid{stroke:var(--border);stroke-width:1}
+svg .axis{stroke:var(--border-strong);stroke-width:1}
+svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}
+svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+input[type=number]{width:120px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}
+button:hover{background:var(--surface-2)}
+button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+button.sel{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.pill.g{background:var(--good-bg);color:var(--good)}
+.pill.w{background:var(--warn-bg);color:var(--warn)}
+.pill.b{background:var(--bad-bg);color:var(--bad)}
+.pill.a{background:var(--accent-bg);color:var(--accent)}
+.err{color:var(--bad);font-size:13px}
+.inrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px 16px;margin-bottom:10px}
+.inrow label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.inrow input{width:100%}
+.dq{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)}
+.dq .btns{display:flex;gap:6px}
+.dq .why{grid-column:1 / -1;font-size:13px}
+.ladder{display:flex;flex-direction:column;gap:6px}
+.ladder .r{padding:9px 14px;border-radius:8px;font-size:14px;font-weight:500}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}
+details.q summary{cursor:pointer;font-weight:500;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}
+details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}
+details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}.dq{grid-template-columns:1fr}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I</div>
+  <h1>Financial statement analysis guide</h1>
+  <p class="lead">Formulas, visuals, worked examples and exam traps for all 12 FSA learning modules, grouped into seven parts, plus a full IFRS vs US GAAP comparison. Save this file and re-upload it to Claude to pick up where you left off.</p>
+  <div class="chips">
+    <span class="chip acc">Exam weight 11–14%</span>
+    <span class="chip">About 20–25 of 180 questions</span>
+    <span class="chip">12 learning modules</span>
+    <span class="chip">IFRS vs US GAAP is heavily tested</span>
+  </div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a>
+  <a href="#f1">1 · Framework</a>
+  <a href="#f2">2 · Income statement</a>
+  <a href="#f3">3 · Balance sheet</a>
+  <a href="#f4">4 · Cash flows</a>
+  <a href="#f5">5 · Inventory and long-lived assets</a>
+  <a href="#f6">6 · Liabilities and taxes</a>
+  <a href="#f7">7 · Quality and analysis</a>
+  <a href="#sheet">IFRS vs GAAP</a>
+  <a href="#formulas">Formula sheet</a>
+  <a href="#practice">Practice</a>
+  <a href="#progress">My progress</a>
+</div></nav>
+
+<!-- ================= GAME PLAN ================= -->
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <p class="muted">What candidates who passed wish they'd known going in.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h4>What actually gets tested</h4>
+      <ul class="small">
+        <li>FSA is big and detailed. Most questions ask about the <b>effect</b> of an accounting choice: "Compared with FIFO, LIFO gives higher or lower…?" Learn the direction of each effect on net income, assets, cash flow and ratios.</li>
+        <li><b>IFRS vs US GAAP differences</b> come up again and again. The comparison table near the end is worth memorizing.</li>
+        <li>Calculations are usually short: CFO by the indirect method, EPS, LIFO-to-FIFO, depreciation, deferred taxes, bond interest expense, ratios.</li>
+        <li>FSA is the foundation for corporate issuers, equity valuation and credit analysis, so time spent here pays off elsewhere.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Highest-yield items, ranked</h4>
+      <ol class="small">
+        <li>Cash flow statement: classification, indirect method, IFRS vs GAAP choices, FCFF and FCFE</li>
+        <li>Inventory: FIFO vs LIFO vs average, LIFO reserve, write-downs</li>
+        <li>Long-lived assets: capitalize vs expense, depreciation, impairment, revaluation</li>
+        <li>Income taxes: deferred tax liabilities and assets, tax expense</li>
+        <li>Ratios and DuPont analysis</li>
+        <li>Revenue recognition, non-recurring items, accounting changes</li>
+        <li>Basic and diluted EPS</li>
+        <li>Bonds (effective interest), leases, pensions</li>
+        <li>Financial reporting quality and warning signs</li>
+        <li>Conceptual framework, audit opinions, OCI</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout trap"><b>Top traps.</b> Mixing up the sign of working-capital changes in the indirect method (an increase in an asset <i>reduces</i> CFO). Forgetting to subtract gains on asset sales from CFO. Treating LIFO as allowed under IFRS (it isn't). Adding the full LIFO reserve change to net income (adjust it after tax). Using book value instead of fair value to compute goodwill. Calling a change in useful life "retrospective" (estimates change prospectively).</div>
+  <div class="callout tip"><b>BA II Plus.</b> Bond issue price for the effective interest method: N, I/Y (market rate), PMT (coupon), FV, <span class="kbd">CPT</span> <span class="kbd">PV</span>. Lease liability: the PV of the lease payments at the discount rate. Use <span class="kbd">2nd</span> <span class="kbd">AMORT</span> to split payments into interest and principal.</div>
+</section>
+
+<!-- ================= PART 1 ================= -->
+<section class="mod" id="f1">
+  <div class="modtag">Part 1 · Learning module 1</div>
+  <h2>Framework, statements and reporting standards</h2>
+  <p class="muted">What the statements are, where else to look, and the rules behind them.</p>
+
+  <h3>1.1 How the statements connect</h3>
+  <div class="viz">
+    <div class="viz-title">The statements are linked</div>
+    <div class="viz-sub">Net income flows into equity and is the starting point for cash from operations; the cash flow statement explains the change in the balance sheet's cash.</div>
+    <div class="flow">
+      <div class="step"><div class="n">Income statement</div><p class="small" style="margin:4px 0 0">Revenue − expenses = <b>net income</b> for the period.</p></div>
+      <div class="step"><div class="n">Statement of changes in equity</div><p class="small" style="margin:4px 0 0">Opening retained earnings + <b>net income</b> − dividends = closing retained earnings. Also shows OCI and share issues.</p></div>
+      <div class="step"><div class="n">Balance sheet</div><p class="small" style="margin:4px 0 0">Assets = liabilities + equity at a point in time. Equity includes the closing retained earnings.</p></div>
+      <div class="step"><div class="n">Cash flow statement</div><p class="small" style="margin:4px 0 0">Starts from <b>net income</b> (indirect method); ends with the change in <b>cash</b> that ties to the balance sheet.</p></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h4>Beyond the statements</h4><ul class="small" style="margin:0"><li><b>Notes</b>: accounting policies, estimates, segment data, commitments</li><li><b>MD&amp;A</b> (management commentary): results, trends, risks, liquidity</li><li><b>Auditor's report</b></li><li>Proxy statements, earnings calls, industry and economic data</li></ul></div>
+    <div class="card"><h4>The analysis process</h4><ol class="small" style="margin:0"><li>Define the purpose and context</li><li>Collect data</li><li>Process data (adjust, compute ratios)</li><li>Analyze and interpret</li><li>Communicate conclusions</li><li>Follow up and update</li></ol></div>
+    <div class="card"><h4>Audit opinions</h4><ul class="small" style="margin:0"><li><span class="pill g">Unqualified (clean)</span> statements are fairly presented</li><li><span class="pill w">Qualified</span> fair except for a specific issue</li><li><span class="pill b">Adverse</span> materially misstated, not fairly presented</li><li><span class="pill b">Disclaimer</span> auditor can't express an opinion</li></ul><p class="small muted" style="margin:6px 0 0">Reports also list key audit matters (critical audit matters in the US).</p></div>
+  </div>
+
+  <h3>1.2 Standards and the conceptual framework</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Who sets the rules</h4><b>Standard setters</b> write the standards: the IASB (IFRS) and the FASB (US GAAP). <b>Regulators</b> enforce them and have legal authority: e.g. the SEC in the US; IOSCO coordinates securities regulators globally.</div>
+    <div class="card small"><h4>Qualitative characteristics</h4><b>Fundamental:</b> relevance (including materiality) and faithful representation (complete, neutral, free from error).<br><b>Enhancing:</b> comparability, verifiability, timeliness, understandability.<br>Constraint: benefits should exceed the cost of reporting.</div>
+  </div>
+  <p class="small">Elements: assets, liabilities, equity, income, expenses. Key assumptions: <b>accrual basis</b> (record when earned or incurred, not when cash moves) and <b>going concern</b>.</p>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="mod" id="f2">
+  <div class="modtag">Part 2 · Learning module 2</div>
+  <h2>Analyzing income statements</h2>
+  <p class="muted">Revenue and expense recognition, non-recurring items, EPS and comprehensive income.</p>
+
+  <h3>2.1 Revenue recognition (IFRS 15 / ASC 606)</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1</div><p class="small" style="margin:4px 0 0">Identify the contract</p></div>
+    <div class="step"><div class="n">2</div><p class="small" style="margin:4px 0 0">Identify the separate performance obligations</p></div>
+    <div class="step"><div class="n">3</div><p class="small" style="margin:4px 0 0">Determine the transaction price</p></div>
+    <div class="step"><div class="n">4</div><p class="small" style="margin:4px 0 0">Allocate the price to the obligations</p></div>
+    <div class="step"><div class="n">5</div><p class="small" style="margin:4px 0 0">Recognize revenue as each obligation is satisfied (at a point in time or over time)</p></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Over time</b> (e.g. long-term construction): recognize in proportion to progress, often measured by costs incurred.</li>
+    <li><b>Principal vs agent:</b> a principal controls the good or service and reports <b>gross</b> revenue; an agent arranges it for someone else and reports only its <b>net</b> commission.</li>
+    <li>Variable consideration (discounts, bonuses) is included only if a significant reversal is unlikely. Cash received before delivery is a liability (unearned revenue).</li>
+  </ul>
+
+  <h3>2.2 Expenses and non-recurring items</h3>
+  <div class="grid">
+    <div class="card small"><h4>Expense recognition</h4>Match expenses to the revenue they help generate (matching), or recognize them in the period incurred. Choices such as depreciation method, inventory method and bad-debt estimates affect reported profit.</div>
+    <div class="card small"><h4>Discontinued operations</h4>A component the company has disposed of or plans to sell. Reported <b>separately, after income from continuing operations, net of tax</b>. Analysts usually exclude it when forecasting.</div>
+    <div class="card small"><h4>Unusual or infrequent items</h4>Shown within continuing operations, <b>before tax</b> (e.g. restructuring charges, gains on asset sales). Extraordinary items are no longer allowed under either IFRS or US GAAP.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Accounting change</th><th>Treatment</th><th>Example</th></tr>
+    <tr><td><b>Change in accounting policy</b></td><td><span class="pill a">Retrospective</span>: restate prior periods so they're comparable</td><td>Switching inventory method</td></tr>
+    <tr><td><b>Change in accounting estimate</b></td><td><span class="pill g">Prospective</span>: affects current and future periods only</td><td>Changing an asset's useful life or salvage value</td></tr>
+    <tr><td><b>Correction of a prior-period error</b></td><td><span class="pill b">Restate</span> prior periods, with disclosure</td><td>Fixing a past misstatement</td></tr>
+  </table></div>
+
+  <h3>2.3 Earnings per share</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Basic EPS</div><div class="fx-eq"><span class="frac"><span>Net income − Preferred dividends</span><span>Weighted average common shares</span></span></div></div>
+    <div class="fx"><div class="fx-name">Diluted EPS</div><div class="fx-eq"><span class="frac"><span>NI − Pref. div. + Conv. pref. div. + Conv. debt interest × (1 − t)</span><span>Wtd. shares + Shares from conversions + Net new option shares</span></span></div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Treasury stock method</b> for options and warrants: net new shares = N − (N × exercise price ÷ average market price). Only dilutive when the market price is above the exercise price.</li>
+    <li><b>If-converted method</b> for convertible preferred and convertible debt.</li>
+    <li>A security is <b>antidilutive</b> if including it raises EPS; leave it out. Diluted EPS is never above basic EPS.</li>
+    <li>Stock splits and stock dividends are applied retroactively to all periods; share issues and buybacks are time-weighted.</li>
+  </ul>
+  <div class="viz">
+    <div class="viz-title">Diluted EPS calculator</div>
+    <div class="viz-sub">Pre-filled with the question-bank problem you solved (answer $7.72). Change any number to test other cases; securities are added from most to least dilutive and dropped if antidilutive.</div>
+    <div class="inrow">
+      <label>Net income <input type="number" id="epNI" value="1000000"></label>
+      <label>All preferred dividends <input type="number" id="epPD" value="20000"></label>
+      <label>Weighted average common shares <input type="number" id="epSh" value="100000"></label>
+      <label>Tax rate (%) <input type="number" id="epT" value="40"></label>
+      <label>Convertible preferred: its dividends <input type="number" id="epCPD" value="20000"></label>
+      <label>Convertible preferred: shares if converted <input type="number" id="epCPS" value="10000"></label>
+      <label>Convertible bonds: annual interest <input type="number" id="epBI" value="6400"></label>
+      <label>Convertible bonds: shares if converted <input type="number" id="epBS" value="20000"></label>
+      <label>Options: number <input type="number" id="epON" value="0"></label>
+      <label>Options: exercise price <input type="number" id="epOX" value="0"></label>
+      <label>Options: average market price <input type="number" id="epOP" value="0"></label>
+    </div>
+    <div class="err" id="epErr"></div>
+    <div class="tbl"><table id="epTbl"></table></div>
+    <div class="stats"><div class="stat"><div class="l">Basic EPS</div><div class="v" id="epB"></div></div><div class="stat"><div class="l">Diluted EPS</div><div class="v" id="epD"></div></div></div>
+  </div>
+
+  <h3>2.4 Comprehensive income</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Comprehensive income</div><div class="fx-eq">Net income + Other comprehensive income (OCI)</div><div class="fx-note">OCI collects gains and losses that bypass the income statement.</div></div>
+    <div class="card small"><h4>Items in OCI</h4><ul style="margin:0"><li>Foreign currency translation adjustments</li><li>Unrealized gains/losses on debt securities at fair value through OCI</li><li>Pension remeasurements (actuarial gains and losses)</li><li>Effective portion of cash flow hedges</li><li>Revaluation surplus on PP&amp;E (IFRS)</li></ul><p class="muted" style="margin:6px 0 0">Not in OCI: unrealized gains on securities at fair value through profit or loss (they go to net income).</p></div>
+  </div>
+  <p class="small"><b>Common-size income statement:</b> every line divided by revenue, giving the margins directly (gross, operating, pretax, net).</p>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="mod" id="f3">
+  <div class="modtag">Part 3 · Learning module 3</div>
+  <h2>Analyzing balance sheets</h2>
+  <p class="muted">Classification, measurement, intangibles and goodwill, financial instruments and equity.</p>
+
+  <div class="grid">
+    <div class="card small"><h4>Current vs non-current</h4>Current assets are expected to be used up or turned into cash within one year or the operating cycle (whichever is longer); current liabilities are due within that time. A liquidity-based presentation (no current/non-current split) is allowed under IFRS when more relevant, e.g. for banks.</div>
+    <div class="card small"><h4>Measurement bases</h4>Historical cost, amortized cost, fair value, and lower of cost and net realizable value (inventory). The balance sheet mixes them, so book equity rarely equals market value.</div>
+    <div class="card small"><h4>Common-size balance sheet</h4>Every item divided by total assets; useful for comparing firms of different sizes.</div>
+  </div>
+
+  <h3>3.1 Intangibles and goodwill</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Goodwill</div><div class="fx-eq">Purchase price − Fair value of identifiable net assets acquired</div><div class="fx-note">Only arises in an acquisition. Internally generated goodwill is never recorded.</div></div>
+    <div class="card small">Goodwill and indefinite-life intangibles are <b>not amortized</b>; they're tested for impairment at least annually. Finite-life intangibles (patents, licenses) are amortized. Analysts often remove goodwill when computing ratios such as tangible book value.</div>
+  </div>
+
+  <h3>3.2 Financial instruments</h3>
+  <div class="tbl"><table>
+    <tr><th>Category</th><th>Measured at</th><th>Unrealized gains/losses go to</th></tr>
+    <tr><td>Amortized cost (debt held to collect cash flows)</td><td>Amortized cost</td><td>Not recognized</td></tr>
+    <tr><td>Fair value through OCI</td><td>Fair value</td><td>OCI</td></tr>
+    <tr><td>Fair value through profit or loss (incl. trading)</td><td>Fair value</td><td>Net income</td></tr>
+  </table></div>
+
+  <h3>3.3 Equity</h3>
+  <p class="small">Contributed capital (common and preferred stock, additional paid-in capital) + retained earnings − treasury stock (bought-back shares, which have no votes or dividends) + accumulated OCI + non-controlling (minority) interest.</p>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section class="mod" id="f4">
+  <div class="modtag">Part 4 · Learning modules 4–5</div>
+  <h2>Analyzing statements of cash flows</h2>
+  <p class="muted">Classification, the direct and indirect methods, free cash flow and cash flow ratios.</p>
+
+  <div class="grid">
+    <div class="card small"><h4><span class="pill g">CFO</span> Operating</h4>Cash from day-to-day business: collections from customers, payments to suppliers and employees, taxes, and (US GAAP) interest paid and interest and dividends received.</div>
+    <div class="card small"><h4><span class="pill a">CFI</span> Investing</h4>Buying and selling long-term assets and investments in other companies' securities; making and collecting loans to others.</div>
+    <div class="card small"><h4><span class="pill w">CFF</span> Financing</h4>Issuing and repaying debt, issuing and buying back shares, and (US GAAP) dividends paid.</div>
+  </div>
+  <p class="small" style="margin-top:10px"><b>Non-cash transactions</b> (e.g. converting debt to equity, buying an asset with a loan) don't appear in the statement; they're disclosed in the notes.</p>
+
+  <div class="viz">
+    <div class="viz-title">Classify it: CFO, CFI or CFF? (US GAAP)</div>
+    <div class="viz-sub">Click an answer for each item. Where IFRS allows a choice, the feedback says so.</div>
+    <div id="cfQuiz"></div>
+    <p class="small" style="margin:10px 0 0" id="cfScore"></p>
+  </div>
+
+  <h3>4.1 Direct vs indirect method</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Direct method</h4>Lists actual cash receipts and payments (cash from customers, cash to suppliers…). More informative; encouraged by both IFRS and US GAAP, but rarely used. US GAAP requires a reconciliation (the indirect method) in the notes if the direct method is used.</div>
+    <div class="card small"><h4>Indirect method</h4>Starts with net income and adjusts for non-cash items and working capital changes. Most companies use it. Only CFO differs between the two methods; CFI and CFF are the same.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Indirect method adjustment</th><th>Effect on CFO</th></tr>
+    <tr><td>Depreciation, amortization, impairment (non-cash expenses)</td><td><span class="pill g">Add back</span></td></tr>
+    <tr><td>Gain on sale of an asset (cash goes in CFI)</td><td><span class="pill b">Subtract</span></td></tr>
+    <tr><td>Loss on sale of an asset</td><td><span class="pill g">Add back</span></td></tr>
+    <tr><td>Increase in an operating asset (receivables, inventory, prepaid)</td><td><span class="pill b">Subtract</span></td></tr>
+    <tr><td>Decrease in an operating asset</td><td><span class="pill g">Add</span></td></tr>
+    <tr><td>Increase in an operating liability (payables, accrued expenses, unearned revenue)</td><td><span class="pill g">Add</span></td></tr>
+    <tr><td>Decrease in an operating liability</td><td><span class="pill b">Subtract</span></td></tr>
+    <tr><td>Increase in deferred tax liability</td><td><span class="pill g">Add</span></td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">From net income to cash from operations</div>
+    <div class="viz-sub">Change the items and watch the bridge. Asset increases pull cash down; liability increases push it up.</div>
+    <div class="ctl"><label for="wfNI">Net income</label><input type="range" id="wfNI" min="0" max="400" step="10" value="200"><output id="wfNIo"></output></div>
+    <div class="ctl"><label for="wfDA">Depreciation and amortization</label><input type="range" id="wfDA" min="0" max="150" step="5" value="60"><output id="wfDAo"></output></div>
+    <div class="ctl"><label for="wfG">Gain on sale of equipment</label><input type="range" id="wfG" min="0" max="80" step="5" value="20"><output id="wfGo"></output></div>
+    <div class="ctl"><label for="wfAR">Change in receivables</label><input type="range" id="wfAR" min="-100" max="100" step="5" value="40"><output id="wfARo"></output></div>
+    <div class="ctl"><label for="wfIN">Change in inventory</label><input type="range" id="wfIN" min="-100" max="100" step="5" value="-15"><output id="wfINo"></output></div>
+    <div class="ctl"><label for="wfAP">Change in payables</label><input type="range" id="wfAP" min="-100" max="100" step="5" value="25"><output id="wfAPo"></output></div>
+    <svg id="wfSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1);height:10px"></span>Start and end</span><span><span class="sw" style="background:var(--c2);height:10px"></span>Adds to cash</span><span><span class="sw" style="background:var(--c3);height:10px"></span>Reduces cash</span></div>
+  </div>
+
+  <h3>4.2 Free cash flow and ratios</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Free cash flow to the firm</div><div class="fx-eq">FCFF = CFO + Interest × (1 − t) − FCInv</div><div class="fx-note">FCInv = capital expenditure (net of disposals). Under IFRS, if interest paid is in CFF, don't add it back.</div></div>
+    <div class="fx"><div class="fx-name">Free cash flow to equity</div><div class="fx-eq">FCFE = CFO − FCInv + Net borrowing</div></div>
+    <div class="card small"><h4>Cash flow ratios</h4>Cash flow to revenue (CFO/revenue) · cash return on assets (CFO/avg assets) · cash to income (CFO/operating income) · cash flow per share · debt coverage (CFO/total debt) · interest coverage ((CFO + interest + taxes)/interest) · reinvestment (CFO/capex).</div>
+  </div>
+  <div class="callout trap"><b>Warning sign.</b> CFO persistently below net income can mean aggressive revenue or expense recognition. Also check whether CFO is boosted by stretching payables or selling receivables.</div>
+</section>
+
+<!-- ================= PART 5 ================= -->
+<section class="mod" id="f5">
+  <div class="modtag">Part 5 · Learning modules 6–7</div>
+  <h2>Inventories and long-lived assets</h2>
+  <p class="muted">Cost flow methods, the LIFO reserve, write-downs, capitalizing, depreciation, impairment and revaluation.</p>
+
+  <h3>5.1 Inventory cost flow methods</h3>
+  <div class="grid">
+    <div class="card small"><h4>FIFO</h4>First in, first out: the oldest costs go to COGS; ending inventory reflects the most recent costs. Allowed under IFRS and US GAAP.</div>
+    <div class="card small"><h4>Weighted average</h4>COGS and inventory both use the average cost of goods available. Allowed under both.</div>
+    <div class="card small"><h4>LIFO</h4>Last in, first out: newest costs go to COGS. <b>US GAAP only.</b> Popular in the US because it lowers taxes when prices rise.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">FIFO vs weighted average vs LIFO</div>
+    <div class="viz-sub">Beginning inventory: 100 units at $10. Then three purchases of 100 units each, with the price changing by the trend each time. Units sell for $20.</div>
+    <div class="ctl"><label for="ivG">Price change per purchase</label><input type="range" id="ivG" min="-15" max="15" step="1" value="10"><output id="ivGo"></output></div>
+    <div class="ctl"><label for="ivS">Units sold (of 400)</label><input type="range" id="ivS" min="0" max="400" step="10" value="250"><output id="ivSo"></output></div>
+    <svg id="ivSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c3);height:10px"></span>Cost of goods sold</span><span><span class="sw" style="background:var(--c2);height:10px"></span>Ending inventory</span></div>
+    <div class="stats" id="ivStats"></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Rising prices, stable inventory: LIFO compared with FIFO</th><th>Effect</th></tr>
+    <tr><td>COGS</td><td>Higher</td></tr>
+    <tr><td>Gross profit, net income, taxes paid</td><td>Lower</td></tr>
+    <tr><td>Cash flow from operations</td><td>Higher (less tax paid)</td></tr>
+    <tr><td>Ending inventory, current ratio, working capital</td><td>Lower</td></tr>
+    <tr><td>Inventory turnover</td><td>Higher (higher COGS ÷ lower inventory)</td></tr>
+    <tr><td>Debt-to-equity</td><td>Higher (lower equity)</td></tr>
+  </table></div>
+  <p class="small">With falling prices, every effect reverses. FIFO's balance sheet is more current; LIFO's income statement is more current.</p>
+
+  <h3>5.2 The LIFO reserve</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Inventory</div><div class="fx-eq">Inv<sub>FIFO</sub> = Inv<sub>LIFO</sub> + LIFO reserve</div></div>
+    <div class="fx"><div class="fx-name">COGS</div><div class="fx-eq">COGS<sub>FIFO</sub> = COGS<sub>LIFO</sub> − ΔLIFO reserve</div></div>
+    <div class="fx"><div class="fx-name">Net income</div><div class="fx-eq">NI<sub>FIFO</sub> = NI<sub>LIFO</sub> + ΔLIFO reserve × (1 − t)</div></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li>Converting the balance sheet to FIFO: equity rises by LIFO reserve × (1 − t); liabilities (deferred taxes) rise by LIFO reserve × t.</li>
+    <li><b>LIFO liquidation:</b> when inventory quantities fall, old low costs flow into COGS, inflating profit for a one-off period. A falling LIFO reserve is the clue. It's unsustainable and a reporting-quality red flag.</li>
+  </ul>
+
+  <h3>5.3 Inventory valuation</h3>
+  <div class="grid two">
+    <div class="card small"><h4>IFRS</h4>Lower of cost and <b>net realizable value</b> (estimated selling price − costs to complete and sell). Write-downs <b>can be reversed</b> (up to the original cost).</div>
+    <div class="card small"><h4>US GAAP</h4>FIFO and average cost: lower of cost and NRV. LIFO and retail method: lower of cost or market. Write-downs <b>can't be reversed</b>.</div>
+  </div>
+  <p class="small">Periodic inventory systems update inventory at period end; perpetual systems update with each sale. FIFO and specific identification give the same result under both; LIFO and average cost can differ.</p>
+
+  <h3>5.4 Capitalizing vs expensing</h3>
+  <div class="viz">
+    <div class="viz-title">Capitalize or expense the same spending</div>
+    <div class="viz-sub">Before this spending, net income is $500 a year and CFO is $600. Taxes are ignored. Capitalizing spreads the cost over its life; expensing hits year 1.</div>
+    <div class="ctl"><label for="ceE">Amount spent in year 1</label><input type="range" id="ceE" min="100" max="900" step="50" value="400"><output id="ceEo"></output></div>
+    <div class="ctl"><label for="ceN">Useful life (years)</label><input type="range" id="ceN" min="2" max="8" step="1" value="4"><output id="ceNo"></output></div>
+    <svg id="ceSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Net income if capitalized</span><span><span class="sw" style="background:var(--c3)"></span>Net income if expensed</span></div>
+    <div class="tbl" style="margin-top:10px"><table id="ceTbl"></table></div>
+  </div>
+  <ul class="small">
+    <li>Capitalizing gives smoother, higher early profits, higher assets and equity, and <b>higher CFO</b> (the outflow is in CFI). Profitability ratios are higher in year 1 and lower later (bigger asset base).</li>
+    <li><b>Interest during construction</b> is capitalized into the asset's cost under both IFRS and US GAAP; it's then in CFI, not CFO.</li>
+    <li><b>R&amp;D:</b> IFRS expenses research and capitalizes development once specific criteria are met. US GAAP generally expenses both (with exceptions such as some software).</li>
+  </ul>
+
+  <h3>5.5 Depreciation</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Straight-line</div><div class="fx-eq"><span class="frac"><span>Cost − Salvage</span><span>Useful life</span></span></div></div>
+    <div class="fx"><div class="fx-name">Double-declining balance</div><div class="fx-eq"><span class="frac"><span>2</span><span>Useful life</span></span> × Beginning book value</div><div class="fx-note">Ignores salvage in the rate, but never depreciate below salvage.</div></div>
+    <div class="fx"><div class="fx-name">Units of production</div><div class="fx-eq"><span class="frac"><span>Cost − Salvage</span><span>Total expected units</span></span> × Units used</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Straight-line vs double-declining balance</div>
+    <div class="viz-sub">An asset costing $10,000. Accelerated depreciation front-loads the expense; total depreciation is the same either way.</div>
+    <div class="ctl"><label for="dpN">Useful life (years)</label><input type="range" id="dpN" min="3" max="10" step="1" value="5"><output id="dpNo"></output></div>
+    <div class="ctl"><label for="dpS">Salvage value</label><input type="range" id="dpS" min="0" max="3000" step="250" value="1000"><output id="dpSo"></output></div>
+    <svg id="dpSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4);height:10px"></span>Straight-line expense</span><span><span class="sw" style="background:var(--c3);height:10px"></span>Double-declining expense</span></div>
+  </div>
+  <ul class="small">
+    <li><b>Component depreciation</b> (depreciating significant parts separately) is required under IFRS and allowed but rare under US GAAP.</li>
+    <li>Changes in method, life or salvage are changes in estimate: <b>prospective</b>.</li>
+  </ul>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Average age</div><div class="fx-eq"><span class="frac"><span>Accumulated depreciation</span><span>Depreciation expense</span></span></div></div>
+    <div class="fx"><div class="fx-name">Total useful life</div><div class="fx-eq"><span class="frac"><span>Gross PP&amp;E</span><span>Depreciation expense</span></span></div></div>
+    <div class="fx"><div class="fx-name">Remaining useful life</div><div class="fx-eq"><span class="frac"><span>Net PP&amp;E</span><span>Depreciation expense</span></span></div></div>
+  </div>
+
+  <h3>5.6 Impairment, revaluation and derecognition</h3>
+  <div class="grid two">
+    <div class="card small"><h4>IFRS impairment</h4>Impaired if carrying amount &gt; <b>recoverable amount</b> = higher of (fair value − costs to sell) and value in use (PV of future cash flows). Loss = carrying amount − recoverable amount. <b>Reversals allowed</b> (not for goodwill).</div>
+    <div class="card small"><h4>US GAAP impairment (assets held for use)</h4>Step 1, recoverability: impaired if carrying amount &gt; <b>undiscounted</b> future cash flows. Step 2: loss = carrying amount − fair value. <b>No reversals.</b></div>
+  </div>
+  <ul class="small" style="margin-top:10px">
+    <li><b>Revaluation model (IFRS only):</b> PP&amp;E carried at fair value. Increases go to OCI (revaluation surplus) unless they reverse a past loss in profit; decreases go to profit unless they reverse a past surplus.</li>
+    <li><b>Investment property (IFRS):</b> cost model or fair value model (fair value changes go to profit).</li>
+    <li><b>Derecognition:</b> gain or loss on sale = proceeds − carrying amount. Assets held for sale are carried at the lower of carrying amount and fair value less costs to sell, and are no longer depreciated.</li>
+    <li>Impairments are non-cash: they reduce net income and assets but not CFO.</li>
+  </ul>
+</section>
+
+<!-- ================= PART 6 ================= -->
+<section class="mod" id="f6">
+  <div class="modtag">Part 6 · Learning modules 8–9</div>
+  <h2>Long-term liabilities, equity and income taxes</h2>
+  <p class="muted">Bonds, leases, pensions, share-based pay, and deferred taxes.</p>
+
+  <h3>6.1 Bonds: the effective interest method</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Interest expense</div><div class="fx-eq">Carrying value × Market rate at issuance</div><div class="fx-note">The coupon is the cash paid. The difference amortizes the discount or premium.</div></div>
+    <div class="card small"><h4>Discount bond</h4>Coupon &lt; market rate. Issued below par. Interest expense &gt; coupon; carrying value <b>rises</b> to par.</div>
+    <div class="card small"><h4>Premium bond</h4>Coupon &gt; market rate. Issued above par. Interest expense &lt; coupon; carrying value <b>falls</b> to par.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Carrying value and interest expense</div>
+    <div class="viz-sub">A $1,000, 10-year annual-coupon bond. Interest expense uses the market rate at issuance.</div>
+    <div class="ctl"><label for="bdC">Coupon rate</label><input type="range" id="bdC" min="0" max="12" step="0.5" value="5"><output id="bdCo"></output></div>
+    <div class="ctl"><label for="bdM">Market rate at issuance</label><input type="range" id="bdM" min="1" max="12" step="0.5" value="7"><output id="bdMo"></output></div>
+    <svg id="bdSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Carrying value</span><span><span class="sw" style="background:var(--c4)"></span>Par</span></div>
+    <div class="stats"><div class="stat"><div class="l">Issue price</div><div class="v" id="bdP"></div></div><div class="stat"><div class="l">Year-1 interest expense</div><div class="v" id="bdI"></div></div><div class="stat"><div class="l">Year-1 coupon paid</div><div class="v" id="bdCp"></div></div></div>
+  </div>
+  <ul class="small">
+    <li>Under US GAAP the coupon paid is in CFO; issuing and repaying principal is in CFF. Under IFRS, interest paid can be CFO or CFF.</li>
+    <li>Retiring debt early: gain or loss = carrying amount − amount paid. Issue costs reduce the carrying amount (both IFRS and US GAAP).</li>
+    <li><b>Covenants</b> protect lenders: affirmative (must do) and negative (must not do). Breaching one can make the debt due immediately.</li>
+  </ul>
+
+  <h3>6.2 Leases</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Lessee: IFRS 16</h4>One model: almost all leases go on the balance sheet as a <b>right-of-use asset</b> and a <b>lease liability</b> (PV of payments). The income statement shows depreciation plus interest, front-loaded. Short-term (≤ 12 months) and low-value leases can be expensed.</div>
+    <div class="card small"><h4>Lessee: US GAAP (ASC 842)</h4>Both types go on the balance sheet. <b>Finance lease</b>: depreciation + interest (like IFRS). <b>Operating lease</b>: a single straight-line lease cost. A finance lease meets any one test: ownership transfers, purchase option reasonably certain, term is a major part of the asset's life, PV of payments ≥ substantially all of fair value, or the asset is specialized.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Lease expense pattern</div>
+    <div class="viz-sub">The same lease, $1,000 a year paid at year-end. A finance-style lease front-loads expense; an operating lease (US GAAP) is level.</div>
+    <div class="ctl"><label for="lsN">Lease term (years)</label><input type="range" id="lsN" min="3" max="10" step="1" value="5"><output id="lsNo"></output></div>
+    <div class="ctl"><label for="lsR">Discount rate</label><input type="range" id="lsR" min="2" max="12" step="1" value="8"><output id="lsRo"></output></div>
+    <svg id="lsSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1);height:10px"></span>Depreciation (finance / IFRS)</span><span><span class="sw" style="background:var(--c5);height:10px"></span>Interest (finance / IFRS)</span><span><span class="sw" style="background:var(--c4)"></span>Operating lease cost (US GAAP)</span></div>
+    <div class="stats"><div class="stat"><div class="l">Initial lease liability and ROU asset</div><div class="v" id="lsL"></div></div><div class="stat"><div class="l">Year-1 expense: finance vs operating</div><div class="v" id="ls1" style="font-size:16px"></div></div></div>
+  </div>
+  <p class="small"><b>Cash flows:</b> for a finance lease, the principal part of the payment is in CFF (interest in CFO under US GAAP). For a US GAAP operating lease, the whole payment is in CFO. So finance-lease treatment shows higher CFO. <b>Lessors:</b> a finance (IFRS) or sales-type (US GAAP) lease derecognizes the asset and records a receivable; an operating lease keeps the asset and records rental income.</p>
+
+  <h3>6.3 Pensions and share-based compensation</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Defined contribution</h4>Expense = the contribution the company owes for the period. The employee bears the investment risk. No liability beyond unpaid contributions.</div>
+    <div class="card small"><h4>Defined benefit</h4><b>Net pension liability (asset)</b> = PV of the defined benefit obligation − fair value of plan assets. Underfunded = liability. IFRS: service cost and net interest go to profit; remeasurements (actuarial gains and losses, return on assets beyond the interest) go to OCI and stay there. US GAAP: service cost, interest cost and expected return go to profit; actuarial gains and losses go to OCI and are amortized into profit over time.</div>
+  </div>
+  <p class="small"><b>Share-based pay:</b> stock grants and options are measured at <b>fair value on the grant date</b> and expensed over the vesting (service) period. Options are valued with an option-pricing model, so the expense depends on assumptions such as volatility. Stock appreciation rights are settled in cash and remeasured each period.</p>
+
+  <h3>6.4 Income taxes</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Two sets of books</h4>The <b>financial statements</b> show accounting profit (pretax income) and <b>income tax expense</b>. The <b>tax return</b> shows taxable income and <b>taxes payable</b>. Timing differences between them create deferred taxes.</div>
+    <div class="fx"><div class="fx-name">Income tax expense</div><div class="fx-eq">Taxes payable + ΔDTL − ΔDTA</div></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th></th><th>Deferred tax liability (DTL)</th><th>Deferred tax asset (DTA)</th></tr>
+    <tr><td>When</td><td>Taxable income &lt; accounting profit now (pay less tax now, more later)</td><td>Taxable income &gt; accounting profit now (pay more tax now, less later)</td></tr>
+    <tr><td>Typical cause</td><td>Faster depreciation for tax than for the books</td><td>Warranty or bad-debt expenses recognized in the books before they're deductible; tax loss carryforwards</td></tr>
+    <tr><td>Balance sheet test</td><td>Asset's carrying amount &gt; its tax base (or liability's carrying amount &lt; tax base)</td><td>Asset's carrying amount &lt; tax base (or liability's carrying amount &gt; tax base)</td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">How a deferred tax liability builds and reverses</div>
+    <div class="viz-sub">A $1,000 asset with a 5-year life. The books use straight-line; the tax return uses double-declining balance (switching to straight-line). The line shows the DTL on the balance sheet at each year-end.</div>
+    <div class="ctl"><label for="dtR">Tax rate</label><input type="range" id="dtR" min="10" max="40" step="1" value="30"><output id="dtRo"></output></div>
+    <svg id="dtSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4);height:10px"></span>Book depreciation</span><span><span class="sw" style="background:var(--c1);height:10px"></span>Tax depreciation</span><span><span class="sw" style="background:var(--c3)"></span>DTL balance</span></div>
+    <div class="tbl" style="margin-top:10px"><table id="dtTbl"></table></div>
+  </div>
+  <ul class="small">
+    <li><b>Permanent differences</b> (e.g. tax-exempt interest, non-deductible fines) never reverse: no deferred tax, but they make the <b>effective tax rate</b> (tax expense ÷ pretax income) differ from the statutory rate.</li>
+    <li><b>Valuation allowance (US GAAP):</b> reduces a DTA when it's more likely than not that it won't be used. It raises tax expense and lowers net income. IFRS recognizes a DTA only if it's probable it will be used.</li>
+    <li>A change in tax rates remeasures DTLs and DTAs, and the change flows through tax expense.</li>
+    <li><b>Analyst view of a DTL:</b> if it's not expected to reverse (e.g. a growing company keeps buying assets), treat it as equity; if it will reverse, treat it as a liability.</li>
+  </ul>
+</section>
+
+<!-- ================= PART 7 ================= -->
+<section class="mod" id="f7">
+  <div class="modtag">Part 7 · Learning modules 10–12</div>
+  <h2>Reporting quality, analysis techniques and modeling</h2>
+  <p class="muted">How much to trust the numbers, how to analyze them, and how to forecast.</p>
+
+  <h3>7.1 Financial reporting quality</h3>
+  <div class="grid two">
+    <div class="viz" style="margin:0">
+      <div class="viz-title">Spectrum of reporting quality</div>
+      <div class="viz-sub">From best (top) to worst (bottom).</div>
+      <div class="ladder">
+        <div class="r" style="background:var(--good-bg);color:var(--good)">GAAP, decision-useful, sustainable earnings with adequate returns</div>
+        <div class="r" style="background:var(--good-bg);color:var(--good);opacity:.8">GAAP, decision-useful, but low-quality (unsustainable) earnings</div>
+        <div class="r" style="background:var(--warn-bg);color:var(--warn)">Within GAAP, but biased accounting choices</div>
+        <div class="r" style="background:var(--warn-bg);color:var(--warn)">Within GAAP, but "earnings management" through real actions</div>
+        <div class="r" style="background:var(--bad-bg);color:var(--bad)">Departures from GAAP: non-compliant accounting</div>
+        <div class="r" style="background:var(--bad-bg);color:var(--bad)">Departures from GAAP: fictitious transactions (fraud)</div>
+      </div>
+    </div>
+    <div class="card small">
+      <h4>Key ideas</h4>
+      <ul style="margin:0">
+        <li><b>Reporting quality</b> = how useful and faithful the reports are. <b>Earnings quality</b> = how sustainable the earnings are. You can have high-quality reporting of low-quality earnings.</li>
+        <li><b>Conservative</b> choices understate current results; <b>aggressive</b> ones overstate them. Both are biased. Conservative accounting can also enable "cookie jar" reserves to release later.</li>
+        <li><b>Why it happens</b> (the fraud triangle): motivation (bonuses, meeting forecasts, covenants), opportunity (weak controls, flexible rules), rationalization.</li>
+        <li><b>Checks:</b> auditors, regulators, market discipline, private contracts (covenants).</li>
+        <li><b>Non-GAAP measures</b> must be reconciled to the closest GAAP figure; watch for items excluded every year.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout trap"><b>Warning signs.</b> CFO persistently below net income · receivables or inventory growing faster than sales · aggressive revenue recognition (bill-and-hold, channel stuffing) · capitalizing costs others expense · longer useful lives or lower bad-debt estimates than peers · "non-recurring" charges every year · LIFO liquidations · big bath charges · related-party transactions · frequent auditor changes · results that just meet forecasts every quarter.</div>
+
+  <h3>7.2 Analysis techniques and ratios</h3>
+  <div class="tbl"><table>
+    <tr><th>Group</th><th>Ratio</th><th>Formula</th></tr>
+    <tr><td rowspan="4">Activity</td><td>Inventory turnover / days of inventory (DOH)</td><td>COGS / avg inventory; 365 / turnover</td></tr>
+    <tr><td>Receivables turnover / days of sales (DSO)</td><td>Revenue / avg receivables; 365 / turnover</td></tr>
+    <tr><td>Payables turnover / days of payables</td><td>Purchases / avg payables; 365 / turnover</td></tr>
+    <tr><td>Total asset turnover</td><td>Revenue / avg total assets</td></tr>
+    <tr><td rowspan="3">Liquidity</td><td>Current / quick / cash ratio</td><td>CA / CL; (cash + marketable securities + receivables) / CL; (cash + marketable securities) / CL</td></tr>
+    <tr><td>Defensive interval</td><td>(cash + marketable securities + receivables) / daily cash expenditures</td></tr>
+    <tr><td>Cash conversion cycle</td><td>DOH + DSO − days of payables</td></tr>
+    <tr><td rowspan="3">Solvency</td><td>Debt-to-equity / debt-to-capital / debt-to-assets</td><td>Debt / equity; debt / (debt + equity); debt / assets</td></tr>
+    <tr><td>Financial leverage</td><td>Avg total assets / avg total equity</td></tr>
+    <tr><td>Interest coverage / fixed charge coverage</td><td>EBIT / interest; (EBIT + lease payments) / (interest + lease payments)</td></tr>
+    <tr><td rowspan="2">Profitability</td><td>Gross, operating, pretax, net margins</td><td>Each profit line / revenue</td></tr>
+    <tr><td>ROA, ROE, return on total capital</td><td>NI / avg assets; NI / avg equity; EBIT / (debt + equity)</td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">DuPont: what drives ROE?</div>
+    <div class="viz-sub">ROE = tax burden × interest burden × EBIT margin × asset turnover × financial leverage.</div>
+    <div class="ctl"><label for="duT">Tax burden (NI / EBT)</label><input type="range" id="duT" min="0.5" max="1" step="0.01" value="0.75"><output id="duTo"></output></div>
+    <div class="ctl"><label for="duI">Interest burden (EBT / EBIT)</label><input type="range" id="duI" min="0.4" max="1" step="0.01" value="0.8"><output id="duIo"></output></div>
+    <div class="ctl"><label for="duM">EBIT margin (EBIT / revenue)</label><input type="range" id="duM" min="0" max="0.3" step="0.005" value="0.1"><output id="duMo"></output></div>
+    <div class="ctl"><label for="duA">Asset turnover (revenue / assets)</label><input type="range" id="duA" min="0.2" max="3" step="0.05" value="1.2"><output id="duAo"></output></div>
+    <div class="ctl"><label for="duL">Financial leverage (assets / equity)</label><input type="range" id="duL" min="1" max="5" step="0.1" value="2"><output id="duLo"></output></div>
+    <div class="stats">
+      <div class="stat"><div class="l">Net profit margin</div><div class="v" id="duNPM"></div></div>
+      <div class="stat"><div class="l">ROA</div><div class="v" id="duROA"></div></div>
+      <div class="stat"><div class="l">ROE</div><div class="v" id="duROE"></div></div>
+    </div>
+    <p class="small muted" style="margin:8px 0 0">More leverage raises ROE only while the interest burden doesn't fall too much. A higher tax burden ratio means a <i>lower</i> tax rate.</p>
+  </div>
+  <ul class="small">
+    <li><b>Common-size</b> statements (vertical analysis), <b>trend</b> (horizontal) analysis, and <b>cross-sectional</b> comparison with peers.</li>
+    <li><b>Segment analysis:</b> segment margins, segment ROA, and capital allocation across segments.</li>
+    <li><b>Credit analysis</b> focuses on coverage (EBITDA/interest) and leverage (debt/EBITDA, FFO/debt).</li>
+  </ul>
+
+  <h3>7.3 Financial statement modeling</h3>
+  <div class="grid">
+    <div class="card small"><h4>Revenue</h4>Top-down: grow with GDP or the market and apply a market share. Bottom-up: volume × price by product, segment or store. Hybrid approaches combine both.</div>
+    <div class="card small"><h4>Costs and capital</h4>COGS often as a % of revenue (watch input prices and hedging); SG&amp;A has fixed and variable parts. Working capital from days ratios; capex split between maintenance (≈ depreciation) and growth.</div>
+    <div class="card small"><h4>Judgment</h4>Scenario and sensitivity analysis; competitive position (Porter's five forces); inflation and deflation pass-through to prices; technology disruption; choosing the forecast horizon.</div>
+  </div>
+  <p class="small"><b>Behavioral biases in forecasting:</b> overconfidence (ranges too narrow), illusion of control (more detail ≠ more accuracy), conservatism (slow to update), representativeness (over-weighting recent or similar cases), confirmation bias (seeking only supporting evidence).</p>
+</section>
+
+<!-- ================= IFRS vs GAAP ================= -->
+<section class="mod" id="sheet">
+  <div class="modtag">Review</div>
+  <h2>IFRS vs US GAAP</h2>
+  <p class="muted">The differences most likely to be tested.</p>
+  <div class="tbl"><table>
+    <tr><th>Topic</th><th>IFRS</th><th>US GAAP</th></tr>
+    <tr><td>Interest paid</td><td>CFO or CFF</td><td>CFO</td></tr>
+    <tr><td>Interest and dividends received</td><td>CFO or CFI</td><td>CFO</td></tr>
+    <tr><td>Dividends paid</td><td>CFO or CFF</td><td>CFF</td></tr>
+    <tr><td>Taxes paid</td><td>CFO, unless clearly tied to investing or financing</td><td>CFO</td></tr>
+    <tr><td>Bank overdrafts</td><td>Can be part of cash</td><td>Financing</td></tr>
+    <tr><td>LIFO</td><td><span class="pill b">Not allowed</span></td><td>Allowed</td></tr>
+    <tr><td>Inventory write-down reversal</td><td>Allowed (up to original cost)</td><td>Not allowed</td></tr>
+    <tr><td>Development costs</td><td>Capitalized once criteria are met</td><td>Expensed (except some software)</td></tr>
+    <tr><td>PP&amp;E measurement</td><td>Cost or revaluation model</td><td>Cost model only</td></tr>
+    <tr><td>Investment property</td><td>Cost or fair value model</td><td>No separate category (cost)</td></tr>
+    <tr><td>Component depreciation</td><td>Required</td><td>Allowed, rarely used</td></tr>
+    <tr><td>Impairment test (held for use)</td><td>One step: carrying vs recoverable amount</td><td>Two steps: undiscounted cash flows, then fair value</td></tr>
+    <tr><td>Impairment reversal</td><td>Allowed (not goodwill)</td><td>Not allowed</td></tr>
+    <tr><td>Lessee accounting</td><td>Single model (depreciation + interest)</td><td>Finance (depreciation + interest) or operating (straight-line cost)</td></tr>
+    <tr><td>DB pension: in profit or loss</td><td>Service cost + net interest</td><td>Service cost + interest cost − expected return + amortization</td></tr>
+    <tr><td>DB pension: actuarial gains/losses</td><td>OCI, never recycled</td><td>OCI, then amortized into profit</td></tr>
+    <tr><td>Deferred tax assets</td><td>Recognized only if probable</td><td>Recognized in full, less a valuation allowance</td></tr>
+    <tr><td>Balance sheet format</td><td>Liquidity-based order allowed</td><td>Current / non-current, usually most liquid first</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= FORMULAS ================= -->
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div>
+  <h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Basic EPS</td><td>(NI − preferred dividends) / weighted average shares</td></tr>
+    <tr><td>Treasury stock method</td><td>New shares = N − N × exercise price / average price</td></tr>
+    <tr><td>Diluted EPS adjustments</td><td>+ conv. preferred dividends; + conv. debt interest × (1 − t); + conversion shares</td></tr>
+    <tr><td>Comprehensive income</td><td>NI + OCI</td></tr>
+    <tr><td>Goodwill</td><td>Purchase price − fair value of identifiable net assets</td></tr>
+    <tr><td>FCFF</td><td>CFO + interest × (1 − t) − FCInv</td></tr>
+    <tr><td>FCFE</td><td>CFO − FCInv + net borrowing</td></tr>
+    <tr><td>LIFO → FIFO inventory</td><td>LIFO inventory + LIFO reserve</td></tr>
+    <tr><td>LIFO → FIFO COGS</td><td>LIFO COGS − ΔLIFO reserve</td></tr>
+    <tr><td>LIFO → FIFO net income</td><td>LIFO NI + ΔLIFO reserve × (1 − t)</td></tr>
+    <tr><td>Straight-line depreciation</td><td>(Cost − salvage) / life</td></tr>
+    <tr><td>Double-declining balance</td><td>(2 / life) × beginning book value</td></tr>
+    <tr><td>Average age / total life / remaining life</td><td>Acc. dep. / dep. expense; gross PP&amp;E / dep.; net PP&amp;E / dep.</td></tr>
+    <tr><td>IFRS recoverable amount</td><td>Higher of fair value less costs to sell and value in use</td></tr>
+    <tr><td>Bond interest expense</td><td>Carrying value × market rate at issuance</td></tr>
+    <tr><td>Lease liability</td><td>PV of lease payments at the discount rate</td></tr>
+    <tr><td>Net pension liability</td><td>PV of DBO − fair value of plan assets</td></tr>
+    <tr><td>Income tax expense</td><td>Taxes payable + ΔDTL − ΔDTA</td></tr>
+    <tr><td>Effective tax rate</td><td>Income tax expense / pretax income</td></tr>
+    <tr><td>Cash conversion cycle</td><td>DOH + DSO − days of payables</td></tr>
+    <tr><td>3-step DuPont</td><td>ROE = NI/revenue × revenue/assets × assets/equity</td></tr>
+    <tr><td>5-step DuPont</td><td>ROE = NI/EBT × EBT/EBIT × EBIT/revenue × revenue/assets × assets/equity</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div>
+  <h2>Practice questions</h2>
+  <p class="muted">Work each one before opening the answer.</p>
+
+  <details class="q"><summary><span class="qn">1</span>The two fundamental qualitative characteristics of financial information are: A. comparability and timeliness  B. relevance and faithful representation  C. verifiability and understandability<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The others are enhancing characteristics.</div></details>
+
+  <details class="q"><summary><span class="qn">2</span>An auditor finds the statements materially misstated and not fairly presented. The opinion is: A. qualified  B. adverse  C. a disclaimer<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Qualified = fair except for a specific issue; disclaimer = can't form an opinion.</div></details>
+
+  <details class="q"><summary><span class="qn">3</span>An online platform arranges hotel stays but never controls the rooms. It should report revenue as: A. the gross booking value  B. its net commission  C. deferred until the stay ends<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It's an agent, so revenue is net.</div></details>
+
+  <details class="q"><summary><span class="qn">4</span>A company changes an asset's estimated useful life. This is applied: A. retrospectively  B. prospectively  C. by restating prior periods as an error<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A change in estimate affects current and future periods. A change in policy is retrospective.</div></details>
+
+  <details class="q"><summary><span class="qn">5</span>Which goes to net income rather than OCI? A. Foreign currency translation adjustment  B. Unrealized gain on securities at fair value through profit or loss  C. Pension actuarial loss (IFRS)<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Fair value through profit or loss means just that.</div></details>
+
+  <details class="q"><summary><span class="qn">6</span>A company pays $500M for a target with book value of net assets of $350M and fair value of identifiable net assets of $420M. Goodwill is: A. $70M  B. $80M  C. $150M<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 500 − 420 = 80. C uses book value.</div></details>
+
+  <details class="q"><summary><span class="qn">7</span>Under US GAAP, dividends paid to shareholders are classified as: A. CFO  B. CFI  C. CFF<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Under IFRS they can be CFO or CFF.</div></details>
+
+  <details class="q"><summary><span class="qn">8</span>Net income 100, depreciation 20, receivables up 15, inventory down 10, payables down 5, gain on sale of equipment 8. CFO is: A. 92  B. 102  C. 118<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 100 + 20 − 15 + 10 − 5 − 8 = 102. C adds the gain instead of subtracting it.</div></details>
+
+  <details class="q"><summary><span class="qn">9</span>CFO 500, interest paid 50 (in CFO), tax rate 30%, capital expenditure 200. FCFF is: A. 300  B. 335  C. 350<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 500 + 50 × 0.7 − 200 = 335. C adds back interest before tax.</div></details>
+
+  <details class="q"><summary><span class="qn">10</span>With rising prices and stable inventory, compared with FIFO, LIFO gives: A. higher gross margin  B. lower taxes paid  C. higher ending inventory<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Higher COGS → lower taxable income → lower taxes and higher CFO.</div></details>
+
+  <details class="q"><summary><span class="qn">11</span>LIFO inventory is $400 and the LIFO reserve is $100. FIFO inventory is: A. $300  B. $400  C. $500<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> LIFO inventory + LIFO reserve.</div></details>
+
+  <details class="q"><summary><span class="qn">12</span>LIFO COGS is $1,000 and the LIFO reserve rose from $80 to $100. FIFO COGS is: A. $980  B. $1,000  C. $1,020<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 1,000 − 20. Rising prices mean FIFO COGS is lower.</div></details>
+
+  <details class="q"><summary><span class="qn">13</span>Reversing a prior inventory write-down is: A. allowed under IFRS only  B. allowed under US GAAP only  C. allowed under both<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+
+  <details class="q"><summary><span class="qn">14</span>A falling LIFO reserve combined with a sharp rise in gross margin most likely signals: A. a LIFO liquidation  B. a switch to FIFO  C. falling sales<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Old, cheap layers flowed into COGS, boosting profit for a one-off period.</div></details>
+
+  <details class="q"><summary><span class="qn">15</span>Cost $10,000, salvage $1,000, 5-year life. Double-declining depreciation in year 2 is: A. $1,800  B. $2,160  C. $2,400<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Year 1: 40% × 10,000 = 4,000. Year 2: 40% × 6,000 = 2,400. A is straight-line. B wrongly subtracts salvage before applying the rate.</div></details>
+
+  <details class="q"><summary><span class="qn">16</span>Compared with expensing, capitalizing an expenditure in year 1 gives: A. higher CFO  B. higher CFI  C. lower total assets<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> The outflow moves to CFI (lower CFI), so CFO is higher; assets are higher.</div></details>
+
+  <details class="q"><summary><span class="qn">17</span>Under IFRS, carrying amount 1,000; fair value less costs to sell 880; value in use 920. The impairment loss is: A. 0  B. 80  C. 120<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Recoverable amount = higher of 880 and 920 = 920. Loss = 1,000 − 920.</div></details>
+
+  <details class="q"><summary><span class="qn">18</span>Under US GAAP, carrying amount 1,000; undiscounted future cash flows 1,100; fair value 900. The impairment loss is: A. 0  B. 100  C. 200<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Carrying amount is below undiscounted cash flows, so it passes the recoverability test.</div></details>
+
+  <details class="q"><summary><span class="qn">19</span>Accumulated depreciation 400, annual depreciation 100, gross PP&amp;E 1,000. Estimated remaining useful life is: A. 4 years  B. 6 years  C. 10 years<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Net PP&amp;E 600 / 100. A is the average age; C the total life.</div></details>
+
+  <details class="q"><summary><span class="qn">20</span>A $1,000, 5-year, 5% annual bond is issued when market rates are 6%, at $957.88. Year-1 interest expense is closest to: A. $50.00  B. $57.47  C. $60.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 957.88 × 6%. A is the coupon; C uses par.</div></details>
+
+  <details class="q"><summary><span class="qn">21</span>Under IFRS 16, a lessee's total lease-related expense over the lease term is typically: A. level each year  B. higher in early years  C. higher in later years<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Depreciation is level but interest is highest early, when the liability is largest.</div></details>
+
+  <details class="q"><summary><span class="qn">22</span>PV of the defined benefit obligation is 1,200 and plan assets are 1,000. The balance sheet shows a: A. net pension asset of 200  B. net pension liability of 200  C. pension liability of 1,200<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The plan is underfunded by 200.</div></details>
+
+  <details class="q"><summary><span class="qn">23</span>An asset costs 300 with a 3-year life. Book depreciation is straight-line (100); tax depreciation in year 1 is 150. At a 30% tax rate, the DTL at the end of year 1 is: A. 15  B. 30  C. 45<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Carrying amount 200 − tax base 150 = 50 × 30% = 15.</div></details>
+
+  <details class="q"><summary><span class="qn">24</span>Taxes payable are 200, the DTL rose by 15 and the DTA rose by 5. Income tax expense is: A. 190  B. 210  C. 220<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 200 + 15 − 5.</div></details>
+
+  <details class="q"><summary><span class="qn">25</span>Increasing a valuation allowance on deferred tax assets will: A. raise net income  B. lower net income  C. have no effect on net income<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It reduces the DTA and raises tax expense.</div></details>
+
+  <details class="q"><summary><span class="qn">26</span>Net profit margin 5%, asset turnover 1.6, financial leverage 2.5. ROE is: A. 8%  B. 12.5%  C. 20%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 0.05 × 1.6 × 2.5 = 0.20. A is ROA.</div></details>
+
+  <details class="q"><summary><span class="qn">27</span>DOH 60 days, DSO 45 days, days of payables 30. The cash conversion cycle is: A. 75 days  B. 105 days  C. 135 days<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 60 + 45 − 30.</div></details>
+
+  <details class="q"><summary><span class="qn">28</span>Which most likely indicates low earnings quality? A. CFO consistently above net income  B. Receivables growing much faster than revenue  C. Stable gross margins<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It can signal aggressive revenue recognition or weak collections.</div></details>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div>
+  <h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. To keep it, click <b>Save progress into this file</b>: that downloads an updated copy of this guide with your progress built in. Re-upload that copy to Claude to continue from where you left off.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <button class="primary" id="saveFile">Save progress into this file</button>
+    <button id="copyProg">Copy progress for Claude</button>
+    <span class="small muted" id="saveMsg" style="align-self:center"></span>
+  </div>
+</section>
+
+<footer>CFA Level I financial statement analysis guide · Created with Claude on 2026-10-22. Based on the CFA Program Level I curriculum topics; check the CFA Institute site for the current outline.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Financial Statement Analysis study guide",
+  "file_version": 1,
+  "created": "2026-10-22",
+  "companion_files": ["CFA-L1-Portfolio-Management-Guide.html", "CFA-L1-Fixed-Income-Guide.html", "CFA-L1-Quant-Guide.html", "CFA-L1-Ethics-Guide.html"],
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas (fractions, not plain text) and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "11-14%",
+  "modules": [
+    {"id": "f1", "name": "Part 1: Framework, statements and standards (LM 1)", "key": ["statement linkages", "notes, MD&A, audit opinions", "standard setters vs regulators", "qualitative characteristics, accrual, going concern"], "visuals": ["statement linkage flow"]},
+    {"id": "f2", "name": "Part 2: Income statements (LM 2)", "key": ["5-step revenue recognition, principal vs agent", "discontinued ops, unusual items", "policy vs estimate vs error changes", "basic and diluted EPS", "OCI items"], "visuals": ["diluted EPS calculator (pre-filled with the 7.72 qbank problem)"]},
+    {"id": "f3", "name": "Part 3: Balance sheets (LM 3)", "key": ["current vs non-current", "measurement bases", "goodwill and intangibles", "financial instrument categories", "equity components"]},
+    {"id": "f4", "name": "Part 4: Cash flow statements (LM 4-5)", "key": ["CFO/CFI/CFF classification", "IFRS vs GAAP choices", "direct vs indirect", "FCFF, FCFE", "cash flow ratios"], "visuals": ["classification quiz", "NI-to-CFO waterfall (sliders)"]},
+    {"id": "f5", "name": "Part 5: Inventories and long-lived assets (LM 6-7)", "key": ["FIFO, average, LIFO effects", "LIFO reserve conversions, LIFO liquidation", "NRV write-downs and reversals", "capitalize vs expense, interest, R&D", "SL, DDB, units of production", "asset age ratios", "impairment IFRS vs GAAP, revaluation"], "visuals": ["inventory method comparison (sliders)", "capitalize vs expense (sliders)", "depreciation SL vs DDB (sliders)"]},
+    {"id": "f6", "name": "Part 6: Liabilities, equity and taxes (LM 8-9)", "key": ["effective interest method", "leases IFRS 16 vs ASC 842", "DB vs DC pensions", "share-based compensation", "DTL/DTA, tax expense, permanent differences, valuation allowance"], "visuals": ["bond carrying value (sliders)", "lease expense pattern (sliders)", "DTL build and reversal (tax rate slider)"]},
+    {"id": "f7", "name": "Part 7: Reporting quality, analysis and modeling (LM 10-12)", "key": ["quality spectrum, conservative vs aggressive, warning signs", "ratio groups, DuPont", "forecasting, biases"], "visuals": ["quality spectrum", "DuPont calculator"]}
+  ],
+  "known_weak_spots": [
+    "Deferred tax liabilities: student asked for a simpler explanation (covered in chat on 2026-10-15; see Part 6 DTL visual)",
+    "Diluted EPS: worked through the qbank problem (answer 7.72) on 2026-10-11"
+  ],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const money = (v, d) => (v < 0 ? '−$' : '$') + Math.abs(v).toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+const sgnMoney = v => (v > 0 ? '+' : '') + money(v);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) {
+  if (!(max - min > 1e-9)) max = min + 1;
+  const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p;
+  const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step };
+}
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 320, L = o.ml || 60, R = 18, T = 14, B = 44;
+  const pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw;
+  const Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9);
+  const defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; if (!o.noXgrid) el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' });
+  el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 2 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const dot = (x, y, color, r) => el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, g: g, L: L, T: T, pw: pw, ph: ph };
+}
+
+/* ---------- EPS calculator ---------- */
+const EPS_IDS = ['epNI', 'epPD', 'epSh', 'epT', 'epCPD', 'epCPS', 'epBI', 'epBS', 'epON', 'epOX', 'epOP'];
+bind(EPS_IDS, function () {
+  const v = {}; let bad = false;
+  EPS_IDS.forEach(id => { const x = parseFloat($(id).value); if (isNaN(x) || x < 0) bad = true; v[id] = x; });
+  if (bad) { setText('epErr', 'Enter a number of 0 or more in every box.'); return; }
+  if (v.epSh <= 0) { setText('epErr', 'Weighted average shares must be above 0.'); return; }
+  setText('epErr', '');
+  const t = v.epT / 100, baseNum = v.epNI - v.epPD, basic = baseNum / v.epSh;
+  const secs = [];
+  if (v.epCPS > 0) secs.push({ n: 'Convertible preferred', num: v.epCPD, sh: v.epCPS, how: 'Add back ' + money(v.epCPD) + ' of dividends; add ' + v.epCPS.toLocaleString() + ' shares' });
+  if (v.epBS > 0) secs.push({ n: 'Convertible bonds', num: v.epBI * (1 - t), sh: v.epBS, how: 'Add back ' + money(v.epBI) + ' × (1 − ' + v.epT + '%) = ' + money(v.epBI * (1 - t)) + '; add ' + v.epBS.toLocaleString() + ' shares' });
+  if (v.epON > 0) { const ns = v.epOP > v.epOX && v.epOP > 0 ? v.epON - v.epON * v.epOX / v.epOP : 0; secs.push({ n: 'Options / warrants', num: 0, sh: ns, how: ns > 0 ? 'Net new shares ' + v.epON.toLocaleString() + ' − ' + v.epON.toLocaleString() + ' × ' + v.epOX + '/' + v.epOP + ' = ' + Math.round(ns).toLocaleString() : 'Market price not above exercise price: no new shares', opt: true }); }
+  secs.forEach(s => { s.inc = s.sh > 0 ? s.num / s.sh : Infinity; });
+  const order = secs.slice().sort((a, b) => a.inc - b.inc);
+  let num = baseNum, sh = v.epSh, eps = basic;
+  order.forEach(s => { if (s.sh > 0 && (num + s.num) / (sh + s.sh) < eps - 1e-12) { num += s.num; sh += s.sh; eps = num / sh; s.dil = true; } else s.dil = false; });
+  let rows = '<tr><th>Security</th><th>Adjustment</th><th class="num">Per-share effect</th><th>Status</th></tr>';
+  rows += '<tr><td>Basic</td><td>(' + money(v.epNI) + ' − ' + money(v.epPD) + ') ÷ ' + v.epSh.toLocaleString() + '</td><td class="num">' + money(basic, 2) + '</td><td></td></tr>';
+  secs.forEach(s => { rows += '<tr><td>' + esc(s.n) + '</td><td>' + esc(s.how) + '</td><td class="num">' + (isFinite(s.inc) ? money(s.inc, 2) : 'n/a') + '</td><td>' + (s.dil ? '<span class="pill g">Dilutive: included</span>' : '<span class="pill b">Antidilutive: excluded</span>') + '</td></tr>'; });
+  rows += '<tr><th>Diluted</th><th>' + money(num) + ' ÷ ' + Math.round(sh).toLocaleString() + ' shares</th><th class="num">' + money(eps, 2) + '</th><th></th></tr>';
+  $('epTbl').innerHTML = rows;
+  setText('epB', money(basic, 2)); setText('epD', money(eps, 2));
+});
+
+/* ---------- Cash flow classification quiz ---------- */
+const CFQ = [
+  ["Cash collected from customers", "CFO", ""],
+  ["Purchase of new equipment", "CFI", ""],
+  ["Proceeds from issuing bonds", "CFF", ""],
+  ["Interest paid on debt", "CFO", "IFRS allows CFO or CFF."],
+  ["Dividends paid to shareholders", "CFF", "IFRS allows CFO or CFF."],
+  ["Dividends received from an investment", "CFO", "IFRS allows CFO or CFI."],
+  ["Buying another company's bonds as a long-term investment", "CFI", ""],
+  ["Buying back the company's own shares", "CFF", ""],
+  ["Cash paid to suppliers and employees", "CFO", ""],
+  ["Proceeds from selling a factory", "CFI", "Any gain on the sale is subtracted from net income in the indirect method."],
+  ["Repaying the principal on a bank loan", "CFF", ""],
+  ["Income taxes paid", "CFO", ""],
+  ["Making a loan to another company", "CFI", ""]
+];
+const cfAns = new Array(CFQ.length).fill(null);
+function renderCf() {
+  $('cfQuiz').innerHTML = CFQ.map((q, i) => {
+    const a = cfAns[i];
+    const fb = a === null ? '' : '<div class="why"><span class="pill ' + (a === q[1] ? 'g' : 'b') + '">' + (a === q[1] ? 'Right' : 'Not quite') + '</span> ' + q[1] + (q[2] ? '. ' + esc(q[2]) : '.') + '</div>';
+    return '<div class="dq"><div>' + esc(q[0]) + '</div><div class="btns">' + ['CFO', 'CFI', 'CFF'].map(c => '<button data-i="' + i + '" data-v="' + c + '" class="' + (a === c ? 'sel' : '') + '">' + c + '</button>').join('') + '</div>' + fb + '</div>';
+  }).join('');
+  const done = cfAns.filter(x => x !== null).length, right = cfAns.filter((x, i) => x === CFQ[i][1]).length;
+  setText('cfScore', done ? 'Score: ' + right + ' of ' + done + ' answered correctly' + (done === CFQ.length ? ' (all done).' : '.') : '');
+}
+$('cfQuiz').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cfAns[+b.dataset.i] = b.dataset.v; renderCf(); });
+renderCf();
+
+/* ---------- Indirect method waterfall ---------- */
+bind(['wfNI', 'wfDA', 'wfG', 'wfAR', 'wfIN', 'wfAP'], function () {
+  const NI = +$('wfNI').value, DA = +$('wfDA').value, G = +$('wfG').value, AR = +$('wfAR').value, IN = +$('wfIN').value, AP = +$('wfAP').value;
+  setText('wfNIo', money(NI)); setText('wfDAo', money(DA)); setText('wfGo', money(G));
+  setText('wfARo', (AR > 0 ? '+' : '') + AR); setText('wfINo', (IN > 0 ? '+' : '') + IN); setText('wfAPo', (AP > 0 ? '+' : '') + AP);
+  const steps = [['Net income', NI, 'start'], ['+ D&A', DA], ['− Gain', -G], [(AR >= 0 ? '− ' : '+ ') + 'Recv. ' + (AR >= 0 ? 'up' : 'down'), -AR], [(IN >= 0 ? '− ' : '+ ') + 'Inv. ' + (IN >= 0 ? 'up' : 'down'), -IN], [(AP >= 0 ? '+ ' : '− ') + 'Payab. ' + (AP >= 0 ? 'up' : 'down'), AP]];
+  let run = 0; const bars = [];
+  steps.forEach((s, i) => { if (i === 0) { bars.push([s[0], 0, s[1], 'var(--c1)']); run = s[1]; } else { bars.push([s[0], run, run + s[1], s[1] >= 0 ? 'var(--c2)' : 'var(--c3)']); run += s[1]; } });
+  bars.push(['CFO', 0, run, 'var(--c1)']);
+  const vals = bars.reduce((a, b) => a.concat([b[1], b[2]]), [0]), r = nice(Math.min.apply(null, vals), Math.max.apply(null, vals), 5);
+  const n = bars.length, ch = chart($('wfSvg'), { h: 300, xr: [0, n], yr: [r.lo, r.hi], yt: r.step, fy: v => '$' + v.toFixed(0), yl: '$' });
+  bars.forEach((b, i) => {
+    ch.rect(i + 0.18, i + 0.82, b[1], b[2], b[3]);
+    if (i < n - 1) { const nx = bars[i + 1]; ch.el('line', { x1: ch.X(i + 0.82), x2: ch.X(i + 1.18), y1: ch.Y(b[2]), y2: ch.Y(b[2]) }, null, { stroke: 'var(--border-strong)', strokeDasharray: '3 3' }); }
+    ch.text(ch.X(i + 0.5), ch.T + ch.ph + 17, b[0], { 'text-anchor': 'middle', style: 'font-size:11px' });
+    const top = Math.max(b[1], b[2]), val = i === 0 || i === n - 1 ? money(b[2]) : sgnMoney(b[2] - b[1]);
+    ch.text(ch.X(i + 0.5), ch.Y(top) - 6, val, { 'text-anchor': 'middle' }, 't1');
+  });
+});
+
+/* ---------- Inventory methods ---------- */
+bind(['ivG', 'ivS'], function () {
+  const g = +$('ivG').value / 100, sold = +$('ivS').value; setText('ivGo', (g > 0 ? '+' : '') + Math.round(g * 100) + '%'); setText('ivSo', sold + ' units');
+  const lots = [[100, 10]]; for (let k = 1; k <= 3; k++) lots.push([100, 10 * Math.pow(1 + g, k)]);
+  const total = lots.reduce((s, l) => s + l[0] * l[1], 0), avg = total / 400;
+  const take = (order, q) => { let c = 0, left = q; order.forEach(l => { const u = Math.min(left, l[0]); c += u * l[1]; left -= u; }); return c; };
+  const fifo = take(lots, sold), lifo = take(lots.slice().reverse(), sold), wav = avg * sold;
+  const M = [['FIFO', fifo], ['Weighted average', wav], ['LIFO', lifo]];
+  const r = nice(0, total, 5), ch = chart($('ivSvg'), { h: 280, xr: [0, 3], yr: [0, r.hi], yt: r.step, fy: v => '$' + v.toFixed(0), yl: 'Cost' });
+  M.forEach((m, i) => {
+    ch.rect(i + 0.2, i + 0.8, 0, m[1], 'var(--c3)'); ch.rect(i + 0.2, i + 0.8, m[1], total, 'var(--c2)');
+    ch.text(ch.X(i + 0.5), ch.T + ch.ph + 17, m[0], { 'text-anchor': 'middle' }, 't1');
+    if (m[1] > total * 0.08) ch.text(ch.X(i + 0.5), ch.Y(m[1] / 2) + 4, 'COGS ' + money(m[1]), { 'text-anchor': 'middle', style: 'fill:var(--bg);font-weight:600;font-size:12px' });
+    if (total - m[1] > total * 0.08) ch.text(ch.X(i + 0.5), ch.Y((m[1] + total) / 2) + 4, 'Inv ' + money(total - m[1]), { 'text-anchor': 'middle', style: 'fill:var(--bg);font-weight:600;font-size:12px' });
+  });
+  ch.text(ch.X(3) - 4, ch.Y(total) - 6, 'Goods available ' + money(total), { 'text-anchor': 'end' });
+  $('ivStats').innerHTML = M.map(m => '<div class="stat"><div class="l">' + m[0] + ': gross profit</div><div class="v">' + money(sold * 20 - m[1]) + '</div><div class="small muted">Ending inventory ' + money(total - m[1]) + '</div></div>').join('');
+});
+
+/* ---------- Capitalize vs expense ---------- */
+bind(['ceE', 'ceN'], function () {
+  const E = +$('ceE').value, n = +$('ceN').value; setText('ceEo', money(E)); setText('ceNo', n + ' years');
+  const yrs = n + 1, cap = [], exp = [];
+  for (let t = 1; t <= yrs; t++) { cap.push([t, 500 - (t <= n ? E / n : 0)]); exp.push([t, 500 - (t === 1 ? E : 0)]); }
+  const vals = cap.concat(exp).map(p => p[1]), r = nice(Math.min(0, Math.min.apply(null, vals)), 550, 5);
+  const ch = chart($('ceSvg'), { h: 270, xr: [0.5, yrs + 0.5], yr: [r.lo, r.hi], yt: r.step, fy: v => '$' + v.toFixed(0), yl: 'Net income' });
+  for (let t = 1; t <= yrs; t++) { ch.rect(t - 0.32, t, 0, cap[t - 1][1], 'var(--c1)'); ch.rect(t, t + 0.32, 0, exp[t - 1][1], 'var(--c3)'); ch.text(ch.X(t), ch.T + ch.ph + 17, 'Yr ' + t, { 'text-anchor': 'middle' }); }
+  const rows = [['', 'Capitalize', 'Expense'], ['Year-1 net income', money(500 - E / n), money(500 - E)], ['Year-1 CFO', money(600), money(600 - E)], ['Year-1 CFI', money(-E), money(0)], ['Total cash flow, year 1', money(600 - E), money(600 - E)], ['Assets at end of year 1', '+' + money(E - E / n), '+$0']];
+  $('ceTbl').innerHTML = rows.map((rw, i) => '<tr>' + rw.map((c, j) => (i === 0 ? '<th' + (j ? ' class="num"' : '') + '>' : '<td' + (j ? ' class="num"' : '') + '>') + c + (i === 0 ? '</th>' : '</td>')).join('') + '</tr>').join('');
+});
+
+/* ---------- Depreciation ---------- */
+bind(['dpN', 'dpS'], function () {
+  const n = +$('dpN').value, S = +$('dpS').value, C = 10000; setText('dpNo', n + ' years'); setText('dpSo', money(S));
+  const sl = (C - S) / n, ddb = []; let bv = C;
+  for (let t = 1; t <= n; t++) { let d = t === n ? bv - S : Math.min(2 / n * bv, bv - S); d = Math.max(0, d); ddb.push(d); bv -= d; }
+  const r = nice(0, Math.max(sl, Math.max.apply(null, ddb)), 5);
+  const ch = chart($('dpSvg'), { h: 270, xr: [0.5, n + 0.5], yr: [0, r.hi], yt: r.step, fy: v => '$' + v.toFixed(0), yl: 'Depreciation expense' });
+  for (let t = 1; t <= n; t++) {
+    ch.rect(t - 0.34, t, 0, sl, 'var(--c4)'); ch.rect(t, t + 0.34, 0, ddb[t - 1], 'var(--c3)');
+    ch.text(ch.X(t), ch.T + ch.ph + 17, 'Yr ' + t, { 'text-anchor': 'middle' });
+    ch.text(ch.X(t + 0.17), ch.Y(ddb[t - 1]) - 5, money(ddb[t - 1]), { 'text-anchor': 'middle', style: 'font-size:10px' });
+  }
+  ch.text(ch.X(n + 0.5) - 4, ch.Y(sl) - 6, 'straight-line ' + money(sl) + '/yr', { 'text-anchor': 'end' }, 't1');
+});
+
+/* ---------- Bond amortization ---------- */
+function bondPrice(c, N, y) { let p = 0; for (let t = 1; t <= N; t++) p += 1000 * c / Math.pow(1 + y, t); return p + 1000 / Math.pow(1 + y, N); }
+bind(['bdC', 'bdM'], function () {
+  const c = +$('bdC').value / 100, m = +$('bdM').value / 100, N = 10; setText('bdCo', pct(c, 1)); setText('bdMo', pct(m, 1));
+  const P0 = bondPrice(c, N, m), path = [[0, P0]]; let cv = P0, int1 = 0;
+  for (let t = 1; t <= N; t++) { const ie = cv * m; if (t === 1) int1 = ie; cv = cv + ie - 1000 * c; path.push([t, t === N ? 1000 : cv]); }
+  const vals = path.map(p => p[1]).concat([1000]), r = nice(Math.min.apply(null, vals) - 10, Math.max.apply(null, vals) + 10, 4);
+  const ch = chart($('bdSvg'), { h: 270, xr: [0, N], yr: [r.lo, r.hi], xt: 1, yt: r.step, fy: v => '$' + v.toFixed(0), xl: 'Year', yl: 'Carrying value' });
+  ch.line([[0, 1000], [N, 1000]], 'var(--c4)', 1.5, '5 4'); ch.line(path, 'var(--c1)', 3);
+  path.forEach(p => ch.dot(p[0], p[1], 'var(--c1)', 3.5));
+  const kind = Math.abs(c - m) < 1e-9 ? 'Issued at par' : c < m ? 'Discount bond: carrying value rises to par' : 'Premium bond: carrying value falls to par';
+  ch.text(ch.X(N) - 4, ch.T + 14, kind, { 'text-anchor': 'end' }, 't1');
+  setText('bdP', money(P0, 2)); setText('bdI', money(int1, 2)); setText('bdCp', money(1000 * c, 2));
+});
+
+/* ---------- Leases ---------- */
+bind(['lsN', 'lsR'], function () {
+  const n = +$('lsN').value, r = +$('lsR').value / 100, P = 1000; setText('lsNo', n + ' years'); setText('lsRo', pct(r));
+  const L0 = P * (1 - Math.pow(1 + r, -n)) / r, dep = L0 / n; let L = L0; const ints = [];
+  for (let t = 1; t <= n; t++) { const i = L * r; ints.push(i); L = L + i - P; }
+  const maxv = Math.max(dep + ints[0], P), rr = nice(0, maxv * 1.05, 5);
+  const ch = chart($('lsSvg'), { h: 270, xr: [0.5, n + 0.5], yr: [0, rr.hi], yt: rr.step, fy: v => '$' + v.toFixed(0), yl: 'Annual expense' });
+  for (let t = 1; t <= n; t++) { ch.rect(t - 0.3, t + 0.3, 0, dep, 'var(--c1)'); ch.rect(t - 0.3, t + 0.3, dep, dep + ints[t - 1], 'var(--c5)'); ch.text(ch.X(t), ch.T + ch.ph + 17, 'Yr ' + t, { 'text-anchor': 'middle' }); }
+  ch.line([[0.5, P], [n + 0.5, P]], 'var(--c4)', 2.5, '6 4');
+  ch.text(ch.X(n + 0.5) - 4, ch.Y(P) - 6, 'operating lease cost ' + money(P) + '/yr', { 'text-anchor': 'end' }, 't1');
+  setText('lsL', money(L0)); setText('ls1', money(dep + ints[0]) + ' vs ' + money(P));
+});
+
+/* ---------- Deferred tax ---------- */
+bind(['dtR'], function () {
+  const tr = +$('dtR').value / 100, C = 1000, n = 5; setText('dtRo', pct(tr));
+  const book = new Array(n).fill(C / n), tax = []; let bv = C;
+  for (let t = 1; t <= n; t++) { const ddb = 2 / n * bv, sl = bv / (n - t + 1), d = Math.max(ddb, sl); tax.push(d); bv -= d; }
+  let cumDiff = 0; const dtl = [], rows = [];
+  for (let t = 1; t <= n; t++) { cumDiff += tax[t - 1] - book[t - 1]; dtl.push(cumDiff * tr); }
+  const r = nice(0, Math.max.apply(null, tax.concat(book)), 5);
+  const ch = chart($('dtSvg'), { h: 280, xr: [0.5, n + 0.5], yr: [0, r.hi], yt: r.step, fy: v => '$' + v.toFixed(0), yl: 'Amount' });
+  for (let t = 1; t <= n; t++) { ch.rect(t - 0.34, t, 0, book[t - 1], 'var(--c4)'); ch.rect(t, t + 0.34, 0, tax[t - 1], 'var(--c1)'); ch.text(ch.X(t), ch.T + ch.ph + 17, 'Yr ' + t, { 'text-anchor': 'middle' }); }
+  const dl = [[0.5, 0]].concat(dtl.map((v, i) => [i + 1, v]));
+  ch.line(dl, 'var(--c3)', 3); dtl.forEach((v, i) => { ch.dot(i + 1, v, 'var(--c3)', 5); ch.text(ch.X(i + 1) + 8, ch.Y(v) - 8, 'DTL ' + money(v), {}, 't1'); });
+  let html = '<tr><th>Year</th><th class="num">Book dep.</th><th class="num">Tax dep.</th><th class="num">Difference</th><th class="num">Change in DTL</th><th class="num">DTL balance</th></tr>';
+  let prev = 0; for (let t = 1; t <= n; t++) { const diff = tax[t - 1] - book[t - 1]; html += '<tr><td>' + t + '</td><td class="num">' + money(book[t - 1]) + '</td><td class="num">' + money(tax[t - 1]) + '</td><td class="num">' + sgnMoney(diff) + '</td><td class="num">' + sgnMoney(dtl[t - 1] - prev) + '</td><td class="num">' + money(dtl[t - 1]) + '</td></tr>'; prev = dtl[t - 1]; }
+  $('dtTbl').innerHTML = html;
+});
+
+/* ---------- DuPont ---------- */
+bind(['duT', 'duI', 'duM', 'duA', 'duL'], function () {
+  const T = +$('duT').value, I = +$('duI').value, M = +$('duM').value, A = +$('duA').value, L = +$('duL').value;
+  setText('duTo', T.toFixed(2)); setText('duIo', I.toFixed(2)); setText('duMo', pct(M, 1)); setText('duAo', A.toFixed(2) + '×'); setText('duLo', L.toFixed(1) + '×');
+  const npm = T * I * M; setText('duNPM', pct(npm, 2)); setText('duROA', pct(npm * A, 2)); setText('duROE', pct(npm * A * L, 2));
+});
+
+/* ---------- Progress, notes, save ---------- */
+const DATA = JSON.parse($('study-data').textContent);
+const LS = 'cfa-fsa-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'sheet', name: 'IFRS vs US GAAP table memorized' }, { id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+const list = $('progList');
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); list.appendChild(row);
+});
+$('notes').value = state.notes || '';
+$('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try {
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-FSA-Guide.html';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.');
+  } catch (e) { setText('saveMsg', 'Download blocked here. Open the file in your browser and try again.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(); const txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const done = () => setText('saveMsg', 'Copied. Paste it into your chat with Claude.');
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); });
+  else { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); }
+});
+</script>
+</body>
+</html>
