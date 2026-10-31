@@ -1,0 +1,522 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — ECONOMICS STUDY GUIDE (2026 curriculum, Volume 2, Learning Modules 1–8)
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Economics Guide</title>
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;--border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);--accent:#534AB7;--accent-bg:#EEEDFE;--c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:24px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:24px;font-weight:600;margin:0 0 4px}h3{font-size:18px;font-weight:600;margin:28px 0 8px}h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:720px}.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}nav.toc .row{display:flex;gap:6px;overflow-x:auto}nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:0}.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}.fx-eq .frac{margin:0 4px;line-height:1.4}.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:12px 0}.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}.callout.tip{border-left-color:var(--good);background:var(--good-bg)}.callout b{font-weight:600}.callout.trap b{color:var(--bad)}.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}.ctl label{font-size:14px;color:var(--muted);min-width:190px}.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}.stat .l{font-size:12px;color:var(--muted)}.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}svg .grid{stroke:var(--border);stroke-width:1}svg .axis{stroke:var(--border-strong);stroke-width:1}svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}button:hover{background:var(--surface-2)}button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.pill.g{background:var(--good-bg);color:var(--good)}.pill.w{background:var(--warn-bg);color:var(--warn)}.pill.b{background:var(--bad-bg);color:var(--bad)}.pill.a{background:var(--accent-bg);color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}details.q summary{cursor:pointer;font-weight:500;list-style:none}details.q summary::-webkit-details-marker{display:none}details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+<style>.arch{display:grid;grid-template-columns:auto 1fr 1fr;gap:8px;align-items:stretch}.arch .ax{font-size:13px;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;padding:4px}.arch button{text-align:left;padding:14px;border-radius:12px;min-height:84px}.arch button b{display:block;font-size:16px;margin-bottom:2px}.arch button.sel{outline:2px solid var(--accent)}</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I · 2026 curriculum</div>
+  <h1>Economics guide</h1>
+  <p class="lead">Market structures, business cycles, fiscal and monetary policy, geopolitics, international trade, the FX market and exchange rate calculations. Built from Volume 2 of your 2026 curriculum.</p>
+  <div class="chips"><span class="chip acc">Exam weight 6–9%</span><span class="chip">About 11–16 of 180 questions</span><span class="chip">8 learning modules</span></div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a><a href="#e1">1 · Market structures</a><a href="#e2">2 · Business cycles</a><a href="#e3">3 · Fiscal policy</a><a href="#e4">4 · Monetary policy</a><a href="#e5">5 · Geopolitics</a><a href="#e6">6 · Trade</a><a href="#e7">7 · FX market</a><a href="#e8">8 · FX calculations</a><a href="#formulas">Formula sheet</a><a href="#practice">Practice</a><a href="#progress">My progress</a>
+</div></nav>
+
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div><h2>Exam game plan</h2>
+  <div class="grid two">
+    <div class="card"><h4>What gets tested</h4><ul class="small">
+      <li><b>Exchange rate calculations</b> are the most reliable points: cross rates, forward rates and points, premiums and discounts, % changes.</li>
+      <li><b>Policy questions</b>: tools, multipliers, lags, the policy mix, central bank roles and limitations.</li>
+      <li><b>Classification questions</b>: market structure features, cycle phases and indicators, geopolitical archetypes and risk types, trading blocs, currency regimes.</li></ul></div>
+    <div class="card"><h4>Highest-yield items, ranked</h4><ol class="small">
+      <li>Cross rates, forward rates and forward points</li><li>Market structures; shutdown and breakeven; concentration measures</li><li>Monetary policy tools, transmission and limitations; policy mix</li><li>Fiscal multiplier, tools, deficits, lags</li><li>Business cycle phases and leading/coincident/lagging indicators</li><li>Exchange rate regimes; capital restrictions</li><li>Geopolitical archetypes, tools and risk types</li><li>Trade restrictions and trading blocs</li></ol></div>
+  </div>
+  <div class="callout trap"><b>Top traps.</b> Mixing up base and price currency (in USD/EUR, the euro is the base). Thinking the higher-interest-rate currency trades at a forward premium (it trades at a <i>discount</i>). Shutting down when price is below ATC but above AVC in the short run (keep operating). Calling the inventory-to-sales ratio a leading indicator (it's lagging).</div>
+</section>
+
+<section class="mod" id="e1">
+  <div class="modtag">Part 1 · Learning module 1</div><h2>The firm and market structures</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Perfect competition</th><th>Monopolistic competition</th><th>Oligopoly</th><th>Monopoly</th></tr>
+    <tr><td>Number of sellers</td><td>Many</td><td>Many</td><td>Few</td><td>One</td></tr>
+    <tr><td>Product</td><td>Identical</td><td>Differentiated</td><td>Identical or differentiated</td><td>Unique, no close substitutes</td></tr>
+    <tr><td>Barriers to entry</td><td>Very low</td><td>Low</td><td>High</td><td>Very high</td></tr>
+    <tr><td>Pricing power</td><td>None (price taker)</td><td>Some</td><td>Some or considerable; firms interdependent</td><td>Considerable</td></tr>
+    <tr><td>Non-price competition</td><td>None</td><td>Advertising, differentiation</td><td>Advertising, differentiation</td><td>Advertising</td></tr>
+    <tr><td>Long-run economic profit</td><td>Zero</td><td>Zero</td><td>Can be positive</td><td>Can be positive</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card small"><h4>Profit maximization</h4>Every firm produces where <b>marginal revenue = marginal cost</b>. Under perfect competition P = MR, so P = MC. A firm with pricing power faces downward-sloping demand, so MR &lt; P and it sets P &gt; MC.</div>
+    <div class="card small"><h4>Oligopoly models</h4><b>Kinked demand</b> (rivals match price cuts, not increases, so prices are sticky); <b>Cournot</b> (each firm takes rivals' output as fixed; outcome between monopoly and competition); <b>Stackelberg</b> (a leader moves first and gains); <b>Nash equilibrium</b> (no one gains by changing strategy alone; collusion is unstable); <b>dominant firm</b> (sets price, others follow).</div>
+    <div class="card small"><h4>Economies of scale</h4>Long-run average cost falls as output grows (economies of scale), then rises (diseconomies). The lowest point is the minimum efficient scale. In the long run, competitive firms produce at minimum average total cost.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Shutdown and breakeven</div>
+    <div class="viz-sub">A competitive firm takes the market price. It produces where price = marginal cost, then decides whether to keep operating.</div>
+    <div class="ctl"><label for="scP">Market price</label><input type="range" id="scP" min="6" max="34" step="0.5" value="15"><output id="scPo"></output></div>
+    <svg id="scSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Marginal cost</span><span><span class="sw" style="background:var(--c3)"></span>Average total cost</span><span><span class="sw" style="background:var(--c2)"></span>Average variable cost</span></div>
+    <div class="stats"><div class="stat"><div class="l">Output (P = MC)</div><div class="v" id="scQ"></div></div><div class="stat"><div class="l">Economic profit</div><div class="v" id="scPr"></div></div><div class="stat"><div class="l">Decision</div><div class="v" id="scD" style="font-size:14px"></div></div></div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Decision rules</h4><b>P ≥ ATC</b>: profitable (breakeven at minimum ATC). <b>AVC ≤ P &lt; ATC</b>: operate in the short run (revenue covers variable costs and part of fixed costs), exit in the long run. <b>P &lt; AVC</b>: shut down now.</div>
+    <div class="card small"><h4>Measuring concentration</h4><b>N-firm concentration ratio</b>: sum of the largest N firms' market shares (ignores the market's structure within those firms). <b>Herfindahl–Hirschman index</b>: sum of squared market shares (in %); 10,000 for a monopoly; more sensitive to mergers among large firms. Neither captures barriers to entry or potential competition.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Concentration calculator</div>
+    <div class="viz-sub">Market shares of the five largest firms; the rest is spread across many small firms.</div>
+    <div class="ctl"><label for="h1">Firm 1</label><input type="range" id="h1" min="0" max="60" step="1" value="35"><output id="h1o"></output></div>
+    <div class="ctl"><label for="h2">Firm 2</label><input type="range" id="h2" min="0" max="40" step="1" value="25"><output id="h2o"></output></div>
+    <div class="ctl"><label for="h3">Firm 3</label><input type="range" id="h3" min="0" max="30" step="1" value="15"><output id="h3o"></output></div>
+    <div class="ctl"><label for="h4">Firm 4</label><input type="range" id="h4" min="0" max="20" step="1" value="10"><output id="h4o"></output></div>
+    <div class="ctl"><label for="h5">Firm 5</label><input type="range" id="h5" min="0" max="15" step="1" value="5"><output id="h5o"></output></div>
+    <div class="ctl"><label for="hM">Merge firms 3 and 4</label><input type="checkbox" id="hM" style="width:18px;height:18px;accent-color:var(--accent)"></div>
+    <div class="err" id="hErr"></div>
+    <div class="stats"><div class="stat"><div class="l">4-firm concentration ratio</div><div class="v" id="hCR"></div></div><div class="stat"><div class="l">HHI</div><div class="v" id="hHHI"></div></div><div class="stat"><div class="l">Other firms' share</div><div class="v" id="hO"></div></div></div>
+  </div>
+</section>
+
+<section class="mod" id="e2">
+  <div class="modtag">Part 2 · Learning module 2</div><h2>Understanding business cycles</h2>
+  <p class="small">The curriculum mainly uses the <b>growth cycle</b>: fluctuations of output around its long-run trend (potential output). The <b>classical cycle</b> tracks the level of activity; the <b>growth rate cycle</b> tracks its growth rate and signals turning points earliest.</p>
+  <div class="viz">
+    <div class="viz-title">The four phases</div>
+    <div class="viz-sub">The output gap (actual minus potential output) over one cycle.</div>
+    <svg id="bcSvg"></svg>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Phase</th><th>Output gap</th><th>What happens</th></tr>
+    <tr><td><b>Recovery</b></td><td>Negative, starting to narrow (trough)</td><td>Spending begins to pick up; firms rebuild inventory; hiring lags; inflation still low</td></tr>
+    <tr><td><b>Expansion</b></td><td>Positive and widening (boom)</td><td>Strong growth; firms hire and invest; prices and interest rates may rise; shortages can appear</td></tr>
+    <tr><td><b>Slowdown</b></td><td>Positive, starting to narrow (peak)</td><td>Growth slows; firms use overtime rather than new hires; inflation eventually slows</td></tr>
+    <tr><td><b>Contraction</b></td><td>Negative and widening</td><td>Confidence falls; firms cut overtime, then jobs; recession (or depression if severe)</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card small"><h4>Credit cycles</h4>Credit availability and asset prices (especially property) expand and contract together, amplifying the business cycle. Credit cycles tend to be longer and deeper than business cycles; booms that are financed by credit can end in severe busts.</div>
+    <div class="card small"><h4>Leads and lags in decisions</h4>Firms adjust <b>hours and overtime</b> before hiring or firing; <b>capital spending</b> follows orders and capacity use; <b>inventories</b> pile up at peaks (the inventory–sales ratio rises) and are run down in early recovery.</div>
+    <div class="card small"><h4>Nowcasting</h4>Estimating the current state of the economy before official data arrive, using high-frequency data, surveys and big data (e.g. the Atlanta Fed's GDPNow).</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Indicator type</th><th>Turning points</th><th>Examples</th></tr>
+    <tr><td><span class="pill g">Leading</span></td><td>Before the economy</td><td>Stock prices, house prices, retail sales, interest rate spread (long − short), building permits, consumer expectations, average weekly hours in manufacturing, manufacturers' new orders</td></tr>
+    <tr><td><span class="pill a">Coincident</span></td><td>With the economy</td><td>Industrial production, real personal income, manufacturing and trade sales</td></tr>
+    <tr><td><span class="pill w">Lagging</span></td><td>After the economy</td><td>Average duration of unemployment, inventory-to-sales ratio, change in unit labor costs, inflation, average prime lending rate, consumer instalment debt to income, commercial and industrial loans outstanding</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="e3">
+  <div class="modtag">Part 3 · Learning module 3</div><h2>Fiscal policy</h2>
+  <p class="small">Fiscal policy is the government's use of <b>spending and taxation</b> to influence the economy. Its roles: redistributing income and wealth, allocating resources (e.g. public goods), and stabilizing the economy (smoothing the cycle).</p>
+  <div class="grid">
+    <div class="card small"><h4>Tools</h4><b>Spending:</b> transfer payments (welfare, pensions), current spending (wages, goods and services), capital spending (infrastructure). <b>Revenue:</b> direct taxes (on income, wealth, profits) and indirect taxes (on spending: VAT, excise duties). A good tax is simple, efficient, fair and raises enough revenue.</div>
+    <div class="card small"><h4>Deficits and debt: concerns</h4>Higher future taxes; <b>crowding out</b> (government borrowing pushes up rates and reduces private investment); inflation if the central bank finances deficits; reduced fiscal room in the next crisis.</div>
+    <div class="card small"><h4>Deficits and debt: counterpoints</h4>Debt owed to domestic citizens is partly money owed to ourselves; deficits that fund productive investment can raise future output; <b>Ricardian equivalence</b>: if people expect higher future taxes, they save today's tax cut, so it has little effect.</div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Fiscal multiplier</div><div class="fx-eq"><span class="frac"><span>1</span><span>1 − MPC(1 − t)</span></span></div><div class="fx-note">MPC = marginal propensity to consume; t = tax rate. The <b>balanced budget multiplier</b> is positive: raising spending and taxes by the same amount still increases output.</div></div>
+    <div class="viz" style="margin:0">
+      <div class="viz-title">Multiplier calculator</div>
+      <div class="ctl"><label for="fmC">MPC</label><input type="range" id="fmC" min="0.5" max="0.95" step="0.05" value="0.8"><output id="fmCo"></output></div>
+      <div class="ctl"><label for="fmT">Tax rate</label><input type="range" id="fmT" min="0" max="50" step="5" value="25"><output id="fmTo"></output></div>
+      <div class="ctl"><label for="fmG">Extra government spending</label><input type="range" id="fmG" min="10" max="200" step="10" value="100"><output id="fmGo"></output></div>
+      <div class="stats"><div class="stat"><div class="l">Multiplier</div><div class="v" id="fmM"></div></div><div class="stat"><div class="l">Increase in GDP</div><div class="v" id="fmY"></div></div></div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Fiscal stance</h4>A deficit alone doesn't show whether policy is expansionary: deficits rise automatically in recessions. The <b>structural (cyclically adjusted) budget balance</b> is what the balance would be at full employment and shows the true stance.</div>
+    <div class="card small"><h4>Automatic stabilizers vs discretionary policy</h4>Progressive taxes and unemployment benefits automatically cushion downturns and cool booms. Discretionary policy needs new decisions and suffers <b>lags</b>: <b>recognition</b> (seeing the problem), <b>action</b> (passing the law), <b>impact</b> (the effect arriving).</div>
+    <div class="card small"><h4>Other difficulties</h4>Uncertainty about where the economy is; crowding out; supply constraints (more demand just raises prices); unemployment that isn't due to weak demand; political pressure.</div>
+  </div>
+</section>
+
+<section class="mod" id="e4">
+  <div class="modtag">Part 4 · Learning module 4</div><h2>Monetary policy</h2>
+  <div class="grid">
+    <div class="card small"><h4>Roles of a central bank</h4>Monopoly supplier of the currency; banker to the government and to banks; lender of last resort; regulator and supervisor of the payment system and often of banks; manager of FX and gold reserves; conductor of monetary policy.</div>
+    <div class="card small"><h4>Objectives</h4>Mainly <b>price stability</b> (low, stable inflation), often through an inflation target; some central banks also target full employment and stable growth, or an exchange rate. Unexpected inflation redistributes wealth and creates uncertainty; even expected inflation causes menu costs and shoe-leather costs.</div>
+    <div class="card small"><h4>Tools</h4><b>Open market operations</b> (buying or selling government bonds); the <b>policy rate</b> (the rate at which it lends to banks); <b>reserve requirements</b>. When rates hit their lower bound: <b>quantitative easing</b> (large asset purchases) and forward guidance.</div>
+  </div>
+  <div class="flow" style="margin-top:12px">
+    <div class="step"><div class="n">Policy rate</div><p class="small" style="margin:4px 0 0">Central bank changes its official rate.</p></div>
+    <div class="step"><div class="n">Market rates</div><p class="small" style="margin:4px 0 0">Bank lending and bond yields follow.</p></div>
+    <div class="step"><div class="n">Asset prices and expectations</div><p class="small" style="margin:4px 0 0">Share and house prices, confidence, and the exchange rate adjust.</p></div>
+    <div class="step"><div class="n">Spending</div><p class="small" style="margin:4px 0 0">Consumption, investment and net exports change.</p></div>
+    <div class="step"><div class="n">Inflation</div><p class="small" style="margin:4px 0 0">Demand pressure and inflation respond, with long and variable lags.</p></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card small"><h4>Effective central banks are…</h4><b>Independent</b> (operationally free from political pressure), <b>credible</b> (people believe the target), and <b>transparent</b> (clear communication). Credibility anchors inflation expectations.</div>
+    <div class="card small"><h4>Stance</h4>The <b>neutral rate</b> neither speeds up nor slows the economy: roughly trend growth + inflation target. A policy rate above it is <b>contractionary</b>; below it is <b>expansionary</b>.</div>
+    <div class="card small"><h4>Limitations</h4>Long-term rates and expectations may not follow; in a <b>liquidity trap</b> people hoard cash and rate cuts don't work; deflation makes real rates too high at the zero bound; QE's effects are uncertain; banks may not lend.</div>
+  </div>
+  <p class="small"><b>Money:</b> a medium of exchange, store of value and unit of account. Under fractional reserve banking, deposits create more deposits: money multiplier = 1 / reserve requirement. <b>Fisher effect:</b> nominal interest rate ≈ real rate + expected inflation (plus a risk premium for uncertainty).</p>
+  <div class="tbl"><table>
+    <tr><th>Policy mix</th><th>Easy monetary</th><th>Tight monetary</th></tr>
+    <tr><td><b>Easy fiscal</b></td><td>Strong expansion; rising demand and, eventually, inflation</td><td>Higher interest rates; output expands with a bigger public sector share</td></tr>
+    <tr><td><b>Tight fiscal</b></td><td>Lower interest rates; private sector's share of output grows</td><td>Falling demand; contraction</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="e5">
+  <div class="modtag">Part 5 · Learning module 5</div><h2>Introduction to geopolitics</h2>
+  <div class="grid">
+    <div class="card small"><h4>Actors</h4><b>State actors</b>: national governments and their institutions. <b>Non-state actors</b>: companies, NGOs, international organizations, individuals and groups that operate across borders.</div>
+    <div class="card small"><h4>Political cooperation</h4>Countries cooperate to gain access to resources, set common standards, and build <b>soft power</b> (influence through culture and values). Cooperation depends on the hierarchy of national interests, its costs, the power of the decision maker, and institutions (e.g. WTO, IMF, World Bank).</div>
+    <div class="card small"><h4>Globalization</h4>Cross-border flows of goods, capital, people and ideas. Motivations: profit, access to markets and resources, and intrinsic gains (knowledge, culture). Costs: unequal benefits, job losses, dependence on others; risks of rollback and nationalism.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Four archetypes of country behavior</div>
+    <div class="viz-sub">Two axes: cooperation vs non-cooperation, and globalization vs nationalism. Click a box.</div>
+    <div class="arch" id="arch">
+      <div></div><div class="ax"><b>Globalization</b></div><div class="ax"><b>Nationalism / anti-globalization</b></div>
+      <div class="ax"><b>Cooperation</b></div><button data-k="m"><b>Multilateralism</b>Many partners, shared rules</button><button data-k="b"><b>Bilateralism</b>One-to-one agreements</button>
+      <div class="ax"><b>Non-cooperation</b></div><button data-k="h"><b>Hegemony</b>A leader sets the rules</button><button data-k="a"><b>Autarky</b>Self-sufficiency</button>
+    </div>
+    <p class="small" id="archTxt" style="margin:10px 0 0"></p>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Tools of geopolitics</h4><b>National security tools</b> (armed conflict, alliances, espionage); <b>economic tools</b> (trade agreements, or sanctions, tariffs and nationalizations); <b>financial tools</b> (open currency exchange and foreign investment, or capital controls and investment restrictions).</div>
+    <div class="card small"><h4>Types of geopolitical risk</h4><b>Event risk</b>: known dates (elections, Brexit). <b>Exogenous risk</b>: sudden and unexpected (invasions, civil unrest). <b>Thematic risk</b>: known, long-running issues (climate change, cyber threats, terrorism).</div>
+    <div class="card small"><h4>Assessing and acting</h4>Judge each risk by <b>likelihood</b>, <b>velocity</b> (speed of impact), and the <b>size and nature of its impact</b>. Use scenario analysis and <b>signposts</b> (events that show which scenario is unfolding) rather than single forecasts.</div>
+  </div>
+</section>
+
+<section class="mod" id="e6">
+  <div class="modtag">Part 6 · Learning module 6</div><h2>International trade</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Benefits and costs</h4><b>Benefits:</b> gains from specialization and exchange, economies of scale, more variety, more competition and efficiency, technology transfer. <b>Costs:</b> job and income losses in industries that compete with imports; benefits spread unevenly.</div>
+    <div class="card small"><h4>Comparative advantage</h4>A country has an <b>absolute advantage</b> if it produces a good with fewer resources, and a <b>comparative advantage</b> if its <b>opportunity cost</b> is lower. Trade is beneficial whenever opportunity costs differ, even if one country is better at everything.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Restriction</th><th>How it works</th><th>Main effects (importing country)</th></tr>
+    <tr><td><b>Tariff</b></td><td>Tax on imports</td><td>Higher domestic price; less consumption and imports; more domestic production; government revenue; deadweight loss</td></tr>
+    <tr><td><b>Quota</b></td><td>Limit on import quantity</td><td>Like a tariff, but the "quota rent" goes to licence holders or foreign exporters instead of the government</td></tr>
+    <tr><td><b>Export subsidy</b></td><td>Payment to exporters</td><td>Raises the domestic price in the exporting country; costs taxpayers; can provoke retaliation</td></tr>
+    <tr><td><b>Voluntary export restraint</b></td><td>Exporter agrees to limit exports</td><td>Like a quota; the rent goes to foreign exporters</td></tr>
+  </table></div>
+  <p class="small">A large country's tariff can lower the world price (a terms-of-trade gain), but restrictions usually reduce total welfare.</p>
+  <div class="tbl"><table>
+    <tr><th>Trading bloc (each adds to the one above)</th><th>Features</th></tr>
+    <tr><td><b>Free trade area</b></td><td>No trade barriers between members</td></tr>
+    <tr><td><b>Customs union</b></td><td>+ common trade policy (tariffs) toward non-members</td></tr>
+    <tr><td><b>Common market</b></td><td>+ free movement of labor and capital</td></tr>
+    <tr><td><b>Economic union</b></td><td>+ common economic institutions and coordinated policy</td></tr>
+    <tr><td><b>Monetary union</b></td><td>+ a single currency (e.g. the eurozone)</td></tr>
+  </table></div>
+  <p class="small">Regional integration lowers costs and increases competition and investment, but can divert trade from more efficient non-members, and members give up some policy independence.</p>
+</section>
+
+<section class="mod" id="e7">
+  <div class="modtag">Part 7 · Learning module 7</div><h2>Capital flows and the FX market</h2>
+  <div class="grid">
+    <div class="card small"><h4>Market participants</h4><b>Sell side</b>: dealers, mostly large banks. <b>Buy side</b>: corporations, real money investors (pension funds, insurers), leveraged accounts (hedge funds), retail investors, governments, central banks and sovereign wealth funds.</div>
+    <div class="card small"><h4>Products</h4>Spot (settles in about two days), forwards (any later date), FX swaps (spot plus an offsetting forward), futures and options.</div>
+    <div class="card small"><h4>Quotes</h4>"USD/EUR = 1.10" means 1.10 US dollars per <b>one euro</b>: EUR is the <b>base</b> currency, USD the <b>price</b> currency. A <b>direct</b> quote is domestic currency per unit of foreign currency; an <b>indirect</b> quote is the reverse.</div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Real exchange rate</div><div class="fx-eq">Real<sub>d/f</sub> = S<sub>d/f</sub> × <span class="frac"><span>P<sub>f</sub></span><span>P<sub>d</sub></span></span></div><div class="fx-note">Adjusts the nominal rate for relative price levels: the cost of foreign goods in terms of domestic goods.</div></div>
+    <div class="card small"><h4>Trade balance and capital flows</h4>A country with a trade deficit must finance it with capital inflows (borrowing from or selling assets to foreigners); a surplus country lends abroad. Exchange rates move with both trade and capital flows.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Exchange rate regime (most fixed → most flexible)</th><th>Description</th></tr>
+    <tr><td>No separate legal tender</td><td>Uses another country's currency (dollarization) or belongs to a monetary union</td></tr>
+    <tr><td>Currency board</td><td>Legal commitment to exchange at a fixed rate, fully backed by foreign reserves</td></tr>
+    <tr><td>Fixed parity</td><td>Pegged to a currency or basket within a narrow band; can be changed</td></tr>
+    <tr><td>Target zone</td><td>Fixed parity with a wider band</td></tr>
+    <tr><td>Crawling peg</td><td>Peg adjusted regularly (e.g. for inflation)</td></tr>
+    <tr><td>Management within crawling bands</td><td>Band widens over time toward a float</td></tr>
+    <tr><td>Managed floating</td><td>Market-determined, with intervention to steer it</td></tr>
+    <tr><td>Independently floating</td><td>Set by the market; intervention only to calm disorder</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card small"><h4>Why restrict capital flows</h4>Reduce exchange rate volatility and "hot money"; keep an independent monetary policy alongside a fixed exchange rate; protect strategic industries or domestic savers; preserve reserves in a crisis.</div>
+    <div class="card small"><h4>Forms and costs</h4>Taxes on flows, limits on foreign ownership, minimum holding periods, outright bans. They can reduce efficiency, raise the cost of capital and invite evasion.</div>
+  </div>
+</section>
+
+<section class="mod" id="e8">
+  <div class="modtag">Part 8 · Learning module 8</div><h2>Exchange rate calculations</h2>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Cross rate</div><div class="fx-eq">A/C = A/B × B/C</div><div class="fx-note">Line up the currencies so the middle one cancels; invert a quote if needed (B/A = 1 ÷ A/B).</div></div>
+    <div class="fx"><div class="fx-name">Forward rate (covered interest parity)</div><div class="fx-eq">F<sub>p/b</sub> = S<sub>p/b</sub> × <span class="frac"><span>1 + r<sub>p</sub>(Actual/360)</span><span>1 + r<sub>b</sub>(Actual/360)</span></span></div><div class="fx-note">p = price currency, b = base currency.</div></div>
+    <div class="fx"><div class="fx-name">Forward points</div><div class="fx-eq">(F − S) × 10,000</div><div class="fx-note">For quotes to 4 decimals. Positive points = the base currency trades at a forward premium.</div></div>
+  </div>
+  <div class="callout tip"><b>Rule of thumb.</b> The currency with the <b>lower interest rate</b> trades at a <b>forward premium</b>; the higher-rate currency trades at a forward discount. Otherwise you could earn the higher rate risk-free.</div>
+  <div class="viz">
+    <div class="viz-title">Forward rate calculator</div>
+    <div class="viz-sub">Quote in USD/EUR (USD per euro). Change the rates and the term.</div>
+    <div class="ctl"><label for="fxS">Spot USD/EUR</label><input type="range" id="fxS" min="0.9" max="1.4" step="0.005" value="1.1"><output id="fxSo"></output></div>
+    <div class="ctl"><label for="fxP">USD interest rate (price)</label><input type="range" id="fxP" min="0" max="8" step="0.25" value="5"><output id="fxPo"></output></div>
+    <div class="ctl"><label for="fxB">EUR interest rate (base)</label><input type="range" id="fxB" min="0" max="8" step="0.25" value="3"><output id="fxBo"></output></div>
+    <div class="ctl"><label for="fxD">Days</label><input type="range" id="fxD" min="30" max="360" step="30" value="360"><output id="fxDo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">Forward USD/EUR</div><div class="v" id="fxF"></div></div><div class="stat"><div class="l">Forward points</div><div class="v" id="fxPts"></div></div><div class="stat"><div class="l">Euro trades at a forward…</div><div class="v" id="fxPD" style="font-size:16px"></div></div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Cross rate and % change</div>
+    <div class="ctl"><label for="crA">USD/EUR</label><input type="range" id="crA" min="0.9" max="1.4" step="0.01" value="1.1"><output id="crAo"></output></div>
+    <div class="ctl"><label for="crB">JPY/USD</label><input type="range" id="crB" min="100" max="170" step="1" value="150"><output id="crBo"></output></div>
+    <div class="ctl"><label for="crN">New USD/EUR (for % change)</label><input type="range" id="crN" min="0.9" max="1.4" step="0.01" value="1.21"><output id="crNo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">JPY/EUR cross rate</div><div class="v" id="crX"></div></div><div class="stat"><div class="l">Euro vs USD</div><div class="v" id="crE"></div></div><div class="stat"><div class="l">USD vs euro</div><div class="v" id="crU"></div></div></div>
+  </div>
+  <p class="small"><b>Percentage change of a currency:</b> if USD/EUR rises from 1.10 to 1.21, the euro (base) appreciates 10% against the dollar. The dollar depreciates by 1/1.21 ÷ 1/1.10 − 1 = −9.1%, not −10%. Always compute the change with the currency of interest as the base.</p>
+</section>
+
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div><h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Profit maximization</td><td>MR = MC</td></tr>
+    <tr><td>Marginal revenue and elasticity</td><td>MR = P(1 − 1/|E<sub>P</sub>|)</td></tr>
+    <tr><td>Short-run shutdown / long-run exit</td><td>P &lt; AVC / P &lt; ATC</td></tr>
+    <tr><td>N-firm concentration ratio</td><td>Σ market shares of largest N firms</td></tr>
+    <tr><td>Herfindahl–Hirschman index</td><td>Σ (market share in %)²</td></tr>
+    <tr><td>Fiscal multiplier</td><td>1 / [1 − MPC(1 − t)]</td></tr>
+    <tr><td>Money multiplier</td><td>1 / reserve requirement</td></tr>
+    <tr><td>Fisher effect</td><td>Nominal rate ≈ real rate + expected inflation</td></tr>
+    <tr><td>Neutral policy rate</td><td>≈ Trend growth + inflation target</td></tr>
+    <tr><td>Real exchange rate</td><td>S<sub>d/f</sub> × P<sub>f</sub>/P<sub>d</sub></td></tr>
+    <tr><td>Cross rate</td><td>A/C = A/B × B/C</td></tr>
+    <tr><td>Forward rate</td><td>F<sub>p/b</sub> = S<sub>p/b</sub>[1 + r<sub>p</sub>(Act/360)]/[1 + r<sub>b</sub>(Act/360)]</td></tr>
+    <tr><td>Forward points</td><td>(F − S) × 10,000</td></tr>
+    <tr><td>Forward premium as %</td><td>(F − S)/S</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div><h2>Practice questions</h2><p class="muted">Work each one before opening the answer.</p>
+  <details class="q"><summary><span class="qn">1</span>Many firms selling differentiated products with low barriers to entry describes: A. perfect competition  B. monopolistic competition  C. oligopoly<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">2</span>In the short run, a competitive firm should keep operating if price is: A. above average variable cost  B. above average total cost only  C. above marginal revenue<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> It covers variable costs and some fixed costs. Below AVC, shut down.</div></details>
+  <details class="q"><summary><span class="qn">3</span>In an oligopoly where competitors match price cuts but not price increases, demand is described by the: A. Cournot model  B. kinked demand curve  C. Stackelberg model<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">4</span>Market shares 40%, 30%, 20%, 10%. The HHI is: A. 100  B. 3,000  C. 10,000<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 1,600 + 900 + 400 + 100. The 4-firm concentration ratio is 100%.</div></details>
+  <details class="q"><summary><span class="qn">5</span>In the long run, firms in monopolistic competition earn: A. positive economic profit  B. zero economic profit  C. negative economic profit<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Low barriers let new firms enter until profits disappear.</div></details>
+  <details class="q"><summary><span class="qn">6</span>The output gap is positive but starting to narrow. The economy is in: A. expansion  B. slowdown  C. recovery<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Around the peak.</div></details>
+  <details class="q"><summary><span class="qn">7</span>Which is a leading indicator? A. Industrial production  B. Average duration of unemployment  C. Building permits<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> A is coincident; B is lagging.</div></details>
+  <details class="q"><summary><span class="qn">8</span>The inventory-to-sales ratio is a: A. leading indicator  B. coincident indicator  C. lagging indicator<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b></div></details>
+  <details class="q"><summary><span class="qn">9</span>MPC 0.8, tax rate 25%. The fiscal multiplier is: A. 2.5  B. 4.0  C. 5.0<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 1/(1 − 0.8 × 0.75) = 1/0.4. C ignores taxes.</div></details>
+  <details class="q"><summary><span class="qn">10</span>A sales tax is an example of: A. a direct tax  B. an indirect tax  C. a transfer payment<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">11</span>Households save a tax cut because they expect higher taxes later. This is: A. crowding out  B. Ricardian equivalence  C. a liquidity trap<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">12</span>The time it takes to pass a fiscal stimulus bill is the: A. recognition lag  B. action lag  C. impact lag<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">13</span>Which is a central bank role? A. Setting income tax rates  B. Lender of last resort  C. Approving government budgets<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">14</span>Trend growth 2%, inflation target 2%, policy rate 5%. Monetary policy is most likely: A. expansionary  B. neutral  C. contractionary<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Neutral ≈ 4%; 5% is above it.</div></details>
+  <details class="q"><summary><span class="qn">15</span>When rate cuts fail because people hoard cash, the economy is in: A. a liquidity trap  B. stagflation  C. a currency board<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">16</span>Easy fiscal policy combined with tight monetary policy most likely leads to: A. lower interest rates  B. higher interest rates and a larger public sector share  C. a contraction<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">17</span>A country that cooperates widely but through one-to-one agreements fits the archetype of: A. multilateralism  B. bilateralism  C. hegemony<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">18</span>An election with a known date is: A. event risk  B. exogenous risk  C. thematic risk<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">19</span>Which restriction gives revenue to the importing country's government? A. Tariff  B. Quota  C. Voluntary export restraint<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Quota and VER rents go to licence holders or foreign exporters.</div></details>
+  <details class="q"><summary><span class="qn">20</span>A bloc with no internal trade barriers and a common external tariff, but no free movement of labor, is a: A. free trade area  B. customs union  C. common market<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">21</span>A country fixes its exchange rate by law, fully backed by foreign currency reserves. This is a: A. crawling peg  B. currency board  C. target zone<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">22</span>USD/EUR = 1.10 and JPY/USD = 150. JPY/EUR is: A. 136.4  B. 150.0  C. 165.0<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 1.10 × 150: the USD cancels.</div></details>
+  <details class="q"><summary><span class="qn">23</span>Spot USD/EUR 1.1000; USD rate 5%; EUR rate 3%; 360 days. The 1-year forward is closest to: A. 1.0790  B. 1.1000  C. 1.1214<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 1.10 × 1.05/1.03 = 1.12136 (+213.6 points). The lower-rate euro trades at a forward premium.</div></details>
+  <details class="q"><summary><span class="qn">24</span>The base currency trades at a forward discount when its interest rate is: A. higher than the price currency's  B. lower than the price currency's  C. equal to the price currency's<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">25</span>USD/EUR rises from 1.10 to 1.21. The US dollar has: A. appreciated 10%  B. depreciated 9.1%  C. depreciated 10%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> EUR/USD goes from 0.9091 to 0.8264. The euro appreciated 10%.</div></details>
+</section>
+
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div><h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. <b>Save progress into this file</b> downloads an updated copy with your progress built in; re-upload that copy to Claude to continue. On an iPad, use <b>Copy progress for Claude</b> instead.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="saveFile">Save progress into this file</button><button id="copyProg">Copy progress for Claude</button><span class="small muted" id="saveMsg" style="align-self:center"></span></div>
+</section>
+<footer>CFA Level I economics guide · Created with Claude on 2026-10-31 from the 2026 CFA Program curriculum (Volume 2). Paraphrased summaries; the curriculum is the authoritative source.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Economics study guide",
+  "file_version": 1,
+  "created": "2026-10-31",
+  "curriculum": "2026 Level I, Volume 2",
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "6-9%",
+  "modules": [
+    {"id": "e1", "name": "LM1: The firm and market structures", "key": ["four structures", "MR = MC, shutdown and breakeven", "oligopoly models", "concentration ratio, HHI", "economies of scale"]},
+    {"id": "e2", "name": "LM2: Understanding business cycles", "key": ["classical, growth, growth rate cycles", "recovery, expansion, slowdown, contraction", "credit cycles", "labor, capex, inventory behavior", "leading, coincident, lagging indicators; nowcasting"]},
+    {"id": "e3", "name": "LM3: Fiscal policy", "key": ["roles and tools", "deficits and debt arguments", "fiscal and balanced budget multiplier", "structural balance, automatic stabilizers, lags"]},
+    {"id": "e4", "name": "LM4: Monetary policy", "key": ["central bank roles and objectives", "tools and transmission", "independence, credibility, transparency", "neutral rate, limitations, QE", "policy mix"]},
+    {"id": "e5", "name": "LM5: Introduction to geopolitics", "key": ["state vs non-state actors", "cooperation, globalization", "archetypes: multilateralism, bilateralism, hegemony, autarky", "tools", "event, exogenous, thematic risk; likelihood, velocity, impact"]},
+    {"id": "e6", "name": "LM6: International trade", "key": ["benefits and costs", "absolute vs comparative advantage", "tariffs, quotas, subsidies, VERs", "trading blocs"]},
+    {"id": "e7", "name": "LM7: Capital flows and the FX market", "key": ["participants and products", "quotes: base vs price, direct vs indirect", "real exchange rate", "regime taxonomy", "capital restrictions"]},
+    {"id": "e8", "name": "LM8: Exchange rate calculations", "key": ["cross rates", "forward rates and points", "forward premium/discount", "% changes"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const num = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 0 : d);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) { if (!(max - min > 1e-9)) max = min + 1; const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step }; }
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 300, L = o.ml || 56, R = 18, T = 14, B = 44, pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw, Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9), defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' }); el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 3 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+
+/* Cost curves */
+const VC = q => 20 * q - 2 * q * q + 0.1 * q * q * q, MC = q => 20 - 4 * q + 0.3 * q * q, AVC = q => VC(q) / q, ATC = q => (100 + VC(q)) / q;
+bind(['scP'], function () {
+  const P = +$('scP').value; setText('scPo', '$' + P.toFixed(1));
+  const mc = [], avc = [], atc = []; for (let q = 1; q <= 22; q += 0.25) { mc.push([q, MC(q)]); avc.push([q, AVC(q)]); atc.push([q, ATC(q)]); }
+  const ch = chart($('scSvg'), { h: 280, xr: [0, 22], yr: [0, 40], xt: 2, yt: 10, xl: 'Quantity', yl: 'Cost / price ($)' });
+  ch.line(mc, 'var(--c1)', 3); ch.line(atc, 'var(--c3)', 2.5); ch.line(avc, 'var(--c2)', 2.5); ch.line([[0, P], [22, P]], 'var(--text)', 1.5, '5 4');
+  let q = 0; if (P >= 10) { let lo = 6.67, hi = 22; for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; if (MC(m) < P) lo = m; else hi = m; } q = (lo + hi) / 2; }
+  let qa = 13, best = 1e9; for (let x = 8; x <= 18; x += 0.01) { if (ATC(x) < best) { best = ATC(x); qa = x; } }
+  ch.dot(10, 10, 'var(--c2)', 5); ch.text(ch.X(10) + 6, ch.Y(10) + 16, 'shutdown point', {}, 't2'); ch.dot(qa, best, 'var(--c3)', 5); ch.text(ch.X(qa) + 8, ch.Y(best) - 8, 'breakeven point', {}, 't2');
+  if (q) ch.dot(q, P, 'var(--text)', 6);
+  const profit = q ? P * q - 100 - VC(q) : -100;
+  setText('scQ', q ? q.toFixed(1) : '0 (shut down)'); setText('scPr', '$' + num(profit, 1));
+  $('scD').innerHTML = P < 10 ? '<span class="pill b">Shut down now</span>' : P < best ? '<span class="pill w">Operate short run, exit long run</span>' : '<span class="pill g">Operate: covering all costs</span>';
+});
+
+/* HHI */
+bind(['h1', 'h2', 'h3', 'h4', 'h5', 'hM'], function () {
+  let s = ['h1', 'h2', 'h3', 'h4', 'h5'].map(id => +$(id).value); ['h1o', 'h2o', 'h3o', 'h4o', 'h5o'].forEach((id, i) => setText(id, s[i] + '%'));
+  const tot = s.reduce((a, b) => a + b, 0); if (tot > 100) { setText('hErr', 'Shares add up to more than 100%. Lower one of them.'); return; } setText('hErr', '');
+  if ($('hM').checked) s = [s[0], s[1], s[2] + s[3], s[4]];
+  const sorted = s.slice().sort((a, b) => b - a), cr4 = sorted.slice(0, 4).reduce((a, b) => a + b, 0), other = 100 - tot;
+  const hhi = s.reduce((a, b) => a + b * b, 0) + other * 1;
+  setText('hCR', cr4 + '%'); setText('hHHI', Math.round(hhi).toLocaleString()); setText('hO', other + '% (as 1% firms)');
+});
+
+/* Business cycle */
+(function () {
+  const pts = []; for (let i = 0; i <= 200; i++) { const t = i / 200 * 2 * Math.PI; pts.push([t, -Math.cos(t) * 2]); }
+  const ch = chart($('bcSvg'), { h: 240, xr: [0, 2 * Math.PI], yr: [-3, 3], yt: 1, fy: v => (v > 0 ? '+' : '') + v + '%', yl: 'Output gap' });
+  const ph = [[0, Math.PI / 2, 'Recovery', 'var(--c2)'], [Math.PI / 2, Math.PI, 'Expansion', 'var(--c1)'], [Math.PI, 1.5 * Math.PI, 'Slowdown', 'var(--c5)'], [1.5 * Math.PI, 2 * Math.PI, 'Contraction', 'var(--c3)']];
+  ph.forEach(p => { ch.rect(p[0], p[1], -3, 3, p[3], 0.08); ch.text(ch.X((p[0] + p[1]) / 2), ch.T + ch.ph + 17, p[2], { 'text-anchor': 'middle' }, 't1'); });
+  ch.line([[0, 0], [2 * Math.PI, 0]], 'var(--c4)', 1.5, '5 4'); ch.line(pts, 'var(--c1)', 3);
+  ch.dot(0, -2, 'var(--c3)', 5); ch.text(ch.X(0) + 8, ch.Y(-2) + 4, 'trough', {}, 't1'); ch.dot(Math.PI, 2, 'var(--c2)', 5); ch.text(ch.X(Math.PI), ch.Y(2) - 10, 'peak', { 'text-anchor': 'middle' }, 't1');
+})();
+
+/* Fiscal multiplier */
+bind(['fmC', 'fmT', 'fmG'], function () {
+  const c = +$('fmC').value, t = +$('fmT').value / 100, g = +$('fmG').value; setText('fmCo', c.toFixed(2)); setText('fmTo', pct(t)); setText('fmGo', '$' + g + 'bn');
+  const m = 1 / (1 - c * (1 - t)); setText('fmM', m.toFixed(2)); setText('fmY', '$' + (m * g).toFixed(0) + 'bn');
+});
+
+/* Archetypes */
+const ARCH = { m: 'Multilateralism: cooperation with many countries through shared rules and institutions (e.g. WTO members). Benefits from trade and capital flows, but interdependence also spreads shocks.', b: 'Bilateralism: cooperation, but through one-at-a-time agreements between two countries. Regionalism sits between bilateralism and multilateralism.', h: 'Hegemony: a regional or global leader uses its political or economic power to set the rules and control resources. Can stabilize the system, but rivalry rises as hegemons gain or lose influence.', a: 'Autarky: seeking self-sufficiency with little external trade or finance; state-owned enterprises control strategic industries. Strong control at home, but often slower long-run development.' };
+function archShow(k) { [...$('arch').querySelectorAll('button')].forEach(b => b.classList.toggle('sel', b.dataset.k === k)); setText('archTxt', ARCH[k]); }
+$('arch').addEventListener('click', e => { const b = e.target.closest('button'); if (b) archShow(b.dataset.k); }); archShow('m');
+
+/* FX forward */
+bind(['fxS', 'fxP', 'fxB', 'fxD'], function () {
+  const S = +$('fxS').value, rp = +$('fxP').value / 100, rb = +$('fxB').value / 100, d = +$('fxD').value;
+  setText('fxSo', S.toFixed(4)); setText('fxPo', pct(rp, 2)); setText('fxBo', pct(rb, 2)); setText('fxDo', d);
+  const F = S * (1 + rp * d / 360) / (1 + rb * d / 360), pts = (F - S) * 10000;
+  setText('fxF', F.toFixed(4)); setText('fxPts', (pts > 0 ? '+' : '') + num(pts, 1)); setText('fxPD', Math.abs(pts) < 0.05 ? 'neither (equal rates)' : pts > 0 ? 'premium' : 'discount');
+});
+
+/* Cross rate */
+bind(['crA', 'crB', 'crN'], function () {
+  const a = +$('crA').value, b = +$('crB').value, n = +$('crN').value; setText('crAo', a.toFixed(2)); setText('crBo', b); setText('crNo', n.toFixed(2));
+  setText('crX', (a * b).toFixed(2)); const e = n / a - 1, u = a / n - 1; setText('crE', (e > 0 ? '+' : '') + pct(e, 2)); setText('crU', (u > 0 ? '+' : '') + pct(u, 2));
+});
+
+/* Progress */
+const DATA = JSON.parse($('study-data').textContent), LS = 'cfa-econ-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); $('progList').appendChild(row);
+});
+$('notes').value = state.notes || ''; $('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try { const url = URL.createObjectURL(new Blob([html], { type: 'text/html' })); const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Economics-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.'); } catch (e) { setText('saveMsg', 'Download blocked here. Use Copy progress instead.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(), txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const fb = () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => setText('saveMsg', 'Copied. Paste it into your chat with Claude.'), fb); else fb();
+});
+
+</script>
+</body>
+</html>

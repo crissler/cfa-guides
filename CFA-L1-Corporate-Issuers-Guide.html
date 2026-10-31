@@ -1,0 +1,518 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — CORPORATE ISSUERS STUDY GUIDE (2026 curriculum, Volume 3, Learning Modules 1–7)
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Corporate Issuers Guide</title>
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;--border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);--accent:#534AB7;--accent-bg:#EEEDFE;--c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:24px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:24px;font-weight:600;margin:0 0 4px}h3{font-size:18px;font-weight:600;margin:28px 0 8px}h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:720px}.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}nav.toc .row{display:flex;gap:6px;overflow-x:auto}nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:0}.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}.fx-eq .frac{margin:0 4px;line-height:1.4}.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:12px 0}.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}.callout.tip{border-left-color:var(--good);background:var(--good-bg)}.callout b{font-weight:600}.callout.trap b{color:var(--bad)}.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}.ctl label{font-size:14px;color:var(--muted);min-width:190px}.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}.stat .l{font-size:12px;color:var(--muted)}.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}svg .grid{stroke:var(--border);stroke-width:1}svg .axis{stroke:var(--border-strong);stroke-width:1}svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}button:hover{background:var(--surface-2)}button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.pill.g{background:var(--good-bg);color:var(--good)}.pill.w{background:var(--warn-bg);color:var(--warn)}.pill.b{background:var(--bad-bg);color:var(--bad)}.pill.a{background:var(--accent-bg);color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}details.q summary{cursor:pointer;font-weight:500;list-style:none}details.q summary::-webkit-details-marker{display:none}details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I · 2026 curriculum</div>
+  <h1>Corporate issuers guide</h1>
+  <p class="lead">How companies are organized and governed, how they manage cash and working capital, how they choose investments, and how they finance themselves. Built from Volume 3 of your 2026 curriculum.</p>
+  <div class="chips"><span class="chip acc">Exam weight 6–9%</span><span class="chip">About 11–16 of 180 questions</span><span class="chip">7 learning modules</span></div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a><a href="#c1">1 · Organizational forms</a><a href="#c2">2 · Investors and stakeholders</a><a href="#c3">3 · Governance</a><a href="#c4">4 · Working capital</a><a href="#c5">5 · Capital investments</a><a href="#c6">6 · Capital structure</a><a href="#c7">7 · Business models</a><a href="#formulas">Formula sheet</a><a href="#practice">Practice</a><a href="#progress">My progress</a>
+</div></nav>
+
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div>
+  <h2>Exam game plan</h2>
+  <div class="grid two">
+    <div class="card"><h4>What gets tested</h4><ul class="small">
+      <li>Mostly <b>concepts and comparisons</b>: organizational forms, debt vs equity holders, governance mechanisms, working capital approaches, capital structure theories, business model types.</li>
+      <li>A handful of <b>calculations</b>: cash conversion cycle, cost of trade credit, NPV, IRR, ROIC, WACC, and the Modigliani–Miller formulas.</li>
+      <li>Expect "which stakeholder…" and "which mechanism…" questions built on short scenarios.</li></ul></div>
+    <div class="card"><h4>Highest-yield items, ranked</h4><ol class="small">
+      <li>WACC and the Modigliani–Miller propositions (with and without taxes)</li><li>NPV, IRR, ROIC; NPV vs IRR conflicts</li><li>Cash conversion cycle, liquidity sources, cost of trade credit</li><li>Shareholder vs debtholder interests and conflicts</li><li>Principal–agent conflicts and governance mechanisms</li><li>Capital allocation principles, pitfalls and real options</li><li>Organizational forms; public vs private companies</li><li>Static trade-off and pecking order theories</li><li>Business model features and pricing models</li></ol></div>
+  </div>
+  <div class="callout trap"><b>Top traps.</b> Forgetting the (1 − t) on the cost of debt in WACC. Using book weights when market weights are given. Treating sunk costs or financing costs as project cash flows. Picking the higher-IRR project when NPV says otherwise. Thinking MM Proposition I (no taxes) says debt adds value (it says it doesn't).</div>
+</section>
+
+<!-- PART 1 -->
+<section class="mod" id="c1">
+  <div class="modtag">Part 1 · Learning module 1</div>
+  <h2>Organizational forms, corporate features and ownership</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Sole proprietorship</th><th>General partnership</th><th>Limited partnership</th><th>Limited company (corporation)</th></tr>
+    <tr><td>Legal identity</td><td>Same as owner</td><td>Same as owners</td><td>Same as owners</td><td><b>Separate legal entity</b></td></tr>
+    <tr><td>Owner–operator</td><td>Owner runs it</td><td>Partners run it</td><td>General partner runs it; limited partners are passive</td><td><b>Owners and managers separate</b> (board oversees managers)</td></tr>
+    <tr><td>Liability</td><td>Unlimited</td><td>Unlimited, shared</td><td>GP unlimited; LPs limited to their investment</td><td><b>Limited</b> to the investment</td></tr>
+    <tr><td>Taxation</td><td>Personal (pass-through)</td><td>Personal (pass-through)</td><td>Personal (pass-through)</td><td>Corporate tax, then tax on dividends (often "double taxation")</td></tr>
+    <tr><td>Access to financing</td><td>Limited (owner's funds, loans)</td><td>Limited (partners' funds)</td><td>Better (LPs bring capital)</td><td><b>Best</b>: can issue shares and bonds to many investors</td></tr>
+  </table></div>
+  <p class="small">Corporations dominate because limited liability and transferable ownership make it easy to raise large amounts of capital from many investors. The cost is the separation of ownership and control (agency problems, Part 3) and potential double taxation. Some jurisdictions reduce double taxation (e.g. dividend tax credits or pass-through corporate forms).</p>
+  <div class="viz">
+    <div class="viz-title">Double taxation: how much of $100 of profit reaches the owner?</div>
+    <div class="viz-sub">A corporation pays tax on profit, then shareholders pay tax on the dividend. A pass-through business pays only the owner's personal rate.</div>
+    <div class="ctl"><label for="dtC">Corporate tax rate</label><input type="range" id="dtC" min="0" max="40" step="1" value="21"><output id="dtCo"></output></div>
+    <div class="ctl"><label for="dtD">Dividend tax rate</label><input type="range" id="dtD" min="0" max="40" step="1" value="20"><output id="dtDo"></output></div>
+    <div class="ctl"><label for="dtP">Owner's personal rate (pass-through)</label><input type="range" id="dtP" min="0" max="50" step="1" value="35"><output id="dtPo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">Corporation: owner keeps</div><div class="v" id="dtK1"></div></div><div class="stat"><div class="l">Effective tax rate</div><div class="v" id="dtE"></div></div><div class="stat"><div class="l">Pass-through: owner keeps</div><div class="v" id="dtK2"></div></div></div>
+    <p class="small muted" style="margin:8px 0 0">Effective rate on distributed corporate profit = 1 − (1 − corporate rate)(1 − dividend rate).</p>
+  </div>
+  <h3>1.1 Public vs private companies</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Public companies</h4>Shares trade on an exchange; extensive, regular disclosure; liquid shares and easier access to capital; more scrutiny and reporting costs; shareholder base is wide and changes daily.</div>
+    <div class="card small"><h4>Private companies</h4>Shares aren't listed; limited disclosure; illiquid ownership; owners often involved in management; funding from private equity, venture capital and loans.</div>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Going public</h4><b>IPO</b> (underwritten offering of new shares), <b>direct listing</b> (existing shares listed, no new capital raised, no underwriter), or merging with a <b>SPAC</b> (a listed shell company that raised cash to buy a private company).</div>
+    <div class="card small"><h4>Going private</h4>A buyer (often private equity, in a <b>leveraged buyout</b>, or management, in a <b>management buyout</b>) acquires all the public shares and delists the company.</div>
+    <div class="card small"><h4>Share counts</h4><b>Authorized</b> = maximum the company may issue; <b>issued</b> = sold to date; <b>outstanding</b> = issued minus treasury shares (bought back).</div>
+  </div>
+</section>
+
+<!-- PART 2 -->
+<section class="mod" id="c2">
+  <div class="modtag">Part 2 · Learning module 2</div>
+  <h2>Investors and other stakeholders</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Debtholders</h4>Contractual claim to interest and principal; <b>priority</b> over shareholders; upside capped at the promised payments; prefer <b>lower risk</b> and more stable cash flows; protected by covenants and collateral.</div>
+    <div class="card small"><h4>Shareholders</h4><b>Residual</b> claim after everyone else; no promised payments; <b>unlimited upside</b>, loss limited to the investment; voting rights; benefit from <b>higher risk</b> (it raises the value of their "option" on the firm).</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Payoffs to debt and equity at maturity</div>
+    <div class="viz-sub">Debt promises a fixed face value. Equity gets whatever is left. Equity's payoff has the shape of a call option on the firm's assets.</div>
+    <div class="ctl"><label for="peD">Face value of debt</label><input type="range" id="peD" min="0" max="150" step="10" value="80"><output id="peDo"></output></div>
+    <div class="ctl"><label for="peV">Firm value at maturity</label><input type="range" id="peV" min="0" max="200" step="5" value="120"><output id="peVo"></output></div>
+    <svg id="peSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c2)"></span>Debtholders: min(V, D)</span><span><span class="sw" style="background:var(--c1)"></span>Shareholders: max(0, V − D)</span></div>
+    <div class="stats"><div class="stat"><div class="l">Debtholders get</div><div class="v" id="peDb"></div></div><div class="stat"><div class="l">Shareholders get</div><div class="v" id="peEq"></div></div></div>
+  </div>
+  <div class="callout"><b>The core conflict.</b> Shareholders gain from risky projects (they keep the upside; debtholders share the downside), from paying large dividends, and from adding debt. Debtholders want the opposite. Covenants and collateral exist to limit this.</div>
+  <h3>2.1 Stakeholders and ESG</h3>
+  <div class="tbl"><table>
+    <tr><th>Stakeholder</th><th>Main interest</th></tr>
+    <tr><td>Shareholders</td><td>Maximizing the value of their shares</td></tr>
+    <tr><td>Creditors (lenders, bondholders)</td><td>Getting interest and principal paid; stable cash flows, low risk</td></tr>
+    <tr><td>Board of directors</td><td>Protecting shareholders' interests, overseeing management</td></tr>
+    <tr><td>Managers</td><td>Pay, job security, power, reputation</td></tr>
+    <tr><td>Employees</td><td>Pay, security, working conditions, training</td></tr>
+    <tr><td>Customers</td><td>Product quality, safety, price, service</td></tr>
+    <tr><td>Suppliers</td><td>Being paid on time; a lasting relationship</td></tr>
+    <tr><td>Governments and regulators</td><td>Tax revenue, employment, compliance, public welfare</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card small"><h4><span class="pill g">E</span> Environmental</h4>Climate change, pollution, resource use, waste, biodiversity.</div>
+    <div class="card small"><h4><span class="pill a">S</span> Social</h4>Labor practices, health and safety, human rights, data privacy, community relations.</div>
+    <div class="card small"><h4><span class="pill w">G</span> Governance</h4>Board structure and independence, executive pay, shareholder rights, accounting and audit quality.</div>
+  </div>
+  <p class="small">Investors use ESG factors to judge risks and opportunities that may not show up in the financial statements yet (e.g. regulatory fines, stranded assets, reputational damage).</p>
+</section>
+
+<!-- PART 3 -->
+<section class="mod" id="c3">
+  <div class="modtag">Part 3 · Learning module 3</div>
+  <h2>Corporate governance: conflicts, mechanisms, risks and benefits</h2>
+  <p class="small">A <b>principal–agent relationship</b> exists when one party (the principal) hires another (the agent) to act on its behalf. Conflicts arise because the agent's interests differ and the principal can't fully observe what the agent does (information asymmetry).</p>
+  <div class="grid">
+    <div class="card small"><h4>Shareholders vs managers</h4>Excessive pay and perquisites; empire building; too little risk-taking (protecting their jobs) or too much (chasing bonuses); entrenchment; withholding information.</div>
+    <div class="card small"><h4>Controlling vs minority shareholders</h4>A controlling owner can push decisions that benefit them at minority holders' expense (related-party deals, board seats). <b>Dual-class</b> share structures give some shares more votes than their economic stake.</div>
+    <div class="card small"><h4>Shareholders vs creditors</h4>Riskier investments, extra borrowing, or large dividends and buybacks that shift value from creditors to shareholders.</div>
+    <div class="card small"><h4>Other stakeholders</h4>Cost-cutting on product safety (customers), on wages or safety (employees), or on taxes and compliance (government).</div>
+  </div>
+  <h3>3.1 Governance mechanisms</h3>
+  <div class="tbl"><table>
+    <tr><th>Group</th><th>Mechanisms</th></tr>
+    <tr><td>Shareholders</td><td>Financial reporting and transparency; general meetings (ordinary and extraordinary); voting and proxy voting; shareholder activism; derivative lawsuits (suing on the company's behalf); corporate takeovers (proxy contests, tender offers, hostile takeovers)</td></tr>
+    <tr><td>Creditors</td><td>Bond indentures and covenants; collateral; creditor committees in restructuring</td></tr>
+    <tr><td>Board of directors</td><td>Independent directors; board committees: <b>audit</b> (financial reporting, auditors), <b>governance</b> (policies, ethics), <b>remuneration/compensation</b> (executive pay), <b>nomination</b> (board candidates), and often <b>risk</b> and <b>investment</b> committees</td></tr>
+    <tr><td>Managers</td><td>Compensation tied to long-term performance; shareholder "say on pay" votes; clawbacks</td></tr>
+    <tr><td>Employees</td><td>Labor laws, employment contracts, unions, employee share ownership</td></tr>
+    <tr><td>Customers and suppliers</td><td>Contracts and service agreements</td></tr>
+    <tr><td>Government</td><td>Laws, regulation, corporate governance codes, listing requirements</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card small"><h4><span class="pill b">Risks of poor governance</span></h4>Weak control systems and fraud; poor decisions; legal, regulatory and reputational risk; higher default and bankruptcy risk.</div>
+    <div class="card small"><h4><span class="pill g">Benefits of good governance</span></h4>Operational efficiency; better controls; better decision-making; lower default risk; a <b>lower cost of debt and equity</b>; better long-term performance.</div>
+  </div>
+</section>
+
+<!-- PART 4 -->
+<section class="mod" id="c4">
+  <div class="modtag">Part 4 · Learning module 4</div>
+  <h2>Working capital and liquidity</h2>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Cash conversion cycle</div><div class="fx-eq">CCC = DOH + DSO − DPO</div><div class="fx-note">Days of inventory on hand + days sales outstanding − days payables outstanding. Time from paying suppliers to collecting from customers.</div></div>
+    <div class="fx"><div class="fx-name">Days measures</div><div class="fx-eq">DOH = <span class="frac"><span>365</span><span>Inventory turnover</span></span></div><div class="fx-note">DSO = 365 / receivables turnover; DPO = 365 / payables turnover.</div></div>
+    <div class="fx"><div class="fx-name">Cost of not taking a supplier discount</div><div class="fx-eq">(1 + <span class="frac"><span>Discount</span><span>1 − Discount</span></span>)<sup>365 / (Payment − Discount period)</sup> − 1</div><div class="fx-note">2/10 net 30 → 44.6% a year.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Cash conversion cycle and trade credit</div>
+    <div class="viz-sub">A shorter cycle means less cash tied up in operations. Compare the cost of skipping a supplier discount with your borrowing rate.</div>
+    <div class="ctl"><label for="ccI">Days of inventory (DOH)</label><input type="range" id="ccI" min="0" max="120" step="1" value="45"><output id="ccIo"></output></div>
+    <div class="ctl"><label for="ccR">Days sales outstanding (DSO)</label><input type="range" id="ccR" min="0" max="90" step="1" value="30"><output id="ccRo"></output></div>
+    <div class="ctl"><label for="ccP">Days payables (DPO)</label><input type="range" id="ccP" min="0" max="120" step="1" value="40"><output id="ccPo"></output></div>
+    <svg id="ccSvg"></svg>
+    <div class="ctl" style="margin-top:12px"><label for="tcD">Supplier discount</label><input type="range" id="tcD" min="0.5" max="5" step="0.5" value="2"><output id="tcDo"></output></div>
+    <div class="ctl"><label for="tcN">Days: discount / net</label><input type="range" id="tcN" min="15" max="90" step="5" value="30"><output id="tcNo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">Cash conversion cycle</div><div class="v" id="ccV"></div></div><div class="stat"><div class="l">Cost of skipping the discount</div><div class="v" id="tcV"></div></div></div>
+  </div>
+  <h3>4.1 Liquidity</h3>
+  <div class="grid">
+    <div class="card small"><h4>Primary sources</h4>Cash and marketable securities; borrowings (banks, bonds, suppliers' trade credit); <b>cash flow from the business</b> (the main long-term source).</div>
+    <div class="card small"><h4>Secondary sources</h4>Suspending or cutting dividends; delaying or reducing capital spending; issuing equity; renegotiating debt; selling assets; filing for bankruptcy protection. Using them usually signals financial stress.</div>
+    <div class="card small"><h4>Drags and pulls</h4><b>Drags</b> slow cash inflows: uncollected receivables, obsolete inventory, tighter borrowing conditions. <b>Pulls</b> speed cash outflows: paying suppliers early, reduced credit lines.</div>
+  </div>
+  <p class="small">Liquidity ratios: current = CA/CL; quick = (cash + marketable securities + receivables)/CL; cash = (cash + marketable securities)/CL.</p>
+  <h3>4.2 Working capital approaches</h3>
+  <div class="tbl"><table>
+    <tr><th>Approach</th><th>What it means</th><th>Pros</th><th>Cons</th></tr>
+    <tr><td><span class="pill g">Conservative</span></td><td>Higher current assets; long-term financing even for some variable needs</td><td>Flexibility, low rollover risk, stability in market stress</td><td>Higher financing cost; cash tied up</td></tr>
+    <tr><td><span class="pill a">Moderate ("matched")</span></td><td>Long-term financing for permanent needs; short-term for seasonal or variable needs</td><td>Balance of cost and risk</td><td>Uncertain short-term borrowing cost in a crisis</td></tr>
+    <tr><td><span class="pill b">Aggressive</span></td><td>Lean current assets; short-term funding for variable and some permanent needs</td><td>Lowest financing cost; higher returns</td><td>Rollover and interest rate risk; less flexibility</td></tr>
+  </table></div>
+</section>
+
+<!-- PART 5 -->
+<section class="mod" id="c5">
+  <div class="modtag">Part 5 · Learning module 5</div>
+  <h2>Capital investments and capital allocation</h2>
+  <div class="grid">
+    <div class="card small"><h4>Types of capital investment</h4><b>Going concern</b> projects (maintain the business, replace equipment) · <b>regulatory/compliance</b> projects (often required, may not earn a return) · <b>expansion</b> projects (growth; riskier) · <b>other</b> (high-risk, unrelated ventures).</div>
+    <div class="card small"><h4>The capital allocation process</h4><ol style="margin:0"><li>Idea generation</li><li>Investment analysis</li><li>Planning and prioritization</li><li>Monitoring and post-investment review</li></ol></div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Net present value</div><div class="fx-eq">NPV = Σ <span class="frac"><span>CF<sub>t</sub></span><span>(1 + r)<sup>t</sup></span></span> − Outlay</div><div class="fx-note">Accept if NPV &gt; 0. Directly measures value added.</div></div>
+    <div class="fx"><div class="fx-name">Internal rate of return</div><div class="fx-eq">The r where NPV = 0</div><div class="fx-note">Accept if IRR &gt; required return. Assumes reinvestment at the IRR.</div></div>
+    <div class="fx"><div class="fx-name">Return on invested capital</div><div class="fx-eq">ROIC = <span class="frac"><span>After-tax operating profit</span><span>Average invested capital</span></span></div><div class="fx-note">Invested capital = debt + equity. ROIC &gt; cost of capital → value created.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">NPV profiles: when NPV and IRR disagree</div>
+    <div class="viz-sub">Project A (−100, then 10, 40, 100) pays late. Project B (−100, then 90, 25, 10) pays early. B has the higher IRR, but A has the higher NPV at low discount rates. For mutually exclusive projects, follow NPV.</div>
+    <div class="ctl"><label for="npR">Discount rate (cost of capital)</label><input type="range" id="npR" min="0" max="25" step="0.5" value="10"><output id="npRo"></output></div>
+    <svg id="npSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Project A</span><span><span class="sw" style="background:var(--c3)"></span>Project B</span></div>
+    <div class="stats"><div class="stat"><div class="l">NPV of A</div><div class="v" id="npA"></div></div><div class="stat"><div class="l">NPV of B</div><div class="v" id="npB"></div></div><div class="stat"><div class="l">IRR A / IRR B</div><div class="v" id="npI" style="font-size:16px"></div></div><div class="stat"><div class="l">Choose (by NPV)</div><div class="v" id="npC" style="font-size:16px"></div></div></div>
+  </div>
+  <h3>5.1 Principles and pitfalls</h3>
+  <div class="grid two">
+    <div class="card small"><h4>Principles</h4><ul style="margin:0"><li>Decisions are based on <b>cash flows</b>, not accounting income</li><li>Cash flows are based on <b>opportunity costs</b> (what you give up)</li><li><b>Timing</b> of cash flows matters</li><li>Cash flows are analyzed <b>after tax</b></li><li><b>Financing costs are excluded</b>: they're in the discount rate</li><li><b>Ignore sunk costs</b>; include externalities such as cannibalization</li></ul></div>
+    <div class="card small"><h4>Common pitfalls</h4><ul style="margin:0"><li>Inertia: last year's budget drives this year's</li><li>Source-of-capital bias (spending internal cash more freely)</li><li>Failing to consider alternatives or improvements</li><li>Pet projects favored by senior managers</li><li>Basing decisions on EPS, net income or ROE effects</li><li>Internal forecasting errors (over-optimism)</li></ul></div>
+  </div>
+  <h3>5.2 Real options</h3>
+  <div class="grid">
+    <div class="card small"><b>Timing options:</b> delay the investment until more is known.</div>
+    <div class="card small"><b>Sizing options:</b> <i>abandonment</i> (stop if things go badly) and <i>growth/expansion</i> (invest more if things go well).</div>
+    <div class="card small"><b>Flexibility options:</b> <i>price-setting</i> (raise prices instead of capacity) and <i>production-flexibility</i> (switch inputs, add shifts).</div>
+    <div class="card small"><b>Fundamental options:</b> the project's value depends on an underlying price (e.g. a mine that only pays if the metal price is high).</div>
+  </div>
+  <div class="callout tip"><b>With an option.</b> Project NPV = NPV without the option − cost of the option + value of the option. A project with a negative NPV can be worth doing if the option is valuable enough.</div>
+</section>
+
+<!-- PART 6 -->
+<section class="mod" id="c6">
+  <div class="modtag">Part 6 · Learning module 6</div>
+  <h2>Capital structure</h2>
+  <div class="fx"><div class="fx-name">Weighted-average cost of capital</div><div class="fx-eq">WACC = w<sub>d</sub> r<sub>d</sub> (1 − t) + w<sub>p</sub> r<sub>p</sub> + w<sub>e</sub> r<sub>e</sub></div><div class="fx-note">Use market-value weights (or a target capital structure). Interest is tax-deductible, so debt is cheaper after tax.</div></div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card small"><h4>Internal factors</h4>Business model and stability of cash flows; asset type (tangible assets support more debt); existing leverage; corporate tax rate; capital structure policies and ratings targets.</div>
+    <div class="card small"><h4>External factors</h4>Market conditions and the business cycle; regulation; industry norms.</div>
+    <div class="card small"><h4>Company life cycle</h4><b>Start-up:</b> mostly equity (negative cash flow, few assets). <b>Growth:</b> mostly equity, some secured debt. <b>Mature:</b> more debt (stable cash flows, tangible assets).</div>
+  </div>
+  <h3>6.1 Modigliani–Miller propositions</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>No taxes</th><th>With taxes</th></tr>
+    <tr><td><b>Proposition I</b> (firm value)</td><td>V<sub>L</sub> = V<sub>U</sub>: capital structure is <b>irrelevant</b></td><td>V<sub>L</sub> = V<sub>U</sub> + tD: the interest tax shield adds value</td></tr>
+    <tr><td><b>Proposition II</b> (cost of equity)</td><td>r<sub>e</sub> = r<sub>0</sub> + (r<sub>0</sub> − r<sub>d</sub>)(D/E): r<sub>e</sub> rises with leverage; WACC unchanged</td><td>r<sub>e</sub> = r<sub>0</sub> + (r<sub>0</sub> − r<sub>d</sub>)(1 − t)(D/E): WACC falls as debt rises</td></tr>
+  </table></div>
+  <p class="small">Assumptions: perfect markets (no taxes, transaction costs or bankruptcy costs), homogeneous expectations, investors can borrow at the risk-free rate, no agency costs, and investment decisions don't depend on financing. r<sub>0</sub> = cost of capital of an all-equity firm.</p>
+  <div class="viz">
+    <div class="viz-title">Static trade-off: the tax shield vs the cost of financial distress</div>
+    <div class="viz-sub">Firm value as debt rises. MM without taxes is flat; with taxes it keeps rising; adding financial distress costs gives a peak: the optimal capital structure.</div>
+    <div class="ctl"><label for="toT">Tax rate</label><input type="range" id="toT" min="0" max="40" step="1" value="25"><output id="toTo"></output></div>
+    <div class="ctl"><label for="toC">Distress cost intensity</label><input type="range" id="toC" min="0.1" max="1" step="0.05" value="0.4"><output id="toCo"></output></div>
+    <svg id="toSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4)"></span>MM, no taxes</span><span><span class="sw" style="background:var(--c2)"></span>MM with taxes: V<sub>U</sub> + tD</span><span><span class="sw" style="background:var(--c1)"></span>Trade-off: V<sub>U</sub> + tD − PV(distress)</span></div>
+    <div class="stats"><div class="stat"><div class="l">Optimal debt (% of V<sub>U</sub>)</div><div class="v" id="toX"></div></div><div class="stat"><div class="l">Maximum firm value (V<sub>U</sub> = 100)</div><div class="v" id="toV"></div></div></div>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Static trade-off theory</h4>V<sub>L</sub> = V<sub>U</sub> + tD − PV(costs of financial distress). The optimal capital structure balances the tax benefit against expected distress costs; it <b>minimizes WACC</b> and maximizes firm value.</div>
+    <div class="card small"><h4>Pecking order theory</h4>Because managers know more than investors (information asymmetry), firms prefer <b>internal funds first, then debt, then new equity</b> last. Issuing equity can signal that managers think the shares are overvalued.</div>
+    <div class="card small"><h4>Agency costs</h4>Debt can discipline managers (less free cash flow to waste). A <b>target capital structure</b> is the mix management aims for over time; actual weights drift around it.</div>
+  </div>
+</section>
+
+<!-- PART 7 -->
+<section class="mod" id="c7">
+  <div class="modtag">Part 7 · Learning module 7</div>
+  <h2>Business models</h2>
+  <div class="grid">
+    <div class="card small"><h4>Four questions</h4><b>Who</b> are the customers? <b>What</b> does the firm offer (and why do customers buy it)? <b>Where</b> does it reach customers (channels)? <b>How much</b> does it charge (pricing)?</div>
+    <div class="card small"><h4>Value proposition and value chain</h4>The <b>value proposition</b> is why customers choose this product over competitors'. The <b>value chain</b> is how the firm organizes its activities to create that value.</div>
+    <div class="card small"><h4>Analyst's job</h4>Build your own understanding of the business model rather than relying on management's description; it drives the forecast and the risk assessment.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Pricing model</th><th>How it works</th></tr>
+    <tr><td>Value-based vs cost-based</td><td>Price set by value to the customer vs cost plus a markup</td></tr>
+    <tr><td>Price discrimination, tiered pricing, dynamic pricing</td><td>Different prices for different customers, volumes or times (e.g. airline seats)</td></tr>
+    <tr><td>Penetration pricing</td><td>Low initial price to win market share</td></tr>
+    <tr><td>Freemium</td><td>Free basic product, paid premium features</td></tr>
+    <tr><td>Hidden revenue</td><td>Free to users; paid by advertisers or data buyers</td></tr>
+    <tr><td>Recurring revenue / subscription</td><td>Regular payments for ongoing access</td></tr>
+    <tr><td>Bundling, razors-and-blades, add-ons</td><td>Sell products together; cheap base product with profitable consumables or extras</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card small"><h4>Conventional models</h4>Manufacturers, distributors and wholesalers, retailers, franchises, service providers. Long established and easy to understand.</div>
+    <div class="card small"><h4>Unconventional models</h4>E-commerce and digital platforms, <b>network effects</b> (value grows with users), multi-sided platforms, crowdsourcing, asset-light models, licensing. Often combine or vary conventional models.</div>
+  </div>
+</section>
+
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div><h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Effective tax on distributed corporate profit</td><td>1 − (1 − t<sub>corp</sub>)(1 − t<sub>div</sub>)</td></tr>
+    <tr><td>Debt / equity payoffs at maturity</td><td>Debt = min(V, D); Equity = max(0, V − D)</td></tr>
+    <tr><td>Cash conversion cycle</td><td>DOH + DSO − DPO</td></tr>
+    <tr><td>Cost of trade credit</td><td>(1 + d/(1 − d))<sup>365/(N − discount days)</sup> − 1</td></tr>
+    <tr><td>Current / quick / cash ratio</td><td>CA/CL; (cash + mkt sec + receivables)/CL; (cash + mkt sec)/CL</td></tr>
+    <tr><td>NPV</td><td>Σ CF<sub>t</sub>/(1 + r)<sup>t</sup> − outlay</td></tr>
+    <tr><td>IRR</td><td>r where NPV = 0</td></tr>
+    <tr><td>ROIC</td><td>After-tax operating profit / average invested capital</td></tr>
+    <tr><td>WACC</td><td>w<sub>d</sub>r<sub>d</sub>(1 − t) + w<sub>p</sub>r<sub>p</sub> + w<sub>e</sub>r<sub>e</sub></td></tr>
+    <tr><td>MM I with taxes</td><td>V<sub>L</sub> = V<sub>U</sub> + tD</td></tr>
+    <tr><td>MM II (no taxes / taxes)</td><td>r<sub>e</sub> = r<sub>0</sub> + (r<sub>0</sub> − r<sub>d</sub>)(D/E); × (1 − t) with taxes</td></tr>
+    <tr><td>Static trade-off</td><td>V<sub>L</sub> = V<sub>U</sub> + tD − PV(distress costs)</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div><h2>Practice questions</h2><p class="muted">Work each one before opening the answer.</p>
+  <details class="q"><summary><span class="qn">1</span>Which organizational form gives owners limited liability and a legal identity separate from the business? A. General partnership  B. Sole proprietorship  C. Limited company<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Both features belong to the corporate (limited company) form.</div></details>
+  <details class="q"><summary><span class="qn">2</span>In a limited partnership, the partner with unlimited liability is the: A. limited partner  B. general partner  C. both partners equally<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The GP runs the business and has unlimited liability; LPs are liable only up to their investment.</div></details>
+  <details class="q"><summary><span class="qn">3</span>Corporate tax rate 25%, dividend tax rate 20%. The effective tax rate on distributed profit is: A. 40%  B. 45%  C. 20%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 1 − 0.75 × 0.80 = 0.40. B wrongly adds the two rates.</div></details>
+  <details class="q"><summary><span class="qn">4</span>A company lists its existing shares on an exchange without issuing new shares or using an underwriter. This is: A. an IPO  B. a direct listing  C. a SPAC merger<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A direct listing raises no new capital.</div></details>
+  <details class="q"><summary><span class="qn">5</span>Compared with debtholders, shareholders most likely prefer: A. lower-risk projects  B. higher-risk projects  C. stricter covenants<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Shareholders keep the upside and their loss is limited, so risk benefits them.</div></details>
+  <details class="q"><summary><span class="qn">6</span>Which is a governance (G) factor? A. Carbon emissions  B. Board independence  C. Workplace safety<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A is environmental; C is social.</div></details>
+  <details class="q"><summary><span class="qn">7</span>A manager pursues acquisitions that grow the company but destroy shareholder value. This is an example of: A. empire building  B. a derivative lawsuit  C. a creditor conflict<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> A shareholder–manager (principal–agent) conflict.</div></details>
+  <details class="q"><summary><span class="qn">8</span>The board committee most responsible for overseeing financial reporting and the external auditor is the: A. nomination committee  B. remuneration committee  C. audit committee<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b></div></details>
+  <details class="q"><summary><span class="qn">9</span>Shareholders suing directors on behalf of the company is called: A. a proxy contest  B. a derivative lawsuit  C. a tender offer<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">10</span>Effective governance most likely leads to: A. a higher cost of capital  B. a lower cost of capital  C. no change in the cost of capital<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Lower risk for investors means lower required returns.</div></details>
+  <details class="q"><summary><span class="qn">11</span>DOH 45 days, DSO 30 days, DPO 40 days. The cash conversion cycle is: A. 35 days  B. 55 days  C. 115 days<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 45 + 30 − 40.</div></details>
+  <details class="q"><summary><span class="qn">12</span>Supplier terms are 2/10 net 30. The annual cost of skipping the discount is closest to: A. 24.5%  B. 36.5%  C. 44.6%<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> (1 + 0.02/0.98)<sup>365/20</sup> − 1. B is the simple (non-compounded) rate.</div></details>
+  <details class="q"><summary><span class="qn">13</span>Which is a secondary source of liquidity? A. Cash on hand  B. Trade credit  C. Selling long-term assets<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Secondary sources change the firm's operations or financial structure.</div></details>
+  <details class="q"><summary><span class="qn">14</span>A firm that keeps lean current assets and relies on short-term debt follows a working capital approach that is: A. conservative  B. moderate  C. aggressive<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Lower cost, higher rollover risk.</div></details>
+  <details class="q"><summary><span class="qn">15</span>Outlay 100; cash flows 40, 50, 60 over three years; cost of capital 10%. NPV is closest to: A. 22.8  B. 50.0  C. 122.8<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 36.36 + 41.32 + 45.08 − 100 = 22.77. C forgets the outlay. Its IRR is about 21.6%.</div></details>
+  <details class="q"><summary><span class="qn">16</span>Two mutually exclusive projects: A has the higher NPV, B has the higher IRR. The firm should choose: A. A  B. B  C. whichever is cheaper<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> NPV measures the value added; IRR can mislead with different scale or timing.</div></details>
+  <details class="q"><summary><span class="qn">17</span>EBIT 200, tax rate 25%, average invested capital 1,000, WACC 9%. ROIC is: A. 15%, creating value  B. 20%, creating value  C. 15%, destroying value<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 200 × 0.75 / 1,000 = 15% &gt; 9%. B ignores taxes.</div></details>
+  <details class="q"><summary><span class="qn">18</span>Which should be excluded from a project's cash flows? A. Lost sales of an existing product (cannibalization)  B. Market research already paid for last year  C. Opportunity cost of land the firm owns<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Sunk costs are ignored.</div></details>
+  <details class="q"><summary><span class="qn">19</span>The right to stop a project if results are poor is: A. a timing option  B. an abandonment option  C. a fundamental option<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A sizing option.</div></details>
+  <details class="q"><summary><span class="qn">20</span>Weights: debt 40%, equity 60%. Pretax cost of debt 6%, tax rate 25%, cost of equity 11%. WACC is: A. 8.4%  B. 9.0%  C. 8.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 0.4 × 4.5% + 0.6 × 11% = 1.8% + 6.6%. B forgets the tax shield.</div></details>
+  <details class="q"><summary><span class="qn">21</span>r<sub>0</sub> = 10%, r<sub>d</sub> = 6%, D/E = 0.5, no taxes. Under MM Proposition II the cost of equity is: A. 10%  B. 12%  C. 13%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 10% + (10% − 6%) × 0.5. With a 30% tax rate it would be 10% + 4% × 0.7 × 0.5 = 11.4%.</div></details>
+  <details class="q"><summary><span class="qn">22</span>Unlevered firm value 1,000; the firm adds debt of 400; tax rate 25%. Under MM with taxes, levered value is: A. 1,000  B. 1,100  C. 1,400<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 1,000 + 0.25 × 400.</div></details>
+  <details class="q"><summary><span class="qn">23</span>Under the pecking order theory, the least preferred source of financing is: A. internal funds  B. debt  C. new equity<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Issuing equity sends the most negative signal.</div></details>
+  <details class="q"><summary><span class="qn">24</span>A social network that becomes more valuable to each user as more people join benefits from: A. penetration pricing  B. network effects  C. a value chain<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+</section>
+
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div><h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. <b>Save progress into this file</b> downloads an updated copy with your progress built in; re-upload that copy to Claude to continue. On an iPad, use <b>Copy progress for Claude</b> instead.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="saveFile">Save progress into this file</button><button id="copyProg">Copy progress for Claude</button><span class="small muted" id="saveMsg" style="align-self:center"></span></div>
+</section>
+<footer>CFA Level I corporate issuers guide · Created with Claude on 2026-10-31 from the 2026 CFA Program curriculum (Volume 3). Paraphrased summaries; the curriculum is the authoritative source.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Corporate Issuers study guide",
+  "file_version": 1,
+  "created": "2026-10-31",
+  "curriculum": "2026 Level I, Volume 3",
+  "companion_files": ["CFA-L1-Ethics-Guide.html", "CFA-L1-Quant-Guide.html", "CFA-L1-Economics-Guide.html", "CFA-L1-FSA-Guide.html", "CFA-L1-Equity-Guide.html", "CFA-L1-Fixed-Income-Guide.html", "CFA-L1-Derivatives-Guide.html", "CFA-L1-Alternatives-Guide.html", "CFA-L1-Portfolio-Management-Guide.html"],
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "6-9%",
+  "modules": [
+    {"id": "c1", "name": "LM1: Organizational forms, corporate features and ownership", "key": ["sole proprietorship, partnerships, limited companies", "double taxation", "public vs private; IPO, direct listing, SPAC; going private"]},
+    {"id": "c2", "name": "LM2: Investors and other stakeholders", "key": ["debt vs equity claims and payoffs", "stakeholder groups and interests", "ESG factors"]},
+    {"id": "c3", "name": "LM3: Corporate governance", "key": ["principal-agent conflicts", "shareholder, creditor, board, management, employee, government mechanisms", "board committees", "risks and benefits"]},
+    {"id": "c4", "name": "LM4: Working capital and liquidity", "key": ["cash conversion cycle", "cost of trade credit", "primary vs secondary liquidity sources, drags and pulls", "conservative, moderate, aggressive approaches"]},
+    {"id": "c5", "name": "LM5: Capital investments and capital allocation", "key": ["types of capital investment", "process", "NPV, IRR, ROIC", "principles and pitfalls", "real options"]},
+    {"id": "c6", "name": "LM6: Capital structure", "key": ["WACC", "internal and external factors, life cycle", "MM propositions with/without taxes", "static trade-off, pecking order, target structure"]},
+    {"id": "c7", "name": "LM7: Business models", "key": ["who/what/where/how much", "value proposition, value chain", "pricing models", "conventional vs unconventional models, network effects"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const num = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 0 : d);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) { if (!(max - min > 1e-9)) max = min + 1; const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step }; }
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 300, L = o.ml || 56, R = 18, T = 14, B = 44, pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw, Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9), defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' }); el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 3 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+/* Double taxation */
+bind(['dtC', 'dtD', 'dtP'], function () {
+  const c = +$('dtC').value / 100, d = +$('dtD').value / 100, p = +$('dtP').value / 100;
+  setText('dtCo', pct(c)); setText('dtDo', pct(d)); setText('dtPo', pct(p));
+  const keep = 100 * (1 - c) * (1 - d); setText('dtK1', '$' + keep.toFixed(2)); setText('dtE', pct(1 - keep / 100, 1)); setText('dtK2', '$' + (100 * (1 - p)).toFixed(2));
+});
+
+/* Debt vs equity payoffs */
+bind(['peD', 'peV'], function () {
+  const D = +$('peD').value, V = +$('peV').value; setText('peDo', D); setText('peVo', V);
+  const ch = chart($('peSvg'), { h: 280, xr: [0, 200], yr: [0, 200], xt: 25, yt: 50, xl: 'Firm (asset) value at maturity, V', yl: 'Payoff' });
+  ch.line([[0, 0], [D, D], [200, D]], 'var(--c2)', 3); ch.line([[0, 0], [D, 0], [200, 200 - D]], 'var(--c1)', 3);
+  ch.vline(V, 'var(--c4)', '4 3'); ch.dot(V, Math.min(V, D), 'var(--c2)', 6); ch.dot(V, Math.max(0, V - D), 'var(--c1)', 6);
+  ch.text(ch.X(D) + 6, ch.Y(D) - 8, 'face value ' + D, {}, 't1');
+  setText('peDb', Math.min(V, D)); setText('peEq', Math.max(0, V - D));
+});
+
+/* CCC and trade credit */
+bind(['ccI', 'ccR', 'ccP', 'tcD', 'tcN'], function () {
+  const I = +$('ccI').value, R = +$('ccR').value, P = +$('ccP').value, dsc = +$('tcD').value / 100, N = +$('tcN').value, dd = 10;
+  setText('ccIo', I + ' days'); setText('ccRo', R + ' days'); setText('ccPo', P + ' days'); setText('tcDo', pct(dsc, 1)); setText('tcNo', dd + ' / ' + N);
+  const ccc = I + R - P, top = Math.max(I + R, P, 30) * 1.08;
+  const ch = chart($('ccSvg'), { h: 180, ml: 110, xr: [0, top], yr: [0, 2], xt: nice(0, top, 5).step, xl: 'Days' });
+  ch.rect(0, I, 1.15, 1.75, 'var(--c1)'); ch.rect(I, I + R, 1.15, 1.75, 'var(--c5)'); ch.rect(0, P, 0.25, 0.85, 'var(--c3)');
+  if (I > 12) ch.text(ch.X(I / 2), ch.Y(1.45) + 4, 'Inventory ' + I, { 'text-anchor': 'middle', style: 'fill:var(--bg);font-weight:600;font-size:12px' });
+  if (R > 12) ch.text(ch.X(I + R / 2), ch.Y(1.45) + 4, 'Receivables ' + R, { 'text-anchor': 'middle', style: 'fill:var(--bg);font-weight:600;font-size:12px' });
+  if (P > 12) ch.text(ch.X(P / 2), ch.Y(0.55) + 4, 'Payables ' + P, { 'text-anchor': 'middle', style: 'fill:var(--bg);font-weight:600;font-size:12px' });
+  ch.text(ch.L - 8, ch.Y(1.45) + 4, 'Operating cycle', { 'text-anchor': 'end' }); ch.text(ch.L - 8, ch.Y(0.55) + 4, 'Supplier credit', { 'text-anchor': 'end' });
+  setText('ccV', ccc + ' days');
+  const ear = N > dd ? Math.pow(1 + dsc / (1 - dsc), 365 / (N - dd)) - 1 : NaN; setText('tcV', isFinite(ear) ? pct(ear, 1) : 'n/a');
+});
+
+/* NPV profiles */
+const PA = [-100, 10, 40, 100], PB = [-100, 90, 25, 10];
+const npv = (cf, r) => cf.reduce((s, c, t) => s + c / Math.pow(1 + r, t), 0);
+function irr(cf) { let lo = -0.9, hi = 1; for (let i = 0; i < 100; i++) { const m = (lo + hi) / 2; if (npv(cf, m) > 0) lo = m; else hi = m; } return (lo + hi) / 2; }
+bind(['npR'], function () {
+  const r = +$('npR').value / 100; setText('npRo', pct(r, 1));
+  const a = [], b = []; for (let i = 0; i <= 50; i++) { const x = i * 0.005; a.push([x, npv(PA, x)]); b.push([x, npv(PB, x)]); }
+  const ch = chart($('npSvg'), { h: 290, xr: [0, 0.25], yr: [-20, 50], xt: 0.05, yt: 10, fx: v => pct(v), xl: 'Discount rate', yl: 'NPV' });
+  ch.line(a, 'var(--c1)', 3); ch.line(b, 'var(--c3)', 3); ch.vline(r, 'var(--c4)', '4 3');
+  const ia = irr(PA), ib = irr(PB); ch.dot(ia, 0, 'var(--c1)', 5); ch.dot(ib, 0, 'var(--c3)', 5);
+  ch.text(ch.X(ia) - 4, ch.Y(0) + 18, 'IRR A', { 'text-anchor': 'end' }, 't1'); ch.text(ch.X(ib) + 4, ch.Y(0) - 8, 'IRR B', {}, 't1');
+  const na = npv(PA, r), nb = npv(PB, r); setText('npA', num(na, 2)); setText('npB', num(nb, 2)); setText('npI', pct(ia, 1) + ' / ' + pct(ib, 1));
+  setText('npC', na <= 0 && nb <= 0 ? 'Neither' : na >= nb ? 'Project A' : 'Project B');
+});
+
+/* Static trade-off */
+bind(['toT', 'toC'], function () {
+  const t = +$('toT').value / 100, c = +$('toC').value; setText('toTo', pct(t)); setText('toCo', c.toFixed(2));
+  const mm = [], tx = [], tr = []; for (let i = 0; i <= 50; i++) { const x = i / 50; mm.push([x, 100]); tx.push([x, 100 + 100 * t * x]); tr.push([x, 100 * (1 + t * x - c * x * x)]); }
+  const ch = chart($('toSvg'), { h: 290, xr: [0, 1], yr: [80, 140], xt: 0.2, yt: 10, fx: v => pct(v), xl: 'Debt as % of unlevered firm value', yl: 'Firm value' });
+  ch.line(mm, 'var(--c4)', 2, '6 4'); ch.line(tx, 'var(--c2)', 2.5); ch.line(tr, 'var(--c1)', 3);
+  const xs = Math.min(1, t / (2 * c)), vs = 100 * (1 + t * xs - c * xs * xs);
+  ch.vline(xs, 'var(--c1)', '4 3'); ch.dot(xs, vs, 'var(--c1)', 6); ch.text(ch.X(xs) + 8, ch.Y(vs) - 8, 'optimal', {}, 't1');
+  setText('toX', pct(xs)); setText('toV', vs.toFixed(1));
+});
+
+/* Progress */
+const DATA = JSON.parse($('study-data').textContent), LS = 'cfa-ci-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); $('progList').appendChild(row);
+});
+$('notes').value = state.notes || ''; $('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try { const url = URL.createObjectURL(new Blob([html], { type: 'text/html' })); const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Corporate-Issuers-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.'); } catch (e) { setText('saveMsg', 'Download blocked here. Use Copy progress instead.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(), txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const fb = () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => setText('saveMsg', 'Copied. Paste it into your chat with Claude.'), fb); else fb();
+});
+</script>
+</body>
+</html>

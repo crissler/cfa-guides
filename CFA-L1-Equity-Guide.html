@@ -1,0 +1,495 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — EQUITY INVESTMENTS STUDY GUIDE (2026 curriculum, Volume 5, Learning Modules 1–8)
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Equity Guide</title>
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;--border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);--accent:#534AB7;--accent-bg:#EEEDFE;--c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:24px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:24px;font-weight:600;margin:0 0 4px}h3{font-size:18px;font-weight:600;margin:28px 0 8px}h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:720px}.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}nav.toc .row{display:flex;gap:6px;overflow-x:auto}nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:0}.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}.fx-eq .frac{margin:0 4px;line-height:1.4}.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:12px 0}.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}.callout.tip{border-left-color:var(--good);background:var(--good-bg)}.callout b{font-weight:600}.callout.trap b{color:var(--bad)}.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}.ctl label{font-size:14px;color:var(--muted);min-width:190px}.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}.stat .l{font-size:12px;color:var(--muted)}.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}svg .grid{stroke:var(--border);stroke-width:1}svg .axis{stroke:var(--border-strong);stroke-width:1}svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}button:hover{background:var(--surface-2)}button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.pill.g{background:var(--good-bg);color:var(--good)}.pill.w{background:var(--warn-bg);color:var(--warn)}.pill.b{background:var(--bad-bg);color:var(--bad)}.pill.a{background:var(--accent-bg);color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}details.q summary{cursor:pointer;font-weight:500;list-style:none}details.q summary::-webkit-details-marker{display:none}details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I · 2026 curriculum</div>
+  <h1>Equity investments guide</h1>
+  <p class="lead">How equity markets work, how indexes are built, how efficient markets are, the types of equity securities, how to analyze companies and industries, and how to value shares. Built from Volume 5 of your 2026 curriculum.</p>
+  <div class="chips"><span class="chip acc">Exam weight 11–14%</span><span class="chip">About 20–25 of 180 questions</span><span class="chip">8 learning modules</span></div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a><a href="#q1">1 · Market structure</a><a href="#q2">2 · Indexes</a><a href="#q3">3 · Efficiency</a><a href="#q4">4 · Equity securities</a><a href="#q5">5 · Company analysis</a><a href="#q6">6 · Industry analysis</a><a href="#q7">7 · Forecasting</a><a href="#q8">8 · Valuation</a><a href="#formulas">Formula sheet</a><a href="#practice">Practice</a><a href="#progress">My progress</a>
+</div></nav>
+
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div><h2>Exam game plan</h2>
+  <div class="grid two">
+    <div class="card"><h4>What gets tested</h4><ul class="small">
+      <li><b>Calculations:</b> margin trades (leverage, return, margin call price), index returns under different weightings, dividend discount models, justified P/E, enterprise value.</li>
+      <li><b>Concepts:</b> order types, market structures, forms of market efficiency and anomalies, types of shares and depository receipts, industry life cycle, Porter's five forces, valuation approaches.</li>
+      <li>The newer modules (company analysis, industry analysis, forecasting) are mostly "which approach / which factor" questions.</li></ul></div>
+    <div class="card"><h4>Highest-yield items, ranked</h4><ol class="small">
+      <li>Dividend discount models (Gordon, multistage, preferred)</li><li>Price multiples, justified P/E, enterprise value</li><li>Margin trading calculations</li><li>Index weighting methods and their biases</li><li>Weak, semi-strong and strong-form efficiency; anomalies</li><li>Orders: execution, validity, clearing instructions</li><li>Preferred vs common shares; depository receipts</li><li>Industry life cycle and five forces</li><li>Forecasting approaches and company analysis</li></ol></div>
+  </div>
+  <div class="callout trap"><b>Top traps.</b> Using D<sub>0</sub> instead of D<sub>1</sub> in the Gordon model. Forgetting that the margin call price uses the <i>maintenance</i> margin. Thinking a price-weighted index gives equal weight to each company. Saying strong-form efficiency is consistent with insiders earning abnormal returns (it isn't). Calling a stock overvalued when its intrinsic value is <i>above</i> its price (that's undervalued).</div>
+</section>
+
+<section class="mod" id="q1">
+  <div class="modtag">Part 1 · Learning module 1</div><h2>Market organization and structure</h2>
+  <div class="grid">
+    <div class="card small"><h4>What the financial system does</h4>Lets people save, borrow, raise equity, manage risk, exchange assets now and in the future, and use information. It allocates capital to its most productive uses and sets prices that balance supply and demand.</div>
+    <div class="card small"><h4>Intermediaries</h4>Brokers and exchanges (connect traders); dealers (trade from their own inventory); securitizers; depository institutions; insurers; arbitrageurs; clearinghouses and custodians (settle trades, hold assets safely).</div>
+    <div class="card small"><h4>Positions</h4><b>Long</b>: own the asset, gain if it rises. <b>Short</b>: sell a borrowed asset, gain if it falls; the short seller pays any dividends to the lender and faces unlimited potential loss. <b>Leveraged</b>: buy partly with borrowed money (on margin).</div>
+  </div>
+  <h3>1.1 Buying on margin</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Leverage ratio</div><div class="fx-eq"><span class="frac"><span>1</span><span>Initial margin %</span></span></div><div class="fx-note">40% initial margin → leverage of 2.5.</div></div>
+    <div class="fx"><div class="fx-name">Margin call price</div><div class="fx-eq">P<sub>0</sub> × <span class="frac"><span>1 − Initial margin</span><span>1 − Maintenance margin</span></span></div><div class="fx-note">Below this price the investor must add cash.</div></div>
+    <div class="fx"><div class="fx-name">Return on a margin trade</div><div class="fx-eq"><span class="frac"><span>Ending equity − Initial equity</span><span>Initial equity</span></span></div><div class="fx-note">Ending equity = sale proceeds + dividends − loan repayment − interest − commissions.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Margin trade calculator</div>
+    <div class="viz-sub">Buy 1,000 shares at $50, partly with a loan. Leverage magnifies both gains and losses.</div>
+    <div class="ctl"><label for="mgI">Initial margin</label><input type="range" id="mgI" min="25" max="100" step="5" value="40"><output id="mgIo"></output></div>
+    <div class="ctl"><label for="mgM">Maintenance margin</label><input type="range" id="mgM" min="10" max="50" step="5" value="25"><output id="mgMo"></output></div>
+    <div class="ctl"><label for="mgP">Price after one year</label><input type="range" id="mgP" min="25" max="80" step="1" value="60"><output id="mgPo"></output></div>
+    <div class="ctl"><label for="mgD">Dividend per share</label><input type="range" id="mgD" min="0" max="2" step="0.1" value="0.5"><output id="mgDo"></output></div>
+    <div class="ctl"><label for="mgR">Interest rate on the loan</label><input type="range" id="mgR" min="0" max="10" step="0.5" value="6"><output id="mgRo"></output></div>
+    <svg id="mgSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>Return with margin</span><span><span class="sw" style="background:var(--c4)"></span>Return without margin</span></div>
+    <div class="stats"><div class="stat"><div class="l">Leverage ratio</div><div class="v" id="mgL"></div></div><div class="stat"><div class="l">Margin call price</div><div class="v" id="mgC"></div></div><div class="stat"><div class="l">Return with margin</div><div class="v" id="mgRet"></div></div><div class="stat"><div class="l">Return without margin</div><div class="v" id="mgU"></div></div></div>
+  </div>
+  <h3>1.2 Orders</h3>
+  <div class="tbl"><table>
+    <tr><th>Instruction</th><th>Examples</th></tr>
+    <tr><td><b>Execution</b> (how to fill)</td><td><b>Market order</b>: fill now at the best price (certain execution, uncertain price). <b>Limit order</b>: only at the limit price or better (price control, may not fill). All-or-nothing; hidden orders; iceberg orders (only part displayed).</td></tr>
+    <tr><td><b>Validity</b> (when it's active)</td><td>Day order; good-till-cancelled; immediate-or-cancel (fill-or-kill); good-on-close/open; <b>stop orders</b> (become active only after the price hits a stop price; a stop-loss sell protects a long position)</td></tr>
+    <tr><td><b>Clearing</b> (how to settle)</td><td>Who clears and settles the trade; for sells, whether it's a long sale or a short sale</td></tr>
+  </table></div>
+  <p class="small">A limit buy below the market price is "behind the market"; at the best bid it "makes a new market" only if it improves the best bid; a limit buy at or above the best offer is "marketable" and fills immediately.</p>
+  <h3>1.3 Primary and secondary markets</h3>
+  <div class="grid">
+    <div class="card small"><h4>Primary markets</h4>Issuers sell new securities: IPOs and seasoned offerings (underwritten, best efforts, auctions), shelf registrations, rights offerings (existing holders can buy new shares at a discount), private placements.</div>
+    <div class="card small"><h4>Secondary markets</h4>Investors trade with each other. Liquid secondary markets lower issuers' cost of capital by making primary issues more attractive. Call markets trade at set times; continuous markets trade throughout the day.</div>
+    <div class="card small"><h4>Execution mechanisms</h4><b>Quote-driven</b> (dealer) markets; <b>order-driven</b> markets (orders matched by rules: price, display, time priority); <b>brokered</b> markets (for unique assets, e.g. real estate).</div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card small"><h4>A well-functioning financial system has…</h4>Complete markets (people can save, borrow, hedge); operational efficiency (low trading costs); informational efficiency (prices reflect information); allocational efficiency (capital goes to its best uses).</div>
+    <div class="card small"><h4>Objectives of regulation</h4>Control fraud; control agency problems; promote fairness; set mutually beneficial standards; prevent undercapitalized firms from exploiting investors; ensure long-term liabilities are funded.</div>
+  </div>
+</section>
+
+<section class="mod" id="q2">
+  <div class="modtag">Part 2 · Learning module 2</div><h2>Security market indexes</h2>
+  <div class="tbl"><table>
+    <tr><th>Weighting</th><th>Weight of each stock</th><th>Notes</th></tr>
+    <tr><td><b>Price-weighted</b></td><td>Price ÷ sum of prices</td><td>Index = sum of prices ÷ divisor (adjusted for splits). High-priced stocks dominate. Examples: Dow Jones Industrial Average, Nikkei 225.</td></tr>
+    <tr><td><b>Equal-weighted</b></td><td>1 ÷ number of stocks</td><td>Over-weights small companies; must be rebalanced often.</td></tr>
+    <tr><td><b>Market-cap weighted</b></td><td>Market cap ÷ total market cap</td><td>Largest companies dominate; over-weights overvalued stocks; self-rebalancing. <b>Float-adjusted</b> uses only shares available to the public.</td></tr>
+    <tr><td><b>Fundamental-weighted</b></td><td>Based on earnings, sales, dividends or book value</td><td>Avoids over-weighting overvalued stocks; tilts toward value.</td></tr>
+  </table></div>
+  <div class="viz">
+    <div class="viz-title">Same stocks, three indexes</div>
+    <div class="viz-sub">Stock A: $100 × 1,000 shares. Stock B: $50 × 2,000. Stock C: $10 × 10,000. All three have the same market cap ($100,000). Move one price and compare the index returns.</div>
+    <div class="ctl"><label for="ixA">Change in Stock A</label><input type="range" id="ixA" min="-50" max="50" step="5" value="10"><output id="ixAo"></output></div>
+    <div class="ctl"><label for="ixB">Change in Stock B</label><input type="range" id="ixB" min="-50" max="50" step="5" value="0"><output id="ixBo"></output></div>
+    <div class="ctl"><label for="ixC">Change in Stock C</label><input type="range" id="ixC" min="-50" max="50" step="5" value="0"><output id="ixCo"></output></div>
+    <div class="tbl"><table id="ixTbl"></table></div>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Price return vs total return</h4>Price return uses only price changes. Total return also includes dividends (and other income). Over long periods, total return indexes grow much faster.</div>
+    <div class="card small"><h4>Rebalancing vs reconstitution</h4><b>Rebalancing</b>: restoring target weights (needed for equal weighting). <b>Reconstitution</b>: changing which stocks are in the index.</div>
+    <div class="card small"><h4>Uses of indexes</h4>Gauging market sentiment; proxies for the market (e.g. for beta); benchmarks for managers; model portfolios for index funds and ETFs.</div>
+  </div>
+  <p class="small"><b>Other index types:</b> broad market, multi-market, sector, style (value, growth, size). Fixed-income indexes are hard to build (huge universe, dealer markets, constant turnover as bonds mature). Commodity indexes depend on futures; real estate indexes use appraisals, repeat sales or REITs; hedge fund indexes suffer from survivorship and self-reporting bias.</p>
+</section>
+
+<section class="mod" id="q3">
+  <div class="modtag">Part 3 · Learning module 3</div><h2>Market efficiency</h2>
+  <p class="small">In an efficient market, prices quickly and fully reflect available information, so investors can't consistently earn abnormal (risk-adjusted) returns. Efficiency improves with more participants and analysts, more information, fewer trading restrictions, and lower trading and information costs.</p>
+  <div class="viz">
+    <div class="viz-title">Three forms of efficiency</div>
+    <div class="viz-sub">Each form includes the ones inside it.</div>
+    <svg viewBox="0 0 640 280" role="img" aria-label="Nested circles for weak, semi-strong and strong form efficiency">
+      <ellipse cx="320" cy="150" rx="300" ry="125" style="fill:var(--c1);opacity:.12;stroke:var(--c1);stroke-width:2"/>
+      <ellipse cx="320" cy="168" rx="200" ry="88" style="fill:var(--c2);opacity:.15;stroke:var(--c2);stroke-width:2"/>
+      <ellipse cx="320" cy="186" rx="105" ry="50" style="fill:var(--c3);opacity:.2;stroke:var(--c3);stroke-width:2"/>
+      <text x="320" y="48" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">Strong form: all information, public and private</text>
+      <text x="320" y="100" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">Semi-strong form: all public information</text>
+      <text x="320" y="182" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">Weak form:</text>
+      <text x="320" y="200" text-anchor="middle" style="fill:var(--text);font:600 14px var(--sans)">past prices and volume</text>
+    </svg>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>If markets are…</th><th>This can't earn abnormal returns</th></tr>
+    <tr><td>Weak-form efficient</td><td>Technical analysis (past prices and volume)</td></tr>
+    <tr><td>Semi-strong-form efficient</td><td>Technical analysis and fundamental analysis of public information</td></tr>
+    <tr><td>Strong-form efficient</td><td>Anything, including insider information</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card small"><h4>Anomalies</h4><b>Time-series:</b> calendar effects (January effect, turn-of-the-month), momentum and overreaction. <b>Cross-sectional:</b> size effect, value effect. <b>Other:</b> closed-end fund discounts, slow reaction to earnings surprises, IPO underperformance, predictability from dividend yields. Many disappear once discovered or after transaction costs.</div>
+    <div class="card small"><h4>Behavioral finance</h4>Loss aversion, herding, overconfidence, information cascades and other biases can explain some anomalies. Biases don't automatically make markets inefficient; what matters is whether they create exploitable mispricing.</div>
+  </div>
+  <div class="callout tip"><b>Implications.</b> In efficient markets, passive investing makes sense, and active managers must justify their fees. Portfolio managers still add value by matching portfolios to clients' risk, tax and liquidity needs.</div>
+</section>
+
+<section class="mod" id="q4">
+  <div class="modtag">Part 4 · Learning module 4</div><h2>Overview of equity securities</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Common shares</h4>Residual claim; voting rights. <b>Statutory voting</b>: one vote per share per director. <b>Cumulative voting</b>: votes can be concentrated on one candidate, helping minority holders win seats. <b>Callable</b> common shares (company can buy back at a set price) and <b>putable</b> common shares (holder can sell back) also exist.</div>
+    <div class="card small"><h4>Preference (preferred) shares</h4>Fixed dividends paid before common; priority in liquidation; usually no votes. <b>Cumulative</b>: missed dividends accrue and must be paid before common dividends. <b>Participating</b>: extra dividends if profits are high. <b>Convertible</b>: can be swapped for common shares.</div>
+  </div>
+  <p class="small"><b>Risk ranking (lowest to highest):</b> putable preferred &lt; cumulative preferred &lt; non-cumulative preferred &lt; common shares. Callable shares are riskier for investors than otherwise identical non-callable shares; putable shares are less risky.</p>
+  <h3>4.1 Private vs public equity and foreign investing</h3>
+  <div class="grid">
+    <div class="card small"><h4>Private equity</h4>Venture capital, leveraged buyouts (MBOs), private investment in public equity (PIPE). Less liquid, less disclosure, long horizons, managers focus on the long term rather than quarterly results.</div>
+    <div class="card small"><h4>Depository receipts</h4>Shares held by a bank that issues receipts in another market. <b>Sponsored</b> (company involved; holders get voting rights) vs <b>unsponsored</b>. <b>ADRs</b>: Level I (over-the-counter), Level II (listed, no new capital), Level III (listed and raises capital), Rule 144A (private placement to institutions). <b>GDRs</b> trade outside the US and the issuer's home market.</div>
+    <div class="card small"><h4>Other forms</h4><b>Direct investing</b> in foreign markets (currency, local rules). <b>Global registered shares</b> trade in different currencies on different exchanges. <b>Basket of listed depository receipts</b>: an ETF holding DRs.</div>
+  </div>
+  <h3>4.2 Risk, return and value</h3>
+  <div class="grid">
+    <div class="card small"><h4>Return sources</h4>Price change + dividends (+ currency gains for foreign shares). Reinvesting dividends compounds returns over time.</div>
+    <div class="card small"><h4>Book vs market value</h4>Book value = equity on the balance sheet (historical, accounting-based). Market value = share price × shares, reflecting expected future cash flows. Market-to-book &gt; 1 is normal for growing companies.</div>
+    <div class="fx"><div class="fx-name">Return on equity</div><div class="fx-eq">ROE = <span class="frac"><span>Net income</span><span>Average book equity</span></span></div><div class="fx-note">Can rise from more leverage or buybacks, not just better operations.</div></div>
+  </div>
+  <p class="small">The company's <b>cost of equity</b> is the minimum return investors require to hold its shares; it equals investors' <b>required return</b>. It isn't observable and must be estimated (e.g. with the DDM or CAPM).</p>
+</section>
+
+<section class="mod" id="q5">
+  <div class="modtag">Part 5 · Learning module 5</div><h2>Company analysis: past and present</h2>
+  <div class="flow">
+    <div class="step"><div class="n">Business model</div><p class="small" style="margin:4px 0 0">Who are the customers, what's sold, how it's delivered, how it's priced; what makes it profitable.</p></div>
+    <div class="step"><div class="n">Revenue drivers</div><p class="small" style="margin:4px 0 0">Volume × price; by segment, product and geography; pricing power and market share.</p></div>
+    <div class="step"><div class="n">Operating profitability</div><p class="small" style="margin:4px 0 0">Gross and operating margins; fixed vs variable costs; operating leverage.</p></div>
+    <div class="step"><div class="n">Working capital</div><p class="small" style="margin:4px 0 0">Days of inventory, receivables and payables; cash conversion.</p></div>
+    <div class="step"><div class="n">Capital investment and structure</div><p class="small" style="margin:4px 0 0">Capex, ROIC vs cost of capital, leverage and liquidity.</p></div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card small"><h4>Operating leverage</h4>The share of costs that are fixed. High operating leverage means a small change in revenue causes a big change in operating profit, in both directions.</div>
+    <div class="card small"><h4>Good company research covers…</h4>The investment thesis; the business model and key drivers; past results explained by those drivers; risks; valuation and recommendation. Explain <i>why</i> the numbers changed, not just <i>that</i> they did.</div>
+  </div>
+</section>
+
+<section class="mod" id="q6">
+  <div class="modtag">Part 6 · Learning module 6</div><h2>Industry and competitive analysis</h2>
+  <div class="grid">
+    <div class="card small"><h4>Classifying industries</h4>By products and services, using commercial systems (e.g. GICS, ICB) or government systems. By sensitivity to the business cycle: <b>cyclical</b> (autos, travel) vs <b>non-cyclical</b> (defensive, e.g. utilities and staples, or growth). Peer groups are companies with similar business activities and drivers.</div>
+    <div class="card small"><h4>Industry size, growth and profitability</h4>Market size and growth rate; profitability (margins, ROIC) and how it varies across firms; market share trends; concentration (e.g. Herfindahl–Hirschman index).</div>
+    <div class="card small"><h4>External influences (PESTLE)</h4><b>P</b>olitical, <b>E</b>conomic, <b>S</b>ocial, <b>T</b>echnological, <b>L</b>egal and <b>E</b>nvironmental factors that affect demand, costs and competition.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Industry life cycle</div>
+    <div class="viz-sub">Industry demand over time. Growth slows, competition shifts from winning new customers to taking share.</div>
+    <svg id="lcSvg"></svg>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Phase</th><th>Growth</th><th>Prices and profits</th><th>Competition</th></tr>
+    <tr><td>Embryonic</td><td>Slow</td><td>High prices, losses common</td><td>Few firms; high risk of failure</td></tr>
+    <tr><td>Growth</td><td>Rapid</td><td>Prices fall, profits rise</td><td>Low: plenty of new customers</td></tr>
+    <tr><td>Shakeout</td><td>Slowing</td><td>Price cuts, falling profits</td><td>Intense; weaker firms exit</td></tr>
+    <tr><td>Mature</td><td>Slow or none</td><td>Stable; leaders earn good margins</td><td>Consolidated; barriers high</td></tr>
+    <tr><td>Decline</td><td>Negative</td><td>Price wars, falling profits</td><td>Excess capacity; exits and mergers</td></tr>
+  </table></div>
+  <h3>6.1 Porter's five forces</h3>
+  <div class="grid">
+    <div class="card small"><h4>Threat of new entrants</h4>Low when barriers are high: economies of scale, capital needs, brand loyalty, regulation, distribution access.</div>
+    <div class="card small"><h4>Threat of substitutes</h4>Different products that meet the same need cap prices.</div>
+    <div class="card small"><h4>Bargaining power of buyers</h4>High when buyers are few, large, or can switch easily.</div>
+    <div class="card small"><h4>Bargaining power of suppliers</h4>High when suppliers are few or inputs are unique.</div>
+    <div class="card small"><h4>Rivalry among competitors</h4>High with many similar firms, slow growth, high fixed costs, undifferentiated products, high exit barriers.</div>
+  </div>
+  <p class="small"><b>Competitive strategies:</b> cost leadership (lowest cost), differentiation (unique product, premium price), and focus (a narrow segment, using either). Weak forces mean higher potential profitability for the industry.</p>
+</section>
+
+<section class="mod" id="q7">
+  <div class="modtag">Part 7 · Learning module 7</div><h2>Company analysis: forecasting</h2>
+  <div class="grid">
+    <div class="card small"><h4>What to forecast</h4>Forecast the <b>drivers</b> (volume, price, margins, days ratios) and let the line items follow, rather than forecasting each line separately.</div>
+    <div class="card small"><h4>Approaches</h4>Historical results; historical base rates and <b>convergence</b> (e.g. growth and margins drift toward industry averages over time); management guidance; the analyst's own discretionary forecast.</div>
+    <div class="card small"><h4>Revenue</h4><b>Top-down</b>: market size or GDP growth × market share. <b>Bottom-up</b>: volume × price, by segment or store. <b>Hybrid</b>: combine both.</div>
+    <div class="card small"><h4>Costs and capital</h4>COGS often as % of revenue; SG&amp;A split into fixed and variable; capex split into maintenance (≈ depreciation) and growth; working capital via days ratios; capital structure via target leverage.</div>
+    <div class="card small"><h4>Forecast horizon</h4>Long enough to capture the investment thesis and reach a "normal" state, often through a full business cycle; then a terminal value.</div>
+    <div class="card small"><h4>Scenarios and sensitivity</h4>Model base, bull and bear cases and test the key assumptions; identify which drivers matter most to value.</div>
+  </div>
+</section>
+
+<section class="mod" id="q8">
+  <div class="modtag">Part 8 · Learning module 8</div><h2>Equity valuation: concepts and basic tools</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Intrinsic value vs price</h4>Intrinsic value &gt; price → <span class="pill g">undervalued</span> (buy). Intrinsic value &lt; price → <span class="pill b">overvalued</span> (sell). Close → fairly valued. Before acting, ask how confident you are in the estimate and whether the market might know something you don't.</div>
+    <div class="card small"><h4>Three families of models</h4><b>Present value</b> (discounted cash flow): DDM, FCFE. <b>Multiplier</b> (market multiples): P/E, P/B, P/S, P/CF, EV/EBITDA. <b>Asset-based</b>: market value of assets − liabilities (useful for natural resource firms, financial firms, liquidations).</div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Gordon (constant) growth DDM</div><div class="fx-eq">V<sub>0</sub> = <span class="frac"><span>D<sub>1</sub></span><span>r − g</span></span> = <span class="frac"><span>D<sub>0</sub>(1 + g)</span><span>r − g</span></span></div><div class="fx-note">Requires r &gt; g. Best for mature, stable dividend payers.</div></div>
+    <div class="fx"><div class="fx-name">Preferred stock (no maturity)</div><div class="fx-eq">V<sub>0</sub> = <span class="frac"><span>D</span><span>r</span></span></div></div>
+    <div class="fx"><div class="fx-name">Sustainable growth</div><div class="fx-eq">g = b × ROE</div><div class="fx-note">b = retention ratio = 1 − payout.</div></div>
+    <div class="fx"><div class="fx-name">FCFE</div><div class="fx-eq">CFO − FCInv + Net borrowing</div><div class="fx-note">Value = PV of FCFE at the cost of equity. Useful when dividends don't reflect capacity to pay.</div></div>
+    <div class="fx"><div class="fx-name">Justified forward P/E</div><div class="fx-eq"><span class="frac"><span>P<sub>0</sub></span><span>E<sub>1</sub></span></span> = <span class="frac"><span>D<sub>1</sub>/E<sub>1</sub></span><span>r − g</span></span></div><div class="fx-note">Higher payout or growth, or lower required return → higher justified P/E.</div></div>
+    <div class="fx"><div class="fx-name">Enterprise value</div><div class="fx-eq">EV = Market cap + Debt + Preferred − Cash</div><div class="fx-note">EV/EBITDA compares firms with different leverage.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Two-stage dividend discount model</div>
+    <div class="viz-sub">High growth for a few years, then constant growth forever. The chart shows how sensitive value is to the long-term growth rate.</div>
+    <div class="ctl"><label for="ddD">Current dividend D<sub>0</sub></label><input type="range" id="ddD" min="0.5" max="5" step="0.1" value="2"><output id="ddDo"></output></div>
+    <div class="ctl"><label for="ddG1">High growth rate</label><input type="range" id="ddG1" min="0" max="25" step="1" value="10"><output id="ddG1o"></output></div>
+    <div class="ctl"><label for="ddN">High-growth years</label><input type="range" id="ddN" min="0" max="10" step="1" value="3"><output id="ddNo"></output></div>
+    <div class="ctl"><label for="ddG2">Long-term growth rate</label><input type="range" id="ddG2" min="0" max="8" step="0.5" value="4"><output id="ddG2o"></output></div>
+    <div class="ctl"><label for="ddR">Required return</label><input type="range" id="ddR" min="5" max="15" step="0.5" value="9"><output id="ddRo"></output></div>
+    <svg id="ddSvg"></svg>
+    <div class="stats"><div class="stat"><div class="l">Value today</div><div class="v" id="ddV"></div></div><div class="stat"><div class="l">PV of high-growth dividends</div><div class="v" id="ddP1"></div></div><div class="stat"><div class="l">PV of terminal value</div><div class="v" id="ddP2"></div></div></div>
+  </div>
+  <div class="grid two">
+    <div class="card small"><h4>Method of comparables</h4>Compare a stock's multiple with peers' or the industry's. A lower multiple may mean undervalued, or that the company deserves it (slower growth, higher risk). Relative, not absolute, valuation.</div>
+    <div class="card small"><h4>Choosing a model</h4>DDM: stable dividend payers. FCFE: firms whose dividends differ from their capacity to pay. Multiples: quick comparisons, and companies without dividends. Asset-based: firms with mostly tangible or financial assets.</div>
+  </div>
+</section>
+
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div><h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Leverage ratio</td><td>1 / initial margin</td></tr>
+    <tr><td>Margin call price</td><td>P<sub>0</sub>(1 − IM)/(1 − MM)</td></tr>
+    <tr><td>Margin trade return</td><td>(ending equity − initial equity) / initial equity</td></tr>
+    <tr><td>Price-weighted index</td><td>Σ prices / divisor</td></tr>
+    <tr><td>Index price return</td><td>(V<sub>1</sub> − V<sub>0</sub>)/V<sub>0</sub>; total return adds income</td></tr>
+    <tr><td>ROE</td><td>Net income / average book equity</td></tr>
+    <tr><td>Gordon growth</td><td>V<sub>0</sub> = D<sub>1</sub>/(r − g)</td></tr>
+    <tr><td>Multistage DDM</td><td>Σ D<sub>t</sub>/(1 + r)<sup>t</sup> + [D<sub>n+1</sub>/(r − g)]/(1 + r)<sup>n</sup></td></tr>
+    <tr><td>Preferred stock</td><td>D / r</td></tr>
+    <tr><td>Sustainable growth</td><td>g = b × ROE</td></tr>
+    <tr><td>Implied required return</td><td>r = D<sub>1</sub>/P<sub>0</sub> + g</td></tr>
+    <tr><td>FCFE</td><td>CFO − FCInv + net borrowing</td></tr>
+    <tr><td>Justified forward P/E</td><td>(D<sub>1</sub>/E<sub>1</sub>)/(r − g)</td></tr>
+    <tr><td>Enterprise value</td><td>Market cap + debt + preferred − cash</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div><h2>Practice questions</h2><p class="muted">Work each one before opening the answer.</p>
+  <details class="q"><summary><span class="qn">1</span>An investor buys with an initial margin of 40%. The leverage ratio is: A. 1.4  B. 2.5  C. 4.0<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 1 / 0.40.</div></details>
+  <details class="q"><summary><span class="qn">2</span>Shares bought at $40 with 50% initial margin and 25% maintenance margin. The margin call price is closest to: A. $20.00  B. $26.67  C. $30.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 40 × 0.5 / 0.75.</div></details>
+  <details class="q"><summary><span class="qn">3</span>Buy 1,000 shares at $50 with 40% margin; loan rate 6%; sell at $60 after a year; dividends $0.50 a share. Return on equity is closest to: A. 21.0%  B. 43.5%  C. 50.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Equity 20,000; loan 30,000. Ending equity = 60,000 + 500 − 30,000 − 1,800 = 28,700. Return = 8,700 / 20,000. A is the unleveraged return.</div></details>
+  <details class="q"><summary><span class="qn">4</span>Which order guarantees execution but not price? A. Limit order  B. Market order  C. Stop-limit order<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">5</span>A stop-loss sell order is typically used to: A. buy below the market  B. limit losses on a long position  C. guarantee a selling price<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It becomes a market order once the stop price is hit, so the final price isn't guaranteed.</div></details>
+  <details class="q"><summary><span class="qn">6</span>Existing shareholders get the right to buy new shares at a discount in a: A. shelf registration  B. rights offering  C. private placement<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">7</span>Stocks at $100, $50 and $10 (equal market caps). The $100 stock rises 10%. The price-weighted index rises about: A. 3.3%  B. 6.3%  C. 10.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> +10 / 160 = 6.25%. Equal and cap-weighted indexes rise 3.33%.</div></details>
+  <details class="q"><summary><span class="qn">8</span>Which index weighting needs the most frequent rebalancing? A. Market-cap  B. Equal  C. Float-adjusted market-cap<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Weights drift as prices change; cap-weighted indexes rebalance themselves.</div></details>
+  <details class="q"><summary><span class="qn">9</span>A market-cap-weighted index tends to: A. over-weight overvalued stocks  B. over-weight small companies  C. tilt toward value stocks<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Fundamental weighting addresses this.</div></details>
+  <details class="q"><summary><span class="qn">10</span>If markets are semi-strong-form efficient, which can still earn abnormal returns? A. Technical analysis  B. Fundamental analysis of public data  C. Trading on private (insider) information<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Only strong-form efficiency rules that out.</div></details>
+  <details class="q"><summary><span class="qn">11</span>Small-cap stocks outperforming large caps on a risk-adjusted basis is a: A. time-series anomaly  B. cross-sectional anomaly  C. calendar anomaly<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The size effect.</div></details>
+  <details class="q"><summary><span class="qn">12</span>Missed dividends must be paid before any common dividend on: A. cumulative preferred  B. non-cumulative preferred  C. participating preferred<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">13</span>Which is least risky for investors? A. Callable common shares  B. Non-cumulative preferred  C. Putable preferred<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> The put lets holders sell back; preferred ranks ahead of common.</div></details>
+  <details class="q"><summary><span class="qn">14</span>An ADR that lists on a US exchange and raises new capital is: A. Level I  B. Level II  C. Level III<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Level II lists but doesn't raise capital; Level I trades over the counter.</div></details>
+  <details class="q"><summary><span class="qn">15</span>An industry with rapid demand growth, falling prices and rising profits is in the: A. embryonic phase  B. growth phase  C. shakeout phase<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">16</span>Which most likely increases rivalry in an industry? A. High exit barriers  B. Strong brand differentiation  C. Fast industry growth<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Firms stay and fight instead of leaving.</div></details>
+  <details class="q"><summary><span class="qn">17</span>Forecasting revenue as market size × expected market share is a: A. bottom-up approach  B. top-down approach  C. base-rate approach<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">18</span>Assuming a company's margins drift toward the industry average over time applies: A. management guidance  B. convergence to base rates  C. a bottom-up forecast<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">19</span>D<sub>0</sub> = $2.00, g = 4%, r = 9%. Gordon growth value is: A. $40.00  B. $41.60  C. $52.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 2.08 / 0.05. A uses D<sub>0</sub> instead of D<sub>1</sub>.</div></details>
+  <details class="q"><summary><span class="qn">20</span>A preferred share pays $5 a year forever and investors require 8%. Its value is: A. $40.00  B. $62.50  C. $67.50<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 5 / 0.08.</div></details>
+  <details class="q"><summary><span class="qn">21</span>Retention ratio 60%, ROE 15%. Sustainable growth is: A. 6%  B. 9%  C. 15%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 0.6 × 15%.</div></details>
+  <details class="q"><summary><span class="qn">22</span>Payout ratio 40%, r = 10%, g = 6%. The justified forward P/E is: A. 4.0  B. 10.0  C. 15.0<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 0.40 / 0.04.</div></details>
+  <details class="q"><summary><span class="qn">23</span>Market cap 500, debt 200, preferred 50, cash 80. Enterprise value is: A. 620  B. 670  C. 830<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 500 + 200 + 50 − 80.</div></details>
+  <details class="q"><summary><span class="qn">24</span>An analyst's intrinsic value is $45 and the share trades at $38. The stock appears: A. overvalued  B. undervalued  C. fairly valued<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Value above price.</div></details>
+  <details class="q"><summary><span class="qn">25</span>An asset-based valuation is most appropriate for: A. a software company  B. a natural resource company  C. a fast-growing consumer brand<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Its value is mostly in tangible assets with observable market values.</div></details>
+</section>
+
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div><h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. <b>Save progress into this file</b> downloads an updated copy with your progress built in; re-upload that copy to Claude to continue. On an iPad, use <b>Copy progress for Claude</b> instead.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="saveFile">Save progress into this file</button><button id="copyProg">Copy progress for Claude</button><span class="small muted" id="saveMsg" style="align-self:center"></span></div>
+</section>
+<footer>CFA Level I equity guide · Created with Claude on 2026-10-31 from the 2026 CFA Program curriculum (Volume 5). Paraphrased summaries; the curriculum is the authoritative source.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Equity Investments study guide",
+  "file_version": 1,
+  "created": "2026-10-31",
+  "curriculum": "2026 Level I, Volume 5",
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "11-14%",
+  "modules": [
+    {"id": "q1", "name": "LM1: Market organization and structure", "key": ["financial system functions, intermediaries", "long, short, leveraged positions; margin calculations", "execution, validity, clearing instructions", "primary vs secondary markets; quote-, order-driven, brokered", "well-functioning system, regulation"]},
+    {"id": "q2", "name": "LM2: Security market indexes", "key": ["price, equal, cap, float, fundamental weighting", "price vs total return", "rebalancing vs reconstitution", "uses and index types"]},
+    {"id": "q3", "name": "LM3: Market efficiency", "key": ["weak, semi-strong, strong forms", "anomalies", "behavioral finance", "implications"]},
+    {"id": "q4", "name": "LM4: Overview of equity securities", "key": ["common vs preferred; voting; callable/putable; cumulative/participating/convertible", "private vs public", "depository receipts, ADR levels, GDRs", "book vs market value, ROE, cost of equity"]},
+    {"id": "q5", "name": "LM5: Company analysis: past and present", "key": ["business model", "revenue drivers", "profitability and operating leverage", "working capital, capex, capital structure"]},
+    {"id": "q6", "name": "LM6: Industry and competitive analysis", "key": ["classification, peer groups", "size, growth, profitability, concentration", "life cycle", "Porter's five forces, PESTLE, competitive strategies"]},
+    {"id": "q7", "name": "LM7: Company analysis: forecasting", "key": ["drivers vs line items", "historical, base rates and convergence, guidance, analyst forecasts", "top-down vs bottom-up revenue", "horizon, scenarios"]},
+    {"id": "q8", "name": "LM8: Equity valuation", "key": ["intrinsic value vs price", "DDM: Gordon, multistage, preferred", "FCFE", "multiples, justified P/E, EV", "asset-based valuation"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const num = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 0 : d);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) { if (!(max - min > 1e-9)) max = min + 1; const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step }; }
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 300, L = o.ml || 56, R = 18, T = 14, B = 44, pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw, Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9), defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' }); el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 3 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+
+/* Margin trade */
+bind(['mgI', 'mgM', 'mgP', 'mgD', 'mgR'], function () {
+  const im = +$('mgI').value / 100, mm = +$('mgM').value / 100, p1 = +$('mgP').value, dv = +$('mgD').value, r = +$('mgR').value / 100, p0 = 50, sh = 1000;
+  setText('mgIo', pct(im)); setText('mgMo', pct(mm)); setText('mgPo', '$' + p1); setText('mgDo', '$' + dv.toFixed(2)); setText('mgRo', pct(r, 1));
+  const eq0 = p0 * sh * im, loan = p0 * sh * (1 - im);
+  const ret = p => ((p * sh + dv * sh - loan * (1 + r)) - eq0) / eq0, ur = p => (p - p0 + dv) / p0;
+  const L = [], U = []; for (let p = 25; p <= 80; p++) { L.push([p, ret(p)]); U.push([p, ur(p)]); }
+  const all = L.concat(U).map(q => q[1]), y = nice(Math.min.apply(null, all), Math.max.apply(null, all), 5);
+  const ch = chart($('mgSvg'), { h: 270, xr: [25, 80], yr: [y.lo, y.hi], xt: 5, yt: y.step, fx: v => '$' + v, fy: v => pct(v), xl: 'Price after one year', yl: 'Return' });
+  ch.line(U, 'var(--c4)', 2, '6 4'); ch.line(L, 'var(--c1)', 3); ch.vline(p1, 'var(--c4)', '3 3'); ch.dot(p1, ret(p1), 'var(--c1)', 6);
+  const mc = p0 * (1 - im) / (1 - mm); if (mc >= 25) { ch.vline(mc, 'var(--c3)', '5 3'); ch.text(ch.X(mc) + 6, ch.T + 14, 'margin call $' + mc.toFixed(2), {}, 't1'); }
+  setText('mgL', (1 / im).toFixed(2) + '×'); setText('mgC', '$' + mc.toFixed(2)); setText('mgRet', pct(ret(p1), 1)); setText('mgU', pct(ur(p1), 1));
+});
+
+/* Index weighting */
+bind(['ixA', 'ixB', 'ixC'], function () {
+  const ch = ['ixA', 'ixB', 'ixC'].map(id => +$(id).value / 100); ['ixAo', 'ixBo', 'ixCo'].forEach((id, i) => setText(id, (ch[i] > 0 ? '+' : '') + pct(ch[i])));
+  const P = [100, 50, 10], S = [1000, 2000, 10000], P1 = P.map((p, i) => p * (1 + ch[i]));
+  const sum = a => a.reduce((s, x) => s + x, 0);
+  const pw = sum(P1) / sum(P) - 1, ew = sum(ch) / 3, cw = sum(P1.map((p, i) => p * S[i])) / sum(P.map((p, i) => p * S[i])) - 1;
+  const wP = P.map(p => p / sum(P)), wC = P.map((p, i) => p * S[i] / sum(P.map((q, j) => q * S[j])));
+  const names = ['A ($100)', 'B ($50)', 'C ($10)'];
+  let h = '<tr><th>Stock</th><th class="num">Price-weight</th><th class="num">Equal weight</th><th class="num">Cap weight</th><th class="num">Price change</th></tr>';
+  names.forEach((n, i) => { h += '<tr><td>' + n + '</td><td class="num">' + pct(wP[i], 1) + '</td><td class="num">33.3%</td><td class="num">' + pct(wC[i], 1) + '</td><td class="num">' + (ch[i] > 0 ? '+' : '') + pct(ch[i]) + '</td></tr>'; });
+  h += '<tr><th>Index return</th><th class="num">' + pct(pw, 2) + '</th><th class="num">' + pct(ew, 2) + '</th><th class="num">' + pct(cw, 2) + '</th><th></th></tr>';
+  $('ixTbl').innerHTML = h;
+});
+
+/* Life cycle */
+(function () {
+  const pts = []; for (let i = 0; i <= 100; i++) { const t = i / 10; const s = 100 / (1 + Math.exp(-1.3 * (t - 3.5))); const d = t > 7.5 ? (t - 7.5) * 14 : 0; pts.push([t, Math.max(0, s - d * d / 18)]); }
+  const ch = chart($('lcSvg'), { h: 260, xr: [0, 10], yr: [0, 110], xl: 'Time', yl: 'Industry demand' });
+  const bounds = [0, 2, 4.6, 6, 8, 10], names = ['Embryonic', 'Growth', 'Shakeout', 'Mature', 'Decline'], cols = ['var(--c4)', 'var(--c2)', 'var(--c5)', 'var(--c1)', 'var(--c3)'];
+  names.forEach((n, i) => { ch.rect(bounds[i], bounds[i + 1], 0, 110, cols[i], 0.1); ch.text(ch.X((bounds[i] + bounds[i + 1]) / 2), ch.T + 14, n, { 'text-anchor': 'middle' }, 't1'); });
+  ch.line(pts, 'var(--c1)', 3);
+})();
+
+/* Two-stage DDM */
+function ddm(D0, g1, n, g2, r) { let pv = 0, D = D0; for (let t = 1; t <= n; t++) { D *= 1 + g1; pv += D / Math.pow(1 + r, t); } const Dn1 = D * (1 + g2), tv = Dn1 / (r - g2); return { pv1: pv, pv2: tv / Math.pow(1 + r, n), v: pv + tv / Math.pow(1 + r, n) }; }
+bind(['ddD', 'ddG1', 'ddN', 'ddG2', 'ddR'], function () {
+  const D0 = +$('ddD').value, g1 = +$('ddG1').value / 100, n = +$('ddN').value, g2 = +$('ddG2').value / 100, r = +$('ddR').value / 100;
+  setText('ddDo', '$' + D0.toFixed(2)); setText('ddG1o', pct(g1)); setText('ddNo', n + ' yrs'); setText('ddG2o', pct(g2, 1)); setText('ddRo', pct(r, 1));
+  if (r <= g2) { setText('ddV', 'r must exceed g'); setText('ddP1', '—'); setText('ddP2', '—'); }
+  else { const v = ddm(D0, g1, n, g2, r); setText('ddV', '$' + v.v.toFixed(2)); setText('ddP1', '$' + v.pv1.toFixed(2)); setText('ddP2', '$' + v.pv2.toFixed(2)); }
+  const pts = []; for (let i = 0; i <= 80; i++) { const g = i * 0.001; if (g < r - 0.006) pts.push([g, ddm(D0, g1, n, g, r).v]); }
+  const top = Math.min(Math.max.apply(null, pts.map(p => p[1])), ddm(D0, g1, n, Math.max(0, r - 0.02), r).v * 1.6), y = nice(0, top, 5);
+  const ch = chart($('ddSvg'), { h: 260, xr: [0, 0.08], yr: [0, y.hi], xt: 0.01, yt: y.step, fx: v => pct(v), fy: v => '$' + v.toFixed(0), xl: 'Long-term growth rate', yl: 'Value' });
+  ch.line(pts, 'var(--c1)', 3); if (r > g2) ch.dot(g2, ddm(D0, g1, n, g2, r).v, 'var(--c3)', 6);
+  ch.text(ch.X(0.08) - 4, ch.T + 14, 'value explodes as g approaches r', { 'text-anchor': 'end' });
+});
+
+/* Progress */
+const DATA = JSON.parse($('study-data').textContent), LS = 'cfa-eq-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); $('progList').appendChild(row);
+});
+$('notes').value = state.notes || ''; $('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try { const url = URL.createObjectURL(new Blob([html], { type: 'text/html' })); const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Equity-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.'); } catch (e) { setText('saveMsg', 'Download blocked here. Use Copy progress instead.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(), txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const fb = () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => setText('saveMsg', 'Copied. Paste it into your chat with Claude.'), fb); else fb();
+});
+
+</script>
+</body>
+</html>

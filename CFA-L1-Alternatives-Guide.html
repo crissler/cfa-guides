@@ -1,0 +1,450 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — ALTERNATIVE INVESTMENTS STUDY GUIDE (2026 curriculum, Volume 8, Learning Modules 1–7)
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Alternatives Guide</title>
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;--border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);--accent:#534AB7;--accent-bg:#EEEDFE;--c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:24px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:24px;font-weight:600;margin:0 0 4px}h3{font-size:18px;font-weight:600;margin:28px 0 8px}h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:720px}.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}nav.toc .row{display:flex;gap:6px;overflow-x:auto}nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:0}.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}.fx-eq .frac{margin:0 4px;line-height:1.4}.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:12px 0}.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}.callout.tip{border-left-color:var(--good);background:var(--good-bg)}.callout b{font-weight:600}.callout.trap b{color:var(--bad)}.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}.ctl label{font-size:14px;color:var(--muted);min-width:190px}.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}.stat .l{font-size:12px;color:var(--muted)}.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}svg .grid{stroke:var(--border);stroke-width:1}svg .axis{stroke:var(--border-strong);stroke-width:1}svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}button:hover{background:var(--surface-2)}button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.pill.g{background:var(--good-bg);color:var(--good)}.pill.w{background:var(--warn-bg);color:var(--warn)}.pill.b{background:var(--bad-bg);color:var(--bad)}.pill.a{background:var(--accent-bg);color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}details.q summary{cursor:pointer;font-weight:500;list-style:none}details.q summary::-webkit-details-marker{display:none}details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I · 2026 curriculum</div>
+  <h1>Alternative investments guide</h1>
+  <p class="lead">Private capital, real estate, infrastructure, natural resources, hedge funds and digital assets: how they're structured, how managers are paid, how returns are measured, and what they add to a portfolio. Built from Volume 8 of your 2026 curriculum.</p>
+  <div class="chips"><span class="chip acc">Exam weight 7–10%</span><span class="chip">About 13–18 of 180 questions</span><span class="chip">7 learning modules</span></div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a><a href="#a1">1 · Features and structures</a><a href="#a2">2 · Performance and fees</a><a href="#a3">3 · Private capital</a><a href="#a4">4 · Real estate and infrastructure</a><a href="#a5">5 · Natural resources</a><a href="#a6">6 · Hedge funds</a><a href="#a7">7 · Digital assets</a><a href="#formulas">Formula sheet</a><a href="#practice">Practice</a><a href="#progress">My progress</a>
+</div></nav>
+
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div><h2>Exam game plan</h2>
+  <div class="grid two">
+    <div class="card"><h4>What gets tested</h4><ul class="small">
+      <li><b>Fee calculations</b> are the main math: management and performance fees, hard vs soft hurdles, catch-up, high-water marks, and the LP's net return.</li>
+      <li><b>Return measurement</b>: IRR vs MOIC, the J-curve, survivorship and backfill bias, smoothed (appraisal-based) returns.</li>
+      <li><b>Features and comparisons</b>: fund vs co-investment vs direct; PE categories and exits; private debt types; real estate and infrastructure forms; commodity curves; hedge fund strategies; digital assets.</li></ul></div>
+    <div class="card"><h4>Highest-yield items, ranked</h4><ol class="small">
+      <li>Fee structures and net-of-fee returns</li><li>Waterfalls (deal-by-deal vs whole-of-fund), clawback, high-water mark</li><li>IRR vs MOIC; life cycle and J-curve</li><li>Investment methods: fund, co-investment, direct</li><li>Private equity categories and exit routes; private debt types</li><li>Hedge fund strategies and vehicles</li><li>Real estate and infrastructure characteristics</li><li>Commodities: contango, backwardation, convenience yield</li><li>Digital assets: DLT, consensus, tokens, investment forms</li></ol></div>
+  </div>
+  <div class="callout trap"><b>Top traps.</b> Charging the performance fee on the whole return under a hard hurdle (it's only on the excess). Forgetting that a soft hurdle with catch-up gives the GP its full share once returns are high enough. Treating MOIC as if it accounts for time. Taking smoothed alternative returns at face value: they understate volatility and correlation. Assuming a deal-by-deal waterfall favors LPs (it favors the GP).</div>
+</section>
+
+<section class="mod" id="a1">
+  <div class="modtag">Part 1 · Learning module 1</div><h2>Features, methods and structures</h2>
+  <div class="grid">
+    <div class="card small"><h4>What counts as "alternative"</h4>Anything other than traditional public equity, bonds and cash. Categories: <b>private capital</b> (private equity, private debt), <b>real assets</b> (real estate, infrastructure, natural resources), <b>hedge funds</b>, and increasingly <b>digital assets</b>.</div>
+    <div class="card small"><h4>Typical characteristics</h4>Illiquid; less transparent; specialized knowledge needed; high fees; often leverage; returns not normally distributed; low correlation with traditional assets; long time horizons; complex legal and tax structures; lighter regulation.</div>
+    <div class="card small"><h4>Why invest</h4>Diversification, potential for higher returns (including an illiquidity premium), access to strategies and assets not available in public markets, and inflation protection for some real assets.</div>
+  </div>
+  <h3>1.1 Investment methods</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Fund investment</th><th>Co-investment</th><th>Direct investment</th></tr>
+    <tr><td>How</td><td>Invest as an LP in a fund run by a GP</td><td>Invest in a fund <i>and</i> alongside it in specific deals</td><td>Buy assets or companies directly</td></tr>
+    <tr><td>Fees</td><td>Highest (management + performance)</td><td>Lower on the co-invested part</td><td>Lowest</td></tr>
+    <tr><td>Control</td><td>Least</td><td>More</td><td>Most</td></tr>
+    <tr><td>Expertise needed</td><td>Least (but must choose managers well)</td><td>More; learn from the GP</td><td>Most; large investors only</td></tr>
+    <tr><td>Diversification</td><td>Good</td><td>Less</td><td>Least (concentrated)</td></tr>
+  </table></div>
+  <p class="small"><b>Due diligence</b> covers the manager's team and track record, strategy and process, operations and risk management, legal terms, and fees.</p>
+  <h3>1.2 Ownership and compensation structures</h3>
+  <div class="grid">
+    <div class="card small"><h4>Limited partnership</h4>The <b>general partner</b> (GP) manages the fund and has unlimited liability. <b>Limited partners</b> (LPs) are passive investors whose liability is capped at their investment. Terms are set in the <b>limited partnership agreement</b> (LPA); side letters can give some LPs special terms. Other forms: joint ventures, separately managed accounts.</div>
+    <div class="card small"><h4>Fees</h4><b>Management fee</b>: usually 1–2% of <b>committed capital</b> (private equity) or of <b>assets under management</b> (hedge funds). <b>Performance fee</b> (incentive fee, carried interest): typically 20% of profits, often only above a <b>hurdle rate</b>.</div>
+    <div class="card small"><h4>Waterfalls</h4><b>Deal-by-deal (American)</b>: GP earns carry on each successful deal as it exits; favors the GP. <b>Whole-of-fund (European)</b>: LPs get back all contributed capital plus the hurdle first; favors LPs.</div>
+  </div>
+  <div class="grid two" style="margin-top:12px">
+    <div class="card small"><h4>Protecting LPs</h4><b>High-water mark</b>: no performance fee until the fund's value exceeds its previous peak (net of fees), so LPs don't pay twice for the same gains. <b>Clawback</b>: LPs can reclaim performance fees already paid if later losses mean the GP was overpaid.</div>
+    <div class="card small"><h4>Other arrangements</h4><b>Founders shares</b>: lower fees (e.g. 1.5% and 10%) for early investors. <b>Either/or fees</b>: the manager earns <i>either</i> a low management fee (e.g. 1%) <i>or</i> a higher performance fee (e.g. 30% above a hurdle), whichever is greater. Lockups and redemption notice periods limit withdrawals.</div>
+  </div>
+</section>
+
+<section class="mod" id="a2">
+  <div class="modtag">Part 2 · Learning module 2</div><h2>Performance appraisal and returns</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Investment life cycle</h4><b>Capital commitment</b> (fees start, little income) → <b>capital deployment</b> (cash calls, investing) → <b>capital distribution</b> (exits, cash returned). Returns are typically negative early and positive later: the <b>J-curve</b>.</div>
+    <div class="card small"><h4>Why appraisal is hard</h4>Long horizons, irregular cash flows, leverage, illiquidity, complex fees, appraisal-based (smoothed) valuations, and non-normal returns. Returns depend on when an investor came in and on their specific fee terms.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">The J-curve</div>
+    <div class="viz-sub">Illustrative cumulative net cash flow to LPs in a 10-year private equity fund.</div>
+    <svg id="jcSvg"></svg>
+  </div>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Multiple of invested capital</div><div class="fx-eq">MOIC = <span class="frac"><span>Realized value + Unrealized value</span><span>Total invested capital</span></span></div><div class="fx-note">Simple, but ignores how long the money was tied up.</div></div>
+    <div class="fx"><div class="fx-name">Internal rate of return</div><div class="fx-eq">The rate that sets the NPV of all cash flows to zero</div><div class="fx-note">Preferred for alternatives because it reflects cash-flow timing.</div></div>
+    <div class="fx"><div class="fx-name">GP's return under a hard hurdle</div><div class="fx-eq">r<sub>GP</sub> = max[0, p × (r − r<sub>h</sub>)]</div><div class="fx-note">p = performance fee rate, r = fund return, r<sub>h</sub> = hurdle. Ignores management fees.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Same MOIC, very different IRR</div>
+    <div class="viz-sub">$100 invested returns $250. The longer it takes, the lower the annual return.</div>
+    <div class="ctl"><label for="moY">Years until the $250 comes back</label><input type="range" id="moY" min="1" max="12" step="1" value="5"><output id="moYo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">MOIC</div><div class="v">2.5×</div></div><div class="stat"><div class="l">IRR</div><div class="v" id="moI"></div></div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Performance fee calculator</div>
+    <div class="viz-sub">One period. The management fee is taken first; the performance fee is then based on the return after management fees.</div>
+    <div class="ctl"><label for="feG">Gross fund return</label><input type="range" id="feG" min="-10" max="40" step="0.5" value="18"><output id="feGo"></output></div>
+    <div class="ctl"><label for="feM">Management fee</label><input type="range" id="feM" min="0" max="3" step="0.25" value="0"><output id="feMo"></output></div>
+    <div class="ctl"><label for="feP">Performance fee</label><input type="range" id="feP" min="0" max="30" step="1" value="20"><output id="fePo"></output></div>
+    <div class="ctl"><label for="feH">Hurdle rate</label><input type="range" id="feH" min="0" max="12" step="0.5" value="8"><output id="feHo"></output></div>
+    <div class="ctl"><label for="feT">Hurdle type</label><select id="feT"><option value="hard">Hard hurdle</option><option value="soft">Soft hurdle with full catch-up</option><option value="none">No hurdle</option></select></div>
+    <svg id="feSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4)"></span>Return after management fee (no performance fee)</span><span><span class="sw" style="background:var(--c2)"></span>LP net return, hard hurdle</span><span><span class="sw" style="background:var(--c3)"></span>LP net return, soft hurdle with catch-up</span></div>
+    <div class="stats"><div class="stat"><div class="l">GP performance fee</div><div class="v" id="feF"></div></div><div class="stat"><div class="l">Total fees</div><div class="v" id="feTot"></div></div><div class="stat"><div class="l">LP net return</div><div class="v" id="feN"></div></div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Hedge fund fees with a high-water mark</div>
+    <div class="viz-sub">"2 and 20": a 2% management fee on beginning-of-year assets, then 20% of gains above the high-water mark (net of the management fee). Starts at $100 million.</div>
+    <div class="ctl"><label for="hw1">Year 1 gross return</label><input type="range" id="hw1" min="-30" max="40" step="1" value="20"><output id="hw1o"></output></div>
+    <div class="ctl"><label for="hw2">Year 2 gross return</label><input type="range" id="hw2" min="-30" max="40" step="1" value="-15"><output id="hw2o"></output></div>
+    <div class="ctl"><label for="hw3">Year 3 gross return</label><input type="range" id="hw3" min="-30" max="40" step="1" value="20"><output id="hw3o"></output></div>
+    <div class="tbl"><table id="hwTbl"></table></div>
+  </div>
+  <div class="callout trap"><b>Biases in reported returns.</b> <b>Survivorship bias</b>: failed funds drop out of databases, inflating averages. <b>Backfill bias</b>: funds add their (good) past returns when they start reporting. <b>Smoothing</b>: appraisal-based values move slowly, understating volatility and correlation.</div>
+</section>
+
+<section class="mod" id="a3">
+  <div class="modtag">Part 3 · Learning module 3</div><h2>Private capital: equity and debt</h2>
+  <div class="tbl"><table>
+    <tr><th>Private equity category</th><th>What it does</th></tr>
+    <tr><td><b>Leveraged buyout (LBO)</b></td><td>Buys a mature company with lots of debt. Management buyout (MBO): existing managers buy; management buy-in (MBI): outside managers come in.</td></tr>
+    <tr><td><b>Venture capital</b></td><td>Funds young companies by stage: pre-seed/angel → seed → early stage (Series A…) → later stage → mezzanine (pre-IPO). Highest risk; most fail, a few big winners.</td></tr>
+    <tr><td><b>Growth equity</b></td><td>Minority stakes in established, growing companies needing capital to expand; little or no leverage.</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card small"><h4>Exit strategies</h4><b>Trade sale</b> to a strategic buyer (most common) · <b>IPO</b> (highest valuations but costly and slow) · <b>SPAC</b> merger · <b>recapitalization</b> (re-lever and pay a dividend) · <b>secondary sale</b> to another PE fund · <b>write-off/liquidation</b>.</div>
+    <div class="card small"><h4>How PE creates value</h4>Operational improvements; better governance and aligned incentives; financial engineering (leverage); buying low and selling at a higher multiple.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Private debt</th><th>Features</th></tr>
+    <tr><td><b>Direct lending</b></td><td>Senior, secured loans from non-bank lenders, with covenants; the largest category.</td></tr>
+    <tr><td><b>Mezzanine debt</b></td><td>Subordinated debt, often with warrants or conversion features; higher return than senior debt.</td></tr>
+    <tr><td><b>Venture debt</b></td><td>Loans to early-stage firms with little cash flow, often with equity warrants.</td></tr>
+    <tr><td><b>Distressed debt</b></td><td>Buying debt of companies near or in bankruptcy, aiming to profit from restructuring.</td></tr>
+    <tr><td><b>Unitranche and specialty</b></td><td>Unitranche blends senior and subordinated into one loan at one rate; specialty lending covers niches (e.g. litigation finance, royalties).</td></tr>
+  </table></div>
+  <p class="small"><b>Risk and return:</b> private equity (especially VC) has higher expected returns and risk than private debt; private debt earns more than public bonds because of illiquidity and complexity. Both offer some diversification, though smoothed valuations overstate it.</p>
+</section>
+
+<section class="mod" id="a4">
+  <div class="modtag">Part 4 · Learning module 4</div><h2>Real estate and infrastructure</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Real estate sectors</h4><b>Residential</b> (homes, apartments): the largest sector, about 75% of the global market; cash flow from rents or mortgage payments by households. <b>Commercial</b>: offices, retail, industrial and warehouses, hotels; cash flow from business tenants' leases.</div>
+    <div class="card small"><h4>Unique features</h4>Heterogeneity (no two properties are alike), indivisibility, fixed location, fragmented markets, hard price discovery, high and slow transaction costs, illiquidity.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th></th><th>Equity</th><th>Debt</th></tr>
+    <tr><td><b>Private</b></td><td>Direct ownership; private real estate funds</td><td>Mortgages; private real estate debt funds</td></tr>
+    <tr><td><b>Public</b></td><td>REITs (real estate investment trusts) and real estate company shares</td><td>Mortgage-backed securities</td></tr>
+  </table></div>
+  <p class="small"><b>Investment characteristics:</b> returns from rental income plus appreciation; partial inflation hedge; diversification; risks from leverage, interest rates, vacancies, tenant credit and location. REITs offer liquidity but behave more like equities in the short run.</p>
+  <h3>4.1 Infrastructure</h3>
+  <div class="grid">
+    <div class="card small"><h4>Types</h4><b>Economic</b>: transportation (roads, airports, ports), utilities, energy, communications. <b>Social</b>: schools, hospitals, social housing, correctional facilities.</div>
+    <div class="card small"><h4>Stage of development</h4><b>Greenfield</b>: new, to be built (higher risk; often build-operate-transfer in public–private partnerships). <b>Secondary stage</b>. <b>Brownfield</b>: existing, operating assets with track records (lower risk).</div>
+    <div class="card small"><h4>Cash flow sources</h4><b>Availability payments</b> (paid to keep the facility available), <b>usage-based payments</b> (tolls, fees), and <b>take-or-pay</b> contracts (buyers pay for a minimum volume).</div>
+  </div>
+  <p class="small"><b>Characteristics:</b> long-lived assets, often monopoly-like with high barriers to entry, stable and inflation-linked cash flows, low correlation with other assets. Risks: construction, regulatory and political, demand, and leverage. Increasingly financed privately through <b>public–private partnerships</b>.</p>
+</section>
+
+<section class="mod" id="a5">
+  <div class="modtag">Part 5 · Learning module 5</div><h2>Natural resources</h2>
+  <div class="grid">
+    <div class="card small"><h4>Raw land</h4>Undeveloped land; returns depend on future development or use; no income meanwhile.</div>
+    <div class="card small"><h4>Timberland</h4>Returns from <b>biological growth</b>, timber prices and land value. Owners can <b>delay harvest</b> when prices are low (the trees keep growing), which adds flexibility.</div>
+    <div class="card small"><h4>Farmland</h4>Returns from crop income and land value. Crops must be harvested when ready, so there's less flexibility than timber. Exposed to weather and crop prices.</div>
+  </div>
+  <h3>5.1 Commodities</h3>
+  <div class="grid two">
+    <div class="card small"><h4>How investors get exposure</h4>Mostly through <b>futures</b> (and funds that hold them), plus commodity company shares. Commodity prices depend on supply and demand; supply adjusts slowly (mines, crops), so prices can be volatile.</div>
+    <div class="card small"><h4>Forward curve shapes</h4><b>Contango</b>: forward prices above spot (cost of carry exceeds the convenience yield); hurts long-only investors who roll futures. <b>Backwardation</b>: forward prices below spot (high <b>convenience yield</b>, the benefit of holding the physical commodity); helps long investors.</div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Contango vs backwardation</div>
+    <div class="viz-sub">Forward prices by contract maturity, with the spot price at 100.</div>
+    <div class="ctl"><label for="cmT">Curve shape</label><select id="cmT"><option value="c">Contango</option><option value="b">Backwardation</option></select></div>
+    <svg id="cmSvg"></svg>
+    <p class="small" id="cmTxt" style="margin:6px 0 0"></p>
+  </div>
+  <p class="small"><b>Role in a portfolio:</b> natural resources can hedge inflation and diversify equity and bond risk; farmland and timberland returns are smoothed by appraisals; commodities are volatile and earn no income except through the futures structure.</p>
+</section>
+
+<section class="mod" id="a6">
+  <div class="modtag">Part 6 · Learning module 6</div><h2>Hedge funds</h2>
+  <p class="small">Private, pooled investment vehicles for institutions and wealthy investors, with flexible strategies: leverage, short selling, derivatives, and concentrated positions. Lightly regulated; high minimums; lockups, notice periods and <b>gates</b> limit redemptions.</p>
+  <div class="tbl"><table>
+    <tr><th>Strategy group</th><th>Examples</th></tr>
+    <tr><td><b>Equity</b></td><td>Long/short equity; equity market neutral; short-biased; fundamental or quantitative stock picking</td></tr>
+    <tr><td><b>Event-driven</b></td><td>Merger arbitrage (buy the target, short the acquirer); distressed/restructuring; activist; special situations</td></tr>
+    <tr><td><b>Relative value</b></td><td>Fixed-income arbitrage; convertible bond arbitrage (long convertible, short stock); volatility trading</td></tr>
+    <tr><td><b>Opportunistic</b></td><td>Global macro (bets on rates, currencies, commodities based on economic views); managed futures / CTAs (often trend following)</td></tr>
+    <tr><td><b>Multi-manager</b></td><td>Fund of funds; multi-strategy funds</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card small"><h4>Master–feeder structure</h4>Onshore and offshore feeder funds both invest in one master fund that holds the portfolio. Set up for tax efficiency for different investor types.</div>
+    <div class="card small"><h4>Separately managed account</h4>The investor owns the assets directly; full transparency and customization; higher minimums and costs for the manager.</div>
+    <div class="card small"><h4>Fund of funds</h4>Diversification across managers and access to closed funds, plus due diligence, but an extra layer of fees.</div>
+  </div>
+  <p class="small"><b>Prime brokers</b> provide leverage (margin financing), securities lending for short sales, custody, clearing and reporting. <b>Risk and return:</b> returns depend on manager skill and strategy; leverage and illiquidity add risk; reported indexes suffer from survivorship and backfill bias; diversification benefits fall in crises when correlations rise.</p>
+</section>
+
+<section class="mod" id="a7">
+  <div class="modtag">Part 7 · Learning module 7</div><h2>Introduction to digital assets</h2>
+  <div class="grid">
+    <div class="card small"><h4>Distributed ledger technology</h4>A shared, synchronized database across many participants (nodes). A <b>blockchain</b> bundles transactions into blocks chained together cryptographically, creating an immutable history. Can make post-trade processing, compliance and identity checks more efficient using <b>smart contracts</b> (self-executing code).</div>
+    <div class="card small"><h4>Networks and consensus</h4><b>Permissionless</b> networks are open to anyone (e.g. Bitcoin); <b>permissioned</b> networks restrict who can participate. The <b>consensus protocol</b> sets the rules for adding blocks: <b>proof of work</b> (miners solve puzzles; energy-intensive) or <b>proof of stake</b> (validators stake coins).</div>
+    <div class="card small"><h4>How they differ from traditional assets</h4>Usually no underlying cash flows or fundamental value; validated by a network instead of an intermediary; mostly not legal tender; weaker legal and regulatory protection.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Type</th><th>What it is</th></tr>
+    <tr><td>Cryptocurrencies</td><td>Bitcoin, plus altcoins: <b>stablecoins</b> (pegged to a fiat currency or other assets) and meme coins. Often a capped supply.</td></tr>
+    <tr><td>Non-fungible tokens (NFTs)</td><td>Unique tokens representing ownership of a specific digital or physical item</td></tr>
+    <tr><td>Security tokens</td><td>Digital form of a security (ownership, debt, revenue rights)</td></tr>
+    <tr><td>Utility tokens</td><td>Access to a product or service on a platform</td></tr>
+    <tr><td>Governance tokens</td><td>Voting rights over a protocol's rules</td></tr>
+    <tr><td>Asset-backed tokens</td><td>Digital claims on physical or financial assets that collateralize them</td></tr>
+  </table></div>
+  <div class="grid two">
+    <div class="card small"><h4>How to invest</h4><b>Direct</b>: buy coins or tokens (held in wallets), on centralized or decentralized exchanges, or in initial coin offerings. <b>Indirect</b>: crypto futures (e.g. on regulated exchanges), exchange-traded products, trusts, hedge funds, and shares of crypto-related companies. Exchanges of both types face fraud and manipulation risk and limited oversight.</div>
+    <div class="card small"><h4>Risk, return and diversification</h4>Prices are driven by expectations and demand for a limited supply, not by cash flows. Bitcoin has shown <b>high returns, high volatility and low correlation</b> with traditional assets, though correlations have risen in stressed markets. <b>DeFi</b> (decentralized finance) builds financial services from open-source smart contracts.</div>
+  </div>
+</section>
+
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div><h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>MOIC</td><td>(realized + unrealized value) / invested capital</td></tr>
+    <tr><td>IRR from MOIC (single in and out)</td><td>MOIC<sup>1/years</sup> − 1</td></tr>
+    <tr><td>GP return, hard hurdle</td><td>max[0, p(r − r<sub>h</sub>)]</td></tr>
+    <tr><td>GP return, soft hurdle with full catch-up</td><td>0 if r ≤ r<sub>h</sub>; r − r<sub>h</sub> while catching up; p × r once r ≥ r<sub>h</sub>/(1 − p)</td></tr>
+    <tr><td>LP net return</td><td>Gross return − management fee − performance fee</td></tr>
+    <tr><td>Hedge fund incentive fee with high-water mark</td><td>p × max(0, end value after management fee − high-water mark)</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div><h2>Practice questions</h2><p class="muted">Work each one before opening the answer.</p>
+  <details class="q"><summary><span class="qn">1</span>Which method gives an investor the most control and the lowest fees? A. Fund investment  B. Co-investment  C. Direct investment<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> It also needs the most expertise and is least diversified.</div></details>
+  <details class="q"><summary><span class="qn">2</span>In a limited partnership, unlimited liability belongs to the: A. limited partners  B. general partner  C. fund administrator<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">3</span>A private equity fund's management fee is usually based on: A. committed capital  B. realized profits  C. the hurdle rate<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Hedge funds usually charge on assets under management.</div></details>
+  <details class="q"><summary><span class="qn">4</span>Fund return 18%, hard hurdle 8%, performance fee 20%, no management fee. The LP's net return is: A. 14.4%  B. 16.0%  C. 18.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> GP gets 20% × (18% − 8%) = 2%. A is the soft hurdle with full catch-up (GP gets 20% × 18% = 3.6%).</div></details>
+  <details class="q"><summary><span class="qn">5</span>Which waterfall is more favorable to LPs? A. Deal-by-deal (American)  B. Whole-of-fund (European)  C. Both are equal<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> LPs get back all capital plus the hurdle before the GP earns carry.</div></details>
+  <details class="q"><summary><span class="qn">6</span>A provision that lets LPs recover performance fees already paid after later losses is a: A. high-water mark  B. clawback  C. catch-up<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A high-water mark prevents fees on recovered losses; a clawback reclaims fees already paid.</div></details>
+  <details class="q"><summary><span class="qn">7</span>A fund falls below its previous peak value. Under a high-water mark, the manager: A. still earns a performance fee on any gain  B. earns no performance fee until the previous peak is exceeded  C. must refund all past fees<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">8</span>$100 invested returns $250 after 5 years. The IRR is closest to: A. 20.1%  B. 25.0%  C. 30.0%<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 2.5<sup>1/5</sup> − 1. MOIC is 2.5× whatever the timing.</div></details>
+  <details class="q"><summary><span class="qn">9</span>Positive cash flows to LPs are most likely in the: A. capital commitment phase  B. capital deployment phase  C. capital distribution phase<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> Hence the J-curve.</div></details>
+  <details class="q"><summary><span class="qn">10</span>Appraisal-based valuations of private assets tend to: A. overstate volatility  B. understate volatility and correlation  C. have no effect on measured risk<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Smoothing.</div></details>
+  <details class="q"><summary><span class="qn">11</span>Funds adding their past (good) returns to a database when they start reporting creates: A. survivorship bias  B. backfill bias  C. look-ahead bias<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">12</span>A buyout where the existing management team acquires the company is a: A. management buy-in  B. management buyout  C. growth equity investment<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A buy-in brings in outside managers.</div></details>
+  <details class="q"><summary><span class="qn">13</span>A minority stake in an established, growing company, with little leverage, is: A. venture capital  B. growth equity  C. an LBO<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">14</span>The most common private equity exit is a: A. trade sale to a strategic buyer  B. write-off  C. recapitalization<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">15</span>Subordinated debt that often includes warrants is: A. direct lending  B. mezzanine debt  C. unitranche debt<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">16</span>Real estate investment trusts are an example of: A. private equity real estate  B. public equity real estate  C. public debt real estate<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Mortgage-backed securities are public debt.</div></details>
+  <details class="q"><summary><span class="qn">17</span>An existing toll road with an operating history is a: A. greenfield investment  B. brownfield investment  C. social infrastructure investment<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A toll road is economic infrastructure.</div></details>
+  <details class="q"><summary><span class="qn">18</span>Payments to a private operator for keeping a hospital available for use are: A. usage-based payments  B. availability payments  C. take-or-pay payments<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">19</span>An advantage of timberland over farmland is that: A. timber pays regular annual income  B. harvest can be delayed when prices are low  C. it has no exposure to weather<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The trees keep growing.</div></details>
+  <details class="q"><summary><span class="qn">20</span>A commodity forward curve below the spot price, typically due to a high convenience yield, is in: A. contango  B. backwardation  C. normal carry<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Backwardation tends to help long-only investors.</div></details>
+  <details class="q"><summary><span class="qn">21</span>Buying a takeover target and shorting the acquirer is: A. merger arbitrage  B. convertible arbitrage  C. global macro<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> An event-driven strategy.</div></details>
+  <details class="q"><summary><span class="qn">22</span>A structure where onshore and offshore funds both invest in one fund that holds the portfolio is a: A. fund of funds  B. master–feeder structure  C. separately managed account<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">23</span>Start $100m; year 1 gross +20%; 2% management fee on beginning assets; 20% incentive fee on gains net of the management fee. The year-1 incentive fee is: A. $3.6m  B. $4.0m  C. $2.0m<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> 120 − 2 = 118; 20% × 18 = 3.6. B ignores the management fee.</div></details>
+  <details class="q"><summary><span class="qn">24</span>A cryptocurrency pegged to a fiat currency is a: A. meme coin  B. stablecoin  C. governance token<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">25</span>Which is an indirect way to invest in digital assets? A. Buying bitcoin in a wallet  B. Buying cryptocurrency futures  C. Joining an initial coin offering<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> A and C are direct.</div></details>
+</section>
+
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div><h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. <b>Save progress into this file</b> downloads an updated copy with your progress built in; re-upload that copy to Claude to continue. On an iPad, use <b>Copy progress for Claude</b> instead.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="saveFile">Save progress into this file</button><button id="copyProg">Copy progress for Claude</button><span class="small muted" id="saveMsg" style="align-self:center"></span></div>
+</section>
+<footer>CFA Level I alternative investments guide · Created with Claude on 2026-10-31 from the 2026 CFA Program curriculum (Volume 8). Paraphrased summaries; the curriculum is the authoritative source.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Alternative Investments study guide",
+  "file_version": 1,
+  "created": "2026-10-31",
+  "curriculum": "2026 Level I, Volume 8",
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "7-10%",
+  "modules": [
+    {"id": "a1", "name": "LM1: Features, methods and structures", "key": ["categories and characteristics", "fund vs co-investment vs direct", "LP/GP, LPA, fees, hurdles, waterfalls, high-water mark, clawback, founders shares, either/or fees"]},
+    {"id": "a2", "name": "LM2: Performance and returns", "key": ["life cycle and J-curve", "IRR vs MOIC", "fee calculations: hard vs soft hurdle, catch-up", "survivorship, backfill, smoothing"]},
+    {"id": "a3", "name": "LM3: Private capital", "key": ["LBO, VC stages, growth equity", "exit strategies", "direct lending, mezzanine, venture, distressed, unitranche", "risk/return and diversification"]},
+    {"id": "a4", "name": "LM4: Real estate and infrastructure", "key": ["residential vs commercial", "private/public equity/debt quadrants, REITs", "economic vs social; greenfield vs brownfield", "availability, usage, take-or-pay payments"]},
+    {"id": "a5", "name": "LM5: Natural resources", "key": ["raw land, timberland, farmland", "commodity futures, contango, backwardation, convenience yield", "inflation hedge, diversification"]},
+    {"id": "a6", "name": "LM6: Hedge funds", "key": ["features, lockups, gates", "strategy groups", "master-feeder, SMAs, funds of funds, prime brokers", "risk/return, biases"]},
+    {"id": "a7", "name": "LM7: Digital assets", "key": ["DLT, blockchain, smart contracts", "permissionless vs permissioned, PoW vs PoS", "cryptocurrencies, stablecoins, token types", "direct vs indirect investment", "risk/return/correlation"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const num = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 0 : d);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) { if (!(max - min > 1e-9)) max = min + 1; const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step }; }
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 300, L = o.ml || 56, R = 18, T = 14, B = 44, pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw, Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9), defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' }); el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 3 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+
+/* J-curve */
+(function () {
+  const cf = [-12, -18, -15, -8, 2, 15, 22, 28, 22, 12], pts = [[0, 0]]; let c = 0; cf.forEach((v, i) => { c += v; pts.push([i + 1, c]); });
+  const ch = chart($('jcSvg'), { h: 250, xr: [0, 10], yr: [-60, 60], xt: 1, yt: 20, fx: v => 'Yr ' + v, yl: 'Cumulative net cash flow' });
+  ch.rect(0, 3.5, -60, 60, 'var(--c3)', 0.07); ch.rect(3.5, 7, -60, 60, 'var(--c5)', 0.07); ch.rect(7, 10, -60, 60, 'var(--c2)', 0.07);
+  ch.text(ch.X(1.75), ch.T + 14, 'Commitment', { 'text-anchor': 'middle' }, 't1'); ch.text(ch.X(5.25), ch.T + 14, 'Deployment', { 'text-anchor': 'middle' }, 't1'); ch.text(ch.X(8.5), ch.T + 14, 'Distribution', { 'text-anchor': 'middle' }, 't1');
+  ch.line(pts, 'var(--c1)', 3); pts.forEach(p => ch.dot(p[0], p[1], 'var(--c1)', 3.5));
+})();
+
+/* MOIC vs IRR */
+bind(['moY'], function () { const y = +$('moY').value; setText('moYo', y + (y === 1 ? ' year' : ' years')); setText('moI', pct(Math.pow(2.5, 1 / y) - 1, 1)); });
+
+/* Fee calculator */
+function perfFee(r, p, h, type) { if (type === 'none') return p * Math.max(0, r); if (type === 'hard') return p * Math.max(0, r - h); if (r <= h) return 0; return Math.min(r - h, p * r); }
+bind(['feG', 'feM', 'feP', 'feH', 'feT'], function () {
+  const g = +$('feG').value / 100, m = +$('feM').value / 100, p = +$('feP').value / 100, h = +$('feH').value / 100, type = $('feT').value;
+  setText('feGo', pct(g, 1)); setText('feMo', pct(m, 2)); setText('fePo', pct(p)); setText('feHo', pct(h, 1));
+  const r = g - m, f = perfFee(r, p, h, type);
+  setText('feF', pct(f, 2)); setText('feTot', pct(m + f, 2)); setText('feN', pct(r - f, 2));
+  const base = [], hard = [], soft = []; for (let i = -10; i <= 40; i += 0.5) { const rr = i / 100 - m; base.push([i / 100, rr]); hard.push([i / 100, rr - perfFee(rr, p, h, 'hard')]); soft.push([i / 100, rr - perfFee(rr, p, h, 'soft')]); }
+  const ch = chart($('feSvg'), { h: 280, xr: [-0.1, 0.4], yr: [-0.1, 0.4], xt: 0.1, yt: 0.1, fx: v => pct(v), fy: v => pct(v), xl: 'Gross fund return', yl: 'LP net return' });
+  ch.line(base, 'var(--c4)', 2, '6 4'); ch.line(hard, 'var(--c2)', 3); ch.line(soft, 'var(--c3)', 3); ch.vline(g, 'var(--c4)', '3 3');
+  ch.dot(g, r - f, type === 'soft' ? 'var(--c3)' : type === 'hard' ? 'var(--c2)' : 'var(--c4)', 6);
+});
+
+/* High-water mark */
+bind(['hw1', 'hw2', 'hw3'], function () {
+  const R = ['hw1', 'hw2', 'hw3'].map(id => +$(id).value / 100); ['hw1o', 'hw2o', 'hw3o'].forEach((id, i) => setText(id, (R[i] > 0 ? '+' : '') + pct(R[i])));
+  function run(useHwm) { let v = 100, hwm = 100, rows = [], tot = 0; R.forEach((r, i) => { const start = v, gross = start * (1 + r), mf = 0.02 * start, afterMf = gross - mf, ref = useHwm ? Math.max(hwm, start) : start, inc = 0.2 * Math.max(0, afterMf - ref), end = afterMf - inc; tot += mf + inc; rows.push([i + 1, start, gross, mf, inc, end, useHwm ? hwm : null]); v = end; if (end > hwm) hwm = end; }); return { rows: rows, end: v, fees: tot }; }
+  const a = run(true), b = run(false), f = x => '$' + x.toFixed(2);
+  let h = '<tr><th>Year</th><th class="num">Start</th><th class="num">Before fees</th><th class="num">Mgmt fee</th><th class="num">Incentive fee (HWM)</th><th class="num">End (HWM)</th><th class="num">Incentive fee (no HWM)</th></tr>';
+  a.rows.forEach((r, i) => { h += '<tr><td>' + r[0] + '</td><td class="num">' + f(r[1]) + '</td><td class="num">' + f(r[2]) + '</td><td class="num">' + f(r[3]) + '</td><td class="num">' + f(r[4]) + '</td><td class="num">' + f(r[5]) + '</td><td class="num">' + f(b.rows[i][4]) + '</td></tr>'; });
+  h += '<tr><th colspan="5">End value after 3 years: with high-water mark ' + f(a.end) + ', without ' + f(b.end) + '</th><th class="num">Total fees</th><th class="num">' + f(a.fees) + ' vs ' + f(b.fees) + '</th></tr>';
+  $('hwTbl').innerHTML = h;
+});
+
+/* Commodity curve */
+bind(['cmT'], function () {
+  const c = $('cmT').value === 'c', pts = []; for (let m = 0; m <= 24; m++) pts.push([m, c ? 100 + 0.6 * m : 100 - 0.9 * m + 0.012 * m * m]);
+  const ch = chart($('cmSvg'), { h: 240, xr: [0, 24], yr: [70, 120], xt: 3, yt: 10, fx: v => v + 'm', xl: 'Contract maturity (months)', yl: 'Price' });
+  ch.line([[0, 100], [24, 100]], 'var(--c4)', 1.5, '5 4'); ch.line(pts, c ? 'var(--c3)' : 'var(--c2)', 3); ch.dot(0, 100, 'var(--text)', 5); ch.text(ch.X(0) + 8, ch.Y(100) - 8, 'spot 100', {}, 't1');
+  setText('cmTxt', c ? 'Contango: storage and financing costs exceed the convenience yield, so later contracts cost more. A long investor who rolls futures keeps buying higher and selling lower: a drag on returns.' : 'Backwardation: a high convenience yield (benefit of holding the physical commodity, e.g. when supply is tight) puts forward prices below spot. Rolling futures adds to a long investor\'s return.');
+});
+
+/* Progress */
+const DATA = JSON.parse($('study-data').textContent), LS = 'cfa-alt-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); $('progList').appendChild(row);
+});
+$('notes').value = state.notes || ''; $('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try { const url = URL.createObjectURL(new Blob([html], { type: 'text/html' })); const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Alternatives-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.'); } catch (e) { setText('saveMsg', 'Download blocked here. Use Copy progress instead.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(), txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const fb = () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => setText('saveMsg', 'Copied. Paste it into your chat with Claude.'), fb); else fb();
+});
+
+</script>
+</body>
+</html>

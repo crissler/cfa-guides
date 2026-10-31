@@ -1,0 +1,467 @@
+<!doctype html>
+<!--
+  CFA LEVEL I — DERIVATIVES STUDY GUIDE (2026 curriculum, Volume 7, Learning Modules 1–10)
+  Note for Claude (when this file is re-uploaded): the machine-readable summary of this guide,
+  the student's progress, confidence ratings, notes and known weak spots live in the
+  <script type="application/json" id="study-data"> block near the end of <body>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFA Derivatives Guide</title>
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--surface-2:#f3f1ea;--text:#1f1e1b;--muted:#5f5e5a;--faint:#8a887f;--border:rgba(0,0,0,.12);--border-strong:rgba(0,0,0,.28);--accent:#534AB7;--accent-bg:#EEEDFE;--c1:#7F77DD;--c2:#1D9E75;--c3:#D85A30;--c4:#888780;--c5:#BA7517;--good:#0F6E56;--good-bg:#E1F5EE;--warn:#854F0B;--warn-bg:#FAEEDA;--bad:#A32D2D;--bad-bg:#FCEBEB;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1a18;--surface:#232321;--surface-2:#2c2c29;--text:#ecebe6;--muted:#b4b2a9;--faint:#888780;--border:rgba(255,255,255,.12);--border-strong:rgba(255,255,255,.3);--accent:#AFA9EC;--accent-bg:#26215C;--c1:#AFA9EC;--c2:#5DCAA5;--c3:#F0997B;--c4:#B4B2A9;--c5:#EF9F27;--good:#9FE1CB;--good-bg:#04342C;--warn:#FAC775;--warn-bg:#412402;--bad:#F7C1C1;--bad-bg:#501313;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.top{padding:24px 0 20px}
+h1{font-size:30px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:24px;font-weight:600;margin:0 0 4px}h3{font-size:18px;font-weight:600;margin:28px 0 8px}h4{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:720px}.muted{color:var(--muted)}.small{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}.chip.acc{background:var(--accent-bg);color:var(--accent);border-color:transparent}
+nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px;padding:8px 16px}nav.toc .row{display:flex;gap:6px;overflow-x:auto}nav.toc a{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}nav.toc a:hover{background:var(--surface-2);color:var(--text)}
+section.mod{padding:44px 0 8px;border-bottom:1px solid var(--border)}.modtag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}.card.soft{background:var(--surface-2);border-color:transparent}
+.fx{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:0}.fx-name{font-size:13px;color:var(--muted);margin-bottom:6px}.fx-eq{font-family:var(--serif);font-size:18px;line-height:2.4}.fx-eq .frac{margin:0 4px;line-height:1.4}.fx-note{font-size:13px;color:var(--muted);margin-top:8px}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;text-align:center}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 6px 3px}.frac>span:last-child{padding:3px 6px 0}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:12px 0}.callout.trap{border-left-color:var(--bad);background:var(--bad-bg)}.callout.tip{border-left-color:var(--good);background:var(--good-bg)}.callout b{font-weight:600}.callout.trap b{color:var(--bad)}.callout.tip b{color:var(--good)}
+.tbl{width:100%;overflow-x:auto;margin:8px 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul,ol{margin:0 0 12px;padding-left:22px}li{margin:3px 0}
+.viz{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}.viz-title{font-weight:600;font-size:15px;margin-bottom:2px}.viz-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.ctl{display:flex;align-items:center;gap:12px;margin:0 0 8px;flex-wrap:wrap}.ctl label{font-size:14px;color:var(--muted);min-width:190px}.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}.ctl output{font-size:14px;font-weight:600;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}.stat{background:var(--surface-2);border-radius:8px;padding:8px 12px}.stat .l{font-size:12px;color:var(--muted)}.stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}svg .grid{stroke:var(--border);stroke-width:1}svg .axis{stroke:var(--border-strong);stroke-width:1}svg .t2{fill:var(--muted);font-size:12px;font-family:var(--sans)}svg .t1{fill:var(--text);font-size:12px;font-family:var(--sans);font-weight:600}
+input[type=number],select,textarea{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 8px}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:7px 14px;cursor:pointer}button:hover{background:var(--surface-2)}button.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}.flow .step{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.flow .step .n{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.pill.g{background:var(--good-bg);color:var(--good)}.pill.w{background:var(--warn-bg);color:var(--warn)}.pill.b{background:var(--bad-bg);color:var(--bad)}.pill.a{background:var(--accent-bg);color:var(--accent)}
+.bar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}.bar>div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+details.q{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0}details.q summary{cursor:pointer;font-weight:500;list-style:none}details.q summary::-webkit-details-marker{display:none}details.q summary .qn{color:var(--accent);font-weight:600;margin-right:6px}details.q .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}details.q .reveal{font-size:13px;color:var(--muted);margin-left:6px}details.q[open] .reveal{display:none}
+.prog-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}.prog-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+footer{padding:30px 0;color:var(--faint);font-size:13px}
+@media (max-width:560px){h1{font-size:25px}.prog-row{grid-template-columns:28px 1fr}.prog-row select{grid-column:2}.ctl label{min-width:0;width:100%}}
+@media print{nav.toc,.noprint{display:none}body{background:#fff;color:#000}section.mod{break-before:page}.viz,.card,.fx{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none">&larr; All guides</a>
+<header class="top">
+  <div class="modtag">CFA Level I · 2026 curriculum</div>
+  <h1>Derivatives guide</h1>
+  <p class="lead">Forwards, futures, swaps, options and credit derivatives: how they work, why companies and investors use them, and how to price them with no-arbitrage, put–call parity and a one-period binomial model. Built from Volume 7 of your 2026 curriculum.</p>
+  <div class="chips"><span class="chip acc">Exam weight 5–8%</span><span class="chip">About 9–14 of 180 questions</span><span class="chip">10 learning modules</span></div>
+</header>
+
+<nav class="toc"><div class="row">
+  <a href="#plan">Game plan</a><a href="#d1">1 · Instruments and markets</a><a href="#d2">2 · Uses, benefits, risks</a><a href="#d3">3 · Forwards and futures pricing</a><a href="#d4">4 · Swaps</a><a href="#d5">5 · Options</a><a href="#formulas">Formula sheet</a><a href="#practice">Practice</a><a href="#progress">My progress</a>
+</div></nav>
+
+<section class="mod" id="plan">
+  <div class="modtag">Start here</div><h2>Exam game plan</h2>
+  <div class="grid two">
+    <div class="card"><h4>What gets tested</h4><ul class="small">
+      <li><b>Payoffs and profits</b> of forwards, calls and puts at expiration; breakevens; maximum gains and losses.</li>
+      <li><b>Pricing by no-arbitrage</b>: forward price with cost of carry, forward value during its life, swap rates, option bounds, put–call parity, one-period binomial.</li>
+      <li><b>Concepts</b>: OTC vs exchange-traded, margin and daily settlement, futures vs forward prices, hedge accounting, benefits and risks.</li></ul></div>
+    <div class="card"><h4>Highest-yield items, ranked</h4><ol class="small">
+      <li>Option payoffs and profits; moneyness</li><li>Forward price: F<sub>0</sub>(T) = S<sub>0</sub>(1 + r)<sup>T</sup>, adjusted for income and costs</li><li>Put–call parity and synthetic positions</li><li>One-period binomial: hedge ratio and risk-neutral probability</li><li>Factors that affect option values; lower bounds</li><li>Forward value during its life</li><li>Futures margining; futures vs forwards</li><li>Swap rate as a par rate; swaps as forwards</li><li>Uses: hedging (cash flow, fair value, net investment), benefits and risks</li></ol></div>
+  </div>
+  <div class="callout trap"><b>Top traps.</b> Mixing up payoff (ignores the premium) and profit (subtracts it). Forgetting that a forward's value is zero at inception but its price is not. Using the risk-neutral probability as if it were the real probability. Discounting the strike in put–call parity with the wrong sign. Thinking variation margin restores the account to the <i>maintenance</i> level (it restores it to the <i>initial</i> level).</div>
+</section>
+
+<section class="mod" id="d1">
+  <div class="modtag">Part 1 · Learning modules 1–2</div><h2>Derivative instruments and markets</h2>
+  <p class="small">A derivative's value comes from an <b>underlying</b>: equities, fixed income and interest rates, currencies, commodities, credit, or others (weather, crypto, inflation). Derivatives are either <b>forward commitments</b> (both sides are obligated) or <b>contingent claims</b> (one side has a right, not an obligation).</p>
+  <div class="grid two">
+    <div class="card small"><h4>Over-the-counter (OTC)</h4>Private, customized contracts between two parties (usually with a dealer). Flexible but less transparent, less liquid, and exposed to <b>counterparty credit risk</b>. Many standard OTC trades must now clear through a <b>central counterparty</b> (CCP).</div>
+    <div class="card small"><h4>Exchange-traded</h4>Standardized terms (size, expiry, settlement), traded on an exchange and cleared through a clearinghouse that guarantees performance. Margin and daily settlement limit credit risk. More transparent and liquid.</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Instrument</th><th>Key features</th></tr>
+    <tr><td><b>Forward</b></td><td>OTC agreement to buy/sell at a set price on a future date. No cash at inception (value zero). Settled at maturity by delivery or cash. Counterparty risk.</td></tr>
+    <tr><td><b>Futures</b></td><td>Exchange-traded, standardized forward. <b>Daily settlement</b> (mark-to-market) through margin accounts: initial margin, maintenance margin, and variation margin that restores the account to the <i>initial</i> level. Most are closed out before expiry.</td></tr>
+    <tr><td><b>Swap</b></td><td>Exchange of a series of cash flows, e.g. fixed vs floating interest on a notional amount. Equivalent to a series of forwards. Usually OTC.</td></tr>
+    <tr><td><b>Option</b></td><td>Buyer pays a premium for the right to buy (call) or sell (put) at the exercise (strike) price. European: exercise only at expiry; American: any time up to expiry.</td></tr>
+    <tr><td><b>Credit derivative</b></td><td>E.g. a <b>credit default swap (CDS)</b>: the protection buyer pays periodic premiums; the protection seller pays if a credit event (e.g. default) occurs on the reference entity.</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Long forward payoff at T</div><div class="fx-eq">S<sub>T</sub> − F<sub>0</sub>(T)</div><div class="fx-note">Short forward = F<sub>0</sub>(T) − S<sub>T</sub>. Zero-sum.</div></div>
+    <div class="fx"><div class="fx-name">Call payoff and profit</div><div class="fx-eq">max(0, S<sub>T</sub> − X) &nbsp;·&nbsp; profit = payoff − c<sub>0</sub></div><div class="fx-note">Breakeven: X + c<sub>0</sub>. Buyer's max loss = premium; max gain unlimited.</div></div>
+    <div class="fx"><div class="fx-name">Put payoff and profit</div><div class="fx-eq">max(0, X − S<sub>T</sub>) &nbsp;·&nbsp; profit = payoff − p<sub>0</sub></div><div class="fx-note">Breakeven: X − p<sub>0</sub>. Buyer's max gain = X − p<sub>0</sub>.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Payoff and profit at expiration</div>
+    <div class="viz-sub">Choose a position. Payoff ignores the premium; profit subtracts it (or adds it for the seller).</div>
+    <div class="ctl"><label for="poT">Position</label><select id="poT"><option value="lc">Long call</option><option value="sc">Short call</option><option value="lp">Long put</option><option value="sp">Short put</option><option value="lf">Long forward</option><option value="sf">Short forward</option></select></div>
+    <div class="ctl"><label for="poX">Strike / forward price</label><input type="range" id="poX" min="30" max="70" step="1" value="50"><output id="poXo"></output></div>
+    <div class="ctl"><label for="poP">Option premium</label><input type="range" id="poP" min="0" max="15" step="0.5" value="5"><output id="poPo"></output></div>
+    <div class="ctl"><label for="poS">Underlying price at expiry</label><input type="range" id="poS" min="0" max="100" step="1" value="62"><output id="poSo"></output></div>
+    <svg id="poSvg"></svg>
+    <div class="legend"><span><span class="sw" style="background:var(--c4)"></span>Payoff</span><span><span class="sw" style="background:var(--c1)"></span>Profit</span></div>
+    <div class="stats"><div class="stat"><div class="l">Payoff</div><div class="v" id="poPay"></div></div><div class="stat"><div class="l">Profit</div><div class="v" id="poPro"></div></div><div class="stat"><div class="l">Breakeven</div><div class="v" id="poBE"></div></div><div class="stat"><div class="l">Max gain / max loss</div><div class="v" id="poMM" style="font-size:15px"></div></div></div>
+  </div>
+  <p class="small"><b>Moneyness</b> (call): in the money if S &gt; X, at the money if S = X, out of the money if S &lt; X. Reversed for puts.</p>
+  <div class="viz">
+    <div class="viz-title">Futures margin: daily settlement</div>
+    <div class="viz-sub">Long one contract (multiplier 50) at 100. Each day's gain or loss hits the margin account. If the balance falls below maintenance, variation margin brings it back to the initial level.</div>
+    <div class="ctl"><label for="fmI">Initial margin</label><input type="range" id="fmI" min="400" max="1500" step="50" value="1000"><output id="fmIo"></output></div>
+    <div class="ctl"><label for="fmM">Maintenance margin</label><input type="range" id="fmM" min="200" max="1400" step="50" value="700"><output id="fmMo"></output></div>
+    <div class="tbl"><table id="fmTbl"></table></div>
+  </div>
+</section>
+
+<section class="mod" id="d2">
+  <div class="modtag">Part 2 · Learning module 3</div><h2>Benefits, risks, and issuer and investor uses</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Benefits</h4><ul style="margin:0"><li><b>Risk allocation and transfer</b>: move risk to those willing to bear it</li><li><b>Information discovery</b>: futures and options prices reveal expectations and volatility</li><li><b>Operational advantages</b>: low transaction costs, easy shorting, high liquidity, leverage (small cash outlay)</li><li><b>Market efficiency</b>: mispricing is cheaper to exploit</li></ul></div>
+    <div class="card small"><h4>Risks</h4><ul style="margin:0"><li><b>High implicit leverage</b>: large exposure for little cash</li><li><b>Lack of transparency</b> and complexity</li><li><b>Basis risk</b>: the hedge and the exposure don't move exactly together</li><li><b>Liquidity risk</b>: margin calls need cash</li><li><b>Counterparty credit risk</b> (OTC)</li><li><b>Destabilization and systemic risk</b> from excessive speculation</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Hedge accounting (issuers)</th><th>What's hedged</th><th>Example</th></tr>
+    <tr><td><b>Cash flow hedge</b></td><td>Variability of future cash flows</td><td>Swap floating-rate debt into fixed (receive floating, pay fixed)</td></tr>
+    <tr><td><b>Fair value hedge</b></td><td>Changes in the value of a fixed asset or liability</td><td>Swap fixed-rate debt into floating; hedge commodity inventory</td></tr>
+    <tr><td><b>Net investment hedge</b></td><td>Currency risk on a foreign subsidiary</td><td>FX forward or cross-currency swap</td></tr>
+  </table></div>
+  <p class="small">Hedge accounting lets the gains and losses on the derivative and the hedged item be recognized together, reducing earnings volatility. <b>Investors</b> use derivatives to gain or modify exposure (e.g. change portfolio duration or beta), replicate a cash position cheaply, hedge, or speculate.</p>
+</section>
+
+<section class="mod" id="d3">
+  <div class="modtag">Part 3 · Learning modules 4–6</div><h2>Arbitrage, cost of carry, and pricing forwards and futures</h2>
+  <div class="grid two">
+    <div class="card small"><h4>No-arbitrage pricing</h4><b>Arbitrage</b> = a riskless profit with no net investment. Two portfolios with identical future cash flows must have the same price today (<b>replication</b>). Derivatives are priced so that no arbitrage exists, discounting at the risk-free rate (<b>risk neutrality</b>), regardless of investors' risk preferences.</div>
+    <div class="card small"><h4>Price vs value</h4>A forward's <b>price</b> F<sub>0</sub>(T) is set at inception so its <b>value</b> is zero. As the underlying moves, the value becomes positive for one side and negative for the other. At expiry, value = S<sub>T</sub> − F<sub>0</sub>(T) for the long.</div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="fx"><div class="fx-name">Forward price (no income or costs)</div><div class="fx-eq">F<sub>0</sub>(T) = S<sub>0</sub>(1 + r)<sup>T</sup></div></div>
+    <div class="fx"><div class="fx-name">With income (I) and costs (C)</div><div class="fx-eq">F<sub>0</sub>(T) = [S<sub>0</sub> − PV(I) + PV(C)](1 + r)<sup>T</sup></div><div class="fx-note">Continuous: F<sub>0</sub>(T) = S<sub>0</sub>e<sup>(r + c − i)T</sup>. Income (dividends, coupons, convenience yield) lowers the forward price; storage and insurance costs raise it.</div></div>
+    <div class="fx"><div class="fx-name">Value of a long forward at time t</div><div class="fx-eq">V<sub>t</sub>(T) = S<sub>t</sub> − F<sub>0</sub>(T)(1 + r)<sup>−(T − t)</sup></div><div class="fx-note">Adjust S<sub>t</sub> for the PV of remaining income or costs if there are any.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Forward price and value calculator</div>
+    <div class="viz-sub">Set the contract at inception, then move forward in time to value it.</div>
+    <div class="ctl"><label for="fwS">Spot price today S<sub>0</sub></label><input type="range" id="fwS" min="50" max="150" step="1" value="100"><output id="fwSo"></output></div>
+    <div class="ctl"><label for="fwR">Risk-free rate</label><input type="range" id="fwR" min="0" max="10" step="0.5" value="5"><output id="fwRo"></output></div>
+    <div class="ctl"><label for="fwI">PV of income during the contract</label><input type="range" id="fwI" min="0" max="10" step="0.5" value="0"><output id="fwIo"></output></div>
+    <div class="ctl"><label for="fwC">PV of carrying costs</label><input type="range" id="fwC" min="0" max="10" step="0.5" value="0"><output id="fwCo"></output></div>
+    <div class="ctl"><label for="fwT">Time elapsed (of 1 year)</label><input type="range" id="fwT" min="0" max="1" step="0.05" value="0.5"><output id="fwTo"></output></div>
+    <div class="ctl"><label for="fwSt">Spot price at that time S<sub>t</sub></label><input type="range" id="fwSt" min="50" max="150" step="1" value="104"><output id="fwSto"></output></div>
+    <div class="stats"><div class="stat"><div class="l">Forward price F<sub>0</sub>(1)</div><div class="v" id="fwF"></div></div><div class="stat"><div class="l">Value to long at t</div><div class="v" id="fwV"></div></div><div class="stat"><div class="l">Value to short at t</div><div class="v" id="fwVs"></div></div></div>
+    <p class="small muted" style="margin:8px 0 0">Value at time t assumes no income or costs remain after t.</p>
+  </div>
+  <h3>3.1 Interest rate forwards (FRAs)</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Implied forward rate</div><div class="fx-eq">(1 + z<sub>B</sub>)<sup>B</sup> = (1 + z<sub>A</sub>)<sup>A</sup>(1 + IFR<sub>A,B−A</sub>)<sup>B−A</sup></div><div class="fx-note">The no-arbitrage rate for borrowing from A to B, implied by today's spot curve.</div></div>
+    <div class="card small">A <b>forward rate agreement</b> locks in an interest rate for a future period on a notional amount. The <b>long</b> (fixed-rate payer) gains if the market reference rate ends up above the FRA rate. Settlement is the rate difference × notional × period, discounted back to the start of the period.</div>
+  </div>
+  <h3>3.2 Futures vs forwards</h3>
+  <p class="small">Futures are marked to market daily, so gains and losses are realized each day. If futures prices are <b>positively correlated with interest rates</b>, longs reinvest gains at higher rates and finance losses at lower rates, so <b>futures prices exceed forward prices</b>. Negative correlation reverses this. With constant (or uncorrelated) rates, they're equal. After each daily settlement, a futures contract's value resets to zero.</p>
+</section>
+
+<section class="mod" id="d4">
+  <div class="modtag">Part 4 · Learning module 7</div><h2>Pricing and valuing swaps</h2>
+  <div class="grid two">
+    <div class="card small"><h4>A swap is a series of forwards</h4>A fixed-for-floating interest rate swap is like a portfolio of FRAs, each locking in the same fixed rate. The fixed (swap) rate is set so the swap's value is zero at inception.</div>
+    <div class="fx"><div class="fx-name">Swap fixed rate (a par rate)</div><div class="fx-eq">s<sub>N</sub> = <span class="frac"><span>1 − d<sub>N</sub></span><span>d<sub>1</sub> + d<sub>2</sub> + … + d<sub>N</sub></span></span></div><div class="fx-note">d<sub>t</sub> = 1/(1 + z<sub>t</sub>)<sup>t</sup>. Same as the par rate on a bond.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Swap rate from the spot curve</div>
+    <div class="viz-sub">A 4-year annual-pay swap. The swap rate is an average of the spot rates, weighted toward earlier years.</div>
+    <div class="ctl"><label for="swL">1-year spot rate</label><input type="range" id="swL" min="0.5" max="8" step="0.25" value="3"><output id="swLo"></output></div>
+    <div class="ctl"><label for="swS">Increase per year</label><input type="range" id="swS" min="-1" max="1" step="0.25" value="0.5"><output id="swSo"></output></div>
+    <div class="tbl"><table id="swTbl"></table></div>
+  </div>
+  <p class="small"><b>Value after inception:</b> if market swap rates rise above the contract's fixed rate, the <b>fixed payer</b> gains: value to the fixed payer ≈ (new swap rate − old swap rate) × notional × sum of remaining discount factors.</p>
+</section>
+
+<section class="mod" id="d5">
+  <div class="modtag">Part 5 · Learning modules 8–10</div><h2>Pricing options: bounds, parity and the binomial model</h2>
+  <div class="grid two">
+    <div class="card small"><h4>Intrinsic and time value</h4>Option value = <b>intrinsic value</b> (exercise value if positive) + <b>time value</b>. Time value falls to zero at expiry. A European call's lower bound is above its intrinsic value because the strike is paid later.</div>
+    <div class="fx"><div class="fx-name">European option bounds</div><div class="fx-eq">max[0, S<sub>0</sub> − X(1 + r)<sup>−T</sup>] ≤ c<sub>0</sub> ≤ S<sub>0</sub></div><div class="fx-note">Put: max[0, X(1 + r)<sup>−T</sup> − S<sub>0</sub>] ≤ p<sub>0</sub> ≤ X(1 + r)<sup>−T</sup>.</div></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>If this increases…</th><th>Call value</th><th>Put value</th></tr>
+    <tr><td>Underlying price</td><td><span class="pill g">↑</span></td><td><span class="pill b">↓</span></td></tr>
+    <tr><td>Exercise price</td><td><span class="pill b">↓</span></td><td><span class="pill g">↑</span></td></tr>
+    <tr><td>Time to expiry</td><td><span class="pill g">↑</span></td><td><span class="pill g">↑</span> usually (can fall for deep in-the-money European puts)</td></tr>
+    <tr><td>Volatility of the underlying</td><td><span class="pill g">↑</span></td><td><span class="pill g">↑</span></td></tr>
+    <tr><td>Risk-free rate</td><td><span class="pill g">↑</span></td><td><span class="pill b">↓</span></td></tr>
+    <tr><td>Income on the underlying (dividends)</td><td><span class="pill b">↓</span></td><td><span class="pill g">↑</span></td></tr>
+    <tr><td>Carrying costs</td><td><span class="pill g">↑</span></td><td><span class="pill b">↓</span></td></tr>
+  </table></div>
+  <h3>5.1 Put–call parity</h3>
+  <div class="grid two">
+    <div class="fx"><div class="fx-name">Put–call parity (European, same X and T)</div><div class="fx-eq">S<sub>0</sub> + p<sub>0</sub> = c<sub>0</sub> + X(1 + r)<sup>−T</sup></div><div class="fx-note">Protective put (stock + put) = fiduciary call (call + risk-free bond paying X).</div></div>
+    <div class="fx"><div class="fx-name">Put–call–forward parity</div><div class="fx-eq">F<sub>0</sub>(T)(1 + r)<sup>−T</sup> + p<sub>0</sub> = c<sub>0</sub> + X(1 + r)<sup>−T</sup></div><div class="fx-note">Replace the stock with a long forward plus a bond.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Put–call parity solver</div>
+    <div class="viz-sub">Enter four of the five values and solve for the call or the put.</div>
+    <div class="ctl"><label for="pcS">Stock price S<sub>0</sub></label><input type="range" id="pcS" min="20" max="100" step="1" value="50"><output id="pcSo"></output></div>
+    <div class="ctl"><label for="pcX">Exercise price X</label><input type="range" id="pcX" min="20" max="100" step="1" value="50"><output id="pcXo"></output></div>
+    <div class="ctl"><label for="pcR">Risk-free rate</label><input type="range" id="pcR" min="0" max="10" step="0.5" value="5"><output id="pcRo"></output></div>
+    <div class="ctl"><label for="pcT">Time to expiry (years)</label><input type="range" id="pcT" min="0.25" max="3" step="0.25" value="1"><output id="pcTo"></output></div>
+    <div class="ctl"><label for="pcC">Known call price</label><input type="range" id="pcC" min="0" max="30" step="0.25" value="6"><output id="pcCo"></output></div>
+    <div class="stats"><div class="stat"><div class="l">PV of X</div><div class="v" id="pcPV"></div></div><div class="stat"><div class="l">Put price implied</div><div class="v" id="pcP"></div></div><div class="stat"><div class="l">Call lower bound</div><div class="v" id="pcLB"></div></div></div>
+  </div>
+  <div class="grid">
+    <div class="card small"><h4>Synthetic positions</h4>Rearrange parity: <b>synthetic call</b> = S + p − PV(X); <b>synthetic put</b> = c + PV(X) − S; <b>synthetic stock</b> = c − p + PV(X); <b>synthetic bond</b> = S + p − c. If one side is mispriced, buy the cheap side and sell the expensive side.</div>
+    <div class="card small"><h4>Firm value as options</h4>Shareholders hold a <b>call</b> on the firm's assets with strike = face value of debt. Debtholders hold a <b>risk-free bond minus a put</b> on the firm's assets. That's why more risk helps equity and hurts debt.</div>
+  </div>
+  <h3>5.2 One-period binomial model</h3>
+  <div class="grid">
+    <div class="fx"><div class="fx-name">Risk-neutral probability of an up move</div><div class="fx-eq">π = <span class="frac"><span>1 + r − d</span><span>u − d</span></span></div></div>
+    <div class="fx"><div class="fx-name">Option value</div><div class="fx-eq">c<sub>0</sub> = <span class="frac"><span>π c<sub>1</sub><sup>u</sup> + (1 − π) c<sub>1</sub><sup>d</sup></span><span>1 + r</span></span></div></div>
+    <div class="fx"><div class="fx-name">Hedge ratio</div><div class="fx-eq">h = <span class="frac"><span>c<sub>1</sub><sup>u</sup> − c<sub>1</sub><sup>d</sup></span><span>S<sub>1</sub><sup>u</sup> − S<sub>1</sub><sup>d</sup></span></span></div><div class="fx-note">Shares of stock per option to build a risk-free hedge.</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">One-period binomial tree</div>
+    <div class="viz-sub">The real probability of an up move doesn't matter: the hedge ratio makes the position risk-free, so it must earn the risk-free rate.</div>
+    <div class="ctl"><label for="bnS">Stock price S<sub>0</sub></label><input type="range" id="bnS" min="50" max="150" step="1" value="100"><output id="bnSo"></output></div>
+    <div class="ctl"><label for="bnU">Up factor u</label><input type="range" id="bnU" min="1.05" max="1.5" step="0.05" value="1.2"><output id="bnUo"></output></div>
+    <div class="ctl"><label for="bnD">Down factor d</label><input type="range" id="bnD" min="0.5" max="0.95" step="0.05" value="0.8"><output id="bnDo"></output></div>
+    <div class="ctl"><label for="bnR">Risk-free rate (period)</label><input type="range" id="bnR" min="0" max="10" step="0.5" value="5"><output id="bnRo"></output></div>
+    <div class="ctl"><label for="bnX">Exercise price</label><input type="range" id="bnX" min="50" max="150" step="1" value="100"><output id="bnXo"></output></div>
+    <div class="ctl"><label for="bnT">Option</label><select id="bnT"><option value="c">Call</option><option value="p">Put</option></select></div>
+    <svg id="bnSvg"></svg>
+    <div class="stats"><div class="stat"><div class="l">Risk-neutral π</div><div class="v" id="bnPi"></div></div><div class="stat"><div class="l">Hedge ratio h</div><div class="v" id="bnH"></div></div><div class="stat"><div class="l">Option value today</div><div class="v" id="bnV"></div></div></div>
+    <div class="err" id="bnErr"></div>
+  </div>
+</section>
+
+<section class="mod" id="formulas">
+  <div class="modtag">Review</div><h2>Formula sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Concept</th><th>Formula</th></tr>
+    <tr><td>Long forward payoff</td><td>S<sub>T</sub> − F<sub>0</sub>(T)</td></tr>
+    <tr><td>Call / put payoff</td><td>max(0, S<sub>T</sub> − X); max(0, X − S<sub>T</sub>)</td></tr>
+    <tr><td>Option profit</td><td>Payoff − premium (buyer)</td></tr>
+    <tr><td>Breakeven</td><td>Call: X + c<sub>0</sub>; put: X − p<sub>0</sub></td></tr>
+    <tr><td>Forward price</td><td>F<sub>0</sub>(T) = [S<sub>0</sub> − PV(I) + PV(C)](1 + r)<sup>T</sup></td></tr>
+    <tr><td>Continuous compounding</td><td>F<sub>0</sub>(T) = S<sub>0</sub>e<sup>(r + c − i)T</sup></td></tr>
+    <tr><td>Forward value (long) at t</td><td>V<sub>t</sub>(T) = S<sub>t</sub> − F<sub>0</sub>(T)(1 + r)<sup>−(T−t)</sup></td></tr>
+    <tr><td>Implied forward rate</td><td>(1 + z<sub>B</sub>)<sup>B</sup> = (1 + z<sub>A</sub>)<sup>A</sup>(1 + IFR)<sup>B−A</sup></td></tr>
+    <tr><td>Swap fixed rate</td><td>(1 − d<sub>N</sub>)/Σ d<sub>t</sub></td></tr>
+    <tr><td>Call bounds (European)</td><td>max[0, S<sub>0</sub> − X(1 + r)<sup>−T</sup>] ≤ c<sub>0</sub> ≤ S<sub>0</sub></td></tr>
+    <tr><td>Put bounds (European)</td><td>max[0, X(1 + r)<sup>−T</sup> − S<sub>0</sub>] ≤ p<sub>0</sub> ≤ X(1 + r)<sup>−T</sup></td></tr>
+    <tr><td>Put–call parity</td><td>S<sub>0</sub> + p<sub>0</sub> = c<sub>0</sub> + X(1 + r)<sup>−T</sup></td></tr>
+    <tr><td>Put–call–forward parity</td><td>F<sub>0</sub>(T)(1 + r)<sup>−T</sup> + p<sub>0</sub> = c<sub>0</sub> + X(1 + r)<sup>−T</sup></td></tr>
+    <tr><td>Risk-neutral probability</td><td>π = (1 + r − d)/(u − d)</td></tr>
+    <tr><td>Binomial option value</td><td>[π c<sup>u</sup> + (1 − π)c<sup>d</sup>]/(1 + r)</td></tr>
+    <tr><td>Hedge ratio</td><td>(c<sup>u</sup> − c<sup>d</sup>)/(S<sup>u</sup> − S<sup>d</sup>)</td></tr>
+  </table></div>
+</section>
+
+<section class="mod" id="practice">
+  <div class="modtag">Test yourself</div><h2>Practice questions</h2><p class="muted">Work each one before opening the answer.</p>
+  <details class="q"><summary><span class="qn">1</span>Which derivative is a contingent claim? A. Forward  B. Swap  C. Option<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> The buyer has a right, not an obligation.</div></details>
+  <details class="q"><summary><span class="qn">2</span>Compared with OTC derivatives, exchange-traded derivatives have: A. more customization  B. less counterparty credit risk  C. less transparency<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The clearinghouse guarantees performance.</div></details>
+  <details class="q"><summary><span class="qn">3</span>Initial margin 1,000; maintenance margin 700. A loss drops the account to 650. The variation margin required is: A. 50  B. 350  C. 0<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Back to the initial level: 1,000 − 650.</div></details>
+  <details class="q"><summary><span class="qn">4</span>In a credit default swap, the party that pays periodic premiums is the: A. protection seller  B. protection buyer  C. reference entity<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b></div></details>
+  <details class="q"><summary><span class="qn">5</span>A call with X = 50 costs 4. At expiry the stock is 60. The buyer's profit is: A. 4  B. 6  C. 10<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Payoff 10 − premium 4. C is the payoff.</div></details>
+  <details class="q"><summary><span class="qn">6</span>A put with X = 40 costs 3. The buyer's breakeven price is: A. 37  B. 40  C. 43<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> X − premium.</div></details>
+  <details class="q"><summary><span class="qn">7</span>The maximum loss for the seller of a call is: A. the premium  B. the strike price  C. unlimited<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> The stock can rise without limit.</div></details>
+  <details class="q"><summary><span class="qn">8</span>A company swaps its floating-rate debt into fixed. Under hedge accounting this is a: A. fair value hedge  B. cash flow hedge  C. net investment hedge<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> It hedges variable future interest payments.</div></details>
+  <details class="q"><summary><span class="qn">9</span>The risk that a hedge and the exposure don't move together perfectly is: A. basis risk  B. counterparty risk  C. liquidity risk<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">10</span>S<sub>0</sub> = 100, r = 5%, T = 1, no income or costs. The forward price is: A. 95.24  B. 100.00  C. 105.00<span class="reveal">Show answer</span></summary><div class="ans"><b>C.</b> 100 × 1.05.</div></details>
+  <details class="q"><summary><span class="qn">11</span>Same as Q10, but the PV of dividends during the year is 2. The forward price is: A. 102.90  B. 105.00  C. 107.10<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> (100 − 2) × 1.05. Income lowers the forward price; C wrongly adds it.</div></details>
+  <details class="q"><summary><span class="qn">12</span>At inception, the value of a forward contract to the long is: A. positive  B. zero  C. equal to the forward price<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The price is set so the value is zero.</div></details>
+  <details class="q"><summary><span class="qn">13</span>F<sub>0</sub> = 105, r = 5%. Six months later S<sub>t</sub> = 104. The value to the long is closest to: A. −1.00  B. 1.53  C. 6.53<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 104 − 105/1.05<sup>0.5</sup> = 104 − 102.47.</div></details>
+  <details class="q"><summary><span class="qn">14</span>Higher storage costs for a commodity, all else equal, make its forward price: A. higher  B. lower  C. unchanged<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Costs of carry raise the forward price; a convenience yield lowers it.</div></details>
+  <details class="q"><summary><span class="qn">15</span>If futures prices are positively correlated with interest rates, futures prices are: A. above forward prices  B. below forward prices  C. equal to forward prices<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Longs reinvest daily gains at higher rates.</div></details>
+  <details class="q"><summary><span class="qn">16</span>Discount factors: 0.97, 0.93, 0.89 for years 1–3. The 3-year swap rate is closest to: A. 3.67%  B. 3.94%  C. 11.00%<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> (1 − 0.89)/(0.97 + 0.93 + 0.89) = 0.11/2.79.</div></details>
+  <details class="q"><summary><span class="qn">17</span>Rates rise after a firm enters a swap paying fixed. The swap's value to the firm: A. rises  B. falls  C. doesn't change<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> It pays the old, now below-market, fixed rate and receives a higher floating rate.</div></details>
+  <details class="q"><summary><span class="qn">18</span>An increase in volatility of the underlying: A. raises calls and puts  B. raises calls, lowers puts  C. lowers both<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b></div></details>
+  <details class="q"><summary><span class="qn">19</span>Higher dividends on the underlying stock make a call: A. more valuable  B. less valuable  C. unaffected<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Dividends lower the expected stock price.</div></details>
+  <details class="q"><summary><span class="qn">20</span>S<sub>0</sub> = 55, X = 50, r = 5%, T = 1. The lower bound of a European call is closest to: A. 5.00  B. 7.38  C. 55.00<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> 55 − 50/1.05 = 55 − 47.62. A ignores discounting.</div></details>
+  <details class="q"><summary><span class="qn">21</span>S<sub>0</sub> = 50, X = 50, r = 5%, T = 1, call = 6. By put–call parity the put is closest to: A. 3.62  B. 6.00  C. 8.38<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> p = c + PV(X) − S = 6 + 47.62 − 50.</div></details>
+  <details class="q"><summary><span class="qn">22</span>A long stock plus a long put has the same payoff as: A. a long call plus a risk-free bond paying X  B. a short call plus a bond  C. a long forward<span class="reveal">Show answer</span></summary><div class="ans"><b>A.</b> Protective put = fiduciary call.</div></details>
+  <details class="q"><summary><span class="qn">23</span>S<sub>0</sub> = 100, u = 1.2, d = 0.8, r = 5%. The risk-neutral probability of an up move is: A. 0.500  B. 0.625  C. 0.750<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> (1.05 − 0.8)/(1.2 − 0.8).</div></details>
+  <details class="q"><summary><span class="qn">24</span>Same tree, call with X = 100. The call value today is closest to: A. 10.00  B. 11.90  C. 12.50<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> Up payoff 20, down 0. (0.625 × 20)/1.05. The hedge ratio is 20/40 = 0.5.</div></details>
+  <details class="q"><summary><span class="qn">25</span>Shareholders' claim on a leveraged firm is most similar to: A. a long put on the firm's assets  B. a long call on the firm's assets  C. a risk-free bond<span class="reveal">Show answer</span></summary><div class="ans"><b>B.</b> The strike is the face value of debt.</div></details>
+</section>
+
+<section class="mod" id="progress" style="border-bottom:0">
+  <div class="modtag">Track and save</div><h2>My progress</h2>
+  <p class="muted small">Tick what you've covered and rate your confidence. <b>Save progress into this file</b> downloads an updated copy with your progress built in; re-upload that copy to Claude to continue. On an iPad, use <b>Copy progress for Claude</b> instead.</p>
+  <div id="progList"></div>
+  <h3 style="font-size:15px">Notes and weak spots</h3>
+  <textarea id="notes" rows="5" style="width:100%" placeholder="Questions you got wrong, topics to revisit"></textarea>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="saveFile">Save progress into this file</button><button id="copyProg">Copy progress for Claude</button><span class="small muted" id="saveMsg" style="align-self:center"></span></div>
+</section>
+<footer>CFA Level I derivatives guide · Created with Claude on 2026-10-31 from the 2026 CFA Program curriculum (Volume 7). Paraphrased summaries; the curriculum is the authoritative source.</footer>
+</div>
+
+<script type="application/json" id="study-data">
+{
+  "guide": "CFA Level I - Derivatives study guide",
+  "file_version": 1,
+  "created": "2026-10-31",
+  "curriculum": "2026 Level I, Volume 7",
+  "for_claude": "Student is studying for CFA Level I. Read progress, confidence, notes and known_weak_spots to restore context. Student prefers visual formulas and simple, plain-English explanations. Give hints rather than answers when helping with question banks unless asked.",
+  "exam_weight": "5-8%",
+  "modules": [
+    {"id": "d1", "name": "LM1-2: Instruments and markets", "key": ["underlyings", "OTC vs exchange-traded, CCPs", "forwards, futures (margining), swaps, options, CDS", "payoffs, profits, breakevens, moneyness"]},
+    {"id": "d2", "name": "LM3: Benefits, risks, issuer and investor uses", "key": ["risk transfer, information discovery, operational advantages", "leverage, transparency, basis, liquidity, counterparty, systemic risks", "cash flow, fair value, net investment hedges", "investor uses"]},
+    {"id": "d3", "name": "LM4-6: Arbitrage, cost of carry, forwards and futures", "key": ["no-arbitrage, replication, risk neutrality", "forward price with income and costs", "forward value during life", "FRAs and implied forward rates", "futures vs forward prices"]},
+    {"id": "d4", "name": "LM7: Swaps", "key": ["swap as series of forwards", "swap rate as par rate", "value after inception"]},
+    {"id": "d5", "name": "LM8-10: Options, put-call parity, binomial", "key": ["intrinsic and time value, bounds", "factors affecting option value", "put-call and put-call-forward parity, synthetics", "firm value as options", "one-period binomial: pi, hedge ratio"]}
+  ],
+  "known_weak_spots": [],
+  "progress": {},
+  "notes": "",
+  "saved_at": null
+}
+</script>
+
+<script>
+const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const setText = (id, s) => { const e = $(id); if (e) e.textContent = s; };
+const pct = (v, d) => (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d === undefined ? 0 : d) + '%';
+const num = (v, d) => (v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 0 : d);
+function bind(ids, fn) { ids.forEach(id => { const e = $(id); if (e) e.addEventListener('input', fn); }); fn(); }
+function nice(min, max, n) { if (!(max - min > 1e-9)) max = min + 1; const raw = (max - min) / (n || 5), p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; const step = (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step: step }; }
+const decs = step => { let d = 0; while (d < 6 && Math.abs(Math.round(step * Math.pow(10, d)) - step * Math.pow(10, d)) > 1e-9) d++; return d; };
+function chart(svg, o) {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  const W = o.w || 640, H = o.h || 300, L = o.ml || 56, R = 18, T = 14, B = 44, pw = W - L - R, ph = H - T - B;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+  const X = v => L + (v - o.xr[0]) / (o.xr[1] - o.xr[0]) * pw, Y = v => T + ph - (v - o.yr[0]) / (o.yr[1] - o.yr[0]) * ph;
+  const el = (t, a, p, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; (p || svg).appendChild(n); return n; };
+  const text = (x, y, s, a, cls) => { const n = el('text', Object.assign({ x: x, y: y }, a || {})); n.setAttribute('class', cls || 't2'); n.textContent = s; return n; };
+  const cid = 'clip' + Math.random().toString(36).slice(2, 9), defs = el('defs', {}), cp = el('clipPath', { id: cid }, defs);
+  el('rect', { x: L, y: T, width: pw, height: ph }, cp);
+  const fx = o.fx || (v => v), fy = o.fy || (v => v);
+  if (o.xt) { const n = Math.round((o.xr[1] - o.xr[0]) / o.xt); for (let i = 0; i <= n; i++) { const v = o.xr[0] + i * o.xt; el('line', { x1: X(v), x2: X(v), y1: T, y2: T + ph, 'class': 'grid' }); text(X(v), T + ph + 17, fx(v), { 'text-anchor': 'middle' }); } }
+  if (o.yt) { const n = Math.round((o.yr[1] - o.yr[0]) / o.yt); for (let i = 0; i <= n; i++) { const v = o.yr[0] + i * o.yt; el('line', { x1: L, x2: L + pw, y1: Y(v), y2: Y(v), 'class': 'grid' }); text(L - 8, Y(v) + 4, fy(v), { 'text-anchor': 'end' }); } }
+  el('line', { x1: L, x2: L + pw, y1: T + ph, y2: T + ph, 'class': 'axis' }); el('line', { x1: L, x2: L, y1: T, y2: T + ph, 'class': 'axis' });
+  if (o.yr[0] < 0 && o.yr[1] > 0) el('line', { x1: L, x2: L + pw, y1: Y(0), y2: Y(0), 'class': 'axis' });
+  if (o.xl) text(L + pw / 2, H - 6, o.xl, { 'text-anchor': 'middle' });
+  if (o.yl) text(13, T + ph / 2, o.yl, { 'text-anchor': 'middle', transform: 'rotate(-90 13 ' + (T + ph / 2) + ')' });
+  const g = el('g', { 'clip-path': 'url(#' + cid + ')' });
+  const d = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+  const line = (pts, color, w, dash, op) => el('path', { d: d(pts) }, g, { fill: 'none', stroke: color, strokeWidth: w || 2.5, strokeDasharray: dash || 'none', opacity: op === undefined ? 1 : op });
+  const rect = (x0, x1, y0, y1, color, op) => el('rect', { x: Math.min(X(x0), X(x1)), y: Math.min(Y(y0), Y(y1)), width: Math.abs(X(x1) - X(x0)), height: Math.max(1, Math.abs(Y(y1) - Y(y0))), rx: 3 }, g, { fill: color, opacity: op === undefined ? 0.9 : op });
+  const inside = (x, y) => x >= o.xr[0] && x <= o.xr[1] && y >= o.yr[0] && y <= o.yr[1];
+  const dot = (x, y, color, r) => inside(x, y) ? el('circle', { cx: X(x), cy: Y(y), r: r || 5 }, svg, { fill: color, stroke: 'var(--surface)', strokeWidth: 1.5 }) : null;
+  const vline = (x, color, dash, w) => el('line', { x1: X(x), x2: X(x), y1: T, y2: T + ph }, g, { stroke: color, strokeDasharray: dash || 'none', strokeWidth: w || 1.5 });
+  return { X: X, Y: Y, el: el, text: text, line: line, rect: rect, dot: dot, vline: vline, g: g, L: L, T: T, pw: pw, ph: ph, inside: inside };
+}
+
+
+/* Payoff diagram */
+bind(['poT', 'poX', 'poP', 'poS'], function () {
+  const t = $('poT').value, X = +$('poX').value, P = +$('poP').value, S = +$('poS').value, isOpt = t[1] !== 'f';
+  setText('poXo', X); setText('poPo', isOpt ? P.toFixed(1) : 'n/a'); setText('poSo', S); $('poP').disabled = !isOpt;
+  const pay = s => t === 'lc' ? Math.max(0, s - X) : t === 'sc' ? -Math.max(0, s - X) : t === 'lp' ? Math.max(0, X - s) : t === 'sp' ? -Math.max(0, X - s) : t === 'lf' ? s - X : X - s;
+  const prem = isOpt ? (t[0] === 'l' ? -P : P) : 0, pro = s => pay(s) + prem;
+  const A = [], B = []; for (let s = 0; s <= 100; s += 1) { A.push([s, pay(s)]); B.push([s, pro(s)]); }
+  const ch = chart($('poSvg'), { h: 280, xr: [0, 100], yr: [-60, 60], xt: 10, yt: 20, xl: 'Underlying price at expiry', yl: 'Payoff / profit' });
+  ch.line(A, 'var(--c4)', 2, '6 4'); ch.line(B, 'var(--c1)', 3); ch.vline(S, 'var(--c4)', '3 3'); ch.dot(S, pro(S), 'var(--c1)', 6);
+  const be = t === 'lc' || t === 'sc' ? X + P : t === 'lp' || t === 'sp' ? X - P : X;
+  ch.dot(be, 0, 'var(--c3)', 5); ch.text(ch.X(be), ch.Y(0) + 18, 'breakeven ' + be.toFixed(1), { 'text-anchor': 'middle' }, 't1');
+  setText('poPay', num(pay(S), 2)); setText('poPro', num(pro(S), 2)); setText('poBE', be.toFixed(2));
+  const mm = { lc: ['Unlimited', P.toFixed(1)], sc: [P.toFixed(1), 'Unlimited'], lp: [(X - P).toFixed(1), P.toFixed(1)], sp: [P.toFixed(1), (X - P).toFixed(1)], lf: ['Unlimited', X.toFixed(0)], sf: [X.toFixed(0), 'Unlimited'] }[t];
+  setText('poMM', mm[0] + ' / ' + mm[1]);
+});
+
+/* Futures margin */
+bind(['fmI', 'fmM'], function () {
+  let IM = +$('fmI').value, MM = +$('fmM').value; if (MM > IM) { MM = IM; $('fmM').value = IM; }
+  setText('fmIo', IM); setText('fmMo', MM);
+  const prices = [100, 98, 97, 99, 95, 96, 92], mult = 50; let bal = IM;
+  let h = '<tr><th>Day</th><th class="num">Settlement price</th><th class="num">Gain / loss</th><th class="num">Balance before call</th><th class="num">Variation margin</th><th class="num">Ending balance</th></tr>';
+  h += '<tr><td>0</td><td class="num">100</td><td class="num"></td><td class="num"></td><td class="num">' + IM + ' (initial)</td><td class="num">' + IM + '</td></tr>';
+  for (let i = 1; i < prices.length; i++) {
+    const gl = (prices[i] - prices[i - 1]) * mult; bal += gl; let vm = 0; if (bal < MM) { vm = IM - bal; }
+    h += '<tr><td>' + i + '</td><td class="num">' + prices[i] + '</td><td class="num">' + (gl > 0 ? '+' : '') + num(gl) + '</td><td class="num">' + num(bal) + '</td><td class="num">' + (vm ? '<span class="pill w">+' + num(vm) + '</span>' : '') + '</td><td class="num">' + num(bal + vm) + '</td></tr>';
+    bal += vm;
+  }
+  $('fmTbl').innerHTML = h;
+});
+
+/* Forward calculator */
+bind(['fwS', 'fwR', 'fwI', 'fwC', 'fwT', 'fwSt'], function () {
+  const S = +$('fwS').value, r = +$('fwR').value / 100, I = +$('fwI').value, C = +$('fwC').value, t = +$('fwT').value, St = +$('fwSt').value;
+  setText('fwSo', S); setText('fwRo', pct(r, 1)); setText('fwIo', I.toFixed(1)); setText('fwCo', C.toFixed(1)); setText('fwTo', t.toFixed(2) + ' yr'); setText('fwSto', St);
+  const F = (S - I + C) * (1 + r), V = St - F / Math.pow(1 + r, 1 - t);
+  setText('fwF', F.toFixed(2)); setText('fwV', num(V, 2)); setText('fwVs', num(-V, 2));
+});
+
+/* Swap rate */
+bind(['swL', 'swS'], function () {
+  const L = +$('swL').value / 100, s = +$('swS').value / 100; setText('swLo', pct(L, 2)); setText('swSo', (s >= 0 ? '+' : '−') + Math.abs(s * 100).toFixed(2) + '%');
+  let h = '<tr><th>Year</th><th class="num">Spot rate</th><th class="num">Discount factor</th><th class="num">Swap rate for this maturity</th></tr>', sum = 0;
+  for (let t = 1; t <= 4; t++) { const z = L + s * (t - 1), d = 1 / Math.pow(1 + z, t); sum += d; h += '<tr><td>' + t + '</td><td class="num">' + pct(z, 2) + '</td><td class="num">' + d.toFixed(4) + '</td><td class="num">' + pct((1 - d) / sum, 3) + '</td></tr>'; }
+  $('swTbl').innerHTML = h;
+});
+
+/* Put-call parity */
+bind(['pcS', 'pcX', 'pcR', 'pcT', 'pcC'], function () {
+  const S = +$('pcS').value, X = +$('pcX').value, r = +$('pcR').value / 100, T = +$('pcT').value, c = +$('pcC').value;
+  setText('pcSo', S); setText('pcXo', X); setText('pcRo', pct(r, 1)); setText('pcTo', T.toFixed(2)); setText('pcCo', c.toFixed(2));
+  const pv = X / Math.pow(1 + r, T), p = c + pv - S, lb = Math.max(0, S - pv);
+  setText('pcPV', pv.toFixed(2)); setText('pcP', p < 0 ? num(p, 2) + ' (call too cheap: arbitrage)' : p.toFixed(2)); setText('pcLB', lb.toFixed(2) + (c < lb ? ' — call below bound' : ''));
+});
+
+/* Binomial */
+bind(['bnS', 'bnU', 'bnD', 'bnR', 'bnX', 'bnT'], function () {
+  const S = +$('bnS').value, u = +$('bnU').value, d = +$('bnD').value, r = +$('bnR').value / 100, X = +$('bnX').value, isC = $('bnT').value === 'c';
+  setText('bnSo', S); setText('bnUo', u.toFixed(2)); setText('bnDo', d.toFixed(2)); setText('bnRo', pct(r, 1)); setText('bnXo', X);
+  const Su = S * u, Sd = S * d, cu = isC ? Math.max(0, Su - X) : Math.max(0, X - Su), cd = isC ? Math.max(0, Sd - X) : Math.max(0, X - Sd);
+  const pi = (1 + r - d) / (u - d), v = (pi * cu + (1 - pi) * cd) / (1 + r), h = (cu - cd) / (Su - Sd);
+  setText('bnErr', d < 1 + r && 1 + r < u ? '' : 'For no arbitrage, d < 1 + r < u.');
+  const svg = $('bnSvg'); while (svg.firstChild) svg.removeChild(svg.firstChild); svg.setAttribute('viewBox', '0 0 640 230');
+  const el = (t, a, st) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); if (st) for (const k in st) n.style[k] = st[k]; svg.appendChild(n); return n; };
+  const tx = (x, y, s, c) => { const n = el('text', { x: x, y: y, 'text-anchor': 'middle' }); n.setAttribute('class', c || 't1'); n.textContent = s; };
+  el('line', { x1: 170, y1: 115, x2: 450, y2: 45 }, { stroke: 'var(--border-strong)', strokeWidth: 2 }); el('line', { x1: 170, y1: 115, x2: 450, y2: 185 }, { stroke: 'var(--border-strong)', strokeWidth: 2 });
+  [[120, 115, 'S₀ = ' + S.toFixed(2), (isC ? 'c₀' : 'p₀') + ' = ' + v.toFixed(2)], [510, 45, 'Sᵘ = ' + Su.toFixed(2), 'payoff ' + cu.toFixed(2)], [510, 185, 'Sᵈ = ' + Sd.toFixed(2), 'payoff ' + cd.toFixed(2)]].forEach(n => {
+    el('rect', { x: n[0] - 85, y: n[1] - 30, width: 170, height: 58, rx: 10 }, { fill: 'var(--surface-2)', stroke: 'var(--border-strong)' });
+    tx(n[0], n[1] - 6, n[2]); tx(n[0], n[1] + 16, n[3], 't2');
+  });
+  tx(300, 64, 'π = ' + pi.toFixed(3), 't2'); tx(300, 176, '1 − π = ' + (1 - pi).toFixed(3), 't2');
+  setText('bnPi', pi.toFixed(3)); setText('bnH', num(h, 3)); setText('bnV', v.toFixed(2));
+});
+
+/* Progress */
+const DATA = JSON.parse($('study-data').textContent), LS = 'cfa-deriv-guide-v1';
+let state = { progress: DATA.progress || {}, notes: DATA.notes || '', saved_at: DATA.saved_at };
+try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (s && (!state.saved_at || (s.saved_at && s.saved_at > state.saved_at))) state = s; } catch (e) {}
+const ITEMS = DATA.modules.map(m => ({ id: m.id, name: m.name })).concat([{ id: 'formulas', name: 'Formula sheet memorized' }, { id: 'practice', name: 'Practice questions done' }]);
+const LEVELS = ['Not started', 'Shaky', 'OK', 'Solid'];
+function persist() { state.saved_at = new Date().toISOString(); try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+ITEMS.forEach(it => {
+  const p = state.progress[it.id] || { done: false, confidence: 'Not started' };
+  const row = document.createElement('div'); row.className = 'prog-row';
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!p.done; cb.setAttribute('aria-label', it.name + ' covered');
+  const lab = document.createElement('div'); lab.textContent = it.name;
+  const sel = document.createElement('select'); sel.setAttribute('aria-label', it.name + ' confidence');
+  LEVELS.forEach(l => { const o = document.createElement('option'); o.textContent = l; if (l === p.confidence) o.selected = true; sel.appendChild(o); });
+  const upd = () => { state.progress[it.id] = { done: cb.checked, confidence: sel.value }; persist(); };
+  cb.addEventListener('change', upd); sel.addEventListener('change', upd);
+  row.appendChild(cb); row.appendChild(lab); row.appendChild(sel); $('progList').appendChild(row);
+});
+$('notes').value = state.notes || ''; $('notes').addEventListener('input', () => { state.notes = $('notes').value; persist(); });
+function exportData() { const d = JSON.parse(JSON.stringify(DATA)); d.progress = state.progress; d.notes = state.notes; d.saved_at = new Date().toISOString(); return d; }
+$('saveFile').addEventListener('click', () => {
+  const json = JSON.stringify(exportData(), null, 2).replace(/</g, '\\u003c');
+  const html = PRISTINE.replace(/(<script type="application\/json" id="study-data">)[\s\S]*?(<\/script>)/, (m, a, b) => a + '\n' + json + '\n' + b);
+  try { const url = URL.createObjectURL(new Blob([html], { type: 'text/html' })); const a = document.createElement('a'); a.href = url; a.download = 'CFA-L1-Derivatives-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); setText('saveMsg', 'Downloaded. Keep that copy and re-upload it to Claude.'); } catch (e) { setText('saveMsg', 'Download blocked here. Use Copy progress instead.'); }
+});
+$('copyProg').addEventListener('click', () => {
+  const d = exportData(), txt = JSON.stringify({ guide: d.guide, progress: d.progress, notes: d.notes, known_weak_spots: d.known_weak_spots, saved_at: d.saved_at }, null, 2);
+  const fb = () => { $('notes').value = txt; setText('saveMsg', 'Clipboard blocked; progress shown in the notes box.'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => setText('saveMsg', 'Copied. Paste it into your chat with Claude.'), fb); else fb();
+});
+
+</script>
+</body>
+</html>
